@@ -1,0 +1,87 @@
+<svg width="1000" height="640" viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Anatomy of a first k6 test</title><desc id="d">A k6 script has imports, an exported options object that defines how much load to apply, and an exported default function that defines what each virtual user does. Three users loop for ten seconds, each calling the function then sleeping one second.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#7afcff"/></marker></defs>
+<rect width="1000" height="640" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Anatomy of a k6 test: two blocks, both exported</text>
+<rect x="24" y="56" width="600" height="356" rx="10" fill="#1e1e2e" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="24" y="56" width="600" height="26" rx="10" fill="#181825"/><rect x="24" y="72" width="600" height="10" fill="#181825"/>
+<rect x="34" y="60" width="120" height="22" rx="5" fill="#1e1e2e"/><text x="44" y="75" font-size="11.5" fill="#dfe3ff">first-test.js</text>
+<rect x="32" y="90" width="584" height="42" rx="6" fill="#ffe27a" fill-opacity="0.13" stroke="#ffe27a" stroke-opacity="0.7"/>
+<text class="m" x="44" y="108" font-size="13"><tspan fill="#c586c0">import </tspan><tspan fill="#dfe3ff">http </tspan><tspan fill="#c586c0">from </tspan><tspan fill="#ce9178">&#x27;k6/http&#x27;</tspan><tspan fill="#dfe3ff">;</tspan></text>
+<text class="m" x="44" y="126" font-size="13"><tspan fill="#c586c0">import </tspan><tspan fill="#dfe3ff">{ sleep } </tspan><tspan fill="#c586c0">from </tspan><tspan fill="#ce9178">&#x27;k6&#x27;</tspan><tspan fill="#dfe3ff">;</tspan></text>
+<rect x="32" y="146" width="584" height="98" rx="6" fill="#ff7edb" fill-opacity="0.13" stroke="#ff7edb" stroke-opacity="0.8"/>
+<text class="m" x="44" y="166" font-size="13"><tspan fill="#c586c0">export const </tspan><tspan fill="#9cdcfe">options </tspan><tspan fill="#dfe3ff">= {</tspan></text>
+<text class="m" x="60" y="188" font-size="13"><tspan fill="#9cdcfe">vus</tspan><tspan fill="#dfe3ff">: </tspan><tspan fill="#b5cea8">3</tspan><tspan fill="#dfe3ff">,            </tspan><tspan fill="#6a9955">// three virtual users…</tspan></text>
+<text class="m" x="60" y="208" font-size="13"><tspan fill="#9cdcfe">duration</tspan><tspan fill="#dfe3ff">: </tspan><tspan fill="#ce9178">&#x27;10s&#x27;</tspan><tspan fill="#dfe3ff">,    </tspan><tspan fill="#6a9955">// …looping for ten seconds</tspan></text>
+<text class="m" x="44" y="230" font-size="13"><tspan fill="#dfe3ff">};</tspan></text>
+<rect x="32" y="256" width="584" height="112" rx="6" fill="#7afcff" fill-opacity="0.13" stroke="#7afcff" stroke-opacity="0.8"/>
+<text class="m" x="44" y="276" font-size="13"><tspan fill="#c586c0">export default function </tspan><tspan fill="#dfe3ff">() {</tspan></text>
+<text class="m" x="60" y="300" font-size="13"><tspan fill="#dfe3ff">http.</tspan><tspan fill="#dcdcaa">get</tspan><tspan fill="#dfe3ff">(</tspan><tspan fill="#ce9178">&#x27;https://quickpizza.grafana.com/&#x27;</tspan><tspan fill="#dfe3ff">);</tspan></text>
+<text class="m" x="60" y="322" font-size="13"><tspan fill="#dcdcaa">sleep</tspan><tspan fill="#dfe3ff">(</tspan><tspan fill="#b5cea8">1</tspan><tspan fill="#dfe3ff">);  </tspan><tspan fill="#6a9955">// think time: pause 1s, then loop</tspan></text>
+<text class="m" x="44" y="352" font-size="13"><tspan fill="#dfe3ff">}</tspan></text>
+<path d="M624,110 L660,110" stroke="#ffe27a" stroke-width="2.5"/><circle cx="624" cy="110" r="3.5" fill="#ffe27a"/>
+<rect x="660" y="78" width="316" height="76" rx="10" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<circle cx="680" cy="98" r="10" fill="#ffe27a"/><text x="680" y="102" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="698" y="102" font-size="13" font-weight="700" fill="#ffe27a">Imports — bring in what you use</text>
+<text x="674" y="124" font-size="11.5" fill="#e6e9ff">k6/http for requests; sleep from k6.</text>
+<text x="674" y="140" font-size="11.5" fill="#e6e9ff">Use it → you must import it.</text>
+<path d="M624,198 L660,198" stroke="#ff7edb" stroke-width="2.5"/><circle cx="624" cy="198" r="3.5" fill="#ff7edb"/>
+<rect x="660" y="166" width="316" height="76" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<circle cx="680" cy="186" r="10" fill="#ff7edb"/><text x="680" y="190" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="698" y="190" font-size="13" font-weight="700" fill="#ff7edb">options — HOW MUCH load</text>
+<text x="674" y="212" font-size="11.5" fill="#e6e9ff">How many users, for how long — or ramps,</text>
+<text x="674" y="228" font-size="11.5" fill="#e6e9ff">thresholds… (a “load plan”).</text>
+<path d="M624,306 L660,306" stroke="#7afcff" stroke-width="2.5"/><circle cx="624" cy="306" r="3.5" fill="#7afcff"/>
+<rect x="660" y="274" width="316" height="76" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="680" cy="294" r="10" fill="#7afcff"/><text x="680" y="298" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<text x="698" y="298" font-size="13" font-weight="700" fill="#7afcff">default function — WHAT to do</text>
+<text x="674" y="320" font-size="11.5" fill="#e6e9ff">The user journey: your logic.</text>
+<text x="674" y="336" font-size="11.5" fill="#e6e9ff">k6 runs it again and again per user.</text>
+<rect x="24" y="424" width="600" height="48" rx="10" fill="#7dffb0" fill-opacity="0.1" stroke="#7dffb0" stroke-opacity="0.7"/>
+<text x="40" y="446" font-size="13" font-weight="700" fill="#7dffb0">Both blocks must be <tspan class="m" font-family="Consolas, monospace">export</tspan>ed</text>
+<text x="40" y="464" font-size="11.5" fill="#e8fff2">Otherwise k6 cannot see them — the load plan and the logic could never “talk to each other”.</text>
+<text x="24" y="500" font-size="14" font-weight="700" fill="#ffffff">What k6 does with it</text>
+<text x="98" y="530" font-size="12" font-weight="700" fill="#ffffff" text-anchor="end">VU 1</text>
+<rect x="110" y="516" width="800" height="20" rx="4" fill="#ffffff" fill-opacity="0.05"/>
+<rect x="110.0" y="518" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="120.0" y="522" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="199.60000000000002" y="518" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="209.60000000000002" y="522" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="289.20000000000005" y="518" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="299.20000000000005" y="522" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="378.8" y="518" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="388.8" y="522" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="468.40000000000003" y="518" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="478.40000000000003" y="522" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="558.0" y="518" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="568.0" y="522" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="647.6" y="518" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="657.6" y="522" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="737.2" y="518" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="747.2" y="522" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="826.8000000000001" y="518" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="836.8000000000001" y="522" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<text x="98" y="560" font-size="12" font-weight="700" fill="#ffffff" text-anchor="end">VU 2</text>
+<rect x="110" y="546" width="800" height="20" rx="4" fill="#ffffff" fill-opacity="0.05"/>
+<rect x="115.0" y="548" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="125.0" y="552" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="204.60000000000002" y="548" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="214.60000000000002" y="552" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="294.20000000000005" y="548" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="304.20000000000005" y="552" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="383.8" y="548" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="393.8" y="552" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="473.40000000000003" y="548" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="483.40000000000003" y="552" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="563.0" y="548" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="573.0" y="552" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="652.6" y="548" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="662.6" y="552" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="742.2" y="548" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="752.2" y="552" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="831.8000000000001" y="548" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="841.8000000000001" y="552" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<text x="98" y="590" font-size="12" font-weight="700" fill="#ffffff" text-anchor="end">VU 3</text>
+<rect x="110" y="576" width="800" height="20" rx="4" fill="#ffffff" fill-opacity="0.05"/>
+<rect x="120.0" y="578" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="130.0" y="582" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="209.60000000000002" y="578" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="219.60000000000002" y="582" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="299.20000000000005" y="578" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="309.20000000000005" y="582" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="388.8" y="578" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="398.8" y="582" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="478.40000000000003" y="578" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="488.40000000000003" y="582" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="568.0" y="578" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="578.0" y="582" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="657.6" y="578" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="667.6" y="582" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="747.2" y="578" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="757.2" y="582" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="836.8000000000001" y="578" width="10" height="16" rx="2" fill="#ff7edb"/><rect x="846.8000000000001" y="582" width="70" height="8" rx="2" fill="#a9b0e8" fill-opacity="0.35"/>
+<text x="110" y="616" font-size="11" fill="#8f97d6">0s</text><text x="910" y="616" font-size="11" fill="#8f97d6" text-anchor="end">10s</text>
+<text x="510" y="632" font-size="11" fill="#ff7edb" text-anchor="middle">▮ = the GET request   ▬ = sleep(1)   — every user repeats until 10 s are up</text>
+<rect x="660" y="358" width="316" height="106" rx="10" fill="#b9acff" fill-opacity="0.12" stroke="#b9acff" stroke-width="1.5"/>
+<text x="674" y="382" font-size="13" font-weight="700" fill="#b9acff">Two teams, two blocks</text>
+<text x="674" y="404" font-size="11.5" fill="#e6e9ff">A performance owner can define the</text>
+<text x="674" y="420" font-size="11.5" fill="#e6e9ff">load (options); a tester writes the flow</text>
+<text x="674" y="436" font-size="11.5" fill="#e6e9ff">(default function). Later, options can</text>
+<text x="674" y="452" font-size="11.5" fill="#e6e9ff">live in a config file.</text>
+</g></svg>

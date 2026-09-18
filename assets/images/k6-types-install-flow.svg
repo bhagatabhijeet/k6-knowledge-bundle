@@ -1,0 +1,74 @@
+<svg width="1000" height="560" viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Installing the k6 type definitions step by step</title><desc id="d">Two commands: npm init --yes creates package.json, then npm install --save-dev @types/k6 adds a devDependencies entry to package.json and downloads the package into node_modules. The editor then reads those type definitions to provide IntelliSense.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#7afcff"/></marker></defs>
+<rect width="1000" height="560" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Two commands, and your editor understands k6</text>
+<text x="500" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Real output from a fresh project folder (Node.js 24 / npm 11) — run these in the editor’s terminal</text>
+<rect x="24" y="72" width="300" height="60" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="44" cy="92" r="10" fill="#7afcff"/><text x="44" y="96" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="62" y="96" font-size="13" font-weight="700" fill="#7afcff">Create the Node project</text>
+<rect x="24" y="140" width="300" height="34" rx="8" fill="#000" fill-opacity="0.55"/><text x="38" y="162" font-size="13" fill="#7dffb0" class="m">npm init --yes</text>
+<text x="24" y="196" font-size="11.5" fill="#c9cdf5">Creates package.json — the “heart” of a</text>
+<text x="24" y="212" font-size="11.5" fill="#c9cdf5">Node project. Nothing else changes.</text>
+<rect x="24" y="226" width="300" height="288" rx="10" fill="#1e1e2e" stroke="#ffffff" stroke-opacity="0.2"/>
+<text x="38" y="248" font-size="12" font-weight="700" fill="#ffe27a">package.json</text>
+<g class="m" font-size="11.5" fill="#dfe3ff">
+<text x="38" y="274">{</text>
+<text x="38" y="292">  &quot;name&quot;: &quot;k6-load&quot;,</text>
+<text x="38" y="310">  &quot;version&quot;: &quot;1.0.0&quot;,</text>
+<text x="38" y="328">  &quot;main&quot;: &quot;index.js&quot;,</text>
+<text x="38" y="346">  &quot;scripts&quot;: { … },</text>
+<text x="38" y="364">  &quot;license&quot;: &quot;ISC&quot;,</text>
+<text x="38" y="382">  &quot;type&quot;: &quot;commonjs&quot;</text>
+<text x="38" y="400">}</text>
+</g>
+<text x="38" y="440" font-size="11.5" fill="#ff5c7a">no “devDependencies” yet</text>
+<text x="38" y="460" font-size="11" fill="#8f97d6">no node_modules folder yet</text>
+<path d="M336,300 L364,300" stroke="#7afcff" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+<rect x="370" y="72" width="340" height="60" rx="10" fill="#7dffb0" fill-opacity="0.12" stroke="#7dffb0" stroke-width="1.5"/>
+<circle cx="390" cy="92" r="10" fill="#7dffb0"/><text x="390" y="96" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="408" y="96" font-size="13" font-weight="700" fill="#7dffb0">Install the k6 type definitions</text>
+<rect x="370" y="140" width="340" height="34" rx="8" fill="#000" fill-opacity="0.55"/><text x="384" y="162" font-size="13" fill="#7dffb0" class="m">npm install --save-dev @types/k6</text>
+<text x="370" y="196" font-size="11.5" fill="#c9cdf5">--save-dev = “a development helper, not needed to</text>
+<text x="370" y="212" font-size="11.5" fill="#c9cdf5">run k6”. Real output:  added 1 package</text>
+<rect x="370" y="226" width="340" height="288" rx="10" fill="#1e1e2e" stroke="#7dffb0" stroke-opacity="0.7"/>
+<text x="384" y="248" font-size="12" font-weight="700" fill="#ffe27a">package.json  (after)</text>
+<g class="m" font-size="11.5" fill="#dfe3ff">
+<text x="384" y="274">{</text>
+<text x="384" y="292">  &quot;name&quot;: &quot;k6-load&quot;,</text>
+<text x="384" y="310">  &quot;version&quot;: &quot;1.0.0&quot;,</text>
+<text x="384" y="328">  &quot;main&quot;: &quot;index.js&quot;,</text>
+<text x="384" y="346">  &quot;scripts&quot;: { … },</text>
+<text x="384" y="364">  &quot;license&quot;: &quot;ISC&quot;,</text>
+<text x="384" y="382">  &quot;type&quot;: &quot;commonjs&quot;,</text>
+<rect x="378" y="386" width="324" height="56" rx="4" fill="#7dffb0" fill-opacity="0.18"/>
+<text x="384" y="402" fill="#7dffb0" font-weight="700">  "devDependencies": {</text>
+<text x="384" y="420" fill="#7dffb0" font-weight="700">    "@types/k6": "^2.2.1"</text>
+<text x="384" y="438" fill="#7dffb0" font-weight="700">  }</text>
+<text x="384" y="458">}</text>
+</g>
+<text x="384" y="486" font-size="11.5" fill="#7dffb0">← a new entry appeared (version may differ)</text>
+<path d="M722,300 L750,300" stroke="#7afcff" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+<rect x="756" y="72" width="220" height="442" rx="10" fill="#7dffb0" fill-opacity="0.07" stroke="#7dffb0" stroke-opacity="0.6"/>
+<text x="772" y="98" font-size="13" font-weight="700" fill="#7dffb0">What appeared</text>
+<g class="m" font-size="11">
+<text x="772" y="124" fill="#ffffff">📁 k6-load/</text>
+<text x="772" y="143" fill="#ffe27a">├─ package.json</text>
+<text x="772" y="162" fill="#b9acff">├─ package-lock.json</text>
+<text x="772" y="181" fill="#7afcff">└─ node_modules/</text>
+<text x="772" y="200" fill="#7afcff">   └─ @types/</text>
+<text x="772" y="219" fill="#7afcff">      └─ k6/</text>
+<text x="772" y="238" fill="#dfe3ff">         ├─ http/</text>
+<text x="772" y="257" fill="#dfe3ff">         ├─ metrics/</text>
+<text x="772" y="276" fill="#dfe3ff">         ├─ index.d.ts</text>
+<text x="772" y="295" fill="#dfe3ff">         └─ …</text>
+</g>
+<text x="772" y="336" font-size="11.5" fill="#ffe27a" font-weight="700">package.json</text><text x="772" y="352" font-size="11" fill="#dfe3ff">records the dependency</text>
+<text x="772" y="380" font-size="11.5" fill="#b9acff" font-weight="700">package-lock.json</text><text x="772" y="396" font-size="11" fill="#dfe3ff">pins exact versions</text>
+<text x="772" y="424" font-size="11.5" fill="#7afcff" font-weight="700">node_modules/</text><text x="772" y="440" font-size="11" fill="#dfe3ff">holds the type definitions</text>
+<text x="772" y="468" font-size="11" fill="#8f97d6">Editor reads these .d.ts files</text><text x="772" y="484" font-size="11" fill="#8f97d6">→ IntelliSense switches on</text>
+<rect x="24" y="524" width="952" height="28" rx="8" fill="#ffffff" fill-opacity="0.06"/>
+<text x="500" y="543" font-size="12" fill="#e6e9ff" text-anchor="middle"><tspan fill="#ffe27a" font-weight="700">Why a Node project at all?</tspan>  npm can only add dependencies to a folder that has a package.json — that is why we ran npm init first.</text>
+</g></svg>
