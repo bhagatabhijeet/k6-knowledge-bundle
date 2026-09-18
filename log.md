@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-09-18 (update 5)
+
+- Extended `k6-setup/` to cover both VS Code and Cursor: install steps, extensions, shell commands and terminal in `setting-up-the-editor.md`; clearer shell-command guidance in `creating-a-k6-project.md`.
+
 ## 2026-09-18 (update 4)
 
 - Added topic **k6 Architecture** (`k6-architecture/`) with concepts "How k6 Is Built — Go and the Sobek JavaScript Engine" and "The k6 Test Lifecycle", sourced from the Grafana k6 docs and the Sobek repository.

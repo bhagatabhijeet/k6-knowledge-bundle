@@ -205,9 +205,10 @@ CI pipelines can share. (npm merely launches the `k6` binary; the test still run
   the terminal is in. Check with `pwd` (macOS/Linux) or `cd` (Windows) before running it.
 - **Forgetting to open the folder in the editor.** Creating a folder in the terminal doesn't
   make the editor show it — use *Open Folder* or `code .` / `cursor .`.
-- **`code .` / `cursor .` "not recognized".** The editor's shell command isn't installed. In
-  VS Code run *Command Palette → "Shell Command: Install 'code' command in PATH"* (Cursor has the
-  equivalent), or just use *File → Open Folder*.
+- **`code .` / `cursor .` "not recognized".** The editor's shell command isn't installed. Open the
+  Command Palette (**Ctrl+Shift+P**) and run *"Shell Command: Install 'code' command in PATH"* in VS Code,
+  or the equivalent *"Shell Command: Install 'cursor' command"* in Cursor. Then open a new terminal.
+  Or skip the command entirely and use *File → Open Folder*.
 - **A stale terminal.** After installing Node.js or k6, open a **new** terminal window before
   testing `node -v` / `k6 version`.
 
