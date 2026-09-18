@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-09-18 (update 11)
+
+- Added topic **k6 Core Concepts** (`k6-core-concepts/`): "Expected Responses and http_req_failed", "Thresholds — Pass/Fail Goals for Your Metrics" and "Stages — Ramp-up, Hold and Ramp-down".
+- Added five verified scripts (`assets/code/k6-core-concepts/`) and ten diagrams, including teacher-style annotated consoles from real runs.
+- Verified in k6: default expected range 200–399, global `setResponseCallback`, threshold aggregations per metric type, exit code 99, `abortOnFail` with `delayAbortEval`, stages starting at 1 VU (`startVUs` default) and graceful ramp-down.
+
 ## 2026-09-18 (update 10)
 
 - Replaced the illustrative k6 Studio script with a **real export** (`assets/code/k6-setup/studio-generated-example.js`) and added **real k6 Studio screenshots** (home, recorder, recording, request inspector, generator, load profile, thresholds, script, add-rule menu, validator and checks) to `k6-setup/k6-studio.md`. Screenshots are from k6 Studio v1.13.0.

@@ -161,7 +161,7 @@ Your exact numbers will differ from run to run (network speed, server load) — 
 ### The duplicate `{ expected_response:true }` line
 
 Under `http_req_duration` you may see a second line labelled `{ expected_response:true }` with the same numbers. It is the same metric,
-filtered to requests that got an *expected* (non-error) response. We'll look at it properly later; for now, if it matches the line above it, all
+filtered to requests that got an *expected* (non-error) response. It is explained fully in [Expected Responses and http_req_failed](/k6-core-concepts/expected-responses.md); for now, if it matches the line above it, all
 responses were fine.
 
 ### Choosing how much k6 prints
