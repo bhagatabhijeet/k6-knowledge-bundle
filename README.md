@@ -223,7 +223,7 @@ k6-knowledge-bundle/
         │   └── soak-test.js
         ├── k6-setup/
         │   ├── hello-k6.js
-        │   ├── studio-generated-shape.js
+        │   ├── studio-generated-example.js
         │   ├── debug-demo.js
         │   └── k6-tasks.json
         ├── k6-configuration-options-in-code-editor/

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-09-18 (update 10)
+
+- Replaced the illustrative k6 Studio script with a **real export** (`assets/code/k6-setup/studio-generated-example.js`) and added **real k6 Studio screenshots** (home, recorder, recording, request inspector, generator, load profile, thresholds, script, add-rule menu, validator and checks) to `k6-setup/k6-studio.md`. Screenshots are from k6 Studio v1.13.0.
+
 ## 2026-09-18 (update 9)
 
 - Added guide: "The Math of Percentiles — Explained Simply" (`k6-console-output/percentile-math.md`) with `percentile-math-demo.js` and eight diagrams, written for a 10th-grade reading level.

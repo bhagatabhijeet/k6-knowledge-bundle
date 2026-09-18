@@ -32,6 +32,13 @@ into a k6 script.
 
 ![k6 Studio workflow: record, generate, validate, export, run](/assets/images/k6-studio-workflow.svg)
 
+Here is the real application. Its start screen offers the three components as three doors — **Record flow**, **Generate test** and
+**Open script** — with your files listed in the sidebar (recordings, test generators, scripts and data files):
+
+![k6 Studio start screen with the Recorder, Generator and Validator cards and an empty file sidebar](/assets/images/k6-studio-home.png)
+
+> *Screenshots on this page were taken from k6 Studio v1.13.0 with a small QuickPizza recording. Newer versions may look slightly different.*
+
 It has three main components, per the Grafana docs:
 
 | Component | Job |
@@ -93,37 +100,75 @@ release.
    your app in Chrome as a real user would. Requests land in whichever group is active.
 5. Click **Stop recording**.
 
+The Recorder screen is refreshingly simple — a **Starting URL** box and a **Start recording** button. There is also a
+**Capture browser events** option (marked *Preview*) that records clicks and typing alongside the network requests:
+
+![k6 Studio Recorder screen with a Starting URL field, a Start recording button and a Capture browser events checkbox](/assets/images/k6-studio-recorder.png)
+
 k6 Studio saves the recording as a **HAR file** (an industry-standard log of HTTP requests) together
-with the browser events. Click any request to inspect its headers, payload, cookies and response.
-Right-click a recording in the sidebar to rename it.
+with the browser events. The recording opens as a list of requests, **organised into the groups you named** — here *Home page* (1 request)
+and *Get pizza data* (2 requests):
+
+![A k6 Studio recording listing three requests grouped under Home page and Get pizza data](/assets/images/k6-studio-recording.png)
+
+Click any request to inspect its headers, payload, cookies and response. Rename a recording with the pencil icon beside its name.
+
+![k6 Studio request inspector showing the request URL, method and headers on top and the response status and headers below](/assets/images/k6-studio-request-details.png)
+
+> **Where are my files?** k6 Studio keeps everything in a `k6-studio` folder inside your **Documents** folder — sub-folders
+> `Recordings` (`.har` files), `Generators` (`.k6g` files), `Scripts` and `Data`.
 
 > **Tip:** record exactly the journey you want to load-test, once, cleanly — no wrong turns, no
 > refreshing. What you record is what every virtual user will replay.
 
 ### Step 3 — Create a test with the Generator
 
-From the recording choose **Create test → HTTP test** and select the hosts you care about. The
-Generator window opens:
+From the recording choose **Create test → HTTP test**, then pick which hosts to include (there is also a *Include static assets* option) and click **Continue**. The
+Generator opens with your requests in the recorded order and a **Test rules** list underneath:
 
-![Anatomy of the k6 Studio Generator window](/assets/images/k6-studio-generator-anatomy.svg)
+![The k6 Studio Generator showing the recorded requests grouped, a Test options / Test data / Allowed hosts toolbar, and a default Verification rule](/assets/images/k6-studio-generator.png)
 
-Key areas (numbers match the illustration):
+Key areas of the real window:
 
-1. **Name and actions** — save, export, validate and run.
-2. **Requests inspector** — every recorded request, in order, in your groups.
-3. **Options tabs**
-   - **Test Options** — the **load profile** (*ramping VUs* or *shared iterations*),
-     **thresholds** (your pass/fail criteria) and **think time**.
-   - **Test Data** — variables and CSV/JSON data files (up to 10 MB) for parameterization.
-   - **Allowed Hosts** — include or exclude hosts, typically to drop CDNs and third-party noise.
-4. **Rules list** — how the raw recording is transformed into a robust test.
+1. **Title bar** — the generator's name plus **Save**, **Export**, **Validate** and **Run in Grafana Cloud**.
+2. **Requests / Script tabs** — *Requests* shows the recorded requests (choose the source **Recording** at the top); *Script* shows the k6 code being generated.
+3. **Toolbar on the right** — three buttons that open panels:
+   - **Test options** — the **load profile**, **thresholds**, **think time** and **load zones**.
+   - **Test data** — variables and CSV/JSON data files for parameterization.
+   - **Allowed hosts** — how many of the recorded hosts are included (here `[1/1]`); drop CDNs and third-party noise.
+4. **Test rules** — how the raw recording is transformed into a robust test. A **Verification** rule is already there.
 
-Everything on the *Test Options* tab is the point-and-click equivalent of the `options` object you
-would write in a script — compare it with [Load Testing](/introduction-to-performance-testing/load-testing.md).
+For orientation, here is the same layout as a schematic:
+
+![Schematic of the k6 Studio Generator window: name and actions, requests inspector, options panels and the rules list](/assets/images/k6-studio-generator-anatomy.svg)
+
+#### The load profile — stages in a form
+
+Open **Test options → Load profile**. The default executor is **Ramping VUs**, pre-filled with three stages — ramp to 20 users over 1 minute, stay at
+20 for 3 minutes 30 seconds, ramp down to 0 over 1 minute. Add or edit stages with **Add stage**:
+
+![The Load profile panel of k6 Studio showing the Ramping VUs executor with three stages: 20 VUs for 1m, 20 VUs for 3m30s and 0 VUs for 1m](/assets/images/k6-studio-load-profile.png)
+
+That is exactly the [stages](/k6-core-concepts/index.md) idea in a table: each row is one `{ target, duration }` object. The other executor, **Shared iterations**,
+is the fixed-work style (`vus` + `iterations`).
+
+#### Thresholds in a form
+
+The **Thresholds** tab turns k6 [thresholds](/k6-core-concepts/index.md) into a row of drop-downs — *Metric*, *Statistic*, *Condition*, *Value* and a **Stop test** checkbox
+(which is `abortOnFail`). Here is **Response time · 95th percentile · < · 400 ms**, with Stop test ticked:
+
+![The Thresholds panel of k6 Studio with one row: Response time, 95th percentile, less than 400 ms, Stop test checked](/assets/images/k6-studio-thresholds.png)
+
+Everything in these panels is the point-and-click equivalent of the `options` object you would write in a script — compare it with
+[Load Testing](/introduction-to-performance-testing/load-testing.md).
 
 ### Step 4 — Add rules
 
 A recording replays *yesterday's* values. Rules make it work *today*, for every user:
+
+Click **Add rule** to see the four rule types (or use **Autocorrelate** to let Studio suggest correlation rules):
+
+![The Add rule menu in k6 Studio listing Correlation, Parameterization, Custom code and Verification](/assets/images/k6-studio-add-rule.png)
 
 ![Correlation and parameterization rules in k6 Studio](/assets/images/k6-studio-rules.svg)
 
@@ -139,17 +184,26 @@ server rejects them, and your test measures a wall of errors instead of performa
 
 ### Step 5 — Validate
 
-Click **Validate** to open the **Debugger**. It runs your script for **one iteration**, and you can
-inspect every request and response, plus k6 logs and check results. Typical discoveries: a login that
+Click **Validate** to open the **Validator** window. It runs your script for **one iteration** with your local k6, and you can
+inspect every request and response, plus k6 logs, check results and the generated script. Typical discoveries: a login that
 fails because a token was not correlated, or a request that returns 404.
+
+![The k6 Studio Validator showing three requests with status 200 and tabs for Logs, Checks and Script](/assets/images/k6-studio-validator.png)
+
+The **Checks** tab shows each check with its success rate — here the default *status equals 200* Verification check passed for every request:
+
+![The Checks tab of the k6 Studio Validator: status equals 200 with a 100 percent success rate for both groups](/assets/images/k6-studio-validator-checks.png)
 
 Fix the rules, validate again, and repeat until it's clean. Validating with one user first is far
 cheaper than discovering the problem 10 minutes into a load run.
 
 ### Step 6 — Export and run
 
-Open the **Script** tab and click **Export script** to save a plain `.js` file. Then run it exactly
-like any script:
+The **Script** tab shows the k6 code as you change settings, with a syntax-highlighted editor:
+
+![The Script tab of k6 Studio showing the generated k6 code: imports, the options object with stages and a p(95) threshold](/assets/images/k6-studio-script.png)
+
+Click **Export** to save a plain `.js` file, then run it exactly like any script:
 
 ```bash
 k6 run my-recorded-test.js
@@ -158,43 +212,67 @@ k6 run my-recorded-test.js
 Open the file in VS Code or Cursor to read, learn from, and refine it — it is ordinary k6. The Grafana
 docs note you can also run scripts in **Grafana Cloud k6**.
 
-### What the exported script looks like
+### The real exported script
 
-The code below is a **hand-written illustration** of the shape (a real export is longer and varies by
-version). Compare the comments with the Generator settings above:
+This is the **unedited script k6 Studio generated** for the three-request recording above, with the default load profile and the
+`p(95)<400` threshold from the screenshots:
 
 ```js
-// assets/code/k6-setup/studio-generated-shape.js  (illustrative)
-import http from 'k6/http';
-import { check, group, sleep } from 'k6';
+// assets/code/k6-setup/studio-generated-example.js  (Studio v1.13.0 export)
+import { group, sleep, check } from "k6";
+import http from "k6/http";
+import execution from "k6/execution";
 
-export const options = {                 // ← Generator ▸ Test Options
+export const options = {
   stages: [
-    { duration: '1m', target: 10 },
-    { duration: '3m', target: 10 },
-    { duration: '1m', target: 0 },
+    { target: 20, duration: "1m" },
+    { target: 20, duration: "3m30s" },
+    { target: 0, duration: "1m" },
   ],
-  thresholds: { http_req_duration: ['p(95)<800'], http_req_failed: ['rate<0.01'] },
+  thresholds: {
+    http_req_duration: [{ threshold: "p(95)<400", abortOnFail: true }],
+  },
 };
 
-const USERS = [ /* ← Parameterization rule: data from Test Data */
-  { user: 'alice', pass: 'pw-1' }, { user: 'bob', pass: 'pw-2' }, { user: 'carol', pass: 'pw-3' },
-];
-
 export default function () {
-  const creds = USERS[(__VU + __ITER) % USERS.length];
+  let params;
+  let resp;
+  let match;
+  let regex;
+  let url;
+  const correlation_vars = {};
 
-  group('Home page', function () {       // ← the group you named while recording
-    const res = http.get('https://quickpizza.grafana.com/');
-    check(res, { 'GET / → 200': (r) => r.status === 200 });   // ← Verification rule
+  group("Home page", function () {
+    params = {
+      headers: { Accept: `text/html,application/xhtml+xml` },
+      cookies: {},
+    };
+
+    url = http.url`https://quickpizza.grafana.com/`;
+    resp = http.request("GET", url, null, params);
+
+    check(resp, { "status equals 200": (r) => r.status === 200 });
   });
-  // …Log in group with a correlated token, then sleep(1) for think time
+  sleep(1);
+  // …the "Get pizza data" group (two more requests, each with a check) and another sleep(1)
 }
 ```
 
-[Source](/assets/code/k6-setup/studio-generated-shape.js)
+[Source](/assets/code/k6-setup/studio-generated-example.js) — the file contains the full script. I ran it with a short profile
+(`k6 run --stage 3s:2,3s:0 studio-generated-example.js`): the threshold passed and all checks succeeded.
 
-You already know every piece of it from the earlier topics: `stages`, `thresholds`, `check`, `group`,
+Map it back to the screens you just used:
+
+| In the script | Comes from |
+|---|---|
+| `stages: [ … ]` | **Test options → Load profile** (Ramping VUs table) |
+| `thresholds: { http_req_duration: [{ threshold: "p(95)<400", abortOnFail: true }] }` | **Test options → Thresholds** (95th percentile · < · 400 ms · Stop test ✔) |
+| `group("Home page", …)` | The group you named while recording |
+| `http.request("GET", url, null, params)` | Each recorded request, with its recorded headers |
+| `check(resp, { "status equals 200": … })` | The default **Verification** rule |
+| `sleep(1)` after each group | The **Think time** setting (default 1 second) |
+
+You already know every piece from the earlier topics: `stages`, `thresholds`, `check`, `group`,
 and the [test lifecycle](/k6-architecture/k6-test-lifecycle.md).
 
 ## Studio or hand-written scripts?
