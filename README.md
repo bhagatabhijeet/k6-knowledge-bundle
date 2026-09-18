@@ -158,7 +158,20 @@ k6-knowledge-bundle/
 │   ├── index.md
 │   ├── installing-k6.md
 │   ├── setting-up-the-editor.md
-│   └── creating-a-k6-project.md
+│   ├── creating-a-k6-project.md
+│   ├── k6-studio.md
+│   ├── k6-editor-extensions.md
+│   └── debugging-k6-scripts.md
+│
+├── 📁 k6-configuration-options-in-code-editor/
+│   ├── index.md
+│   ├── enable-k6-intellisense.md
+│   └── writing-your-first-k6-test.md
+│
+├── 📁 k6-console-output/
+│   ├── index.md
+│   ├── reading-the-k6-summary.md
+│   └── http-req-duration-and-percentiles.md
 │
 ├── 📁 k6-architecture/
 │   ├── index.md
@@ -177,7 +190,15 @@ k6-knowledge-bundle/
         │   ├── spike-test-arrival-rate.js
         │   └── soak-test.js
         ├── k6-setup/
-        │   └── hello-k6.js
+        │   ├── hello-k6.js
+        │   ├── studio-generated-shape.js
+        │   ├── debug-demo.js
+        │   └── k6-tasks.json
+        ├── k6-configuration-options-in-code-editor/
+        │   ├── first-test.js
+        │   └── first-test-missing-import.js
+        ├── k6-console-output/
+        │   └── percentile-demo.js
         └── k6-architecture/
             └── test-lifecycle.js
 ```

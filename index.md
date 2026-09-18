@@ -16,4 +16,6 @@ through advanced topics like cloud-scale load runs, Grafana dashboards, and CI/C
 
 1. [Introduction to Performance Testing](/introduction-to-performance-testing/index.md)
 2. [k6 Setup](/k6-setup/index.md)
-3. [k6 Architecture](/k6-architecture/index.md)
+3. [k6 Configuration Options in Code Editor](/k6-configuration-options-in-code-editor/index.md)
+4. [Understanding the k6 Console Output](/k6-console-output/index.md)
+5. [k6 Architecture](/k6-architecture/index.md)

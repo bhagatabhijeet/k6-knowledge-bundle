@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-09-18 (update 8)
+
+- Added topic **k6 Configuration Options in Code Editor** (`k6-configuration-options-in-code-editor/`): "Enabling k6 IntelliSense in Your Editor" and "Writing and Running Your First k6 Test", with `first-test.js` and `first-test-missing-import.js`.
+- Added topic **Understanding the k6 Console Output** (`k6-console-output/`): "Reading the k6 Summary — a Guided Tour" and "http_req_duration and Percentiles", with `percentile-demo.js` and colour-annotated console diagrams.
+- Added guides to `k6-setup/`: "Editor Extensions & AI Assistants for k6" (with `k6-tasks.json`) and "Debugging k6 Scripts" (with `debug-demo.js`).
+- Added terminal-style images for `k6 version` success/failure, the k6 banner and a first `k6 run`; embedded in the install and project guides.
+- Added 15+ SVG diagrams (IntelliSense, npm install flow, first-test anatomy, console tour and zooms, percentiles, debugging toolkit, editor tooling map, AI-assistant setup).
+- Wording: renamed "Course curriculum overview" to "Bundle roadmap" in `what-is-k6.md`; updated root, topic and setup indexes and the README bundle map.
+
+## 2026-09-18 (update 7)
+
+- Rewrote `k6-architecture/k6-test-lifecycle.md` for clarity: glossary, stage-by-stage walkthrough, "when things go wrong" table, self-check questions.
+- Added five lifecycle diagrams to `assets/images/`: `k6-lifecycle-overview`, `k6-lifecycle-timeline`, `k6-lifecycle-data-flow`, `k6-lifecycle-where-to-put-code`, `k6-lifecycle-code-map`.
+- Verified with k6 that HTTP in init raises "Making http requests in the init context is not supported" and that a throwing `setup()` skips both `default()` and `teardown()`.
+
+## 2026-09-18 (update 6)
+
+- Added guide: "Setting Up k6 Studio" (`k6-setup/k6-studio.md`) with the illustrative `studio-generated-shape.js`.
+- Added SVG graphics for the setup topic: `k6-setup-roadmap`, `k6-install-paths`, `editor-vscode-cursor`, `node-vs-k6-engine`, `k6-studio-workflow`, `k6-studio-generator-anatomy`, `k6-studio-rules`; embedded them in the setup pages.
+- Re-verified the JavaScript engine against the latest sources: k6 uses **Sobek** (Grafana's fork of goja) since v0.52; the current `go.mod` has no goja dependency. Added the goja to Sobek history to `how-k6-is-built.md` and the architecture diagram.
+- Updated version examples to k6 v2.x (latest release v2.2.0).
+
 ## 2026-09-18 (update 5)
 
 - Extended `k6-setup/` to cover both VS Code and Cursor: install steps, extensions, shell commands and terminal in `setting-up-the-editor.md`; clearer shell-command guidance in `creating-a-k6-project.md`.

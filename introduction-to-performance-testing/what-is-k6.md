@@ -71,7 +71,7 @@ k6 collects metrics (response time, error rate, throughput) during the run and p
 summary to the terminal. Results can also be streamed to **Grafana Cloud** for rich,
 interactive dashboards.
 
-## Course curriculum overview
+## Bundle roadmap
 
 This bundle follows a step-by-step progression:
 
