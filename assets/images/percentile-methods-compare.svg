@@ -1,0 +1,24 @@
+<svg width="1000" height="540" viewBox="0 0 1000 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Different books, slightly different answers</title><desc id="d">Nearest-rank, average-of-neighbours and k6 interpolation give slightly different p90 and p95 for ten requests. The gap shrinks with more requests.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffffff" fill-opacity="0.85"/></marker></defs>
+<rect width="1000" height="540" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">For the curious: three ways people compute a percentile</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Same ten requests (100 … 1000 ms). k6 uses the third way.</text>
+<rect x="24" y="90" width="952" height="96" rx="12" fill="#ffb86b" fill-opacity="0.09" stroke="#ffb86b" stroke-opacity="0.7"/>
+<text x="40" y="112" font-size="14" font-weight="700" fill="#ffb86b">Method A — “count to the spot”</text><text x="40" y="134" font-size="12" fill="#c9cdf5">position = ⌈p ÷ 100 × n⌉, take that request</text>
+<rect x="570" y="102" width="140" height="68" rx="10" fill="#0b0326" stroke="#ffb86b"/><text x="640" y="126" font-size="13" fill="#ffb86b" text-anchor="middle" font-weight="700">p90</text><text x="640" y="154" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="700">900 ms</text>
+<rect x="760" y="102" width="140" height="68" rx="10" fill="#0b0326" stroke="#ffb86b"/><text x="830" y="126" font-size="13" fill="#ffb86b" text-anchor="middle" font-weight="700">p95</text><text x="830" y="154" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="700">1000 ms</text>
+<rect x="24" y="200" width="952" height="96" rx="12" fill="#b9acff" fill-opacity="0.09" stroke="#b9acff" stroke-opacity="0.7"/>
+<text x="40" y="222" font-size="14" font-weight="700" fill="#b9acff">Method B — “average the neighbours”</text><text x="40" y="244" font-size="12" fill="#c9cdf5">if the spot is between two requests, average them</text>
+<rect x="570" y="212" width="140" height="68" rx="10" fill="#0b0326" stroke="#b9acff"/><text x="640" y="236" font-size="13" fill="#b9acff" text-anchor="middle" font-weight="700">p90</text><text x="640" y="264" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="700">900 ms</text>
+<rect x="760" y="212" width="140" height="68" rx="10" fill="#0b0326" stroke="#b9acff"/><text x="830" y="236" font-size="13" fill="#b9acff" text-anchor="middle" font-weight="700">p95</text><text x="830" y="264" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="700">950 ms</text>
+<rect x="24" y="310" width="952" height="96" rx="12" fill="#ff7edb" fill-opacity="0.09" stroke="#ff7edb" stroke-opacity="0.7"/>
+<text x="40" y="332" font-size="14" font-weight="700" fill="#ff7edb">Method C — k6: “walk the stairs”</text><text x="40" y="354" font-size="12" fill="#c9cdf5">position = p ÷ 100 × (n − 1), walk a fraction between two</text>
+<rect x="570" y="322" width="140" height="68" rx="10" fill="#0b0326" stroke="#ff7edb"/><text x="640" y="346" font-size="13" fill="#ff7edb" text-anchor="middle" font-weight="700">p90</text><text x="640" y="374" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="700">910 ms</text>
+<rect x="760" y="322" width="140" height="68" rx="10" fill="#0b0326" stroke="#ff7edb"/><text x="830" y="346" font-size="13" fill="#ff7edb" text-anchor="middle" font-weight="700">p95</text><text x="830" y="374" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="700">955 ms</text>
+<text x="40" y="376" font-size="13" fill="#ff7edb" font-weight="700">✔ the one k6 prints: p(90)=910ms · p(95)=955ms</text>
+<rect x="24" y="470" width="952" height="44" rx="10" fill="#ffffff" fill-opacity="0.06"/>
+<text x="500" y="498" font-size="13" fill="#e6e9ff" text-anchor="middle">Few requests → the methods disagree.  1000 requests → they differ by a hair (950 vs 950.05).  Just know which one your tool uses.</text>
+</g></svg>

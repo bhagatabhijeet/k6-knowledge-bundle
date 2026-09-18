@@ -1,0 +1,58 @@
+<svg width="1000" height="660" viewBox="0 0 1000 660" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Average, median, min and max</title><desc id="d">A seesaw shows that the average is the balance point. With ten evenly spaced times, average and median are both 550. With nine fast times and one slow time the average is 190 but the median stays 100.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffffff" fill-opacity="0.85"/></marker></defs>
+<rect width="1000" height="660" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Min, Max, Median and Average — the four everyday numbers</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">The average is the balance point of a seesaw</text>
+<text x="40" y="106" font-size="15" font-weight="700" fill="#7dffb0">Ten evenly spread times — everything agrees</text>
+<rect x="90" y="210" width="820" height="10" rx="5" fill="#ffffff" fill-opacity="0.35"/>
+<polygon points="476.0,266 524.0,266 500.0,220" fill="#7afcff" fill-opacity="0.85"/>
+<text x="500.0" y="288" font-size="13" font-weight="700" fill="#7afcff" text-anchor="middle">average = 550 (balance point)</text>
+<circle cx="164.54545454545456" cy="198" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="239.0909090909091" cy="198" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="313.6363636363636" cy="198" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="388.1818181818182" cy="198" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="462.7272727272727" cy="198" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="537.2727272727273" cy="198" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="611.8181818181818" cy="198" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="686.3636363636364" cy="198" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="760.909090909091" cy="198" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="835.4545454545454" cy="198" r="9" fill="#ff5c7a" fill-opacity="0.9"/>
+<text x="164.54545454545456" y="240" font-size="10.5" fill="#8f97d6" text-anchor="middle">100</text>
+<text x="239.0909090909091" y="240" font-size="10.5" fill="#8f97d6" text-anchor="middle">200</text>
+<text x="313.6363636363636" y="240" font-size="10.5" fill="#8f97d6" text-anchor="middle">300</text>
+<text x="388.1818181818182" y="240" font-size="10.5" fill="#8f97d6" text-anchor="middle">400</text>
+<text x="462.7272727272727" y="240" font-size="10.5" fill="#8f97d6" text-anchor="middle">500</text>
+<text x="537.2727272727273" y="240" font-size="10.5" fill="#8f97d6" text-anchor="middle">600</text>
+<text x="611.8181818181818" y="240" font-size="10.5" fill="#8f97d6" text-anchor="middle">700</text>
+<text x="686.3636363636364" y="240" font-size="10.5" fill="#8f97d6" text-anchor="middle">800</text>
+<text x="760.909090909091" y="240" font-size="10.5" fill="#8f97d6" text-anchor="middle">900</text>
+<text x="835.4545454545454" y="240" font-size="10.5" fill="#8f97d6" text-anchor="middle">1000</text>
+<path d="M500.0,132 L500.0,160" stroke="#ffe27a" stroke-width="3"/><text x="500.0" y="128" font-size="12.5" font-weight="700" fill="#ffe27a" text-anchor="middle">median = 550</text>
+<text x="960" y="170" font-size="12" fill="#e6e9ff" text-anchor="end">min 100 · max 1000 · average 550 · median 550</text>
+<text x="40" y="316" font-size="15" font-weight="700" fill="#ffb86b">Nine quick requests and ONE slow one — they disagree!</text>
+<rect x="90" y="420" width="820" height="10" rx="5" fill="#ffffff" fill-opacity="0.35"/>
+<polygon points="207.63636363636363,476 255.63636363636363,476 231.63636363636363,430" fill="#7afcff" fill-opacity="0.85"/>
+<text x="231.63636363636363" y="498" font-size="13" font-weight="700" fill="#7afcff" text-anchor="middle">average = 190 (balance point)</text>
+<circle cx="142.54545454545456" cy="408" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="164.54545454545456" cy="408" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="186.54545454545456" cy="408" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="142.54545454545456" cy="388" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="164.54545454545456" cy="388" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="186.54545454545456" cy="388" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="142.54545454545456" cy="368" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="164.54545454545456" cy="368" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="186.54545454545456" cy="368" r="9" fill="#7dffb0" fill-opacity="0.9"/>
+<circle cx="835.4545454545454" cy="408" r="9" fill="#ff5c7a" fill-opacity="0.9"/>
+<text x="164.54545454545456" y="450" font-size="10.5" fill="#8f97d6" text-anchor="middle">100</text>
+<text x="835.4545454545454" y="450" font-size="10.5" fill="#8f97d6" text-anchor="middle">1000</text>
+<path d="M164.54545454545456,342 L164.54545454545456,370" stroke="#ffe27a" stroke-width="3"/><text x="164.54545454545456" y="338" font-size="12.5" font-weight="700" fill="#ffe27a" text-anchor="middle">median = 100</text>
+<text x="960" y="380" font-size="12" fill="#e6e9ff" text-anchor="end">min 100 · max 1000 · median 100 · average 190</text>
+<rect x="40" y="522" width="920" height="112" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/>
+<text x="60" y="548" font-size="14" font-weight="700" fill="#7dffb0">min</text><text x="150" y="548" font-size="13" fill="#e6e9ff">= the smallest value (the fastest request)</text>
+<text x="60" y="573" font-size="14" font-weight="700" fill="#ff5c7a">max</text><text x="150" y="573" font-size="13" fill="#e6e9ff">= the biggest value (the slowest request)</text>
+<text x="60" y="598" font-size="14" font-weight="700" fill="#ffe27a">median</text><text x="150" y="598" font-size="13" fill="#e6e9ff">= sort them, take the middle one (two middles → their average)</text>
+<text x="60" y="623" font-size="14" font-weight="700" fill="#7afcff">average</text><text x="150" y="623" font-size="13" fill="#e6e9ff">= add them all up, divide by how many: sum ÷ n</text>
+</g></svg>

@@ -1,0 +1,81 @@
+<svg width="1000" height="700" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">The percentile recipe</title><desc id="d">Three steps: sort, find the position with p divided by 100 times n minus 1, then walk a fraction between the two neighbouring values. A table gives p25 to p99 for ten requests of 100 to 1000 ms.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffffff" fill-opacity="0.85"/></marker></defs>
+<rect width="1000" height="700" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">The recipe — three easy steps</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">For any percentile p and n requests</text>
+<rect x="24" y="72" width="308" height="122" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="44" cy="92" r="10" fill="#7afcff"/><text x="44" y="96" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="62" y="96" font-size="13" font-weight="700" fill="#7afcff">Sort</text>
+<text x="38" y="118" font-size="11.5" fill="#e6e9ff">Smallest → largest.</text>
+<text x="38" y="134" font-size="11.5" fill="#e6e9ff">x₀ ≤ x₁ ≤ x₂ … (x₀ is the first)</text>
+<rect x="346" y="72" width="308" height="122" rx="10" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<circle cx="366" cy="92" r="10" fill="#ffe27a"/><text x="366" y="96" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="384" y="96" font-size="13" font-weight="700" fill="#ffe27a">Find the position</text>
+<text x="360" y="118" font-size="11.5" fill="#e6e9ff">position = (p ÷ 100) × (n − 1)</text>
+<text x="360" y="134" font-size="11.5" fill="#e6e9ff">Example: p95, n = 10 → 0.95 × 9 = 8.55</text>
+<rect x="668" y="72" width="308" height="122" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<circle cx="688" cy="92" r="10" fill="#ff7edb"/><text x="688" y="96" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<text x="706" y="96" font-size="13" font-weight="700" fill="#ff7edb">Walk between two values</text>
+<text x="682" y="118" font-size="11.5" fill="#e6e9ff">whole part = the step you stand on</text>
+<text x="682" y="134" font-size="11.5" fill="#e6e9ff">answer = x[whole] + fraction × (x[whole+1] − x[whole])</text>
+<text x="24" y="232" font-size="15" font-weight="700" fill="#ffffff">Try it: ten requests taking 100, 200, … 1000 ms  (n = 10)</text>
+<rect x="24" y="246" width="952" height="30" rx="8" fill="#ffffff" fill-opacity="0.1"/>
+<text x="40" y="266" font-size="12.5" font-weight="700" fill="#7afcff">percentile</text>
+<text x="180" y="266" font-size="12.5" font-weight="700" fill="#7afcff">position = p/100 × 9</text>
+<text x="400" y="266" font-size="12.5" font-weight="700" fill="#7afcff">between</text>
+<text x="560" y="266" font-size="12.5" font-weight="700" fill="#7afcff">fraction</text>
+<text x="680" y="266" font-size="12.5" font-weight="700" fill="#7afcff">answer</text>
+<text x="810" y="266" font-size="12.5" font-weight="700" fill="#7afcff">k6 prints</text>
+<rect x="24" y="280" width="952" height="30" rx="6" fill="#7dffb0" fill-opacity="0.08"/>
+<text x="40" y="300" font-size="13" fill="#ffffff" font-weight="700">p25</text>
+<text x="180" y="300" font-size="13" fill="#ffffff" font-weight="400">0.25 × 9 = 2.25</text>
+<text x="400" y="300" font-size="13" fill="#ffffff" font-weight="400">300 and 400</text>
+<text x="560" y="300" font-size="13" fill="#ffffff" font-weight="400">0.25</text>
+<text x="680" y="300" font-size="13" fill="#ffffff" font-weight="700">325 ms</text>
+<text x="810" y="300" font-size="13" fill="#ffffff" font-weight="400">325ms</text>
+<rect x="24" y="314" width="952" height="30" rx="6" fill="#ffe27a" fill-opacity="0.08"/>
+<text x="40" y="334" font-size="13" fill="#ffffff" font-weight="700">p50</text>
+<text x="180" y="334" font-size="13" fill="#ffffff" font-weight="400">0.5 × 9 = 4.50</text>
+<text x="400" y="334" font-size="13" fill="#ffffff" font-weight="400">500 and 600</text>
+<text x="560" y="334" font-size="13" fill="#ffffff" font-weight="400">0.50</text>
+<text x="680" y="334" font-size="13" fill="#ffffff" font-weight="700">550 ms</text>
+<text x="810" y="334" font-size="13" fill="#ffffff" font-weight="400">550ms (med)</text>
+<rect x="24" y="348" width="952" height="30" rx="6" fill="#7afcff" fill-opacity="0.08"/>
+<text x="40" y="368" font-size="13" fill="#ffffff" font-weight="700">p75</text>
+<text x="180" y="368" font-size="13" fill="#ffffff" font-weight="400">0.75 × 9 = 6.75</text>
+<text x="400" y="368" font-size="13" fill="#ffffff" font-weight="400">700 and 800</text>
+<text x="560" y="368" font-size="13" fill="#ffffff" font-weight="400">0.75</text>
+<text x="680" y="368" font-size="13" fill="#ffffff" font-weight="700">775 ms</text>
+<text x="810" y="368" font-size="13" fill="#ffffff" font-weight="400">775ms</text>
+<rect x="24" y="382" width="952" height="30" rx="6" fill="#ffb86b" fill-opacity="0.08"/>
+<text x="40" y="402" font-size="13" fill="#ffffff" font-weight="700">p90</text>
+<text x="180" y="402" font-size="13" fill="#ffffff" font-weight="400">0.9 × 9 = 8.10</text>
+<text x="400" y="402" font-size="13" fill="#ffffff" font-weight="400">900 and 1000</text>
+<text x="560" y="402" font-size="13" fill="#ffffff" font-weight="400">0.10</text>
+<text x="680" y="402" font-size="13" fill="#ffffff" font-weight="700">910 ms</text>
+<text x="810" y="402" font-size="13" fill="#ffffff" font-weight="400">910ms</text>
+<rect x="24" y="416" width="952" height="30" rx="6" fill="#ff7edb" fill-opacity="0.08"/>
+<text x="40" y="436" font-size="13" fill="#ffffff" font-weight="700">p95</text>
+<text x="180" y="436" font-size="13" fill="#ffffff" font-weight="400">0.95 × 9 = 8.55</text>
+<text x="400" y="436" font-size="13" fill="#ffffff" font-weight="400">900 and 1000</text>
+<text x="560" y="436" font-size="13" fill="#ffffff" font-weight="400">0.55</text>
+<text x="680" y="436" font-size="13" fill="#ffffff" font-weight="700">955 ms</text>
+<text x="810" y="436" font-size="13" fill="#ffffff" font-weight="400">954.99ms</text>
+<rect x="24" y="450" width="952" height="30" rx="6" fill="#ff5c7a" fill-opacity="0.08"/>
+<text x="40" y="470" font-size="13" fill="#ffffff" font-weight="700">p99</text>
+<text x="180" y="470" font-size="13" fill="#ffffff" font-weight="400">0.99 × 9 = 8.91</text>
+<text x="400" y="470" font-size="13" fill="#ffffff" font-weight="400">900 and 1000</text>
+<text x="560" y="470" font-size="13" fill="#ffffff" font-weight="400">0.91</text>
+<text x="680" y="470" font-size="13" fill="#ffffff" font-weight="700">991 ms</text>
+<text x="810" y="470" font-size="13" fill="#ffffff" font-weight="400">991ms</text>
+<rect x="24" y="516" width="952" height="80" rx="12" fill="#7dffb0" fill-opacity="0.08" stroke="#7dffb0" stroke-opacity="0.7"/>
+<text x="42" y="542" font-size="14" font-weight="700" fill="#7dffb0">Whole-number position? Then no walking is needed.</text>
+<text x="42" y="566" font-size="13" fill="#e6e9ff">p0 → position 0 → the smallest value (min).   p100 → position 9 → the largest (max).</text>
+<text x="42" y="586" font-size="13" fill="#e6e9ff">p50 → position 4.5 → half way between 500 and 600 = 550 = the median.</text>
+<rect x="24" y="610" width="952" height="70" rx="12" fill="#ffe27a" fill-opacity="0.08" stroke="#ffe27a" stroke-opacity="0.7"/>
+<text x="42" y="636" font-size="14" font-weight="700" fill="#ffe27a">Bigger n? Same recipe.</text>
+<text x="42" y="660" font-size="13" fill="#e6e9ff">With 1000 requests taking 1, 2 … 1000 ms:  p95 = 0.95 × 999 = 949.05 → 950 + 0.05 × (951 − 950) = 950.05 ms (k6: 950.05ms).</text>
+</g></svg>

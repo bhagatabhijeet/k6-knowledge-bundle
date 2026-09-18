@@ -1,0 +1,57 @@
+<svg width="1000" height="660" viewBox="0 0 1000 660" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">What does the 90th percentile mean</title><desc id="d">In a sorted line of ten times, the first nine are 90 percent. The 9th time, 900 ms, is about the 90th percentile: nine out of ten requests took 900 ms or less.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffffff" fill-opacity="0.85"/></marker></defs>
+<rect width="1000" height="660" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Step 2 — “Percent” means how far along the line</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Example: the 90th percentile (written p90 or p(90))</text>
+<rect x="90" y="303.0" width="64" height="27.0" rx="6" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="122.0" y="296.0" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">100</text>
+<text x="122.0" y="350" font-size="12" fill="#c9cdf5" text-anchor="middle">1st</text>
+<rect x="172" y="282.0" width="64" height="48.0" rx="6" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="204.0" y="275.0" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">200</text>
+<text x="204.0" y="350" font-size="12" fill="#c9cdf5" text-anchor="middle">2nd</text>
+<rect x="254" y="261.0" width="64" height="69.0" rx="6" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="286.0" y="254.0" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">300</text>
+<text x="286.0" y="350" font-size="12" fill="#c9cdf5" text-anchor="middle">3rd</text>
+<rect x="336" y="240.0" width="64" height="90.0" rx="6" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="368.0" y="233.0" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">400</text>
+<text x="368.0" y="350" font-size="12" fill="#c9cdf5" text-anchor="middle">4th</text>
+<rect x="418" y="219.0" width="64" height="111.0" rx="6" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="450.0" y="212.0" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">500</text>
+<text x="450.0" y="350" font-size="12" fill="#c9cdf5" text-anchor="middle">5th</text>
+<rect x="500" y="198.0" width="64" height="132.0" rx="6" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="532.0" y="191.0" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">600</text>
+<text x="532.0" y="350" font-size="12" fill="#c9cdf5" text-anchor="middle">6th</text>
+<rect x="582" y="177.0" width="64" height="153.0" rx="6" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="614.0" y="170.0" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">700</text>
+<text x="614.0" y="350" font-size="12" fill="#c9cdf5" text-anchor="middle">7th</text>
+<rect x="664" y="156.0" width="64" height="174.0" rx="6" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="696.0" y="149.0" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">800</text>
+<text x="696.0" y="350" font-size="12" fill="#c9cdf5" text-anchor="middle">8th</text>
+<rect x="746" y="135.0" width="64" height="195.0" rx="6" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="778.0" y="128.0" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">900</text>
+<text x="778.0" y="350" font-size="12" fill="#c9cdf5" text-anchor="middle">9th</text>
+<rect x="828" y="114.0" width="64" height="216.0" rx="6" fill="#ff5c7a" fill-opacity="0.75"/>
+<text x="860.0" y="107.0" font-size="13" font-weight="700" fill="#ff5c7a" text-anchor="middle">1000</text>
+<text x="860.0" y="350" font-size="12" fill="#c9cdf5" text-anchor="middle">10th</text>
+<line x1="76" y1="330" x2="906" y2="330" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2"/>
+<path d="M90,372 L90,384 L810,384 L810,372" stroke="#7dffb0" stroke-width="3" fill="none"/>
+<text x="450.0" y="406" font-size="15" font-weight="700" fill="#7dffb0" text-anchor="middle">these 9 out of 10  =  90% of the requests</text>
+<path d="M828,372 L828,384 L892,384 L892,372" stroke="#ff5c7a" stroke-width="3" fill="none"/>
+<text x="860" y="406" font-size="13" font-weight="700" fill="#ff5c7a" text-anchor="middle">slowest 10%</text>
+<rect x="90" y="428" width="836" height="70" rx="14" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="2"/>
+<text x="508" y="456" font-size="17" font-weight="700" fill="#ff7edb" text-anchor="middle">p90 ≈ the 9th time = 900 ms</text>
+<text x="508" y="482" font-size="14" fill="#ffffff" text-anchor="middle">“9 out of 10 requests took 900 ms or LESS.”</text>
+<rect x="40" y="522" width="300" height="98" rx="12" fill="#7dffb0" fill-opacity="0.1" stroke="#7dffb0"/>
+<text x="56" y="552" font-size="20" font-weight="700" fill="#7dffb0">p0</text>
+<text x="56" y="578" font-size="12.5" fill="#e6e9ff">the FIRST one = the fastest (min)</text>
+<rect x="356" y="522" width="300" height="98" rx="12" fill="#ffe27a" fill-opacity="0.1" stroke="#ffe27a"/>
+<text x="372" y="552" font-size="20" font-weight="700" fill="#ffe27a">p50</text>
+<text x="372" y="578" font-size="12.5" fill="#e6e9ff">half way along = the middle (median)</text>
+<rect x="672" y="522" width="300" height="98" rx="12" fill="#ff5c7a" fill-opacity="0.1" stroke="#ff5c7a"/>
+<text x="688" y="552" font-size="20" font-weight="700" fill="#ff5c7a">p100</text>
+<text x="688" y="578" font-size="12.5" fill="#e6e9ff">the LAST one = the slowest (max)</text>
+<text x="500" y="644" font-size="12" fill="#8f97d6" text-anchor="middle">k6 prints 910 ms for p(90) — a slightly smoother answer. Step 4 shows why.</text>
+</g></svg>

@@ -1,0 +1,32 @@
+<svg width="1000" height="700" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Three percentile traps</title><desc id="d">Percentiles cannot be averaged across servers; high percentiles need many requests; and a percentile is a time value, not a share.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffffff" fill-opacity="0.85"/></marker></defs>
+<rect width="1000" height="700" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Three traps to avoid</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Numbers below were checked by running k6</text>
+<rect x="24" y="68" width="952" height="216" rx="14" fill="#ff5c7a" fill-opacity="0.07" stroke="#ff5c7a" stroke-opacity="0.7"/>
+<text x="44" y="98" font-size="17" font-weight="700" fill="#ff5c7a">Trap 1 — Don’t average percentiles</text>
+<text x="44" y="122" font-size="13" fill="#e6e9ff">Two servers share the work.  A: 900 requests, all 100 ms.   B: 100 requests, all 1000 ms.</text>
+<rect x="44" y="140" width="702" height="28" rx="6" fill="#7dffb0" fill-opacity="0.4" stroke="#7dffb0"/><text x="395" y="160" font-size="12.5" fill="#e8fff2" text-anchor="middle" font-weight="700">Server A · p95 = 100 ms</text>
+<rect x="746" y="140" width="78" height="28" rx="6" fill="#ff5c7a" fill-opacity="0.4" stroke="#ff5c7a"/><text x="785" y="160" font-size="11.5" fill="#ffe0e6" text-anchor="middle" font-weight="700">B: 1000</text>
+<text x="44" y="200" font-size="14" fill="#ff5c7a" font-weight="700">✗ (100 + 1000) ÷ 2 = 550 ms    ← WRONG, looks fine!</text>
+<text x="44" y="226" font-size="14" fill="#7dffb0" font-weight="700">✓ p95 of all 1000 requests together = 1000 ms    ← RIGHT (k6 says 1s)</text>
+<text x="44" y="256" font-size="12.5" fill="#ffe27a" font-weight="700">Fix: put the raw numbers together first, then work out the percentile once.</text>
+<rect x="24" y="298" width="952" height="214" rx="14" fill="#ffb86b" fill-opacity="0.07" stroke="#ffb86b" stroke-opacity="0.7"/>
+<text x="44" y="328" font-size="17" font-weight="700" fill="#ffb86b">Trap 2 — Too few requests, too “high” a percentile</text>
+<text x="44" y="352" font-size="13" fill="#e6e9ff">100 requests: 99 took 250 ms, and 1 took 5000 ms.</text>
+<rect x="44" y="370" width="216" height="56" rx="10" fill="#7dffb0" fill-opacity="0.15" stroke="#7dffb0"/><text x="58" y="393" font-size="13" font-weight="700" fill="#7dffb0">p95</text><text x="58" y="415" font-size="17" font-weight="700" fill="#ffffff">250 ms</text>
+<rect x="276" y="370" width="216" height="56" rx="10" fill="#ffb86b" fill-opacity="0.15" stroke="#ffb86b"/><text x="290" y="393" font-size="13" font-weight="700" fill="#ffb86b">p99</text><text x="290" y="415" font-size="17" font-weight="700" fill="#ffffff">297.5 ms</text>
+<rect x="508" y="370" width="216" height="56" rx="10" fill="#ff5c7a" fill-opacity="0.15" stroke="#ff5c7a"/><text x="522" y="393" font-size="13" font-weight="700" fill="#ff5c7a">p99.9</text><text x="522" y="415" font-size="17" font-weight="700" fill="#ffffff">4.52 s</text>
+<rect x="740" y="370" width="216" height="56" rx="10" fill="#ff5c7a" fill-opacity="0.15" stroke="#ff5c7a"/><text x="754" y="393" font-size="13" font-weight="700" fill="#ff5c7a">max</text><text x="754" y="415" font-size="17" font-weight="700" fill="#ffffff">5 s</text>
+<text x="44" y="452" font-size="13" fill="#e6e9ff">With only 100 requests, p99 depends on the single slowest one. One blip moves it a lot.</text>
+<text x="44" y="478" font-size="12.5" fill="#ffe27a" font-weight="700">Rule of thumb: the higher the percentile, the more requests you need. Longer tests = steadier numbers.</text>
+<rect x="24" y="526" width="952" height="156" rx="14" fill="#b9acff" fill-opacity="0.07" stroke="#b9acff" stroke-opacity="0.7"/>
+<text x="44" y="556" font-size="17" font-weight="700" fill="#b9acff">Trap 3 — “95” is a share, the answer is a time</text>
+<text x="44" y="582" font-size="13" fill="#e6e9ff"><tspan font-weight="700">p(95)=112ms</tspan> does NOT mean “95% speed”. It means: 95 out of 100 requests took 112 ms or less.</text>
+<text x="44" y="606" font-size="13" fill="#e6e9ff">Is 112 ms good? That depends on your goal — which is what a <tspan font-weight="700" fill="#ffe27a">threshold</tspan> is for.</text>
+<rect x="44" y="622" width="880" height="34" rx="8" fill="#000" fill-opacity="0.45"/>
+<text x="58" y="644" font-size="13" fill="#7dffb0" class="m">http_req_duration: ['p(95)&lt;400']   →  “95% of requests must take under 400 ms”</text>
+</g></svg>

@@ -1,0 +1,66 @@
+<svg width="1000" height="640" viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">When the spot is between two requests</title><desc id="d">k6 numbers the sorted requests from 0. For p90 the position is 8.1: ten percent of the way from the 900 ms request to the 1000 ms request, so 910 ms. For p95 it is 8.55, 55 percent of the way, so 955 ms.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffffff" fill-opacity="0.85"/></marker></defs>
+<rect width="1000" height="640" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Step 4 — What if the spot lands BETWEEN two requests?</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Walk along the stairs: a fraction of the way from one step to the next</text>
+<rect x="90" y="275.0" width="64" height="25.0" rx="6" fill="#a9b0e8" fill-opacity="0.75"/>
+<text x="122.0" y="268.0" font-size="13" font-weight="700" fill="#a9b0e8" text-anchor="middle">100</text>
+<rect x="172" y="256.0" width="64" height="44.0" rx="6" fill="#a9b0e8" fill-opacity="0.75"/>
+<text x="204.0" y="249.0" font-size="13" font-weight="700" fill="#a9b0e8" text-anchor="middle">200</text>
+<rect x="254" y="237.0" width="64" height="63.0" rx="6" fill="#a9b0e8" fill-opacity="0.75"/>
+<text x="286.0" y="230.0" font-size="13" font-weight="700" fill="#a9b0e8" text-anchor="middle">300</text>
+<rect x="336" y="218.0" width="64" height="82.0" rx="6" fill="#a9b0e8" fill-opacity="0.75"/>
+<text x="368.0" y="211.0" font-size="13" font-weight="700" fill="#a9b0e8" text-anchor="middle">400</text>
+<rect x="418" y="199.0" width="64" height="101.0" rx="6" fill="#a9b0e8" fill-opacity="0.75"/>
+<text x="450.0" y="192.0" font-size="13" font-weight="700" fill="#a9b0e8" text-anchor="middle">500</text>
+<rect x="500" y="180.0" width="64" height="120.0" rx="6" fill="#a9b0e8" fill-opacity="0.75"/>
+<text x="532.0" y="173.0" font-size="13" font-weight="700" fill="#a9b0e8" text-anchor="middle">600</text>
+<rect x="582" y="161.0" width="64" height="139.0" rx="6" fill="#a9b0e8" fill-opacity="0.75"/>
+<text x="614.0" y="154.0" font-size="13" font-weight="700" fill="#a9b0e8" text-anchor="middle">700</text>
+<rect x="664" y="142.0" width="64" height="158.0" rx="6" fill="#a9b0e8" fill-opacity="0.75"/>
+<text x="696.0" y="135.0" font-size="13" font-weight="700" fill="#a9b0e8" text-anchor="middle">800</text>
+<rect x="746" y="123.0" width="64" height="177.0" rx="6" fill="#ffb86b" fill-opacity="0.75"/>
+<text x="778.0" y="116.0" font-size="13" font-weight="700" fill="#ffb86b" text-anchor="middle">900</text>
+<rect x="828" y="104.0" width="64" height="196.0" rx="6" fill="#ffb86b" fill-opacity="0.75"/>
+<text x="860.0" y="97.0" font-size="13" font-weight="700" fill="#ffb86b" text-anchor="middle">1000</text>
+<line x1="76" y1="300" x2="906" y2="300" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2"/>
+<text x="122" y="322" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">0</text>
+<text x="204" y="322" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<text x="286" y="322" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<text x="368" y="322" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<text x="450" y="322" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">4</text>
+<text x="532" y="322" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">5</text>
+<text x="614" y="322" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">6</text>
+<text x="696" y="322" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">7</text>
+<text x="778" y="322" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">8</text>
+<text x="860" y="322" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">9</text>
+<text x="40" y="322" font-size="11" fill="#8f97d6">position →</text>
+<text x="500" y="346" font-size="12" fill="#a9b0e8" text-anchor="middle">k6 counts positions from 0, so the ten requests sit at positions 0, 1, 2 … 9</text>
+<rect x="60" y="366" width="880" height="140" rx="14" fill="#ffb86b" fill-opacity="0.08" stroke="#ffb86b" stroke-opacity="0.8"/>
+<text x="80" y="390" font-size="14" font-weight="700" fill="#ffb86b">Zoom in on positions 8 and 9  (900 ms → 1000 ms)</text>
+<line x1="120" y1="458" x2="880" y2="458" stroke="#ffffff" stroke-opacity="0.5" stroke-width="4"/>
+<circle cx="120" cy="458" r="8" fill="#ffb86b"/><text x="150" y="490" font-size="13" font-weight="700" fill="#ffb86b" text-anchor="middle">position 8 = 900 ms</text>
+<circle cx="880" cy="458" r="8" fill="#ffb86b"/><text x="850" y="490" font-size="13" font-weight="700" fill="#ffb86b" text-anchor="middle">position 9 = 1000 ms</text>
+<path d="M196.0,458 L196.0,430" stroke="#ff7edb" stroke-width="3"/><circle cx="196.0" cy="458" r="7" fill="#ff7edb"/>
+<text x="266.0" y="422" font-size="12.5" font-weight="700" fill="#ff7edb" text-anchor="middle">p90 → 8.1: 10% of the way → 910 ms</text>
+<path d="M538.0,458 L538.0,430" stroke="#7afcff" stroke-width="3"/><circle cx="538.0" cy="458" r="7" fill="#7afcff"/>
+<text x="538.0" y="422" font-size="12.5" font-weight="700" fill="#7afcff" text-anchor="middle">p95 → 8.55: 55% of the way → 955 ms</text>
+<rect x="40" y="512" width="300" height="108" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<text x="54" y="536" font-size="13" font-weight="700" fill="#ff7edb">p90 in plain words</text>
+<text x="54" y="558" font-size="11.5" fill="#e6e9ff">position = 0.90 × (10 − 1) = 8.1</text>
+<text x="54" y="574" font-size="11.5" fill="#e6e9ff">that is 8 and a little bit (0.1)</text>
+<text x="54" y="590" font-size="11.5" fill="#e6e9ff">900 + 0.1 × (1000 − 900) = 910</text>
+<rect x="350" y="512" width="300" height="108" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<text x="364" y="536" font-size="13" font-weight="700" fill="#7afcff">p95 in plain words</text>
+<text x="364" y="558" font-size="11.5" fill="#e6e9ff">position = 0.95 × 9 = 8.55</text>
+<text x="364" y="574" font-size="11.5" fill="#e6e9ff">8 and a bit more (0.55)</text>
+<text x="364" y="590" font-size="11.5" fill="#e6e9ff">900 + 0.55 × 100 = 955</text>
+<rect x="660" y="512" width="300" height="108" rx="10" fill="#7dffb0" fill-opacity="0.12" stroke="#7dffb0" stroke-width="1.5"/>
+<text x="674" y="536" font-size="13" font-weight="700" fill="#7dffb0">Real k6 says</text>
+<text x="674" y="558" font-size="11.5" fill="#e6e9ff">p(90)=910ms</text>
+<text x="674" y="574" font-size="11.5" fill="#e6e9ff">p(95)=955ms  (shown 954.99)</text>
+<text x="674" y="590" font-size="11.5" fill="#e6e9ff">k6 rounds long decimals</text>
+</g></svg>
