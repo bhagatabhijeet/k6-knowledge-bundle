@@ -1,0 +1,45 @@
+<svg width="1200" height="220" viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="f-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"  stop-color="#03081f"/>
+      <stop offset="35%" stop-color="#1b2a8c"/>
+      <stop offset="65%" stop-color="#5a189a"/>
+      <stop offset="100%" stop-color="#0b0326"/>
+    </linearGradient>
+    <linearGradient id="f-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"  stop-color="#7a5a1e"/>
+      <stop offset="20%" stop-color="#f6e27a"/>
+      <stop offset="40%" stop-color="#fff6d5"/>
+      <stop offset="55%" stop-color="#d4af37"/>
+      <stop offset="75%" stop-color="#fff6d5"/>
+      <stop offset="100%" stop-color="#7a5a1e"/>
+    </linearGradient>
+    <linearGradient id="f-sheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="45%"  stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="55%"  stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="65%"  stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="f-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="220" rx="16" fill="#05010f"/>
+  <rect x="8" y="8" width="1184" height="204" rx="10" fill="url(#f-bg)"/>
+  <rect x="8" y="8" width="1184" height="204" rx="10" fill="url(#f-sheen)"/>
+
+  <rect x="22" y="22" width="1156" height="176" rx="6" fill="none" stroke="url(#f-gold)" stroke-width="2.5"/>
+
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="600" y="95" font-size="30" fill="#f6e9c9" filter="url(#f-glow)">Stop reading about performance testing.</text>
+    <text x="600" y="135" font-size="30" font-weight="bold" fill="url(#f-gold)" filter="url(#f-glow)">Start breaking things on purpose. ⚡</text>
+
+    <line x1="470" y1="158" x2="730" y2="158" stroke="url(#f-gold)" stroke-width="1.5" opacity="0.85"/>
+    <circle cx="600" cy="158" r="3.5" fill="url(#f-gold)"/>
+
+    <text x="600" y="188" font-size="18" letter-spacing="3" fill="#c9b6ff" font-style="italic">→ Begin at index.md</text>
+  </g>
+</svg>

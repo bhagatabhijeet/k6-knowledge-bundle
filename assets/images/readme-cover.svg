@@ -1,0 +1,104 @@
+<svg width="1200" height="440" viewBox="0 0 1200 440" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Deep hardcover base gradient -->
+    <linearGradient id="cover-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"  stop-color="#0b0326"/>
+      <stop offset="28%" stop-color="#2c0e5e"/>
+      <stop offset="55%" stop-color="#5a189a"/>
+      <stop offset="78%" stop-color="#1b2a8c"/>
+      <stop offset="100%" stop-color="#03081f"/>
+    </linearGradient>
+
+    <!-- Gold foil gradient for title / trim -->
+    <linearGradient id="gold-foil" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"  stop-color="#7a5a1e"/>
+      <stop offset="18%" stop-color="#f6e27a"/>
+      <stop offset="35%" stop-color="#fff6d5"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="68%" stop-color="#fff6d5"/>
+      <stop offset="85%" stop-color="#b8860b"/>
+      <stop offset="100%" stop-color="#7a5a1e"/>
+    </linearGradient>
+
+    <!-- k6 accent gradient (electric, like a spark) -->
+    <linearGradient id="spark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"  stop-color="#ff7edb"/>
+      <stop offset="45%" stop-color="#7afcff"/>
+      <stop offset="100%" stop-color="#8a4fff"/>
+    </linearGradient>
+
+    <!-- Glossy diagonal sheen -->
+    <linearGradient id="sheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="40%"  stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="60%"  stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="vignette" cx="50%" cy="45%" r="75%">
+      <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.55"/>
+    </radialGradient>
+
+    <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer "hardcover" edge -->
+  <rect x="0" y="0" width="1200" height="440" rx="18" fill="#05010f"/>
+
+  <!-- Cover face -->
+  <rect x="10" y="10" width="1180" height="420" rx="12" fill="url(#cover-bg)"/>
+
+  <!-- Book spine hinge line -->
+  <rect x="52" y="10" width="4" height="420" fill="#000000" opacity="0.35"/>
+  <rect x="58" y="10" width="2" height="420" fill="#ffffff" opacity="0.08"/>
+
+  <!-- Vignette for depth -->
+  <rect x="10" y="10" width="1180" height="420" rx="12" fill="url(#vignette)"/>
+
+  <!-- Glossy sheen sweep -->
+  <rect x="10" y="10" width="1180" height="420" rx="12" fill="url(#sheen)"/>
+
+  <!-- Gold foil border / trim -->
+  <rect x="26" y="26" width="1148" height="388" rx="8" fill="none" stroke="url(#gold-foil)" stroke-width="3"/>
+  <rect x="34" y="34" width="1132" height="372" rx="6" fill="none" stroke="url(#gold-foil)" stroke-width="1" opacity="0.6"/>
+
+  <!-- Corner flourishes -->
+  <g stroke="url(#gold-foil)" stroke-width="2" fill="none" opacity="0.85">
+    <path d="M34,64 L34,34 L64,34"/>
+    <path d="M1136,34 L1166,34 L1166,64"/>
+    <path d="M34,376 L34,406 L64,406"/>
+    <path d="M1166,376 L1166,406 L1136,406"/>
+  </g>
+
+  <!-- Title block -->
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="620" y="185" font-size="108" font-weight="bold" fill="url(#gold-foil)" filter="url(#soft-glow)">k6</text>
+    <text x="700" y="185" font-size="108" font-weight="bold" fill="url(#spark)" opacity="0.9" filter="url(#soft-glow)" dx="-590">⚡</text>
+
+    <text x="620" y="240" font-size="34" letter-spacing="10" fill="#f6e9c9">PERFORMANCE&#160;&#160;TESTING</text>
+
+    <text x="620" y="285" font-size="20" letter-spacing="6" fill="url(#gold-foil)" font-style="italic">Knowledge&#160;Bundle</text>
+  </g>
+
+  <!-- Divider flourish -->
+  <g stroke="url(#gold-foil)" stroke-width="1.5" opacity="0.8">
+    <line x1="420" y1="312" x2="820" y2="312"/>
+    <circle cx="620" cy="312" r="4" fill="url(#gold-foil)" stroke="none"/>
+  </g>
+
+  <!-- Footer strap line -->
+  <text x="620" y="352" font-family="Georgia, serif" font-size="17" letter-spacing="3" fill="#c9b6ff" text-anchor="middle" opacity="0.9">
+    Structured &#183; Cross-Linked &#183; AI-Aided Learning
+  </text>
+
+  <!-- subtle bottom shine -->
+  <rect x="10" y="10" width="1180" height="420" rx="12" fill="url(#sheen)" opacity="0.35" transform="rotate(180 600 220)"/>
+</svg>

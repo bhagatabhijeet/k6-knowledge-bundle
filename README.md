@@ -5,21 +5,7 @@
 
 <div align="center">
 
-```
-╔══════════════════════════════════════════════════════════════════════╗
-║                                                                      ║
-║    ██╗  ██╗ ██████╗      ██████╗ ███████╗██████╗ ███████╗           ║
-║    ██║ ██╔╝██╔════╝     ██╔══██╗██╔════╝██╔══██╗██╔════╝           ║
-║    █████╔╝ ███████╗     ██████╔╝█████╗  ██████╔╝█████╗             ║
-║    ██╔═██╗ ██╔═══██╗    ██╔═══╝ ██╔══╝  ██╔══██╗██╔══╝             ║
-║    ██║  ██╗╚███████╔╝   ██║     ███████╗██║  ██║██║                 ║
-║    ╚═╝  ╚═╝ ╚══════╝    ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝                ║
-║                                                                      ║
-║          P E R F O R M A N C E   T E S T I N G                      ║
-║                   Knowledge Bundle                                   ║
-║                                                                      ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
+<img src="assets/images/readme-cover.svg" alt="k6 Performance Testing — Knowledge Bundle" width="100%" />
 
 ### ⚡ 6+ Hours of Structured Content · AI-Aided Learning · Zero to Production ⚡
 
@@ -230,16 +216,7 @@ MIT — use it, share it, point your AI at it.
 
 <div align="center">
 
-```
-┌──────────────────────────────────────────────────┐
-│                                                  │
-│   Stop reading about performance testing.        │
-│   Start breaking things on purpose.  ⚡          │
-│                                                  │
-│          → Begin at index.md                     │
-│                                                  │
-└──────────────────────────────────────────────────┘
-```
+<img src="assets/images/readme-footer.svg" alt="Stop reading about performance testing. Start breaking things on purpose." width="100%" />
 
 **Built with ❤️ using [OKF v0.2](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) · Powered by [Grafana k6](https://grafana.com/docs/k6/latest/)**
 
