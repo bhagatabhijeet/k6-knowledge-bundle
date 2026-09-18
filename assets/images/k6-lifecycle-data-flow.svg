@@ -1,0 +1,81 @@
+<svg width="1000" height="420" viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">Passing data from setup to the VU code and teardown</title>
+  <desc id="d">The object returned by setup is serialised to JSON and each virtual user receives its own copy as the data argument of the default function. Teardown receives the data too. Changes made in one virtual user are not seen by others.</desc>
+    <style>g[font-family*="Consolas"] text { white-space: pre; }</style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffe27a"/></marker>
+    <marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#7dffb0"/></marker>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1000" height="420" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="500" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">How data travels between stages</text>
+    <text x="500" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Only ONE thing carries data across stages: what setup() returns</text>
+
+    <!-- setup box -->
+    <rect x="30" y="100" width="230" height="130" rx="12" fill="#ffe27a" fill-opacity="0.1" stroke="#ffe27a" stroke-width="2"/>
+    <text x="145" y="126" font-size="15" font-weight="700" fill="#ffe27a" text-anchor="middle">② setup()  — runs once</text>
+    <g font-family="Consolas, monospace" font-size="12" fill="#fff6d5">
+      <text x="46" y="156">const res = http.post(login);</text>
+      <text x="46" y="176">return {</text>
+      <text x="46" y="196">  <tspan fill="#ffe27a" font-weight="700">token: res.json('token')</tspan></text>
+      <text x="46" y="216">};</text>
+    </g>
+
+    <!-- serialise -->
+    <path d="M260,165 L318,165" stroke="#ffe27a" stroke-width="3" fill="none" marker-end="url(#arr)" filter="url(#glow)"/>
+    <rect x="322" y="122" width="132" height="86" rx="10" fill="#0b0326" stroke="#ffe27a" stroke-opacity="0.8" stroke-dasharray="5 4"/>
+    <text x="388" y="146" font-size="12" font-weight="700" fill="#ffe27a" text-anchor="middle">saved as JSON</text>
+    <text x="388" y="166" font-size="11" fill="#fff6d5" font-family="Consolas, monospace" text-anchor="middle">{"token":"abc…"}</text>
+    <text x="388" y="188" font-size="10" fill="#a9b0e8" text-anchor="middle">a snapshot, not a</text>
+    <text x="388" y="201" font-size="10" fill="#a9b0e8" text-anchor="middle">live shared object</text>
+
+    <!-- fan out -->
+    <g stroke="#ffe27a" stroke-width="2.5" fill="none" marker-end="url(#arr)">
+      <path d="M454,150 C 490,120 500,104 532,104"/>
+      <path d="M454,165 L532,165"/>
+      <path d="M454,180 C 490,215 500,226 532,226"/>
+    </g>
+    <text x="493" y="266" font-size="11" fill="#ffe27a" text-anchor="middle" font-weight="700">each VU gets its OWN copy</text>
+
+    <!-- VU boxes -->
+    <g>
+      <rect x="536" y="80" width="230" height="48" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="2"/>
+      <text x="651" y="102" font-size="12" font-weight="700" fill="#ff9be3" text-anchor="middle">VU 1  ·  default(data)</text>
+      <text x="651" y="120" font-size="11" fill="#ffe6f8" font-family="Consolas, monospace" text-anchor="middle">data.token → "abc…"</text>
+
+      <rect x="536" y="141" width="230" height="48" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="2"/>
+      <text x="651" y="163" font-size="12" font-weight="700" fill="#ff9be3" text-anchor="middle">VU 2  ·  default(data)</text>
+      <text x="651" y="181" font-size="11" fill="#ffe6f8" font-family="Consolas, monospace" text-anchor="middle">data.token → "abc…"</text>
+
+      <rect x="536" y="202" width="230" height="48" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="2"/>
+      <text x="651" y="224" font-size="12" font-weight="700" fill="#ff9be3" text-anchor="middle">VU 3  ·  default(data)</text>
+      <text x="651" y="242" font-size="11" fill="#ffe6f8" font-family="Consolas, monospace" text-anchor="middle">data.token → "abc…"</text>
+    </g>
+
+    <!-- teardown -->
+    <path d="M766,165 L816,165" stroke="#7dffb0" stroke-width="2.5" fill="none" marker-end="url(#arr2)"/>
+    <rect x="820" y="126" width="150" height="78" rx="10" fill="#7dffb0" fill-opacity="0.1" stroke="#7dffb0" stroke-width="2"/>
+    <text x="895" y="150" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">④ teardown(data)</text>
+    <text x="895" y="170" font-size="11" fill="#dfffee" font-family="Consolas, monospace" text-anchor="middle">same data,</text>
+    <text x="895" y="186" font-size="11" fill="#dfffee" font-family="Consolas, monospace" text-anchor="middle">as returned by setup</text>
+
+    <!-- rules -->
+    <rect x="30" y="290" width="450" height="112" rx="12" fill="#7dffb0" fill-opacity="0.08" stroke="#7dffb0" stroke-opacity="0.7"/>
+    <text x="46" y="314" font-size="13" font-weight="700" fill="#7dffb0">✓ Can travel through setup → VUs → teardown</text>
+    <g font-size="12" fill="#e8fff2">
+      <text x="46" y="338">numbers · strings · booleans · null</text>
+      <text x="46" y="358">arrays · plain objects  (anything JSON can hold)</text>
+      <text x="46" y="382">e.g. tokens, IDs, lists of test users</text>
+    </g>
+
+    <rect x="500" y="290" width="470" height="112" rx="12" fill="#ff5c7a" fill-opacity="0.08" stroke="#ff5c7a" stroke-opacity="0.7"/>
+    <text x="516" y="314" font-size="13" font-weight="700" fill="#ff8fa6">✗ Does NOT survive, and does NOT sync</text>
+    <g font-size="12" fill="#ffe0e6">
+      <text x="516" y="338">functions · class instances · open connections</text>
+      <text x="516" y="358">changing data.x in VU 1 is invisible to VU 2 and teardown</text>
+      <text x="516" y="382">VUs are isolated — no shared variables between them</text>
+    </g>
+  </g>
+</svg>

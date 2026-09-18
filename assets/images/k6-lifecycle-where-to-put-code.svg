@@ -1,0 +1,77 @@
+<svg width="1000" height="500" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">Where should my code go?</title>
+  <desc id="d">A guide to placing code in the right lifecycle stage, with a worked example: logging in once in setup performs one login, while logging in inside the default function performs one login per iteration and pollutes the results.</desc>
+    <style>g[font-family*="Consolas"] text { white-space: pre; }</style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+  </defs>
+  <rect width="1000" height="500" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="500" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Where does my code go? Ask “how often should this run?”</text>
+
+    <!-- LEFT: decision guide -->
+    <g>
+      <rect x="24" y="60" width="450" height="66" rx="10" fill="#7afcff" fill-opacity="0.09" stroke="#7afcff" stroke-opacity="0.8"/>
+      <text x="40" y="84" font-size="13" font-weight="700" fill="#7afcff">① INIT — top of the file</text>
+      <text x="40" y="104" font-size="12" fill="#dff8ff">imports · <tspan font-family="Consolas, monospace">options</tspan> · constants · loading files. Never HTTP.</text>
+      <text x="40" y="119" font-size="10.5" fill="#8f97d6">runs for every VU → keep it light</text>
+
+      <rect x="24" y="136" width="450" height="66" rx="10" fill="#ffe27a" fill-opacity="0.09" stroke="#ffe27a" stroke-opacity="0.8"/>
+      <text x="40" y="160" font-size="13" font-weight="700" fill="#ffe27a">② setup() — “do this ONE time before the test”</text>
+      <text x="40" y="180" font-size="12" fill="#fff6d5">log in once · create test data · check the system is up.</text>
+      <text x="40" y="195" font-size="10.5" fill="#8f97d6">return what the VUs will need</text>
+
+      <rect x="24" y="212" width="450" height="66" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-opacity="0.9"/>
+      <text x="40" y="236" font-size="13" font-weight="700" fill="#ff9be3">③ default() — “what a real user does, repeatedly”</text>
+      <text x="40" y="256" font-size="12" fill="#ffe6f8">the journey you want to MEASURE: browse, search, add to cart…</text>
+      <text x="40" y="271" font-size="10.5" fill="#8f97d6">everything here counts in your response-time results</text>
+
+      <rect x="24" y="288" width="450" height="66" rx="10" fill="#7dffb0" fill-opacity="0.09" stroke="#7dffb0" stroke-opacity="0.8"/>
+      <text x="40" y="312" font-size="13" font-weight="700" fill="#7dffb0">④ teardown() — “clean up ONE time after”</text>
+      <text x="40" y="332" font-size="12" fill="#dfffee">delete test data · notify a webhook · log final state.</text>
+      <text x="40" y="347" font-size="10.5" fill="#8f97d6">skipped if setup() failed</text>
+    </g>
+
+    <!-- RIGHT: worked example -->
+    <text x="740" y="80" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Worked example: 100 VUs × 60 iterations each</text>
+
+    <!-- login in setup -->
+    <rect x="500" y="96" width="476" height="150" rx="12" fill="#7dffb0" fill-opacity="0.08" stroke="#7dffb0" stroke-width="2"/>
+    <text x="516" y="120" font-size="13" font-weight="700" fill="#7dffb0">✓ Log in inside setup()</text>
+    <g font-family="Consolas, monospace" font-size="11.5" fill="#e8fff2">
+      <text x="516" y="144">export function setup() { return { token: login() }; }</text>
+      <text x="516" y="162">export default function (d) { http.get(url, auth(d.token)); }</text>
+    </g>
+    <text x="516" y="190" font-size="12" fill="#e8fff2">Logins performed:</text>
+    <rect x="516" y="200" width="6" height="22" rx="2" fill="#7dffb0"/>
+    <text x="532" y="217" font-size="13" font-weight="700" fill="#7dffb0">1</text>
+    <text x="580" y="217" font-size="11.5" fill="#dfffee">→ login not in your results, backend barely notices</text>
+
+    <!-- login in default -->
+    <rect x="500" y="258" width="476" height="150" rx="12" fill="#ff5c7a" fill-opacity="0.08" stroke="#ff5c7a" stroke-width="2"/>
+    <text x="516" y="282" font-size="13" font-weight="700" fill="#ff8fa6">✗ Log in inside default() (unless login IS the journey)</text>
+    <g font-family="Consolas, monospace" font-size="11.5" fill="#ffe0e6">
+      <text x="516" y="306">export default function () {</text>
+      <text x="516" y="324">  const t = login();   // every iteration!</text>
+      <text x="516" y="342">  http.get(url, auth(t)); }</text>
+    </g>
+    <text x="516" y="368" font-size="12" fill="#ffe0e6">Logins performed:</text>
+    <rect x="516" y="378" width="440" height="22" rx="2" fill="#ff5c7a"/>
+    <text x="536" y="394" font-size="13" font-weight="700" fill="#ffffff">6,000</text>
+    <text x="606" y="394" font-size="11.5" fill="#ffe0e6">→ login load drowns the test you meant to run</text>
+
+    <!-- not allowed -->
+    <rect x="500" y="420" width="476" height="62" rx="12" fill="#ffb86b" fill-opacity="0.08" stroke="#ffb86b" stroke-opacity="0.7"/>
+    <text x="516" y="444" font-size="13" font-weight="700" fill="#ffb86b">✗ HTTP at the top level (init) → k6 error</text>
+    <text x="516" y="464" font-family="Consolas, monospace" font-size="11.5" fill="#fff0da">const r = http.get(url);   // not allowed in init — move to setup()</text>
+
+    <!-- footer -->
+    <rect x="24" y="368" width="450" height="114" rx="12" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="40" y="392" font-size="13" font-weight="700" fill="#ffffff">One-line rule of thumb</text>
+    <g font-size="12" fill="#dfe3ff">
+      <text x="40" y="416">Once per <tspan font-weight="700" fill="#ffe27a">test</tspan>  →  setup() / teardown()</text>
+      <text x="40" y="436">Once per <tspan font-weight="700" fill="#ff9be3">iteration</tspan>  →  default()</text>
+      <text x="40" y="456">Once per <tspan font-weight="700" fill="#7afcff">VU, no HTTP</tspan>  →  top of file</text>
+    </g>
+  </g>
+</svg>

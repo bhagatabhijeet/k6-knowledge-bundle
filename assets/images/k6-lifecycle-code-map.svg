@@ -1,0 +1,107 @@
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">Script mapped to console output</title>
+  <desc id="d">The example script on the left is divided into the four lifecycle stages. On the right, the console lines each stage prints are shown with how many times they appear: init several times, setup once, iteration six times, teardown once.</desc>
+    <style>g[font-family*="Consolas"] text { white-space: pre; }</style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#7afcff"/></marker>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffe27a"/></marker>
+    <marker id="a3" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ff7edb"/></marker>
+    <marker id="a4" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#7dffb0"/></marker>
+  </defs>
+  <rect width="1000" height="600" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="500" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Read the script, predict the console</text>
+    <text x="500" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">test-lifecycle.js · options = { vus: 3, iterations: 6 } — every colour is one stage</text>
+
+    <text x="24" y="82" font-size="12" font-weight="700" fill="#a9b0e8">YOUR SCRIPT</text>
+    <text x="640" y="82" font-size="12" font-weight="700" fill="#a9b0e8">WHAT k6 PRINTS</text>
+
+    <!-- code panel -->
+    <rect x="24" y="90" width="560" height="490" rx="12" fill="#0a0d26" stroke="#ffffff" stroke-opacity="0.15"/>
+
+    <!-- INIT band -->
+    <rect x="30" y="98" width="548" height="92" rx="8" fill="#7afcff" fill-opacity="0.1"/><rect x="30" y="98" width="6" height="92" fill="#7afcff"/>
+    <g font-family="Consolas, monospace" font-size="12.5" fill="#dff8ff">
+      <text x="48" y="120">import http from 'k6/http';</text>
+      <text x="48" y="140">import { check, sleep } from 'k6';</text>
+      <text x="48" y="160">export const options = { vus: 3, iterations: 6 };</text>
+      <text x="48" y="180"><tspan fill="#7afcff" font-weight="700">console.log('init : script loaded');</tspan></text>
+    </g>
+    <text x="570" y="112" font-size="11" font-weight="700" fill="#7afcff" text-anchor="end">① INIT</text>
+
+    <!-- SETUP band -->
+    <rect x="30" y="200" width="548" height="104" rx="8" fill="#ffe27a" fill-opacity="0.1"/><rect x="30" y="200" width="6" height="104" fill="#ffe27a"/>
+    <g font-family="Consolas, monospace" font-size="12.5" fill="#fff6d5">
+      <text x="48" y="222">export function setup() {</text>
+      <text x="48" y="242">  <tspan fill="#ffe27a" font-weight="700">console.log('setup : runs once');</tspan></text>
+      <text x="48" y="262">  const res = http.get('https://test.k6.io');</text>
+      <text x="48" y="282">  return { startedWithStatus: res.status };</text>
+      <text x="48" y="298">}</text>
+    </g>
+    <text x="570" y="214" font-size="11" font-weight="700" fill="#ffe27a" text-anchor="end">② SETUP</text>
+
+    <!-- VU band -->
+    <rect x="30" y="314" width="548" height="150" rx="8" fill="#ff7edb" fill-opacity="0.12"/><rect x="30" y="314" width="6" height="150" fill="#ff7edb"/>
+    <g font-family="Consolas, monospace" font-size="12.5" fill="#ffe6f8">
+      <text x="48" y="336">export default function (data) {</text>
+      <text x="48" y="356">  const res = http.get('https://test.k6.io');</text>
+      <text x="48" y="376">  check(res, { 'status is 200': r =&gt; r.status === 200 });</text>
+      <text x="48" y="396">  <tspan fill="#ff9be3" font-weight="700">console.log(`iteration : setup returned</tspan></text>
+      <text x="48" y="416"><tspan fill="#ff9be3" font-weight="700">     status ${data.startedWithStatus}`);</tspan></text>
+      <text x="48" y="436">  sleep(1);</text>
+      <text x="48" y="456">}</text>
+    </g>
+    <text x="570" y="328" font-size="11" font-weight="700" fill="#ff9be3" text-anchor="end">③ VU CODE</text>
+
+    <!-- TEARDOWN band -->
+    <rect x="30" y="474" width="548" height="98" rx="8" fill="#7dffb0" fill-opacity="0.1"/><rect x="30" y="474" width="6" height="98" fill="#7dffb0"/>
+    <g font-family="Consolas, monospace" font-size="12.5" fill="#dfffee">
+      <text x="48" y="498">export function teardown(data) {</text>
+      <text x="48" y="518">  <tspan fill="#7dffb0" font-weight="700">console.log('teardown : runs once');</tspan></text>
+      <text x="48" y="538">}</text>
+    </g>
+    <text x="570" y="488" font-size="11" font-weight="700" fill="#7dffb0" text-anchor="end">④ TEARDOWN</text>
+
+    <!-- output rows -->
+    <g>
+      <path d="M580,152 L636,152" stroke="#7afcff" stroke-width="2.5" fill="none" marker-end="url(#a1)"/>
+      <rect x="640" y="104" width="340" height="96" rx="10" fill="#0a0d26" stroke="#7afcff" stroke-opacity="0.8" stroke-width="1.5"/>
+      <text x="654" y="128" font-family="Consolas, monospace" font-size="11.5" fill="#dff8ff">init : script loaded</text>
+      <text x="654" y="146" font-family="Consolas, monospace" font-size="11.5" fill="#dff8ff">init : script loaded</text>
+      <text x="654" y="164" font-family="Consolas, monospace" font-size="11.5" fill="#dff8ff">init : script loaded  …</text>
+      <rect x="880" y="112" width="90" height="38" rx="8" fill="#7afcff" fill-opacity="0.25"/>
+      <text x="925" y="128" font-size="12" font-weight="700" fill="#e8ffff" text-anchor="middle">≥ 3 times</text>
+      <text x="925" y="143" font-size="9.5" fill="#bfefff" text-anchor="middle">1 per VU + k6 extras</text>
+      <text x="654" y="188" font-size="10.5" fill="#8f97d6">(seen 7× in a real run with 3 VUs)</text>
+
+      <path d="M580,250 L636,250" stroke="#ffe27a" stroke-width="2.5" fill="none" marker-end="url(#a2)"/>
+      <rect x="640" y="222" width="340" height="56" rx="10" fill="#0a0d26" stroke="#ffe27a" stroke-opacity="0.8" stroke-width="1.5"/>
+      <text x="654" y="256" font-family="Consolas, monospace" font-size="11.5" fill="#fff6d5">setup : runs once</text>
+      <rect x="880" y="234" width="90" height="32" rx="8" fill="#ffe27a" fill-opacity="0.25"/>
+      <text x="925" y="255" font-size="13" font-weight="700" fill="#fff9dc" text-anchor="middle">exactly 1×</text>
+
+      <path d="M580,390 L636,390" stroke="#ff7edb" stroke-width="2.5" fill="none" marker-end="url(#a3)"/>
+      <rect x="640" y="304" width="340" height="176" rx="10" fill="#0a0d26" stroke="#ff7edb" stroke-opacity="0.8" stroke-width="1.5"/>
+      <g font-family="Consolas, monospace" font-size="11.5" fill="#ffe6f8">
+        <text x="654" y="328">iteration : setup returned status 200</text>
+        <text x="654" y="348">iteration : setup returned status 200</text>
+        <text x="654" y="368">iteration : setup returned status 200</text>
+        <text x="654" y="388">iteration : setup returned status 200</text>
+        <text x="654" y="408">iteration : setup returned status 200</text>
+        <text x="654" y="428">iteration : setup returned status 200</text>
+      </g>
+      <rect x="840" y="438" width="130" height="32" rx="8" fill="#ff7edb" fill-opacity="0.3"/>
+      <text x="905" y="459" font-size="13" font-weight="700" fill="#fff0fb" text-anchor="middle">6 = iterations</text>
+      <text x="654" y="462" font-size="10.5" fill="#8f97d6">each shows the value setup() returned</text>
+
+      <path d="M580,520 L636,520" stroke="#7dffb0" stroke-width="2.5" fill="none" marker-end="url(#a4)"/>
+      <rect x="640" y="492" width="340" height="56" rx="10" fill="#0a0d26" stroke="#7dffb0" stroke-opacity="0.8" stroke-width="1.5"/>
+      <text x="654" y="526" font-family="Consolas, monospace" font-size="11.5" fill="#dfffee">teardown : runs once</text>
+      <rect x="880" y="504" width="90" height="32" rx="8" fill="#7dffb0" fill-opacity="0.25"/>
+      <text x="925" y="525" font-size="13" font-weight="700" fill="#eafff3" text-anchor="middle">exactly 1×</text>
+    </g>
+
+    <text x="810" y="574" font-size="11" fill="#a9b0e8" text-anchor="middle">order on screen: init… → setup → iterations → teardown</text>
+  </g>
+</svg>

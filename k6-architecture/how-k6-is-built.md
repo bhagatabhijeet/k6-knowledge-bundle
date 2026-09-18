@@ -2,8 +2,8 @@
 type: Concept
 title: How k6 Is Built — Go and the Sobek JavaScript Engine
 description: >
-  k6 is a Go program that embeds a JavaScript VM (Sobek, a fork of goja) to run test
-  scripts. Explains what that means: it is not Node.js, how virtual users map onto
+  k6 is a Go program that embeds a JavaScript VM (Sobek — Grafana's fork of goja, used since
+  k6 v0.52) to run test scripts. Explains what that means: it is not Node.js, how virtual users map onto
   runtimes, why modules work differently, and how Go extensions fit in.
 tags:
   - k6
@@ -44,8 +44,21 @@ Two languages, two jobs:
 
 k6 does not use V8 (Chrome, Node.js) or any engine written in C. It uses
 **Sobek** — a JavaScript engine written **entirely in Go** and maintained by Grafana. Sobek is
-a fork of **goja**, the popular Go JavaScript engine; older k6 material and blog posts say
-"goja", and it is the same lineage.
+a fork of **goja**, the popular Go JavaScript engine. Older k6 material and blog posts say
+"goja" — that was correct then, but not now:
+
+```
+  k6 ≤ v0.51            k6 v0.52 (2024)                k6 v1.x → v2.x (current)
+  ───────────           ──────────────────             ────────────────────────
+  goja (dop251)   ──►   switch to Sobek fork   ──►     Sobek
+                        "We've switched to our
+                         own fork of goja named
+                         sobek" — release notes
+```
+
+The move was made "to accelerate the development speed and bring ECMAScript Modules (ESM)
+support to k6 earlier" (v0.52.0 release notes). It's confirmed in the latest sources: the
+current k6 `go.mod` depends on `github.com/grafana/sobek` and no longer lists goja at all.
 
 Why a Go-native engine rather than V8?
 
@@ -70,6 +83,7 @@ Knowing the architecture explains behaviours that otherwise look arbitrary:
 |---|---|
 | `require('fs')` or `process.env` fails | k6 is **not Node.js**. The docs: *"k6 isn't Node.js or a browser. Packages that rely on APIs provided by Node.js won't work in k6."* |
 | Most npm packages don't work | k6 uses **browser-like module resolution**, not Node's algorithm; it only loads built-in modules, local files and remote HTTP(S) scripts |
+| No F5 / breakpoint debugging like Playwright | There is no Node inspector to attach to — see [Debugging k6 Scripts](/k6-setup/debugging-k6-scripts.md) |
 | `__ENV.MY_VAR` instead of `process.env` | Environment variables are exposed by the Go engine as `__ENV` |
 | 1000 VUs need gigabytes of RAM | Each VU has its own JavaScript runtime and its own copy of your script and imports |
 | `http.get` is fast, JS helpers are slower | HTTP is Go code; your JS runs in an interpreter |
@@ -144,8 +158,9 @@ Prometheus, JSON and others via `--out`.
 - **Assuming a TypeScript error will fail the run.** Types are stripped, not checked.
 - **Blaming k6 for slow numeric JS.** Heavy computation inside `default()` runs in an interpreter and
   eats load-generator CPU. Keep VU code thin: call the network, check, sleep.
-- **Searching for "goja" and finding outdated advice.** Sobek is the fork k6 uses now; the
-  concepts carry over, but check the k6 docs for current behaviour.
+- **Trusting "k6 uses goja" articles.** True until v0.51; since v0.52 (2024) k6 and its
+  extensions use **Sobek**, including today's v2.x. The concepts carry over, but check the
+  current docs for behaviour.
 
 ## Key takeaways
 
@@ -163,6 +178,7 @@ Prometheus, JSON and others via `--out`.
 - [Grafana k6 — JavaScript and TypeScript compatibility](https://grafana.com/docs/k6/latest/using-k6/javascript-typescript-compatibility-mode/)
 - [Grafana k6 — Extensions](https://grafana.com/docs/k6/latest/extensions/)
 - [Grafana k6 — Fine-tuning OS](https://grafana.com/docs/k6/latest/misc/fine-tuning-os/) (per-VU memory guidance)
+- [k6 v0.52.0 release notes — switch from goja to sobek](https://github.com/grafana/k6/blob/master/release%20notes/v0.52.0.md)
 - [Sobek on GitHub](https://github.com/grafana/sobek) · [k6 on GitHub](https://github.com/grafana/k6)
 - [The k6 Test Lifecycle](/k6-architecture/k6-test-lifecycle.md)
 - [What Is k6?](/introduction-to-performance-testing/what-is-k6.md)

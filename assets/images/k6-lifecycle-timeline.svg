@@ -1,0 +1,96 @@
+<svg width="1000" height="470" viewBox="0 0 1000 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">k6 lifecycle on a timeline with three virtual users</title>
+  <desc id="d">Each of three virtual users runs init once. Setup runs once on its own. Then each virtual user runs the default function twice, six iterations in total. Finally teardown runs once.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffffff" fill-opacity="0.7"/></marker>
+  </defs>
+  <rect width="1000" height="470" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="500" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">The lifecycle over time — 3 VUs, 6 iterations</text>
+    <text x="500" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">options = { vus: 3, iterations: 6 } — the exact run from the example script</text>
+
+    <!-- phase header bands -->
+    <g text-anchor="middle" font-size="12" font-weight="700">
+      <rect x="150" y="70" width="110" height="28" rx="6" fill="#7afcff" fill-opacity="0.2" stroke="#7afcff"/><text x="205" y="89" fill="#7afcff">① INIT</text>
+      <rect x="268" y="70" width="100" height="28" rx="6" fill="#ffe27a" fill-opacity="0.2" stroke="#ffe27a"/><text x="318" y="89" fill="#ffe27a">② SETUP</text>
+      <rect x="376" y="70" width="378" height="28" rx="6" fill="#ff7edb" fill-opacity="0.2" stroke="#ff7edb"/><text x="565" y="89" fill="#ff9be3">③ VU CODE — the default function loops</text>
+      <rect x="762" y="70" width="110" height="28" rx="6" fill="#7dffb0" fill-opacity="0.2" stroke="#7dffb0"/><text x="817" y="89" fill="#7dffb0">④ TEARDOWN</text>
+    </g>
+
+    <!-- boundary guides -->
+    <g stroke="#ffffff" stroke-opacity="0.16" stroke-dasharray="4 4">
+      <line x1="264" y1="104" x2="264" y2="376"/><line x1="372" y1="104" x2="372" y2="376"/><line x1="758" y1="104" x2="758" y2="376"/>
+    </g>
+
+    <!-- lane labels -->
+    <g font-size="13" font-weight="700" fill="#dfe3ff" text-anchor="end">
+      <text x="136" y="140">k6 itself</text>
+      <text x="136" y="212">VU 1</text>
+      <text x="136" y="276">VU 2</text>
+      <text x="136" y="340">VU 3</text>
+    </g>
+    <g font-size="10.5" fill="#8f97d6" text-anchor="end">
+      <text x="136" y="156">(the “main” run)</text>
+    </g>
+    <g stroke="#ffffff" stroke-opacity="0.08">
+      <line x1="150" y1="170" x2="900" y2="170"/><line x1="150" y1="234" x2="900" y2="234"/><line x1="150" y1="298" x2="900" y2="298"/><line x1="150" y1="362" x2="900" y2="362"/>
+    </g>
+
+    <!-- k6 itself lane: start-up init, setup, teardown -->
+    <g font-size="11" text-anchor="middle" font-weight="700">
+      <rect x="160" y="122" width="38" height="34" rx="6" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-dasharray="3 3"/><text x="179" y="143" fill="#7afcff" font-size="10">init</text>
+      <rect x="276" y="122" width="84" height="34" rx="6" fill="#ffe27a" fill-opacity="0.35" stroke="#ffe27a" stroke-width="2"/><text x="318" y="143" fill="#fff6d5">setup() ×1</text>
+      <rect x="770" y="122" width="94" height="34" rx="6" fill="#7dffb0" fill-opacity="0.35" stroke="#7dffb0" stroke-width="2"/><text x="817" y="143" fill="#eafff3">teardown() ×1</text>
+    </g>
+    <text x="205" y="118" font-size="9.5" fill="#8f97d6" text-anchor="middle">k6 start-up runs</text>
+
+    <!-- VU lanes: init blocks -->
+    <g font-size="11" text-anchor="middle" font-weight="700">
+      <rect x="170" y="190" width="70" height="34" rx="6" fill="#7afcff" fill-opacity="0.3" stroke="#7afcff" stroke-width="2"/><text x="205" y="211" fill="#e8ffff">init</text>
+      <rect x="170" y="254" width="70" height="34" rx="6" fill="#7afcff" fill-opacity="0.3" stroke="#7afcff" stroke-width="2"/><text x="205" y="275" fill="#e8ffff">init</text>
+      <rect x="170" y="318" width="70" height="34" rx="6" fill="#7afcff" fill-opacity="0.3" stroke="#7afcff" stroke-width="2"/><text x="205" y="339" fill="#e8ffff">init</text>
+    </g>
+
+    <!-- waiting during setup -->
+    <g font-size="10" fill="#8f97d6" text-anchor="middle">
+      <text x="318" y="211">VUs wait…</text><text x="318" y="275">VUs wait…</text><text x="318" y="339">VUs wait…</text>
+    </g>
+
+    <!-- iterations -->
+    <g font-size="11" text-anchor="middle" font-weight="700" fill="#fff0fb">
+      <rect x="384" y="190" width="172" height="34" rx="6" fill="#ff7edb" fill-opacity="0.35" stroke="#ff7edb" stroke-width="2"/><text x="470" y="211">default() — iteration 1</text>
+      <rect x="564" y="190" width="182" height="34" rx="6" fill="#ff7edb" fill-opacity="0.35" stroke="#ff7edb" stroke-width="2"/><text x="655" y="211">default() — iteration 4</text>
+
+      <rect x="384" y="254" width="160" height="34" rx="6" fill="#ff7edb" fill-opacity="0.35" stroke="#ff7edb" stroke-width="2"/><text x="464" y="275">default() — iteration 2</text>
+      <rect x="552" y="254" width="180" height="34" rx="6" fill="#ff7edb" fill-opacity="0.35" stroke="#ff7edb" stroke-width="2"/><text x="642" y="275">default() — iteration 5</text>
+
+      <rect x="390" y="318" width="176" height="34" rx="6" fill="#ff7edb" fill-opacity="0.35" stroke="#ff7edb" stroke-width="2"/><text x="478" y="339">default() — iteration 3</text>
+      <rect x="574" y="318" width="172" height="34" rx="6" fill="#ff7edb" fill-opacity="0.35" stroke="#ff7edb" stroke-width="2"/><text x="660" y="339">default() — iteration 6</text>
+    </g>
+    <g font-size="10" fill="#ffb8ec" text-anchor="middle">
+      <text x="560" y="243">← immediately loops back to the top →</text>
+    </g>
+
+    <!-- idle after done -->
+    <g font-size="10" fill="#8f97d6" text-anchor="middle">
+      <text x="817" y="211">VU finished</text><text x="817" y="275">VU finished</text><text x="817" y="339">VU finished</text>
+    </g>
+
+    <!-- time axis -->
+    <path d="M150,392 L900,392" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2" marker-end="url(#arr)"/>
+    <text x="905" y="396" font-size="11" fill="#8f97d6">time</text>
+
+    <!-- count summary -->
+    <g font-size="12" text-anchor="middle">
+      <rect x="150" y="410" width="180" height="44" rx="8" fill="#7afcff" fill-opacity="0.1" stroke="#7afcff" stroke-opacity="0.6"/>
+      <text x="240" y="429" font-weight="700" fill="#7afcff">init</text><text x="240" y="446" fill="#dff8ff" font-size="11">3 VUs → 3 runs (+ start-up)</text>
+      <rect x="340" y="410" width="150" height="44" rx="8" fill="#ffe27a" fill-opacity="0.1" stroke="#ffe27a" stroke-opacity="0.6"/>
+      <text x="415" y="429" font-weight="700" fill="#ffe27a">setup</text><text x="415" y="446" fill="#fff6d5" font-size="11">1 run, total</text>
+      <rect x="500" y="410" width="210" height="44" rx="8" fill="#ff7edb" fill-opacity="0.1" stroke="#ff7edb" stroke-opacity="0.6"/>
+      <text x="605" y="429" font-weight="700" fill="#ff9be3">VU code</text><text x="605" y="446" fill="#ffe6f8" font-size="11">6 iterations shared by 3 VUs</text>
+      <rect x="720" y="410" width="150" height="44" rx="8" fill="#7dffb0" fill-opacity="0.1" stroke="#7dffb0" stroke-opacity="0.6"/>
+      <text x="795" y="429" font-weight="700" fill="#7dffb0">teardown</text><text x="795" y="446" fill="#dfffee" font-size="11">1 run, total</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,108 @@
+<svg width="1000" height="470" viewBox="0 0 1000 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">The four k6 lifecycle stages</title>
+  <desc id="d">Init runs once for each virtual user and cannot make HTTP requests. Setup runs once per test. VU code, the default function, loops many times in every virtual user. Teardown runs once per test at the end.</desc>
+    <style>g[font-family*="Consolas"] text { white-space: pre; }</style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffffff" fill-opacity="0.8"/></marker>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1000" height="470" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="500" y="36" font-size="21" font-weight="700" fill="#ffffff">The k6 test lifecycle — four stages, always in this order</text>
+    <text x="500" y="58" font-size="12" fill="#a9b0e8">Read left → right. Each card says WHEN it runs, HOW OFTEN, and whether it may send HTTP requests.</text>
+
+    <!-- arrows between cards -->
+    <g stroke="#ffffff" stroke-opacity="0.7" stroke-width="2.5" fill="none" marker-end="url(#arr)">
+      <path d="M244,190 L268,190"/><path d="M494,190 L518,190"/><path d="M744,190 L768,190"/>
+    </g>
+
+    <!-- INIT -->
+    <g>
+      <rect x="20" y="80" width="224" height="250" rx="14" fill="#7afcff" fill-opacity="0.09" stroke="#7afcff" stroke-width="2"/>
+      <circle cx="46" cy="106" r="16" fill="#7afcff"/><text x="46" y="112" font-size="16" font-weight="700" fill="#0b0326">1</text>
+      <text x="132" y="112" font-size="20" font-weight="700" fill="#7afcff">INIT</text>
+      <text x="132" y="134" font-size="11" fill="#a9b0e8">prepare the script</text>
+      <rect x="36" y="148" width="192" height="46" rx="8" fill="#7afcff" fill-opacity="0.2"/>
+      <text x="132" y="169" font-size="14" font-weight="700" fill="#e8ffff">once for EACH VU</text>
+      <text x="132" y="186" font-size="10.5" fill="#bfefff">(+ a few k6 start-up runs)</text>
+      <text x="132" y="220" font-size="12" fill="#ffb3b3" font-weight="700">✗ NO HTTP requests</text>
+      <g font-size="11" fill="#dff8ff" font-family="Consolas, monospace">
+        <text x="132" y="248">import … from 'k6/http'</text>
+        <text x="132" y="266">export const options</text>
+        <text x="132" y="284">const DATA = open(…)</text>
+      </g>
+      <text x="132" y="314" font-size="10.5" fill="#8f97d6">top level of the file</text>
+    </g>
+
+    <!-- SETUP -->
+    <g>
+      <rect x="272" y="80" width="224" height="250" rx="14" fill="#ffe27a" fill-opacity="0.09" stroke="#ffe27a" stroke-width="2"/>
+      <circle cx="298" cy="106" r="16" fill="#ffe27a"/><text x="298" y="112" font-size="16" font-weight="700" fill="#0b0326">2</text>
+      <text x="390" y="112" font-size="20" font-weight="700" fill="#ffe27a">SETUP</text>
+      <text x="390" y="134" font-size="11" fill="#a9b0e8">prepare the environment</text>
+      <rect x="288" y="148" width="192" height="46" rx="8" fill="#ffe27a" fill-opacity="0.2"/>
+      <text x="384" y="169" font-size="14" font-weight="700" fill="#fff9dc">exactly ONCE per test</text>
+      <text x="384" y="186" font-size="10.5" fill="#fff0b0">before any load starts</text>
+      <text x="384" y="220" font-size="12" fill="#7dffb0" font-weight="700">✓ HTTP allowed</text>
+      <g font-size="11" fill="#fff6d5" font-family="Consolas, monospace">
+        <text x="384" y="248">export function setup() {</text>
+        <text x="384" y="266">  …create data, log in…</text>
+        <text x="384" y="284">  return { token }; }</text>
+      </g>
+      <text x="384" y="314" font-size="10.5" fill="#8f97d6">time limit: setupTimeout (60 s)</text>
+    </g>
+
+    <!-- VU CODE -->
+    <g filter="url(#glow)">
+      <rect x="524" y="80" width="224" height="250" rx="14" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="3"/>
+    </g>
+    <g>
+      <circle cx="550" cy="106" r="16" fill="#ff7edb"/><text x="550" y="112" font-size="16" font-weight="700" fill="#0b0326">3</text>
+      <text x="646" y="112" font-size="20" font-weight="700" fill="#ff9be3">VU CODE</text>
+      <text x="646" y="134" font-size="11" fill="#ffd1f2">★ this IS your load test ★</text>
+      <rect x="540" y="148" width="192" height="46" rx="8" fill="#ff7edb" fill-opacity="0.25"/>
+      <text x="636" y="169" font-size="14" font-weight="700" fill="#fff0fb">LOOPS: again &amp; again</text>
+      <text x="636" y="186" font-size="10.5" fill="#ffd1f2">every VU, for the whole test</text>
+      <text x="636" y="220" font-size="12" fill="#7dffb0" font-weight="700">✓ HTTP allowed</text>
+      <g font-size="11" fill="#ffe6f8" font-family="Consolas, monospace">
+        <text x="636" y="248">export default function</text>
+        <text x="636" y="266">  (data) {</text>
+        <text x="636" y="284">  http.get(…); check(…); }</text>
+      </g>
+      <text x="636" y="314" font-size="10.5" fill="#ffb8ec">one run = one “iteration”</text>
+    </g>
+
+    <!-- TEARDOWN -->
+    <g>
+      <rect x="776" y="80" width="204" height="250" rx="14" fill="#7dffb0" fill-opacity="0.09" stroke="#7dffb0" stroke-width="2"/>
+      <circle cx="802" cy="106" r="16" fill="#7dffb0"/><text x="802" y="112" font-size="16" font-weight="700" fill="#0b0326">4</text>
+      <text x="892" y="112" font-size="20" font-weight="700" fill="#7dffb0">TEARDOWN</text>
+      <text x="878" y="134" font-size="11" fill="#a9b0e8">clean up</text>
+      <rect x="792" y="148" width="172" height="46" rx="8" fill="#7dffb0" fill-opacity="0.2"/>
+      <text x="878" y="169" font-size="14" font-weight="700" fill="#eafff3">exactly ONCE</text>
+      <text x="878" y="186" font-size="10.5" fill="#bdf5d4">after the last iteration</text>
+      <text x="878" y="220" font-size="12" fill="#7dffb0" font-weight="700">✓ HTTP allowed</text>
+      <g font-size="11" fill="#dfffee" font-family="Consolas, monospace">
+        <text x="878" y="248">export function</text>
+        <text x="878" y="266">  teardown(data) {</text>
+        <text x="878" y="284">  …delete test data… }</text>
+      </g>
+      <text x="878" y="314" font-size="10.5" fill="#8f97d6">skipped if setup() failed</text>
+    </g>
+
+    <!-- time arrow -->
+    <path d="M30,352 L970,352" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2" marker-end="url(#arr)"/>
+    <text x="500" y="372" font-size="11" fill="#8f97d6">time →</text>
+
+    <!-- analogy strip -->
+    <rect x="20" y="386" width="960" height="66" rx="12" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="36" y="410" font-size="12" font-weight="700" fill="#ffb86b" text-anchor="start">🍕 Think of a pizza pop-up:</text>
+    <g font-size="11.5" fill="#dfe3ff" text-anchor="start">
+      <text x="36" y="432"><tspan fill="#7afcff" font-weight="700">Init</tspan> = every cook reads the recipe &amp; sets up their own station ·
+        <tspan fill="#ffe27a" font-weight="700">Setup</tspan> = the owner buys ingredients once ·
+        <tspan fill="#ff9be3" font-weight="700">VU code</tspan> = cooks make pizza after pizza ·
+        <tspan fill="#7dffb0" font-weight="700">Teardown</tspan> = owner cleans up once</text>
+    </g>
+  </g>
+</svg>
