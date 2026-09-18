@@ -1,0 +1,58 @@
+<svg width="1000" height="640" viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Anatomy of a k6 threshold</title><desc id="d">A threshold names a metric, optionally a tag filter, then one or more rules made of an aggregation method, an operator and a value. Different metric types allow different aggregation methods.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="640" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Anatomy of a threshold — every part has a job</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">metric{tag filter}: [ rule , rule … ]   and a rule is   aggregation  operator  value</text>
+<rect x="24" y="66" width="952" height="84" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="24" y="66" width="952" height="26" rx="10" fill="#1d1f33"/><rect x="24" y="82" width="952" height="10" fill="#1d1f33"/>
+<circle cx="44" cy="79" r="5" fill="#ff5c7a"/><circle cx="62" cy="79" r="5" fill="#ffd166"/><circle cx="80" cy="79" r="5" fill="#7dffb0"/>
+<text x="500.0" y="83" font-size="11" fill="#a9b0e8" text-anchor="middle">options.thresholds</text>
+<g class="m" font-size="15">
+<text x="44" y="124"><tspan fill="#7afcff" font-weight="700">http_req_duration</tspan><tspan fill="#ff7edb" font-weight="700">{name:home}</tspan><tspan fill="#dfe3ff">: [ </tspan><tspan fill="#dfe3ff">'</tspan><tspan fill="#ffe27a" font-weight="700">p(95)</tspan><tspan fill="#ffb86b" font-weight="700">&lt;</tspan><tspan fill="#7dffb0" font-weight="700">800</tspan><tspan fill="#dfe3ff">'</tspan><tspan fill="#dfe3ff">, '</tspan><tspan fill="#ffe27a" font-weight="700">avg</tspan><tspan fill="#ffb86b" font-weight="700">&lt;</tspan><tspan fill="#7dffb0" font-weight="700">800</tspan><tspan fill="#dfe3ff">' ],</tspan></text>
+</g>
+<rect x="24" y="166" width="308" height="84" rx="10" fill="#7afcff" fill-opacity="0.11" stroke="#7afcff" stroke-width="1.5"/>
+<text x="38" y="190" font-size="13.5" font-weight="700" fill="#7afcff">① metric</text>
+<text x="38" y="210" font-size="11.5" fill="#e6e9ff">What to measure: a built-in one </text>
+<text x="38" y="225" font-size="11.5" fill="#e6e9ff">(http_req_duration) or your own custom </text>
+<text x="38" y="240" font-size="11.5" fill="#e6e9ff">metric. </text>
+<rect x="346" y="166" width="308" height="84" rx="10" fill="#ff7edb" fill-opacity="0.11" stroke="#ff7edb" stroke-width="1.5"/>
+<text x="360" y="190" font-size="13.5" font-weight="700" fill="#ff7edb">② {tag filter}</text>
+<text x="360" y="210" font-size="11.5" fill="#e6e9ff">Optional: judge only requests with that tag, </text>
+<text x="360" y="225" font-size="11.5" fill="#e6e9ff">e.g. {name:home} or </text>
+<text x="360" y="240" font-size="11.5" fill="#e6e9ff">{expected_response:true}. </text>
+<rect x="668" y="166" width="308" height="84" rx="10" fill="#ffe27a" fill-opacity="0.11" stroke="#ffe27a" stroke-width="1.5"/>
+<text x="682" y="190" font-size="13.5" font-weight="700" fill="#ffe27a">③ aggregation</text>
+<text x="682" y="210" font-size="11.5" fill="#e6e9ff">How to boil many samples down to ONE number: </text>
+<text x="682" y="225" font-size="11.5" fill="#e6e9ff">avg, med, p(95), count, rate, value … </text>
+<rect x="24" y="262" width="308" height="84" rx="10" fill="#ffb86b" fill-opacity="0.11" stroke="#ffb86b" stroke-width="1.5"/>
+<text x="38" y="286" font-size="13.5" font-weight="700" fill="#ffb86b">④ operator</text>
+<text x="38" y="306" font-size="11.5" fill="#e6e9ff">How to compare: &lt;  &lt;=  &gt;  &gt;=   (docs also </text>
+<text x="38" y="321" font-size="11.5" fill="#e6e9ff">show ==) </text>
+<rect x="346" y="262" width="308" height="84" rx="10" fill="#7dffb0" fill-opacity="0.11" stroke="#7dffb0" stroke-width="1.5"/>
+<text x="360" y="286" font-size="13.5" font-weight="700" fill="#7dffb0">⑤ value</text>
+<text x="360" y="306" font-size="11.5" fill="#e6e9ff">Your goal. Times are in milliseconds (800 = </text>
+<text x="360" y="321" font-size="11.5" fill="#e6e9ff">800 ms); rates are 0 – 1 (0.1 = 10%). </text>
+<rect x="668" y="262" width="308" height="84" rx="10" fill="#b9acff" fill-opacity="0.12" stroke="#b9acff" stroke-width="1.5"/>
+<text x="682" y="286" font-size="13" font-weight="700" fill="#b9acff">Two rules = both must hold</text>
+<text x="682" y="308" font-size="11.5" fill="#e6e9ff">Rules in the list are combined with AND:</text>
+<text x="682" y="324" font-size="11.5" fill="#e6e9ff">&#x27;p(95)&lt;800&#x27; AND &#x27;avg&lt;800&#x27;.</text>
+<text x="24" y="382" font-size="15" font-weight="700" fill="#ffffff">Which aggregation works on which metric type?</text>
+<rect x="24" y="394" width="952" height="28" rx="6" fill="#ffffff" fill-opacity="0.1"/>
+<text x="40" y="413" font-size="12" font-weight="700" fill="#7afcff">metric type</text>
+<text x="190" y="413" font-size="12" font-weight="700" fill="#7afcff">allowed aggregations</text>
+<text x="470" y="413" font-size="12" font-weight="700" fill="#7afcff">built-in example</text>
+<text x="690" y="413" font-size="12" font-weight="700" fill="#7afcff">threshold example</text>
+<rect x="24" y="428" width="952" height="28" rx="6" fill="#ffb86b" fill-opacity="0.09"/>
+<text x="40" y="448" font-size="13" font-weight="700" fill="#ffb86b">Counter</text><text x="190" y="448" font-size="12.5" fill="#e6e9ff">count · rate</text><text x="470" y="448" font-size="12" fill="#c9cdf5">http_reqs, data_sent</text><text x="690" y="448" font-size="11.5" fill="#e6e9ff" class="m">pizzas_requested: [&#x27;count&gt;=4&#x27;]</text>
+<rect x="24" y="460" width="952" height="28" rx="6" fill="#5ee3ff" fill-opacity="0.09"/>
+<text x="40" y="480" font-size="13" font-weight="700" fill="#5ee3ff">Gauge</text><text x="190" y="480" font-size="12.5" fill="#e6e9ff">value</text><text x="470" y="480" font-size="12" fill="#c9cdf5">vus, vus_max</text><text x="690" y="480" font-size="11.5" fill="#e6e9ff" class="m">last_body_size: [&#x27;value&gt;0&#x27;]</text>
+<rect x="24" y="492" width="952" height="28" rx="6" fill="#7afcff" fill-opacity="0.09"/>
+<text x="40" y="512" font-size="13" font-weight="700" fill="#7afcff">Rate</text><text x="190" y="512" font-size="12.5" fill="#e6e9ff">rate</text><text x="470" y="512" font-size="12" fill="#c9cdf5">http_req_failed, checks</text><text x="690" y="512" font-size="11.5" fill="#e6e9ff" class="m">good_responses: [&#x27;rate&gt;0.9&#x27;]</text>
+<rect x="24" y="524" width="952" height="28" rx="6" fill="#b9acff" fill-opacity="0.09"/>
+<text x="40" y="544" font-size="13" font-weight="700" fill="#b9acff">Trend</text><text x="190" y="544" font-size="12.5" fill="#e6e9ff">avg · min · max · med · p(N)</text><text x="470" y="544" font-size="12" fill="#c9cdf5">http_req_duration</text><text x="690" y="544" font-size="11.5" fill="#e6e9ff" class="m">page_time: [&#x27;med&lt;800&#x27;,&#x27;p(99)&lt;1000&#x27;]</text>
+<rect x="24" y="584" width="952" height="44" rx="10" fill="#ffe27a" fill-opacity="0.08" stroke="#ffe27a" stroke-opacity="0.7"/>
+<text x="500" y="611" font-size="13" fill="#fff6d5" text-anchor="middle">Use a threshold on a metric with the wrong aggregation (e.g. avg on a Rate) and k6 will refuse to run the script.</text>
+</g></svg>

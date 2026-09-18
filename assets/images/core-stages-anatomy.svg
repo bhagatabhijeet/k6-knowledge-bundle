@@ -1,0 +1,77 @@
+<svg width="1000" height="620" viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Anatomy of the stages option</title><desc id="d">A stages array with three objects. Stage 1 ramps from one virtual user to 2 over 4 seconds, stage 2 ramps from 2 to 5 over 5 seconds, stage 3 ramps from 5 to 0 over 3 seconds. Duration is how long a stage takes; target is the number of users at the end of it.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="620" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">stages: a list of “go to this many users, taking this long”</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Ramp up · stay · ramp down — the realistic way to apply load</text>
+<rect x="24" y="66" width="440" height="230" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="24" y="66" width="440" height="26" rx="10" fill="#1d1f33"/><rect x="24" y="82" width="440" height="10" fill="#1d1f33"/>
+<circle cx="44" cy="79" r="5" fill="#ff5c7a"/><circle cx="62" cy="79" r="5" fill="#ffd166"/><circle cx="80" cy="79" r="5" fill="#7dffb0"/>
+<text x="244.0" y="83" font-size="11" fill="#a9b0e8" text-anchor="middle">test2.js — options</text>
+<rect x="34" y="160" width="420" height="24" rx="4" fill="#7afcff" fill-opacity="0.18"/><rect x="34" y="184" width="420" height="24" rx="4" fill="#ffe27a" fill-opacity="0.18"/><rect x="34" y="208" width="420" height="24" rx="4" fill="#ff7edb" fill-opacity="0.18"/>
+<text class="m" x="44" y="122" font-size="13"><tspan fill="#c586c0">export const </tspan><tspan fill="#9cdcfe">options</tspan><tspan fill="#dfe3ff"> = {</tspan></text>
+<text class="m" x="58" y="144" font-size="13"><tspan fill="#9cdcfe">stages</tspan><tspan fill="#dfe3ff">: [</tspan></text>
+<text class="m" x="72" y="178" font-size="13"><tspan fill="#dfe3ff">{ </tspan><tspan fill="#9cdcfe">duration</tspan><tspan fill="#dfe3ff">: </tspan><tspan fill="#ce9178" font-weight="700">&#x27;4s&#x27;</tspan><tspan fill="#dfe3ff">, </tspan><tspan fill="#9cdcfe">target</tspan><tspan fill="#dfe3ff">: </tspan><tspan fill="#b5cea8" font-weight="700">2</tspan><tspan fill="#dfe3ff"> },</tspan></text>
+<text class="m" x="72" y="202" font-size="13"><tspan fill="#dfe3ff">{ </tspan><tspan fill="#9cdcfe">duration</tspan><tspan fill="#dfe3ff">: </tspan><tspan fill="#ce9178" font-weight="700">&#x27;5s&#x27;</tspan><tspan fill="#dfe3ff">, </tspan><tspan fill="#9cdcfe">target</tspan><tspan fill="#dfe3ff">: </tspan><tspan fill="#b5cea8" font-weight="700">5</tspan><tspan fill="#dfe3ff"> },</tspan></text>
+<text class="m" x="72" y="226" font-size="13"><tspan fill="#dfe3ff">{ </tspan><tspan fill="#9cdcfe">duration</tspan><tspan fill="#dfe3ff">: </tspan><tspan fill="#ce9178" font-weight="700">&#x27;3s&#x27;</tspan><tspan fill="#dfe3ff">, </tspan><tspan fill="#9cdcfe">target</tspan><tspan fill="#dfe3ff">: </tspan><tspan fill="#b5cea8" font-weight="700">0</tspan><tspan fill="#dfe3ff"> },</tspan></text>
+<text class="m" x="58" y="250" font-size="13"><tspan fill="#dfe3ff">],</tspan></text>
+<text class="m" x="44" y="272" font-size="13"><tspan fill="#dfe3ff">};</tspan></text>
+<text x="470" y="178" font-size="12" font-weight="700" fill="#7afcff">stage 1</text><text x="470" y="202" font-size="12" font-weight="700" fill="#ffe27a">stage 2</text><text x="470" y="226" font-size="12" font-weight="700" fill="#ff7edb">stage 3</text>
+<line x1="600" y1="262" x2="978.0" y2="262" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2"/>
+<line x1="600" y1="262" x2="600" y2="67.6" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2"/>
+<text x="600" y="280" font-size="11" fill="#8f97d6" text-anchor="middle">0s</text>
+<text x="660" y="280" font-size="11" fill="#8f97d6" text-anchor="middle">2s</text>
+<text x="720" y="280" font-size="11" fill="#8f97d6" text-anchor="middle">4s</text>
+<text x="780" y="280" font-size="11" fill="#8f97d6" text-anchor="middle">6s</text>
+<text x="840" y="280" font-size="11" fill="#8f97d6" text-anchor="middle">8s</text>
+<text x="900" y="280" font-size="11" fill="#8f97d6" text-anchor="middle">10s</text>
+<text x="960" y="280" font-size="11" fill="#8f97d6" text-anchor="middle">12s</text>
+<line x1="596" y1="262" x2="978.0" y2="262" stroke="#ffffff" stroke-opacity="0.08"/><text x="590" y="266" font-size="11" fill="#8f97d6" text-anchor="end">0</text>
+<line x1="596" y1="226" x2="978.0" y2="226" stroke="#ffffff" stroke-opacity="0.08"/><text x="590" y="230" font-size="11" fill="#8f97d6" text-anchor="end">1</text>
+<line x1="596" y1="190" x2="978.0" y2="190" stroke="#ffffff" stroke-opacity="0.08"/><text x="590" y="194" font-size="11" fill="#8f97d6" text-anchor="end">2</text>
+<line x1="596" y1="154" x2="978.0" y2="154" stroke="#ffffff" stroke-opacity="0.08"/><text x="590" y="158" font-size="11" fill="#8f97d6" text-anchor="end">3</text>
+<line x1="596" y1="118" x2="978.0" y2="118" stroke="#ffffff" stroke-opacity="0.08"/><text x="590" y="122" font-size="11" fill="#8f97d6" text-anchor="end">4</text>
+<line x1="596" y1="82" x2="978.0" y2="82" stroke="#ffffff" stroke-opacity="0.08"/><text x="590" y="86" font-size="11" fill="#8f97d6" text-anchor="end">5</text>
+<text x="566" y="162" font-size="11" fill="#a9b0e8" transform="rotate(-90 566 162)" text-anchor="middle">virtual users</text>
+<line x1="600" y1="226" x2="720" y2="190" stroke="#7afcff" stroke-width="5" stroke-linecap="round"/>
+<line x1="720" y1="190" x2="870" y2="82" stroke="#ffe27a" stroke-width="5" stroke-linecap="round"/>
+<line x1="870" y1="82" x2="960" y2="262" stroke="#ff7edb" stroke-width="5" stroke-linecap="round"/>
+<circle cx="600" cy="226" r="6" fill="#7afcff"/>
+<circle cx="720" cy="190" r="6" fill="#7afcff"/>
+<circle cx="870" cy="82" r="6" fill="#ffe27a"/>
+<circle cx="960" cy="262" r="6" fill="#ff7edb"/>
+<text x="708" y="178" font-size="12" fill="#7afcff" font-weight="700" text-anchor="end">target 2</text>
+<text x="870" y="70" font-size="12" fill="#ffe27a" font-weight="700" text-anchor="middle">target 5 (peak)</text>
+<text x="948" y="246" font-size="12" fill="#ff7edb" font-weight="700" text-anchor="end">target 0</text>
+<text x="598" y="214" font-size="11" fill="#c9cdf5" text-anchor="end">starts at 1</text>
+<path d="M603,292 L717,292" stroke="#7afcff" stroke-width="3"/><text x="660.0" y="309" font-size="11.5" fill="#7afcff" text-anchor="middle" font-weight="700">duration 4 s</text>
+<path d="M723,292 L867,292" stroke="#ffe27a" stroke-width="3"/><text x="795.0" y="309" font-size="11.5" fill="#ffe27a" text-anchor="middle" font-weight="700">duration 5 s</text>
+<path d="M873,292 L957,292" stroke="#ff7edb" stroke-width="3"/><text x="915.0" y="309" font-size="11.5" fill="#ff7edb" text-anchor="middle" font-weight="700">duration 3 s</text>
+<rect x="24" y="338" width="300" height="118" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="44" cy="358" r="10" fill="#7afcff"/><text x="44" y="362" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="62" y="362" font-size="13" font-weight="700" fill="#7afcff">duration = how long</text>
+<text x="38" y="384" font-size="11.5" fill="#e6e9ff">How long THIS stage takes.</text>
+<text x="38" y="400" font-size="11.5" fill="#e6e9ff">Stage 1: 4 seconds.</text>
+<text x="38" y="416" font-size="11.5" fill="#e6e9ff">Total test = 4 + 5 + 3 = 12 s.</text>
+<rect x="350" y="338" width="300" height="118" rx="10" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<circle cx="370" cy="358" r="10" fill="#ffe27a"/><text x="370" y="362" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="388" y="362" font-size="13" font-weight="700" fill="#ffe27a">target = where it ENDS</text>
+<text x="364" y="384" font-size="11.5" fill="#e6e9ff">The number of users at the END of</text>
+<text x="364" y="400" font-size="11.5" fill="#e6e9ff">the stage — not extra users!</text>
+<text x="364" y="416" font-size="11.5" fill="#e6e9ff">2 → 5 adds 3 more users, not 5.</text>
+<rect x="676" y="338" width="300" height="118" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<circle cx="696" cy="358" r="10" fill="#ff7edb"/><text x="696" y="362" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<text x="714" y="362" font-size="13" font-weight="700" fill="#ff7edb">k6 connects the dots</text>
+<text x="690" y="384" font-size="11.5" fill="#e6e9ff">Users change gradually in a straight</text>
+<text x="690" y="400" font-size="11.5" fill="#e6e9ff">line from one target to the next:</text>
+<text x="690" y="416" font-size="11.5" fill="#e6e9ff">linear ramp up, hold, ramp down.</text>
+<text x="24" y="478" font-size="15" font-weight="700" fill="#ffffff">The maths in one line</text>
+<rect x="24" y="490" width="952" height="52" rx="10" fill="#7dffb0" fill-opacity="0.09" stroke="#7dffb0" stroke-opacity="0.7"/>
+<text class="m" x="40" y="512" font-size="13.5"><tspan fill="#7dffb0" font-weight="700">users(t) = start + (target − start) × (time into stage ÷ stage duration)</tspan></text>
+<text x="40" y="532" font-size="12" fill="#e6e9ff">Stage 2, 3 s in:  2 + (5 − 2) × 3 ÷ 5 = 3.8 users → k6 runs whole users only (it showed 3, then 4).</text>
+<rect x="24" y="554" width="952" height="52" rx="10" fill="#ffe27a" fill-opacity="0.08" stroke="#ffe27a" stroke-opacity="0.7"/>
+<text x="40" y="577" font-size="12.5" fill="#fff6d5"><tspan font-weight="700">Where does it start?</tspan>  With the shortcut <tspan class="m" font-family="Consolas, monospace">stages</tspan> k6 starts at 1 user (startVUs defaults to 1), not 0.</text>
+<text x="40" y="597" font-size="12" fill="#fff6d5">To start from zero use a scenario with the ramping-vus executor and <tspan font-family="Consolas, monospace">startVUs: 0</tspan> (verified: 0 users for the first seconds).</text>
+</g></svg>

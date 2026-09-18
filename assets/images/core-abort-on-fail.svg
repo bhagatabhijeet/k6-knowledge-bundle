@@ -1,0 +1,48 @@
+<svg width="1000" height="420" viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">abortOnFail stops a test early</title><desc id="d">A threshold with abortOnFail and a three second delay was crossed. k6 stopped the run at about four seconds instead of thirty and exited with code 99.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="420" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">abortOnFail — stop the test the moment a goal is lost</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Real run: planned 30 s, threshold p(95) &lt; 1 ms (impossible on purpose), delayAbortEval 3 s</text>
+<rect x="40" y="90" width="900" height="40" rx="8" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.25" stroke-dasharray="6 5"/>
+<text x="490" y="115" font-size="12.5" fill="#8f97d6" text-anchor="middle">planned: 30 seconds of load</text>
+<rect x="40" y="90" width="90" height="40" rx="8" fill="#b9acff" fill-opacity="0.3" stroke="#b9acff" stroke-width="2"/>
+<rect x="130" y="90" width="33.0" height="40" fill="#ffb86b" fill-opacity="0.35" stroke="#ffb86b" stroke-width="2"/>
+<path d="M163.0,84 L163.0,150" stroke="#ff5c7a" stroke-width="4"/>
+<text x="173.0" y="150" font-size="14" font-weight="700" fill="#ff5c7a">✗ ABORT at ~4 s</text>
+<line x1="40" y1="132" x2="40" y2="140" stroke="#ffffff" stroke-opacity="0.4"/><text x="40" y="166" font-size="11" fill="#8f97d6" text-anchor="middle">0s</text>
+<line x1="190" y1="132" x2="190" y2="140" stroke="#ffffff" stroke-opacity="0.4"/><text x="190" y="166" font-size="11" fill="#8f97d6" text-anchor="middle">5s</text>
+<line x1="340" y1="132" x2="340" y2="140" stroke="#ffffff" stroke-opacity="0.4"/><text x="340" y="166" font-size="11" fill="#8f97d6" text-anchor="middle">10s</text>
+<line x1="490" y1="132" x2="490" y2="140" stroke="#ffffff" stroke-opacity="0.4"/><text x="490" y="166" font-size="11" fill="#8f97d6" text-anchor="middle">15s</text>
+<line x1="640" y1="132" x2="640" y2="140" stroke="#ffffff" stroke-opacity="0.4"/><text x="640" y="166" font-size="11" fill="#8f97d6" text-anchor="middle">20s</text>
+<line x1="790" y1="132" x2="790" y2="140" stroke="#ffffff" stroke-opacity="0.4"/><text x="790" y="166" font-size="11" fill="#8f97d6" text-anchor="middle">25s</text>
+<line x1="940" y1="132" x2="940" y2="140" stroke="#ffffff" stroke-opacity="0.4"/><text x="940" y="166" font-size="11" fill="#8f97d6" text-anchor="middle">30s</text>
+<text x="85.0" y="82" font-size="12" font-weight="700" fill="#b9acff" text-anchor="middle">delayAbortEval: 3s</text>
+<text x="85.0" y="180" font-size="11" fill="#b9acff" text-anchor="middle">collect samples first</text>
+<rect x="24" y="200" width="300" height="110" rx="10" fill="#b9acff" fill-opacity="0.12" stroke="#b9acff" stroke-width="1.5"/>
+<circle cx="44" cy="220" r="10" fill="#b9acff"/><text x="44" y="224" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="62" y="224" font-size="13" font-weight="700" fill="#b9acff">delayAbortEval</text>
+<text x="38" y="246" font-size="11.5" fill="#e6e9ff">Wait 3 s before judging, so k6</text>
+<text x="38" y="262" font-size="11.5" fill="#e6e9ff">has enough samples. Without it a</text>
+<text x="38" y="278" font-size="11.5" fill="#e6e9ff">single slow first request could</text>
+<text x="38" y="294" font-size="11.5" fill="#e6e9ff">abort the test unfairly.</text>
+<rect x="350" y="200" width="300" height="110" rx="10" fill="#ffb86b" fill-opacity="0.12" stroke="#ffb86b" stroke-width="1.5"/>
+<circle cx="370" cy="220" r="10" fill="#ffb86b"/><text x="370" y="224" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="388" y="224" font-size="13" font-weight="700" fill="#ffb86b">abortOnFail: true</text>
+<text x="364" y="246" font-size="11.5" fill="#e6e9ff">As soon as the threshold is</text>
+<text x="364" y="262" font-size="11.5" fill="#e6e9ff">crossed (after the delay) k6</text>
+<text x="364" y="278" font-size="11.5" fill="#e6e9ff">stops the run — no point loading</text>
+<text x="364" y="294" font-size="11.5" fill="#e6e9ff">a system that already failed.</text>
+<rect x="676" y="200" width="300" height="110" rx="10" fill="#ff5c7a" fill-opacity="0.12" stroke="#ff5c7a" stroke-width="1.5"/>
+<circle cx="696" cy="220" r="10" fill="#ff5c7a"/><text x="696" y="224" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<text x="714" y="224" font-size="13" font-weight="700" fill="#ff5c7a">Result</text>
+<text x="690" y="246" font-size="11.5" fill="#e6e9ff">Ran ~4 s of a planned 30 s.</text>
+<text x="690" y="262" font-size="11.5" fill="#e6e9ff">Exit code 99 — the pipeline fails</text>
+<text x="690" y="278" font-size="11.5" fill="#e6e9ff">fast, and the shared test</text>
+<text x="690" y="294" font-size="11.5" fill="#e6e9ff">environment isn’t hammered.</text>
+<text class="m" x="24" y="340" font-size="12"><tspan fill="#7dffb0" font-weight="700">thresholds: { http_req_duration: [{ threshold: &#x27;p(95)&lt;1&#x27;, abortOnFail: true, delayAbortEval: &#x27;3s&#x27; }] }</tspan></text>
+<text x="24" y="368" font-size="12" fill="#ffb3b3" class="m">ERRO thresholds on metrics 'http_req_duration' were crossed; at least one has abortOnFail enabled, stopping test prematurely</text>
+<text x="500" y="404" font-size="11.5" fill="#8f97d6" text-anchor="middle">In k6 Studio this is the “Stop test” checkbox on a threshold row.</text>
+</g></svg>

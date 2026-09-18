@@ -1,0 +1,77 @@
+<svg width="1000" height="560" viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Planned versus observed virtual users</title><desc id="d">A chart of the planned straight-line ramp against the number of virtual users k6 reported each second. Ramp-up follows the plan in whole steps; ramp-down lags the plan because k6 lets each user finish its current iteration.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="560" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">What k6 planned vs what it did, second by second</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Real run of stages 4s→2, 5s→5, 3s→0  (VUs read from the console every second)</text>
+<line x1="90" y1="380" x2="914.6" y2="380" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2"/><line x1="90" y1="380" x2="90" y2="133.60000000000002" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2"/>
+<text x="90" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">0s</text>
+<text x="152" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">1s</text>
+<text x="214" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">2s</text>
+<text x="276" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">3s</text>
+<text x="338" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">4s</text>
+<text x="400" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">5s</text>
+<text x="462" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">6s</text>
+<text x="524" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">7s</text>
+<text x="586" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">8s</text>
+<text x="648" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">9s</text>
+<text x="710" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">10s</text>
+<text x="772" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">11s</text>
+<text x="834" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">12s</text>
+<text x="896" y="398" font-size="11" fill="#8f97d6" text-anchor="middle">13s</text>
+<line x1="86" y1="380" x2="914.6" y2="380" stroke="#ffffff" stroke-opacity="0.08"/><text x="80" y="384" font-size="11" fill="#8f97d6" text-anchor="end">0</text>
+<line x1="86" y1="336" x2="914.6" y2="336" stroke="#ffffff" stroke-opacity="0.08"/><text x="80" y="340" font-size="11" fill="#8f97d6" text-anchor="end">1</text>
+<line x1="86" y1="292" x2="914.6" y2="292" stroke="#ffffff" stroke-opacity="0.08"/><text x="80" y="296" font-size="11" fill="#8f97d6" text-anchor="end">2</text>
+<line x1="86" y1="248" x2="914.6" y2="248" stroke="#ffffff" stroke-opacity="0.08"/><text x="80" y="252" font-size="11" fill="#8f97d6" text-anchor="end">3</text>
+<line x1="86" y1="204" x2="914.6" y2="204" stroke="#ffffff" stroke-opacity="0.08"/><text x="80" y="208" font-size="11" fill="#8f97d6" text-anchor="end">4</text>
+<line x1="86" y1="160" x2="914.6" y2="160" stroke="#ffffff" stroke-opacity="0.08"/><text x="80" y="164" font-size="11" fill="#8f97d6" text-anchor="end">5</text>
+<polyline points="90,336 338,292 648,160 834,380" fill="none" stroke="#ffe27a" stroke-width="3" stroke-dasharray="9 6"/>
+<line x1="152" y1="336" x2="214" y2="336" stroke="#7dffb0" stroke-width="2.5"/><line x1="214" y1="336" x2="214" y2="336" stroke="#7dffb0" stroke-width="2.5"/>
+<line x1="214" y1="336" x2="276" y2="336" stroke="#7dffb0" stroke-width="2.5"/><line x1="276" y1="336" x2="276" y2="336" stroke="#7dffb0" stroke-width="2.5"/>
+<line x1="276" y1="336" x2="338" y2="336" stroke="#7dffb0" stroke-width="2.5"/><line x1="338" y1="336" x2="338" y2="336" stroke="#7dffb0" stroke-width="2.5"/>
+<line x1="338" y1="336" x2="400" y2="336" stroke="#7dffb0" stroke-width="2.5"/><line x1="400" y1="336" x2="400" y2="292" stroke="#7dffb0" stroke-width="2.5"/>
+<line x1="400" y1="292" x2="462" y2="292" stroke="#7dffb0" stroke-width="2.5"/><line x1="462" y1="292" x2="462" y2="248" stroke="#7dffb0" stroke-width="2.5"/>
+<line x1="462" y1="248" x2="524" y2="248" stroke="#7dffb0" stroke-width="2.5"/><line x1="524" y1="248" x2="524" y2="248" stroke="#7dffb0" stroke-width="2.5"/>
+<line x1="524" y1="248" x2="586" y2="248" stroke="#7dffb0" stroke-width="2.5"/><line x1="586" y1="248" x2="586" y2="204" stroke="#7dffb0" stroke-width="2.5"/>
+<line x1="586" y1="204" x2="648" y2="204" stroke="#7dffb0" stroke-width="2.5"/><line x1="648" y1="204" x2="648" y2="204" stroke="#7dffb0" stroke-width="2.5"/>
+<line x1="648" y1="204" x2="710" y2="204" stroke="#7dffb0" stroke-width="2.5"/><line x1="710" y1="204" x2="710" y2="160" stroke="#7dffb0" stroke-width="2.5"/>
+<line x1="710" y1="160" x2="772" y2="160" stroke="#7dffb0" stroke-width="2.5"/><line x1="772" y1="160" x2="772" y2="248" stroke="#7dffb0" stroke-width="2.5"/>
+<line x1="772" y1="248" x2="834" y2="248" stroke="#7dffb0" stroke-width="2.5"/><line x1="834" y1="248" x2="834" y2="336" stroke="#7dffb0" stroke-width="2.5"/>
+<line x1="834" y1="336" x2="896" y2="336" stroke="#7dffb0" stroke-width="2.5"/><line x1="896" y1="336" x2="896" y2="336" stroke="#7dffb0" stroke-width="2.5"/>
+<circle cx="152" cy="336" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<circle cx="214" cy="336" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<circle cx="276" cy="336" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<circle cx="338" cy="336" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<circle cx="400" cy="292" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<circle cx="462" cy="248" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<circle cx="524" cy="248" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<circle cx="586" cy="204" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<circle cx="648" cy="204" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<circle cx="710" cy="160" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<circle cx="772" cy="248" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<circle cx="834" cy="336" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<circle cx="896" cy="336" r="6" fill="#7dffb0" stroke="#0b0326" stroke-width="2"/>
+<rect x="108.6" y="144.60000000000002" width="24" height="4" fill="#ffe27a"/><text x="140.6" y="150.60000000000002" font-size="12" fill="#ffe27a" font-weight="700">planned straight-line ramp</text>
+<circle cx="120.6" cy="166.60000000000002" r="6" fill="#7dffb0"/><text x="140.6" y="171.60000000000002" font-size="12" fill="#7dffb0" font-weight="700">users k6 reported each second</text>
+<text x="858.8000000000001" y="195.2" font-size="12" fill="#ffb86b" font-weight="700" text-anchor="middle">ramp-down lags</text><text x="858.8000000000001" y="210.6" font-size="11" fill="#ffb86b" text-anchor="middle">(graceful)</text>
+<rect x="24" y="410" width="300" height="134" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="44" cy="430" r="10" fill="#7afcff"/><text x="44" y="434" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="62" y="434" font-size="13" font-weight="700" fill="#7afcff">Ramp-up: whole steps</text>
+<text x="38" y="456" font-size="11.5" fill="#e6e9ff">1 → 2 → 3 → 4 → 5 users. k6 can only</text>
+<text x="38" y="472" font-size="11.5" fill="#e6e9ff">run whole users, so the straight</text>
+<text x="38" y="488" font-size="11.5" fill="#e6e9ff">plan becomes small stair-steps.</text>
+<rect x="350" y="410" width="300" height="134" rx="10" fill="#7dffb0" fill-opacity="0.12" stroke="#7dffb0" stroke-width="1.5"/>
+<circle cx="370" cy="430" r="10" fill="#7dffb0"/><text x="370" y="434" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="388" y="434" font-size="13" font-weight="700" fill="#7dffb0">Hold and peak</text>
+<text x="364" y="456" font-size="11.5" fill="#e6e9ff">The peak of 5 users is reached and</text>
+<text x="364" y="472" font-size="11.5" fill="#e6e9ff">confirmed by  vus max=5  in the</text>
+<text x="364" y="488" font-size="11.5" fill="#e6e9ff">summary.</text>
+<rect x="676" y="410" width="300" height="134" rx="10" fill="#ffb86b" fill-opacity="0.12" stroke="#ffb86b" stroke-width="1.5"/>
+<circle cx="696" cy="430" r="10" fill="#ffb86b"/><text x="696" y="434" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<text x="714" y="434" font-size="13" font-weight="700" fill="#ffb86b">Ramp-down: graceful</text>
+<text x="690" y="456" font-size="11.5" fill="#e6e9ff">Plan: 3.3 → 1.7 → 0 users. Reality:</text>
+<text x="690" y="472" font-size="11.5" fill="#e6e9ff">5 → 3 → 1 → 1. A user leaves only</text>
+<text x="690" y="488" font-size="11.5" fill="#e6e9ff">after finishing its iteration.</text>
+</g></svg>

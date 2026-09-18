@@ -1,0 +1,92 @@
+<svg width="1000" height="684" viewBox="0 0 1000 684" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Watching stages happen: the console during a ramp-up, hold and ramp-down</title><desc id="d">Watching stages happen: the console during a ramp-up, hold and ramp-down</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="684" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Watching stages happen: the console during a ramp-up, hold and ramp-down</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Real run: stages 4s → 2 VUs, 5s → 5 VUs, 3s → 0 VUs, with sleep(1) and two thresholds</text>
+<rect x="20" y="72" width="612" height="386.79999999999995" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="20" y="72" width="612" height="26" rx="10" fill="#1d1f33"/><rect x="20" y="88" width="612" height="10" fill="#1d1f33"/>
+<circle cx="40" cy="85" r="5" fill="#ff5c7a"/><circle cx="58" cy="85" r="5" fill="#ffd166"/><circle cx="76" cy="85" r="5" fill="#7dffb0"/>
+<text x="326.0" y="89" font-size="11" fill="#a9b0e8" text-anchor="middle">Terminal — real output (progress lines, one per second)</text>
+<rect x="28" y="105" width="596" height="37" rx="5" fill="#7afcff" fill-opacity="0.13" stroke="#7afcff" stroke-opacity="0.7"/>
+<rect x="28" y="154.4" width="596" height="56.0" rx="5" fill="#ffe27a" fill-opacity="0.13" stroke="#ffe27a" stroke-opacity="0.7"/>
+<rect x="28" y="211.4" width="596" height="55.99999999999997" rx="5" fill="#7dffb0" fill-opacity="0.13" stroke="#7dffb0" stroke-opacity="0.7"/>
+<rect x="28" y="268.4" width="596" height="18.0" rx="5" fill="#ff7edb" fill-opacity="0.13" stroke="#ff7edb" stroke-opacity="0.7"/>
+<rect x="28" y="287.4" width="596" height="56.0" rx="5" fill="#ffb86b" fill-opacity="0.13" stroke="#ffb86b" stroke-opacity="0.7"/>
+<rect x="28" y="355.79999999999995" width="596" height="37.0" rx="5" fill="#7afcff" fill-opacity="0.13" stroke="#7afcff" stroke-opacity="0.7"/>
+<rect x="28" y="393.79999999999995" width="596" height="18.0" rx="5" fill="#b9acff" fill-opacity="0.13" stroke="#b9acff" stroke-opacity="0.7"/>
+<rect x="28" y="412.79999999999995" width="596" height="18.0" rx="5" fill="#5ee3ff" fill-opacity="0.13" stroke="#5ee3ff" stroke-opacity="0.7"/>
+<g class="m" font-size="9.0">
+<text x="58" y="118" fill="#e6e9ff">     scenarios: (100.00%) 1 scenario, 5 max VUs, 42s max duration (incl. graceful stop):</text>
+<text x="58" y="137" fill="#e6e9ff">              * default: Up to 5 looping VUs for 12s over 3 stages (gracefulRampDown: 30s, ...)</text>
+<text x="58" y="167.4" fill="#e6e9ff">running (01.0s), 1/5 VUs,  0 complete and 0 interrupted iterations</text>
+<text x="58" y="186.4" fill="#e6e9ff">running (02.0s), 1/5 VUs,  1 complete and 0 interrupted iterations</text>
+<text x="58" y="205.4" fill="#e6e9ff">running (04.0s), 1/5 VUs,  3 complete and 0 interrupted iterations</text>
+<text x="58" y="224.4" fill="#e6e9ff">running (05.0s), 2/5 VUs,  4 complete and 0 interrupted iterations</text>
+<text x="58" y="243.4" fill="#e6e9ff">running (06.0s), 3/5 VUs,  6 complete and 0 interrupted iterations</text>
+<text x="58" y="262.4" fill="#e6e9ff">running (08.0s), 4/5 VUs, 12 complete and 0 interrupted iterations</text>
+<text x="58" y="281.4" fill="#e6e9ff">running (10.0s), 5/5 VUs, 19 complete and 0 interrupted iterations</text>
+<text x="58" y="300.4" fill="#e6e9ff">running (11.0s), 3/5 VUs, 24 complete and 0 interrupted iterations</text>
+<text x="58" y="319.4" fill="#e6e9ff">running (12.0s), 1/5 VUs, 27 complete and 0 interrupted iterations</text>
+<text x="58" y="338.4" fill="#e6e9ff">running (13.1s), 0/5 VUs, 28 complete and 0 interrupted iterations</text>
+<text x="58" y="368.79999999999995" fill="#e6e9ff">  ✓ &#x27;p(95)&lt;400&#x27; p(95)=88.09ms</text>
+<text x="58" y="387.79999999999995" fill="#e6e9ff">  ✓ &#x27;rate&lt;0.1&#x27; rate=0.00%</text>
+<text x="58" y="406.79999999999995" fill="#e6e9ff">  http_reqs......................: 28     2.14/s</text>
+<text x="58" y="425.79999999999995" fill="#e6e9ff">  vus............................: 1      min=1   max=5</text>
+</g>
+<circle cx="43" cy="123.5" r="9" fill="#7afcff"/><text x="43" y="127.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<circle cx="43" cy="182.4" r="9" fill="#ffe27a"/><text x="43" y="186.4" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<circle cx="43" cy="239.39999999999998" r="9" fill="#7dffb0"/><text x="43" y="243.39999999999998" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<circle cx="43" cy="277.4" r="9" fill="#ff7edb"/><text x="43" y="281.4" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">4</text>
+<circle cx="43" cy="315.4" r="9" fill="#ffb86b"/><text x="43" y="319.4" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">5</text>
+<circle cx="43" cy="374.29999999999995" r="9" fill="#7afcff"/><text x="43" y="378.29999999999995" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">6</text>
+<circle cx="43" cy="402.79999999999995" r="9" fill="#b9acff"/><text x="43" y="406.79999999999995" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">7</text>
+<circle cx="43" cy="421.79999999999995" r="9" fill="#5ee3ff"/><text x="43" y="425.79999999999995" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">8</text>
+<path d="M628,123.5 L658,123.5" stroke="#7afcff" stroke-width="2.5" fill="none"/><circle cx="628" cy="123.5" r="3.5" fill="#7afcff"/>
+<rect x="662" y="89.5" width="322" height="68" rx="9" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="680" cy="106.5" r="9" fill="#7afcff"/><text x="680" y="110.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="696" y="110.5" font-size="12" font-weight="700" fill="#7afcff">The plan, in one line</text>
+<text x="676" y="127.5" font-size="11" fill="#e6e9ff">“Up to 5 looping VUs for 12s over 3 stages”</text>
+<text x="676" y="142.5" font-size="11" fill="#e6e9ff">12 = 4 + 5 + 3. gracefulRampDown 30s is a limit.</text>
+<path d="M628,182.4 L658,182.4" stroke="#ffe27a" stroke-width="2.5" fill="none"/><circle cx="628" cy="182.4" r="3.5" fill="#ffe27a"/>
+<rect x="662" y="165.5" width="322" height="68" rx="9" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<circle cx="680" cy="182.5" r="9" fill="#ffe27a"/><text x="680" y="186.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="696" y="186.5" font-size="12" font-weight="700" fill="#ffe27a">Stage 1 — ramp up 1 → 2</text>
+<text x="676" y="203.5" font-size="11" fill="#e6e9ff">k6 starts from 1 VU by default and climbs</text>
+<text x="676" y="218.5" font-size="11" fill="#e6e9ff">to 2 (whole users only).</text>
+<path d="M628,239.39999999999998 L658,253.5" stroke="#7dffb0" stroke-width="2.5" fill="none"/><circle cx="628" cy="239.39999999999998" r="3.5" fill="#7dffb0"/>
+<rect x="662" y="241.5" width="322" height="53" rx="9" fill="#7dffb0" fill-opacity="0.12" stroke="#7dffb0" stroke-width="1.5"/>
+<circle cx="680" cy="258.5" r="9" fill="#7dffb0"/><text x="680" y="262.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<text x="696" y="262.5" font-size="12" font-weight="700" fill="#7dffb0">Stage 2 — ramp up 2 → 5</text>
+<text x="676" y="279.5" font-size="11" fill="#e6e9ff">Users join gradually: 2, 3, 3, 4, 4 …</text>
+<path d="M628,277.4 L658,314.5" stroke="#ff7edb" stroke-width="2.5" fill="none"/><circle cx="628" cy="277.4" r="3.5" fill="#ff7edb"/>
+<rect x="662" y="302.5" width="322" height="53" rx="9" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<circle cx="680" cy="319.5" r="9" fill="#ff7edb"/><text x="680" y="323.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">4</text>
+<text x="696" y="323.5" font-size="12" font-weight="700" fill="#ff7edb">Peak: 5 VUs</text>
+<text x="676" y="340.5" font-size="11" fill="#e6e9ff">The most users the app ever sees.</text>
+<path d="M628,315.4 L658,375.5" stroke="#ffb86b" stroke-width="2.5" fill="none"/><circle cx="628" cy="315.4" r="3.5" fill="#ffb86b"/>
+<rect x="662" y="363.5" width="322" height="68" rx="9" fill="#ffb86b" fill-opacity="0.12" stroke="#ffb86b" stroke-width="1.5"/>
+<circle cx="680" cy="380.5" r="9" fill="#ffb86b"/><text x="680" y="384.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">5</text>
+<text x="696" y="384.5" font-size="12" font-weight="700" fill="#ffb86b">Stage 3 — ramp down 5 → 0</text>
+<text x="676" y="401.5" font-size="11" fill="#e6e9ff">Users leave gradually, and only after their</text>
+<text x="676" y="416.5" font-size="11" fill="#e6e9ff">current iteration finishes (graceful).</text>
+<path d="M628,374.29999999999995 L658,451.5" stroke="#7afcff" stroke-width="2.5" fill="none"/><circle cx="628" cy="374.29999999999995" r="3.5" fill="#7afcff"/>
+<rect x="662" y="439.5" width="322" height="53" rx="9" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="680" cy="456.5" r="9" fill="#7afcff"/><text x="680" y="460.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">6</text>
+<text x="696" y="460.5" font-size="12" font-weight="700" fill="#7afcff">Thresholds held</text>
+<text x="676" y="477.5" font-size="11" fill="#e6e9ff">p(95) 88 ms &lt; 400 ms · failures 0% &lt; 10%</text>
+<path d="M628,402.79999999999995 L658,512.5" stroke="#b9acff" stroke-width="2.5" fill="none"/><circle cx="628" cy="402.79999999999995" r="3.5" fill="#b9acff"/>
+<rect x="662" y="500.5" width="322" height="53" rx="9" fill="#b9acff" fill-opacity="0.12" stroke="#b9acff" stroke-width="1.5"/>
+<circle cx="680" cy="517.5" r="9" fill="#b9acff"/><text x="680" y="521.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">7</text>
+<text x="696" y="521.5" font-size="12" font-weight="700" fill="#b9acff">28 requests in 12–13 s</text>
+<text x="676" y="538.5" font-size="11" fill="#e6e9ff">≈ area under the VU curve ÷ 1.1 s per loop.</text>
+<path d="M628,421.79999999999995 L658,573.5" stroke="#5ee3ff" stroke-width="2.5" fill="none"/><circle cx="628" cy="421.79999999999995" r="3.5" fill="#5ee3ff"/>
+<rect x="662" y="561.5" width="322" height="53" rx="9" fill="#5ee3ff" fill-opacity="0.12" stroke="#5ee3ff" stroke-width="1.5"/>
+<circle cx="680" cy="578.5" r="9" fill="#5ee3ff"/><text x="680" y="582.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">8</text>
+<text x="696" y="582.5" font-size="12" font-weight="700" fill="#5ee3ff">vus: min=1 max=5</text>
+<text x="676" y="599.5" font-size="11" fill="#e6e9ff">Confirms the peak you asked for was reached.</text>
+<rect x="20" y="640.5" width="960" height="30" rx="8" fill="#ffffff" fill-opacity="0.05"/>
+<text x="500.0" y="660.5" font-size="12" fill="#c9cdf5" text-anchor="middle">Stage 3 lags the plan a little: k6 never cuts a user off mid-iteration (gracefulRampDown)</text>
+</g></svg>

@@ -1,0 +1,63 @@
+<svg width="1000" height="620" viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">How k6 decides whether a response was expected</title><desc id="d">Every response status is compared with the expected status list. By default 200 to 399 is expected. The result tags the request expected_response true or false; false ones count towards http_req_failed.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="620" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">How k6 decides: was this response expected?</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Every HTTP response goes through the same little decision</text>
+<rect x="30" y="80" width="200" height="70" rx="12" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="2"/>
+<text x="130" y="108" font-size="14" font-weight="700" fill="#7afcff" text-anchor="middle">Response arrives</text><text x="130" y="130" font-size="12" fill="#e6e9ff" text-anchor="middle">status: 200, 404, 302 …</text>
+<path d="M232,115 L282,115" stroke="#ffffff" stroke-width="3" marker-end="url(#arr)"/>
+<polygon points="400,72 520,115 400,158 280,115" fill="#ffe27a" fill-opacity="0.13" stroke="#ffe27a" stroke-width="2"/>
+<text x="400" y="106" font-size="12.5" font-weight="700" fill="#ffe27a" text-anchor="middle">Is the status in the</text><text x="400" y="124" font-size="12.5" font-weight="700" fill="#ffe27a" text-anchor="middle">EXPECTED list?</text>
+<text x="400" y="176" font-size="11.5" fill="#c9cdf5" text-anchor="middle">default list: 200 – 399</text>
+<path d="M520,115 L588,80" stroke="#7dffb0" stroke-width="3" marker-end="url(#arr)"/><text x="536" y="84" font-size="12" fill="#7dffb0" font-weight="700">yes</text>
+<path d="M520,115 L588,152" stroke="#ff5c7a" stroke-width="3" marker-end="url(#arr)"/><text x="540" y="146" font-size="12" fill="#ff5c7a" font-weight="700">no</text>
+<rect x="596" y="56" width="374" height="46" rx="10" fill="#7dffb0" fill-opacity="0.13" stroke="#7dffb0" stroke-width="2"/><text x="783" y="84" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">tag  expected_response = true   ✓</text>
+<rect x="596" y="130" width="374" height="46" rx="10" fill="#ff5c7a" fill-opacity="0.13" stroke="#ff5c7a" stroke-width="2"/><text x="783" y="158" font-size="13" font-weight="700" fill="#ff5c7a" text-anchor="middle">tag  expected_response = false  ✗  → “failed”</text>
+<path d="M783,178 L783,212" stroke="#ff5c7a" stroke-width="3" marker-end="url(#arr)"/>
+<rect x="596" y="214" width="374" height="46" rx="10" fill="#ff7edb" fill-opacity="0.13" stroke="#ff7edb" stroke-width="2"/><text x="783" y="242" font-size="13" font-weight="700" fill="#ff7edb" text-anchor="middle">http_req_failed  =  failed ÷ total</text>
+<text x="30" y="226" font-size="15" font-weight="700" fill="#ffffff">Our three requests</text>
+<rect x="30" y="238" width="540" height="26" rx="6" fill="#ffffff" fill-opacity="0.1"/>
+<text x="42" y="256" font-size="11.5" font-weight="700" fill="#7afcff">request</text>
+<text x="300" y="256" font-size="11.5" font-weight="700" fill="#7afcff">status</text>
+<text x="356" y="256" font-size="11.5" font-weight="700" fill="#7afcff">expected?</text>
+<text x="510" y="256" font-size="11.5" font-weight="700" fill="#7afcff">failed?</text>
+<rect x="30" y="270" width="540" height="26" rx="6" fill="#7dffb0" fill-opacity="0.09"/>
+<text x="42" y="288" font-size="11" fill="#e6e9ff">GET  /</text><text x="300" y="288" font-size="12" fill="#ffffff" font-weight="700">200</text><text x="356" y="288" font-size="11.5" fill="#7dffb0" font-weight="700">✓</text><text x="510" y="288" font-size="12" fill="#7dffb0" font-weight="700">no</text>
+<rect x="30" y="300" width="540" height="26" rx="6" fill="#ff5c7a" fill-opacity="0.09"/>
+<text x="42" y="318" font-size="11" fill="#e6e9ff">GET  /does-not-exist</text><text x="300" y="318" font-size="12" fill="#ffffff" font-weight="700">404</text><text x="356" y="318" font-size="11.5" fill="#ff5c7a" font-weight="700">✗  (not in 200–399)</text><text x="510" y="318" font-size="12" fill="#ff5c7a" font-weight="700">YES</text>
+<rect x="30" y="330" width="540" height="26" rx="6" fill="#7dffb0" fill-opacity="0.09"/>
+<text x="42" y="348" font-size="11" fill="#e6e9ff">same URL + expectedStatuses(404)</text><text x="300" y="348" font-size="12" fill="#ffffff" font-weight="700">404</text><text x="356" y="348" font-size="11.5" fill="#7dffb0" font-weight="700">✓  (we said so)</text><text x="510" y="348" font-size="12" fill="#7dffb0" font-weight="700">no</text>
+<rect x="30" y="368" width="540" height="40" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb"/><text x="300" y="393" font-size="14" font-weight="700" fill="#ff7edb" text-anchor="middle">http_req_failed = 1 ÷ 3 = 33.33%   (real k6 output)</text>
+<rect x="596" y="278" width="374" height="140" rx="12" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/>
+<text x="612" y="308" font-size="13" font-weight="700" fill="#ffe27a">You decide what “expected” means</text>
+<text class="m" x="612" y="332" font-size="11"><tspan fill="#dfe3ff">http.get(url, {</tspan></text>
+<text class="m" x="612" y="348" font-size="11"><tspan fill="#dfe3ff">  responseCallback: </tspan><tspan fill="#7dffb0" font-weight="700">http.expectedStatuses(404)</tspan></text>
+<text class="m" x="612" y="364" font-size="11"><tspan fill="#dfe3ff">});   </tspan><tspan fill="#8f97d6">// this one request</tspan></text>
+<text class="m" x="612" y="388" font-size="10.5"><tspan fill="#dfe3ff">http.setResponseCallback(</tspan></text>
+<text class="m" x="612" y="402" font-size="10.5"><tspan fill="#7dffb0" font-weight="700">  http.expectedStatuses({min:200,max:299}, 404));</tspan></text>
+<text x="612" y="415" font-size="10.5" fill="#8f97d6">↑ the whole test — put it at the top of the script</text>
+<text x="30" y="440" font-size="15" font-weight="700" fill="#ffffff">Where “expected_response” shows up</text>
+<rect x="30" y="452" width="300" height="150" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<circle cx="50" cy="472" r="10" fill="#ff7edb"/><text x="50" y="476" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="68" y="476" font-size="13" font-weight="700" fill="#ff7edb">http_req_failed</text>
+<text x="44" y="498" font-size="11.5" fill="#e6e9ff">A built-in Rate metric.</text>
+<text x="44" y="514" font-size="11.5" fill="#e6e9ff">Counts requests with</text>
+<text x="44" y="530" font-size="11.5" fill="#e6e9ff">expected_response = false.</text>
+<text x="44" y="546" font-size="11.5" fill="#e6e9ff">Use it in a threshold.</text>
+<rect x="350" y="452" width="300" height="150" rx="10" fill="#7dffb0" fill-opacity="0.12" stroke="#7dffb0" stroke-width="1.5"/>
+<circle cx="370" cy="472" r="10" fill="#7dffb0"/><text x="370" y="476" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="388" y="476" font-size="13" font-weight="700" fill="#7dffb0">{ expected_response:true }</text>
+<text x="364" y="498" font-size="11.5" fill="#e6e9ff">The extra line under</text>
+<text x="364" y="514" font-size="11.5" fill="#e6e9ff">http_req_duration in the summary:</text>
+<text x="364" y="530" font-size="11.5" fill="#e6e9ff">timings of expected responses only</text>
+<text x="364" y="546" font-size="11.5" fill="#e6e9ff">— failures don’t skew it.</text>
+<rect x="670" y="452" width="300" height="150" rx="10" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<circle cx="690" cy="472" r="10" fill="#ffe27a"/><text x="690" y="476" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<text x="708" y="476" font-size="13" font-weight="700" fill="#ffe27a">Custom sub-metric threshold</text>
+<text x="684" y="498" font-size="11.5" fill="#e6e9ff">&#x27;http_req_duration{expected_response:true}&#x27;:</text>
+<text x="684" y="514" font-size="11.5" fill="#e6e9ff">  [&#x27;p(95)&lt;800&#x27;]</text>
+<text x="684" y="530" font-size="11.5" fill="#e6e9ff">judge speed on GOOD responses only.</text>
+</g></svg>

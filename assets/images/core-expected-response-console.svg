@@ -1,0 +1,61 @@
+<svg width="1000" height="511" viewBox="0 0 1000 511" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Reading the expected-response lines of the console</title><desc id="d">Reading the expected-response lines of the console</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="511" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Reading the expected-response lines of the console</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Real output: three requests — a normal page (200), a missing page (404), and the same missing page with a 404 we told k6 to expect</text>
+<rect x="20" y="72" width="612" height="166.4" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="20" y="72" width="612" height="26" rx="10" fill="#1d1f33"/><rect x="20" y="88" width="612" height="10" fill="#1d1f33"/>
+<circle cx="40" cy="85" r="5" fill="#ff5c7a"/><circle cx="58" cy="85" r="5" fill="#ffd166"/><circle cx="76" cy="85" r="5" fill="#7dffb0"/>
+<text x="326.0" y="89" font-size="11" fill="#a9b0e8" text-anchor="middle">Terminal — real output (dot leaders shortened)</text>
+<rect x="28" y="105" width="596" height="18" rx="5" fill="#ff7edb" fill-opacity="0.13" stroke="#ff7edb" stroke-opacity="0.7"/>
+<rect x="28" y="124" width="596" height="18" rx="5" fill="#7dffb0" fill-opacity="0.13" stroke="#7dffb0" stroke-opacity="0.7"/>
+<rect x="28" y="143" width="596" height="18" rx="5" fill="#ff5c7a" fill-opacity="0.13" stroke="#ff5c7a" stroke-opacity="0.7"/>
+<rect x="28" y="162" width="596" height="18" rx="5" fill="#ffe27a" fill-opacity="0.13" stroke="#ffe27a" stroke-opacity="0.7"/>
+<rect x="28" y="192.4" width="596" height="18.0" rx="5" fill="#7afcff" fill-opacity="0.13" stroke="#7afcff" stroke-opacity="0.7"/>
+<g class="m" font-size="9.0">
+<text x="58" y="118" fill="#e6e9ff">  http_req_duration...: avg=115.5ms min=71.59ms med=121.41ms max=153.49ms p(95)=150.28ms</text>
+<text x="58" y="137" fill="#e6e9ff">    { expected_response:true }: avg=96.5ms  min=71.59ms med=96.5ms   max=121.41ms p(95)=118.92ms</text>
+<text x="58" y="156" fill="#e6e9ff">  http_req_failed.....: 33.33%  1 out of 3</text>
+<text x="58" y="175" fill="#e6e9ff">  http_reqs...........: 3  3.98/s</text>
+<text x="58" y="205.4" fill="#e6e9ff">  ✓ missing page is 404 (check passes even though the request &quot;failed&quot;)</text>
+</g>
+<circle cx="43" cy="114.0" r="9" fill="#ff7edb"/><text x="43" y="118.0" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<circle cx="43" cy="133.0" r="9" fill="#7dffb0"/><text x="43" y="137.0" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<circle cx="43" cy="152.0" r="9" fill="#ff5c7a"/><text x="43" y="156.0" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<circle cx="43" cy="171.0" r="9" fill="#ffe27a"/><text x="43" y="175.0" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">4</text>
+<circle cx="43" cy="201.4" r="9" fill="#7afcff"/><text x="43" y="205.4" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">5</text>
+<path d="M628,114.0 L658,114.0" stroke="#ff7edb" stroke-width="2.5" fill="none"/><circle cx="628" cy="114.0" r="3.5" fill="#ff7edb"/>
+<rect x="662" y="84" width="322" height="68" rx="9" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<circle cx="680" cy="101" r="9" fill="#ff7edb"/><text x="680" y="105" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="696" y="105" font-size="12" font-weight="700" fill="#ff7edb">All 3 requests are timed</text>
+<text x="676" y="122" font-size="11" fill="#e6e9ff">The 200, the plain 404 and the 404 we</text>
+<text x="676" y="137" font-size="11" fill="#e6e9ff">said was expected.</text>
+<path d="M628,133.0 L658,172" stroke="#7dffb0" stroke-width="2.5" fill="none"/><circle cx="628" cy="133.0" r="3.5" fill="#7dffb0"/>
+<rect x="662" y="160" width="322" height="68" rx="9" fill="#7dffb0" fill-opacity="0.12" stroke="#7dffb0" stroke-width="1.5"/>
+<circle cx="680" cy="177" r="9" fill="#7dffb0"/><text x="680" y="181" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="696" y="181" font-size="12" font-weight="700" fill="#7dffb0">Only the EXPECTED responses</text>
+<text x="676" y="198" font-size="11" fill="#e6e9ff">2 requests: the 200 and the expected 404.</text>
+<text x="676" y="213" font-size="11" fill="#e6e9ff">The unexpected 404 is left out.</text>
+<path d="M628,152.0 L658,248" stroke="#ff5c7a" stroke-width="2.5" fill="none"/><circle cx="628" cy="152.0" r="3.5" fill="#ff5c7a"/>
+<rect x="662" y="236" width="322" height="68" rx="9" fill="#ff5c7a" fill-opacity="0.12" stroke="#ff5c7a" stroke-width="1.5"/>
+<circle cx="680" cy="253" r="9" fill="#ff5c7a"/><text x="680" y="257" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<text x="696" y="257" font-size="12" font-weight="700" fill="#ff5c7a">Failed requests: 1 of 3 = 33.33%</text>
+<text x="676" y="274" font-size="11" fill="#e6e9ff">Only the 404 k6 was NOT told to expect</text>
+<text x="676" y="289" font-size="11" fill="#e6e9ff">counts as failed.</text>
+<path d="M628,171.0 L658,324" stroke="#ffe27a" stroke-width="2.5" fill="none"/><circle cx="628" cy="171.0" r="3.5" fill="#ffe27a"/>
+<rect x="662" y="312" width="322" height="53" rx="9" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<circle cx="680" cy="329" r="9" fill="#ffe27a"/><text x="680" y="333" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">4</text>
+<text x="696" y="333" font-size="12" font-weight="700" fill="#ffe27a">3 requests in total</text>
+<text x="676" y="350" font-size="11" fill="#e6e9ff">The bottom of the failure rate:  1 failed ÷ 3 = 33.33%</text>
+<path d="M628,201.4 L658,385" stroke="#7afcff" stroke-width="2.5" fill="none"/><circle cx="628" cy="201.4" r="3.5" fill="#7afcff"/>
+<rect x="662" y="373" width="322" height="68" rx="9" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="680" cy="390" r="9" fill="#7afcff"/><text x="680" y="394" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">5</text>
+<text x="696" y="394" font-size="12" font-weight="700" fill="#7afcff">A check is a separate thing</text>
+<text x="676" y="411" font-size="11" fill="#e6e9ff">The check asks “is it a 404?” → ✓ 100%.</text>
+<text x="676" y="426" font-size="11" fill="#e6e9ff">http_req_failed still counts that 404.</text>
+<rect x="20" y="467" width="960" height="30" rx="8" fill="#ffffff" fill-opacity="0.05"/>
+<text x="500.0" y="487" font-size="12" fill="#c9cdf5" text-anchor="middle">expected_response:true = “this response was one we expected” — it filters the failed ones out</text>
+</g></svg>

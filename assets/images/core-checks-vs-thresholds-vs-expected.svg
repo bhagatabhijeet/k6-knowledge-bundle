@@ -1,0 +1,41 @@
+<svg width="1000" height="560" viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Checks, expected responses and thresholds compared</title><desc id="d">A check asserts something about one response and is reported as a pass rate. The expected-response rule classifies each HTTP response as failed or not. A threshold judges the whole test pass or fail and controls the exit code.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="560" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Three gates, three different jobs</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">They look similar — but each answers a different question</text>
+<rect x="24" y="70" width="308" height="260" rx="14" fill="#7afcff" fill-opacity="0.09" stroke="#7afcff" stroke-width="2"/>
+<text x="178" y="102" font-size="20" font-weight="700" fill="#7afcff" text-anchor="middle">check()</text>
+<text x="178" y="128" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Did THIS response look right?</text>
+<text x="40" y="164" font-size="12" fill="#e6e9ff">• You write the assertion:</text>
+<text x="40" y="192" font-size="12" fill="#e6e9ff">• status is 404, body has &quot;pizza&quot;…</text>
+<text x="40" y="220" font-size="12" fill="#e6e9ff">• Result: a pass % (the checks metric)</text>
+<text x="40" y="248" font-size="12" fill="#e6e9ff">• A failed check does NOT stop or fail the test</text>
+<rect x="40" y="286" width="276" height="30" rx="15" fill="#7afcff" fill-opacity="0.2"/><text x="178" y="306" font-size="12" font-weight="700" fill="#7afcff" text-anchor="middle">level: one response</text>
+<rect x="346" y="70" width="308" height="260" rx="14" fill="#ff7edb" fill-opacity="0.09" stroke="#ff7edb" stroke-width="2"/>
+<text x="500" y="102" font-size="20" font-weight="700" fill="#ff7edb" text-anchor="middle">Expected response</text>
+<text x="500" y="128" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Was the HTTP status acceptable?</text>
+<text x="362" y="164" font-size="12" fill="#e6e9ff">• k6 decides, using the expected list</text>
+<text x="362" y="192" font-size="12" fill="#e6e9ff">• (default 200 – 399, changeable)</text>
+<text x="362" y="220" font-size="12" fill="#e6e9ff">• Result: http_req_failed rate</text>
+<text x="362" y="248" font-size="12" fill="#e6e9ff">• Failed requests don’t stop the test either</text>
+<rect x="362" y="286" width="276" height="30" rx="15" fill="#ff7edb" fill-opacity="0.2"/><text x="500" y="306" font-size="12" font-weight="700" fill="#ff7edb" text-anchor="middle">level: one request</text>
+<rect x="668" y="70" width="308" height="260" rx="14" fill="#7dffb0" fill-opacity="0.09" stroke="#7dffb0" stroke-width="2"/>
+<text x="822" y="102" font-size="20" font-weight="700" fill="#7dffb0" text-anchor="middle">Threshold</text>
+<text x="822" y="128" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Did the WHOLE test meet its goals?</text>
+<text x="684" y="164" font-size="12" fill="#e6e9ff">• You set goals on any metric:</text>
+<text x="684" y="192" font-size="12" fill="#e6e9ff">• p(95)&lt;400, rate&lt;0.1, checks rate&gt;0.9</text>
+<text x="684" y="220" font-size="12" fill="#e6e9ff">• Result: ✓ / ✗ per goal + exit code</text>
+<text x="684" y="248" font-size="12" fill="#e6e9ff">• Any ✗ → exit code 99 (CI fails)</text>
+<rect x="684" y="286" width="276" height="30" rx="15" fill="#7dffb0" fill-opacity="0.2"/><text x="822" y="306" font-size="12" font-weight="700" fill="#7dffb0" text-anchor="middle">level: the whole run</text>
+<text x="24" y="360" font-size="15" font-weight="700" fill="#ffffff">One example, three verdicts:  GET /does-not-exist  →  404</text>
+<rect x="24" y="384" width="952" height="36" rx="8" fill="#7afcff" fill-opacity="0.09" stroke="#7afcff" stroke-opacity="0.6"/>
+<text x="40" y="407" font-size="13" font-weight="700" fill="#7afcff">check: &#x27;status is 404&#x27;</text><text x="380" y="407" font-size="13" fill="#7dffb0" font-weight="700">✓ passes  (100% of checks)</text>
+<rect x="24" y="428" width="952" height="36" rx="8" fill="#ff7edb" fill-opacity="0.09" stroke="#ff7edb" stroke-opacity="0.6"/>
+<text x="40" y="451" font-size="13" font-weight="700" fill="#ff7edb">expected response (default)</text><text x="380" y="451" font-size="13" fill="#ff5c7a" font-weight="700">✗ 404 is outside 200–399 → counts as FAILED</text>
+<rect x="24" y="472" width="952" height="36" rx="8" fill="#7dffb0" fill-opacity="0.09" stroke="#7dffb0" stroke-opacity="0.6"/>
+<text x="40" y="495" font-size="13" font-weight="700" fill="#7dffb0">threshold http_req_failed rate&lt;0.5</text><text x="380" y="495" font-size="13" fill="#7dffb0" font-weight="700">✓ 33% &lt; 50% → test passes, exit code 0</text>
+<rect x="24" y="520" width="952" height="30" rx="8" fill="#ffffff" fill-opacity="0.06"/><text x="500" y="540" font-size="12.5" fill="#e6e9ff" text-anchor="middle">Change the threshold to  rate&lt;0.1  →  33% &gt; 10%  →  ✗ crossed  →  exit code 99.  Combine all three for a trustworthy test.</text>
+</g></svg>

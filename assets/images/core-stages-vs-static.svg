@@ -1,0 +1,54 @@
+<svg width="1000" height="560" viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Static load versus stages: the area under the curve</title><desc id="d">Three virtual users for ten seconds is 30 user-seconds and produced 27 requests. The ramping test totals about 31 user-seconds and produced 28 requests. Requests are roughly the area under the curve divided by the iteration time of 1.1 seconds.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="560" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">More users for longer = more requests: the area under the curve</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Requests ≈ user-seconds ÷ time per loop (1.1 s here) — same test type, two load shapes</text>
+<rect x="24" y="66" width="470" height="330" rx="14" fill="#7afcff" fill-opacity="0.06" stroke="#7afcff" stroke-opacity="0.7"/>
+<text x="42" y="92" font-size="15" font-weight="700" fill="#7afcff">Static: vus 3, duration 10s</text>
+<text x="42" y="112" font-size="11.5" fill="#c9cdf5" class="m">shape: constant-vus — 3 looping VUs for 10s</text>
+<line x1="74" y1="340" x2="479.0" y2="340" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2"/><line x1="74" y1="340" x2="74" y2="153.0" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2"/>
+<text x="74" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">0s</text>
+<text x="134" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">2s</text>
+<text x="194" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">4s</text>
+<text x="254" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">6s</text>
+<text x="314" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">8s</text>
+<text x="374" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">10s</text>
+<text x="434" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">12s</text>
+<text x="66" y="344" font-size="10.5" fill="#8f97d6" text-anchor="end">0</text>
+<text x="66" y="310" font-size="10.5" fill="#8f97d6" text-anchor="end">1</text>
+<text x="66" y="276" font-size="10.5" fill="#8f97d6" text-anchor="end">2</text>
+<text x="66" y="242" font-size="10.5" fill="#8f97d6" text-anchor="end">3</text>
+<text x="66" y="208" font-size="10.5" fill="#8f97d6" text-anchor="end">4</text>
+<text x="66" y="174" font-size="10.5" fill="#8f97d6" text-anchor="end">5</text>
+<polygon points="74,340 74,238 374,238 374,340" fill="#7afcff" fill-opacity="0.3" stroke="#7afcff" stroke-width="3"/>
+<text x="254" y="299.2" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">area ≈ 30 user-seconds</text>
+<text x="42" y="384" font-size="12.5" fill="#e6e9ff"><tspan font-weight="700" fill="#7afcff">Real result: 27 requests</tspan>  (30 ÷ 1.12 ≈ 27)</text>
+<rect x="506" y="66" width="470" height="330" rx="14" fill="#ff7edb" fill-opacity="0.06" stroke="#ff7edb" stroke-opacity="0.7"/>
+<text x="524" y="92" font-size="15" font-weight="700" fill="#ff7edb">Stages: 4s→2 · 5s→5 · 3s→0</text>
+<text x="524" y="112" font-size="11.5" fill="#c9cdf5" class="m">shape: ramping-vus — up to 5 VUs for 12s</text>
+<line x1="556" y1="340" x2="961.0" y2="340" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2"/><line x1="556" y1="340" x2="556" y2="153.0" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2"/>
+<text x="556" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">0s</text>
+<text x="616" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">2s</text>
+<text x="676" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">4s</text>
+<text x="736" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">6s</text>
+<text x="796" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">8s</text>
+<text x="856" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">10s</text>
+<text x="916" y="356" font-size="10.5" fill="#8f97d6" text-anchor="middle">12s</text>
+<text x="548" y="344" font-size="10.5" fill="#8f97d6" text-anchor="end">0</text>
+<text x="548" y="310" font-size="10.5" fill="#8f97d6" text-anchor="end">1</text>
+<text x="548" y="276" font-size="10.5" fill="#8f97d6" text-anchor="end">2</text>
+<text x="548" y="242" font-size="10.5" fill="#8f97d6" text-anchor="end">3</text>
+<text x="548" y="208" font-size="10.5" fill="#8f97d6" text-anchor="end">4</text>
+<text x="548" y="174" font-size="10.5" fill="#8f97d6" text-anchor="end">5</text>
+<polygon points="556,340 556,306 676,272 826,170 916,340 916,340" fill="#ff7edb" fill-opacity="0.3" stroke="#ff7edb" stroke-width="3"/>
+<text x="736" y="299.2" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">area ≈ 31 user-seconds</text>
+<text x="524" y="384" font-size="12.5" fill="#e6e9ff"><tspan font-weight="700" fill="#ff7edb">Real result: 28 requests</tspan>  (31 ÷ 1.1 ≈ 28)</text>
+<rect x="24" y="410" width="952" height="132" rx="14" fill="#ffe27a" fill-opacity="0.08" stroke="#ffe27a" stroke-opacity="0.7"/>
+<text x="42" y="438" font-size="15" font-weight="700" fill="#ffe27a">Read it like this</text>
+<text x="42" y="464" font-size="13" fill="#e6e9ff">• Each user makes about one request every 1.1 s (request ≈ 0.09 s + sleep 1 s).  So requests ≈ user-seconds ÷ 1.1.</text>
+<text x="42" y="488" font-size="13" fill="#e6e9ff">• A ramp has fewer users early and late, so per second it is gentler on the system — but it reaches a higher peak (5 vs 3).</text>
+<text x="42" y="512" font-size="13" fill="#e6e9ff">• Don’t compare request counts between different load shapes; compare rates and percentiles. Static load is a good smoke test; stages model real traffic.</text>
+</g></svg>

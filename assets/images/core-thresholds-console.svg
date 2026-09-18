@@ -1,0 +1,94 @@
+<svg width="1000" height="699" viewBox="0 0 1000 699" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Reading the THRESHOLDS block: green ticks, red crosses and exit code 99</title><desc id="d">Reading the THRESHOLDS block: green ticks, red crosses and exit code 99</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="699" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Reading the THRESHOLDS block: green ticks, red crosses and exit code 99</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Real output of a 4-request test with several thresholds — one is impossible on purpose (p95 &lt; 1 ms)</text>
+<rect x="20" y="72" width="612" height="455.20000000000005" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="20" y="72" width="612" height="26" rx="10" fill="#1d1f33"/><rect x="20" y="88" width="612" height="10" fill="#1d1f33"/>
+<circle cx="40" cy="85" r="5" fill="#ff5c7a"/><circle cx="58" cy="85" r="5" fill="#ffd166"/><circle cx="76" cy="85" r="5" fill="#7dffb0"/>
+<text x="326.0" y="89" font-size="11" fill="#a9b0e8" text-anchor="middle">Terminal — real output</text>
+<rect x="28" y="135.4" width="596" height="37.0" rx="5" fill="#ff5c7a" fill-opacity="0.13" stroke="#ff5c7a" stroke-opacity="0.7"/>
+<rect x="28" y="173.4" width="596" height="56.0" rx="5" fill="#ff7edb" fill-opacity="0.13" stroke="#ff7edb" stroke-opacity="0.7"/>
+<rect x="28" y="241.8" width="596" height="37.0" rx="5" fill="#7dffb0" fill-opacity="0.13" stroke="#7dffb0" stroke-opacity="0.7"/>
+<rect x="28" y="279.8" width="596" height="37.0" rx="5" fill="#7afcff" fill-opacity="0.13" stroke="#7afcff" stroke-opacity="0.7"/>
+<rect x="28" y="317.8" width="596" height="56.0" rx="5" fill="#b9acff" fill-opacity="0.13" stroke="#b9acff" stroke-opacity="0.7"/>
+<rect x="28" y="374.8" width="596" height="37.0" rx="5" fill="#ffb86b" fill-opacity="0.13" stroke="#ffb86b" stroke-opacity="0.7"/>
+<rect x="28" y="412.8" width="596" height="37.0" rx="5" fill="#5ee3ff" fill-opacity="0.13" stroke="#5ee3ff" stroke-opacity="0.7"/>
+<rect x="28" y="462.2" width="596" height="37.0" rx="5" fill="#ff5c7a" fill-opacity="0.13" stroke="#ff5c7a" stroke-opacity="0.7"/>
+<g class="m" font-size="9.4">
+<text x="58" y="118" fill="#e6e9ff">  █ THRESHOLDS</text>
+<text x="58" y="148.4" fill="#e6e9ff">    http_req_duration</text>
+<text x="58" y="167.4" fill="#e6e9ff">    ✗ &#x27;p(95)&lt;1&#x27; p(95)=112.34ms</text>
+<text x="58" y="186.4" fill="#e6e9ff">      {name:home}</text>
+<text x="58" y="205.4" fill="#e6e9ff">      ✓ &#x27;p(95)&lt;800&#x27; p(95)=112.34ms</text>
+<text x="58" y="224.4" fill="#e6e9ff">      ✓ &#x27;avg&lt;800&#x27; avg=87.98ms</text>
+<text x="58" y="254.8" fill="#e6e9ff">    http_req_failed</text>
+<text x="58" y="273.8" fill="#e6e9ff">    ✓ &#x27;rate&lt;0.1&#x27; rate=0.00%</text>
+<text x="58" y="292.8" fill="#e6e9ff">    good_responses</text>
+<text x="58" y="311.8" fill="#e6e9ff">    ✓ &#x27;rate&gt;0.9&#x27; rate=100.00%</text>
+<text x="58" y="330.8" fill="#e6e9ff">    page_time</text>
+<text x="58" y="349.8" fill="#e6e9ff">    ✓ &#x27;med&lt;800&#x27; med=83ms</text>
+<text x="58" y="368.8" fill="#e6e9ff">    ✓ &#x27;p(99)&lt;1000&#x27; p(99)=115.98ms</text>
+<text x="58" y="387.8" fill="#e6e9ff">    pizzas_requested</text>
+<text x="58" y="406.8" fill="#e6e9ff">    ✓ &#x27;count&gt;=4&#x27; count=4</text>
+<text x="58" y="425.8" fill="#e6e9ff">    last_body_size</text>
+<text x="58" y="444.8" fill="#e6e9ff">    ✓ &#x27;value&gt;0&#x27; value=2847</text>
+<text x="58" y="475.2" fill="#e6e9ff">ERRO thresholds on metrics &#x27;http_req_duration&#x27; have been crossed</text>
+<text x="58" y="494.2" fill="#e6e9ff">(process exit code: 99)</text>
+</g>
+<circle cx="43" cy="153.9" r="9" fill="#ff5c7a"/><text x="43" y="157.9" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<circle cx="43" cy="201.4" r="9" fill="#ff7edb"/><text x="43" y="205.4" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<circle cx="43" cy="260.3" r="9" fill="#7dffb0"/><text x="43" y="264.3" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<circle cx="43" cy="298.3" r="9" fill="#7afcff"/><text x="43" y="302.3" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">4</text>
+<circle cx="43" cy="345.8" r="9" fill="#b9acff"/><text x="43" y="349.8" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">5</text>
+<circle cx="43" cy="393.3" r="9" fill="#ffb86b"/><text x="43" y="397.3" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">6</text>
+<circle cx="43" cy="431.3" r="9" fill="#5ee3ff"/><text x="43" y="435.3" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">7</text>
+<circle cx="43" cy="480.7" r="9" fill="#ff5c7a"/><text x="43" y="484.7" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">8</text>
+<path d="M628,153.9 L658,153.9" stroke="#ff5c7a" stroke-width="2.5" fill="none"/><circle cx="628" cy="153.9" r="3.5" fill="#ff5c7a"/>
+<rect x="662" y="119.9" width="322" height="68" rx="9" fill="#ff5c7a" fill-opacity="0.12" stroke="#ff5c7a" stroke-width="1.5"/>
+<circle cx="680" cy="136.9" r="9" fill="#ff5c7a"/><text x="680" y="140.9" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="696" y="140.9" font-size="12" font-weight="700" fill="#ff5c7a">✗ A failed threshold</text>
+<text x="676" y="157.9" font-size="11" fill="#e6e9ff">p(95) was 112 ms but the goal was &lt; 1 ms.</text>
+<text x="676" y="172.9" font-size="11" fill="#e6e9ff">One ✗ anywhere fails the whole test.</text>
+<path d="M628,201.4 L658,207.9" stroke="#ff7edb" stroke-width="2.5" fill="none"/><circle cx="628" cy="201.4" r="3.5" fill="#ff7edb"/>
+<rect x="662" y="195.9" width="322" height="53" rx="9" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<circle cx="680" cy="212.9" r="9" fill="#ff7edb"/><text x="680" y="216.9" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="696" y="216.9" font-size="12" font-weight="700" fill="#ff7edb">Sub-metric: only requests tagged name:home</text>
+<text x="676" y="233.9" font-size="11" fill="#e6e9ff">Two rules on one metric — BOTH must pass.</text>
+<path d="M628,260.3 L658,268.9" stroke="#7dffb0" stroke-width="2.5" fill="none"/><circle cx="628" cy="260.3" r="3.5" fill="#7dffb0"/>
+<rect x="662" y="256.9" width="322" height="53" rx="9" fill="#7dffb0" fill-opacity="0.12" stroke="#7dffb0" stroke-width="1.5"/>
+<circle cx="680" cy="273.9" r="9" fill="#7dffb0"/><text x="680" y="277.9" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<text x="696" y="277.9" font-size="12" font-weight="700" fill="#7dffb0">Built-in Rate metric</text>
+<text x="676" y="294.9" font-size="11" fill="#e6e9ff">0.00% of requests failed → under 10% → ✓</text>
+<path d="M628,298.3 L658,329.9" stroke="#7afcff" stroke-width="2.5" fill="none"/><circle cx="628" cy="298.3" r="3.5" fill="#7afcff"/>
+<rect x="662" y="317.9" width="322" height="53" rx="9" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="680" cy="334.9" r="9" fill="#7afcff"/><text x="680" y="338.9" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">4</text>
+<text x="696" y="338.9" font-size="12" font-weight="700" fill="#7afcff">Your own Rate metric</text>
+<text x="676" y="355.9" font-size="11" fill="#e6e9ff">aggregation: rate</text>
+<path d="M628,345.8 L658,390.9" stroke="#b9acff" stroke-width="2.5" fill="none"/><circle cx="628" cy="345.8" r="3.5" fill="#b9acff"/>
+<rect x="662" y="378.9" width="322" height="53" rx="9" fill="#b9acff" fill-opacity="0.12" stroke="#b9acff" stroke-width="1.5"/>
+<circle cx="680" cy="395.9" r="9" fill="#b9acff"/><text x="680" y="399.9" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">5</text>
+<text x="696" y="399.9" font-size="12" font-weight="700" fill="#b9acff">Your own Trend metric</text>
+<text x="676" y="416.9" font-size="11" fill="#e6e9ff">aggregations: med, p(99), avg, min, max…</text>
+<path d="M628,393.3 L658,451.9" stroke="#ffb86b" stroke-width="2.5" fill="none"/><circle cx="628" cy="393.3" r="3.5" fill="#ffb86b"/>
+<rect x="662" y="439.9" width="322" height="53" rx="9" fill="#ffb86b" fill-opacity="0.12" stroke="#ffb86b" stroke-width="1.5"/>
+<circle cx="680" cy="456.9" r="9" fill="#ffb86b"/><text x="680" y="460.9" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">6</text>
+<text x="696" y="460.9" font-size="12" font-weight="700" fill="#ffb86b">Your own Counter metric</text>
+<text x="676" y="477.9" font-size="11" fill="#e6e9ff">aggregations: count (or rate)</text>
+<path d="M628,431.3 L658,512.9" stroke="#5ee3ff" stroke-width="2.5" fill="none"/><circle cx="628" cy="431.3" r="3.5" fill="#5ee3ff"/>
+<rect x="662" y="500.9" width="322" height="53" rx="9" fill="#5ee3ff" fill-opacity="0.12" stroke="#5ee3ff" stroke-width="1.5"/>
+<circle cx="680" cy="517.9" r="9" fill="#5ee3ff"/><text x="680" y="521.9" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">7</text>
+<text x="696" y="521.9" font-size="12" font-weight="700" fill="#5ee3ff">Your own Gauge metric</text>
+<text x="676" y="538.9" font-size="11" fill="#e6e9ff">aggregation: value (the last value)</text>
+<path d="M628,480.7 L658,573.9" stroke="#ff5c7a" stroke-width="2.5" fill="none"/><circle cx="628" cy="480.7" r="3.5" fill="#ff5c7a"/>
+<rect x="662" y="561.9" width="322" height="68" rx="9" fill="#ff5c7a" fill-opacity="0.12" stroke="#ff5c7a" stroke-width="1.5"/>
+<circle cx="680" cy="578.9" r="9" fill="#ff5c7a"/><text x="680" y="582.9" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">8</text>
+<text x="696" y="582.9" font-size="12" font-weight="700" fill="#ff5c7a">The verdict: exit code 99</text>
+<text x="676" y="599.9" font-size="11" fill="#e6e9ff">Any crossed threshold → k6 exits with</text>
+<text x="676" y="614.9" font-size="11" fill="#e6e9ff">code 99, so CI can fail the build.</text>
+<rect x="20" y="655.9" width="960" height="30" rx="8" fill="#ffffff" fill-opacity="0.05"/>
+<text x="500.0" y="675.9" font-size="12" fill="#c9cdf5" text-anchor="middle">✓ = threshold held   ✗ = threshold crossed   —   the exit code is what a CI pipeline checks</text>
+</g></svg>
