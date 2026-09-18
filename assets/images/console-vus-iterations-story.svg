@@ -1,0 +1,96 @@
+<svg width="1000" height="520" viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Where do 27 requests come from?</title><desc id="d">Three virtual users each loop for ten seconds. Every loop is one iteration: a short request of about 0.09 seconds followed by a one second sleep, roughly 1.12 seconds in total. Three users times ten seconds divided by 1.12 is about 27 iterations, which is 27 requests.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient></defs>
+<rect width="1000" height="520" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Where do “27 requests” come from?</text>
+<text x="500" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Each row is one virtual user looping for 10 seconds (request slice enlarged for visibility)</text>
+<text x="96" y="124" font-size="13" font-weight="700" fill="#ffffff" text-anchor="end">VU 1</text>
+<rect x="110" y="100" width="800" height="36" rx="6" fill="#ffffff" fill-opacity="0.04"/>
+<rect x="110.0" y="104" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="124.0" y="110" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="199.60000000000002" y="104" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="213.60000000000002" y="110" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="289.20000000000005" y="104" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="303.20000000000005" y="110" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="378.8" y="104" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="392.8" y="110" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="468.40000000000003" y="104" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="482.40000000000003" y="110" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="558.0" y="104" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="572.0" y="110" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="647.6" y="104" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="661.6" y="110" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="737.2" y="104" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="751.2" y="110" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="826.8000000000001" y="104" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="840.8000000000001" y="110" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<text x="96" y="184" font-size="13" font-weight="700" fill="#ffffff" text-anchor="end">VU 2</text>
+<rect x="110" y="160" width="800" height="36" rx="6" fill="#ffffff" fill-opacity="0.04"/>
+<rect x="116.0" y="164" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="130.0" y="170" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="205.60000000000002" y="164" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="219.60000000000002" y="170" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="295.20000000000005" y="164" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="309.20000000000005" y="170" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="384.8" y="164" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="398.8" y="170" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="474.40000000000003" y="164" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="488.40000000000003" y="170" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="564.0" y="164" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="578.0" y="170" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="653.6" y="164" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="667.6" y="170" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="743.2" y="164" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="757.2" y="170" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<text x="96" y="244" font-size="13" font-weight="700" fill="#ffffff" text-anchor="end">VU 3</text>
+<rect x="110" y="220" width="800" height="36" rx="6" fill="#ffffff" fill-opacity="0.04"/>
+<rect x="122.0" y="224" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="136.0" y="230" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="211.60000000000002" y="224" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="225.60000000000002" y="230" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="301.20000000000005" y="224" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="315.20000000000005" y="230" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="390.8" y="224" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="404.8" y="230" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="480.40000000000003" y="224" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="494.40000000000003" y="230" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="570.0" y="224" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="584.0" y="230" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="659.6" y="224" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="673.6" y="230" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<rect x="749.2" y="224" width="14" height="28" rx="3" fill="#ff7edb"/>
+<rect x="763.2" y="230" width="74.0" height="16" rx="3" fill="#a9b0e8" fill-opacity="0.35"/>
+<line x1="110" y1="276" x2="910" y2="276" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2"/>
+<line x1="110" y1="270" x2="110" y2="282" stroke="#ffffff" stroke-opacity="0.4"/><text x="110" y="298" font-size="11" fill="#8f97d6" text-anchor="middle">0s</text>
+<line x1="270" y1="270" x2="270" y2="282" stroke="#ffffff" stroke-opacity="0.4"/><text x="270" y="298" font-size="11" fill="#8f97d6" text-anchor="middle">2s</text>
+<line x1="430" y1="270" x2="430" y2="282" stroke="#ffffff" stroke-opacity="0.4"/><text x="430" y="298" font-size="11" fill="#8f97d6" text-anchor="middle">4s</text>
+<line x1="590" y1="270" x2="590" y2="282" stroke="#ffffff" stroke-opacity="0.4"/><text x="590" y="298" font-size="11" fill="#8f97d6" text-anchor="middle">6s</text>
+<line x1="750" y1="270" x2="750" y2="282" stroke="#ffffff" stroke-opacity="0.4"/><text x="750" y="298" font-size="11" fill="#8f97d6" text-anchor="middle">8s</text>
+<line x1="910" y1="270" x2="910" y2="282" stroke="#ffffff" stroke-opacity="0.4"/><text x="910" y="298" font-size="11" fill="#8f97d6" text-anchor="middle">10s</text>
+<rect x="110" y="316" width="14" height="14" rx="3" fill="#ff7edb"/><text x="130" y="328" font-size="12" fill="#ff7edb" font-weight="700">http.get() ≈ 0.09 s  (http_req_duration)</text>
+<rect x="420" y="316" width="30" height="14" rx="3" fill="#a9b0e8" fill-opacity="0.35"/><text x="458" y="328" font-size="12" fill="#a9b0e8" font-weight="700">sleep(1) = 1 s  (think time)</text>
+<text x="710" y="328" font-size="12" fill="#ffb86b" font-weight="700">one block = one iteration ≈ 1.12 s</text>
+<rect x="30" y="350" width="300" height="150" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="50" cy="370" r="10" fill="#7afcff"/><text x="50" y="374" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="68" y="374" font-size="13" font-weight="700" fill="#7afcff">Iteration length</text>
+<text x="44" y="396" font-size="11.5" fill="#e6e9ff">request ≈ 0.09 s</text>
+<text x="44" y="412" font-size="11.5" fill="#e6e9ff">+ sleep(1) = 1 s</text>
+<text x="44" y="428" font-size="11.5" fill="#e6e9ff">≈ 1.12 s per loop</text>
+<text x="44" y="444" font-size="11.5" fill="#e6e9ff">→ iteration_duration avg = 1.12s</text>
+<rect x="350" y="350" width="300" height="150" rx="10" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<circle cx="370" cy="370" r="10" fill="#ffe27a"/><text x="370" y="374" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="388" y="374" font-size="13" font-weight="700" fill="#ffe27a">Loops in 10 seconds</text>
+<text x="364" y="396" font-size="11.5" fill="#e6e9ff">10 s ÷ 1.12 s ≈ 9 loops per user</text>
+<text x="364" y="412" font-size="11.5" fill="#e6e9ff">× 3 users</text>
+<text x="364" y="428" font-size="11.5" fill="#e6e9ff">≈ 27 iterations</text>
+<text x="364" y="444" font-size="11.5" fill="#e6e9ff">→ iterations: 27</text>
+<rect x="670" y="350" width="300" height="150" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<circle cx="690" cy="370" r="10" fill="#ff7edb"/><text x="690" y="374" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<text x="708" y="374" font-size="13" font-weight="700" fill="#ff7edb">One request per loop</text>
+<text x="684" y="396" font-size="11.5" fill="#e6e9ff">The default function makes</text>
+<text x="684" y="412" font-size="11.5" fill="#e6e9ff">exactly one http.get().</text>
+<text x="684" y="428" font-size="11.5" fill="#e6e9ff">27 loops = 27 requests</text>
+<text x="684" y="444" font-size="11.5" fill="#e6e9ff">→ http_reqs: 27</text>
+</g></svg>

@@ -1,0 +1,171 @@
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Why not just use the average?</title><desc id="d">Two examples. First, 99 requests at 250 milliseconds and one at 5 seconds: the average is nudged up but the 95th percentile stays at 250. Second, 10 fast and 10 slow requests: the average of 1.1 seconds describes nobody, while the 95th percentile shows the slow group.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient></defs>
+<rect width="1000" height="600" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">“Why can’t I just use the average?”</text>
+<rect x="24" y="52" width="470" height="530" rx="14" fill="#7afcff" fill-opacity="0.06" stroke="#7afcff" stroke-opacity="0.7"/>
+<text x="42" y="80" font-size="15" font-weight="700" fill="#7afcff">Example A — one freak request in 100</text>
+<text x="42" y="100" font-size="12" fill="#c9cdf5">Each square is one request.</text>
+<rect x="42" y="116" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="60" y="116" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="78" y="116" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="96" y="116" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="114" y="116" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="132" y="116" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="150" y="116" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="168" y="116" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="186" y="116" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="204" y="116" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="42" y="134" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="60" y="134" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="78" y="134" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="96" y="134" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="114" y="134" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="132" y="134" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="150" y="134" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="168" y="134" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="186" y="134" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="204" y="134" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="42" y="152" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="60" y="152" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="78" y="152" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="96" y="152" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="114" y="152" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="132" y="152" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="150" y="152" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="168" y="152" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="186" y="152" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="204" y="152" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="42" y="170" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="60" y="170" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="78" y="170" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="96" y="170" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="114" y="170" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="132" y="170" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="150" y="170" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="168" y="170" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="186" y="170" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="204" y="170" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="42" y="188" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="60" y="188" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="78" y="188" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="96" y="188" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="114" y="188" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="132" y="188" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="150" y="188" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="168" y="188" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="186" y="188" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="204" y="188" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="42" y="206" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="60" y="206" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="78" y="206" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="96" y="206" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="114" y="206" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="132" y="206" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="150" y="206" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="168" y="206" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="186" y="206" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="204" y="206" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="42" y="224" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="60" y="224" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="78" y="224" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="96" y="224" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="114" y="224" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="132" y="224" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="150" y="224" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="168" y="224" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="186" y="224" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="204" y="224" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="42" y="242" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="60" y="242" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="78" y="242" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="96" y="242" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="114" y="242" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="132" y="242" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="150" y="242" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="168" y="242" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="186" y="242" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="204" y="242" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="42" y="260" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="60" y="260" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="78" y="260" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="96" y="260" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="114" y="260" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="132" y="260" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="150" y="260" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="168" y="260" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="186" y="260" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="204" y="260" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="42" y="278" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="60" y="278" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="78" y="278" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="96" y="278" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="114" y="278" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="132" y="278" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="150" y="278" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="168" y="278" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="186" y="278" width="15" height="15" rx="3" fill="#7afcff" fill-opacity="0.85"/>
+<rect x="204" y="278" width="15" height="15" rx="3" fill="#ff5c7a" fill-opacity="0.85"/>
+<text x="260" y="140" font-size="12" fill="#7afcff" font-weight="700">■ 99 requests · 250 ms</text>
+<text x="260" y="162" font-size="12" fill="#ff5c7a" font-weight="700">■ 1 request · 5000 ms</text>
+<text x="260" y="184" font-size="11" fill="#c9cdf5">(a one-off network hiccup)</text>
+<rect x="42" y="316" width="434" height="102" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="42" y="316" width="434" height="26" rx="10" fill="#1d1f33"/><rect x="42" y="332" width="434" height="10" fill="#1d1f33"/>
+<circle cx="62" cy="329" r="5" fill="#ff5c7a"/><circle cx="80" cy="329" r="5" fill="#ffd166"/><circle cx="98" cy="329" r="5" fill="#7dffb0"/>
+<text x="259.0" y="333" font-size="11" fill="#a9b0e8" text-anchor="middle">Real k6 output</text>
+<g class="m" font-size="11.5">
+<text x="56" y="362" fill="#e6e9ff">avg=<tspan fill="#ff5c7a" font-weight="700">297.5ms</tspan>  med=250ms  max=5s</text>
+<text x="56" y="382" fill="#e6e9ff">p(90)=<tspan fill="#7dffb0" font-weight="700">250ms</tspan>  p(95)=<tspan fill="#7dffb0" font-weight="700">250ms</tspan></text>
+</g>
+<text x="42" y="446" font-size="12.5" fill="#e6e9ff"><tspan font-weight="700" fill="#ff5c7a">Average:</tspan> 297.5 ms — pushed up 19% by ONE request,</text>
+<text x="42" y="464" font-size="12.5" fill="#e6e9ff">so it looks worse than the app really is.</text>
+<text x="42" y="490" font-size="12.5" fill="#e6e9ff"><tspan font-weight="700" fill="#7dffb0">p(95):</tspan> 250 ms — ignores the slowest 5%, so it shows</text>
+<text x="42" y="508" font-size="12.5" fill="#e6e9ff">how the app behaves for almost everyone.</text>
+<text x="42" y="540" font-size="12" font-weight="700" fill="#ffe27a">Takeaway: percentiles are not thrown off by rare glitches.</text>
+<rect x="506" y="52" width="470" height="530" rx="14" fill="#ff7edb" fill-opacity="0.06" stroke="#ff7edb" stroke-opacity="0.7"/>
+<text x="524" y="80" font-size="15" font-weight="700" fill="#ff7edb">Example B — half fast, half slow</text>
+<text x="524" y="100" font-size="12" fill="#c9cdf5">20 requests: 10 quick, 10 sluggish.</text>
+<rect x="524" y="116" width="15" height="15" rx="3" fill="#7dffb0" fill-opacity="0.85"/>
+<rect x="542" y="116" width="15" height="15" rx="3" fill="#7dffb0" fill-opacity="0.85"/>
+<rect x="560" y="116" width="15" height="15" rx="3" fill="#7dffb0" fill-opacity="0.85"/>
+<rect x="578" y="116" width="15" height="15" rx="3" fill="#7dffb0" fill-opacity="0.85"/>
+<rect x="596" y="116" width="15" height="15" rx="3" fill="#7dffb0" fill-opacity="0.85"/>
+<rect x="614" y="116" width="15" height="15" rx="3" fill="#7dffb0" fill-opacity="0.85"/>
+<rect x="632" y="116" width="15" height="15" rx="3" fill="#7dffb0" fill-opacity="0.85"/>
+<rect x="650" y="116" width="15" height="15" rx="3" fill="#7dffb0" fill-opacity="0.85"/>
+<rect x="668" y="116" width="15" height="15" rx="3" fill="#7dffb0" fill-opacity="0.85"/>
+<rect x="686" y="116" width="15" height="15" rx="3" fill="#7dffb0" fill-opacity="0.85"/>
+<rect x="524" y="134" width="15" height="15" rx="3" fill="#ff5c7a" fill-opacity="0.85"/>
+<rect x="542" y="134" width="15" height="15" rx="3" fill="#ff5c7a" fill-opacity="0.85"/>
+<rect x="560" y="134" width="15" height="15" rx="3" fill="#ff5c7a" fill-opacity="0.85"/>
+<rect x="578" y="134" width="15" height="15" rx="3" fill="#ff5c7a" fill-opacity="0.85"/>
+<rect x="596" y="134" width="15" height="15" rx="3" fill="#ff5c7a" fill-opacity="0.85"/>
+<rect x="614" y="134" width="15" height="15" rx="3" fill="#ff5c7a" fill-opacity="0.85"/>
+<rect x="632" y="134" width="15" height="15" rx="3" fill="#ff5c7a" fill-opacity="0.85"/>
+<rect x="650" y="134" width="15" height="15" rx="3" fill="#ff5c7a" fill-opacity="0.85"/>
+<rect x="668" y="134" width="15" height="15" rx="3" fill="#ff5c7a" fill-opacity="0.85"/>
+<rect x="686" y="134" width="15" height="15" rx="3" fill="#ff5c7a" fill-opacity="0.85"/>
+<text x="524" y="178" font-size="12" fill="#7dffb0" font-weight="700">■ 10 requests · 200 ms</text>
+<text x="524" y="198" font-size="12" fill="#ff5c7a" font-weight="700">■ 10 requests · 2000 ms</text>
+<line x1="524" y1="252" x2="944" y2="252" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3"/>
+<circle cx="524.0" cy="252" r="6" fill="#7dffb0"/><text x="524.0" y="274" font-size="11" fill="#7dffb0" text-anchor="middle">200</text>
+<circle cx="924.0" cy="252" r="6" fill="#ff5c7a"/><text x="924.0" y="274" font-size="11" fill="#ff5c7a" text-anchor="middle">2000</text>
+<line x1="724.0" y1="252" x2="724.0" y2="234" stroke="#7afcff" stroke-width="3"/><circle cx="724.0" cy="252" r="6" fill="#7afcff"/>
+<text x="724.0" y="228" font-size="12" font-weight="700" fill="#7afcff" text-anchor="middle">avg = med = 1100 ms</text>
+<text x="724.0" y="296" font-size="11.5" fill="#7afcff" text-anchor="middle">nobody actually waited this long!</text>
+<rect x="524" y="316" width="434" height="102" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="524" y="316" width="434" height="26" rx="10" fill="#1d1f33"/><rect x="524" y="332" width="434" height="10" fill="#1d1f33"/>
+<circle cx="544" cy="329" r="5" fill="#ff5c7a"/><circle cx="562" cy="329" r="5" fill="#ffd166"/><circle cx="580" cy="329" r="5" fill="#7dffb0"/>
+<text x="741.0" y="333" font-size="11" fill="#a9b0e8" text-anchor="middle">Real k6 output</text>
+<g class="m" font-size="11.5">
+<text x="538" y="362" fill="#e6e9ff">avg=<tspan fill="#7afcff" font-weight="700">1.1s</tspan>  med=<tspan fill="#7afcff" font-weight="700">1.1s</tspan>  max=2s</text>
+<text x="538" y="382" fill="#e6e9ff">p(90)=<tspan fill="#ff5c7a" font-weight="700">2s</tspan>  p(95)=<tspan fill="#ff5c7a" font-weight="700">2s</tspan></text>
+</g>
+<text x="524" y="446" font-size="12.5" fill="#e6e9ff"><tspan font-weight="700" fill="#7afcff">Average / median:</tspan> 1.1 s — a “typical” time that no</text>
+<text x="524" y="464" font-size="12.5" fill="#e6e9ff">user ever experienced. Looks fine.</text>
+<text x="524" y="490" font-size="12.5" fill="#e6e9ff"><tspan font-weight="700" fill="#ff5c7a">p(90) / p(95):</tspan> 2 s — exposes that half your users</text>
+<text x="524" y="508" font-size="12.5" fill="#e6e9ff">wait ten times longer than the others.</text>
+<text x="524" y="540" font-size="12" font-weight="700" fill="#ffe27a">Takeaway: averages can hide a whole group of unhappy users.</text>
+</g></svg>

@@ -1,0 +1,48 @@
+<svg width="1000" height="470" viewBox="0 0 1000 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">The k6 run header explained</title><desc id="d">The scenarios line of the k6 console: one scenario, 3 max VUs, 40 seconds max duration including a 30 second graceful stop, and 3 looping VUs for 10 seconds. A timeline shows 10 seconds of testing plus up to 30 seconds of graceful stop.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient></defs>
+<rect width="1000" height="470" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Reading the header: “how long will this take?”</text>
+<rect x="30" y="52" width="940" height="112" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="30" y="52" width="940" height="26" rx="10" fill="#1d1f33"/><rect x="30" y="68" width="940" height="10" fill="#1d1f33"/>
+<circle cx="50" cy="65" r="5" fill="#ff5c7a"/><circle cx="68" cy="65" r="5" fill="#ffd166"/><circle cx="86" cy="65" r="5" fill="#7dffb0"/>
+<text x="500.0" y="69" font-size="11" fill="#a9b0e8" text-anchor="middle">Terminal</text>
+<g class="m" font-size="13.5">
+<text x="50" y="98" fill="#8f97d6">     scenarios: <tspan fill="#7afcff" font-weight="700">(100.00%) 1 scenario</tspan>, <tspan fill="#ff7edb" font-weight="700">3 max VUs</tspan>, <tspan fill="#ffb86b" font-weight="700">40s max duration (incl. graceful stop)</tspan>:</text>
+<text x="50" y="126" fill="#8f97d6">              * default: <tspan fill="#7dffb0" font-weight="700">3 looping VUs</tspan> <tspan fill="#ffe27a" font-weight="700">for 10s</tspan> <tspan fill="#b9acff" font-weight="700">(gracefulStop: 30s)</tspan></text>
+</g>
+<rect x="30" y="180" width="300" height="84" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<text x="44" y="204" font-size="13" font-weight="700" fill="#7afcff">1 scenario</text>
+<text x="44" y="226" font-size="11.5" fill="#e6e9ff">Your script has one load plan.</text>
+<text x="44" y="242" font-size="11.5" fill="#e6e9ff">(100.00%) = all of it is one scenario.</text>
+<rect x="350" y="180" width="300" height="84" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<text x="364" y="204" font-size="13" font-weight="700" fill="#ff7edb">3 max VUs</text>
+<text x="364" y="226" font-size="11.5" fill="#e6e9ff">At most 3 virtual users at once.</text>
+<text x="364" y="242" font-size="11.5" fill="#e6e9ff">From options: vus: 3</text>
+<rect x="670" y="180" width="300" height="84" rx="10" fill="#7dffb0" fill-opacity="0.12" stroke="#7dffb0" stroke-width="1.5"/>
+<text x="684" y="204" font-size="13" font-weight="700" fill="#7dffb0">3 looping VUs</text>
+<text x="684" y="226" font-size="11.5" fill="#e6e9ff">Each user repeats the default</text>
+<text x="684" y="242" font-size="11.5" fill="#e6e9ff">function again and again.</text>
+<rect x="30" y="274" width="300" height="84" rx="10" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<text x="44" y="298" font-size="13" font-weight="700" fill="#ffe27a">for 10s</text>
+<text x="44" y="320" font-size="11.5" fill="#e6e9ff">How long they keep looping.</text>
+<text x="44" y="336" font-size="11.5" fill="#e6e9ff">From options: duration: &#x27;10s&#x27;</text>
+<rect x="350" y="274" width="300" height="84" rx="10" fill="#b9acff" fill-opacity="0.12" stroke="#b9acff" stroke-width="1.5"/>
+<text x="364" y="298" font-size="13" font-weight="700" fill="#b9acff">gracefulStop: 30s</text>
+<text x="364" y="320" font-size="11.5" fill="#e6e9ff">After 10s, users mid-request get</text>
+<text x="364" y="336" font-size="11.5" fill="#e6e9ff">up to 30s to finish (default).</text>
+<rect x="670" y="274" width="300" height="84" rx="10" fill="#ffb86b" fill-opacity="0.12" stroke="#ffb86b" stroke-width="1.5"/>
+<text x="684" y="298" font-size="13" font-weight="700" fill="#ffb86b">40s max duration</text>
+<text x="684" y="320" font-size="11.5" fill="#e6e9ff">10s test + 30s graceful stop.</text>
+<text x="684" y="336" font-size="11.5" fill="#e6e9ff">The worst-case ceiling.</text>
+<text x="30" y="386" font-size="13" font-weight="700" fill="#ffffff">On a clock</text>
+<rect x="30" y="396" width="235.0" height="26" rx="6" fill="#7dffb0" fill-opacity="0.3" stroke="#7dffb0"/>
+<text x="147.5" y="414" font-size="11.5" font-weight="700" fill="#7dffb0" text-anchor="middle">0 – 10s: 3 VUs loop</text>
+<rect x="265.0" y="396" width="705.0" height="26" rx="6" fill="#b9acff" fill-opacity="0.15" stroke="#b9acff" stroke-dasharray="5 4"/>
+<text x="617.5" y="414" font-size="11.5" fill="#b9acff" text-anchor="middle">10 – 40s: graceful-stop window (only used if someone is still mid-request)</text>
+<path d="M267.35,392 L267.35,430" stroke="#ff5c7a" stroke-width="2.5"/>
+<text x="275.35" y="446" font-size="11.5" font-weight="700" fill="#ff5c7a">← this run actually finished at 10.1s</text>
+<text x="500" y="462" font-size="11" fill="#8f97d6" text-anchor="middle">40s is a safety ceiling, not a wait. Most runs end just after the duration.</text>
+</g></svg>

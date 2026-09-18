@@ -1,0 +1,72 @@
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Reading the http_req_duration line</title><desc id="d">The http_req_duration line of the k6 summary with six statistics colour-coded: average, minimum, median, maximum, 90th and 95th percentile, each explained, and placed on a number line from 60 to 120 milliseconds.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient></defs>
+<rect width="1000" height="600" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">The most important line: how long did each request take?</text>
+<rect x="30" y="50" width="940" height="86" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="30" y="50" width="940" height="26" rx="10" fill="#1d1f33"/><rect x="30" y="66" width="940" height="10" fill="#1d1f33"/>
+<circle cx="50" cy="63" r="5" fill="#ff5c7a"/><circle cx="68" cy="63" r="5" fill="#ffd166"/><circle cx="86" cy="63" r="5" fill="#7dffb0"/>
+<text x="500.0" y="67" font-size="11" fill="#a9b0e8" text-anchor="middle">Terminal</text>
+<g class="m" font-size="12.5">
+<text x="46" y="94" fill="#e6e9ff">http_req_duration..............: <tspan fill="#7afcff" font-weight="700">avg=93.16ms</tspan> <tspan fill="#7dffb0" font-weight="700">min=63.56ms</tspan> <tspan fill="#ffe27a" font-weight="700">med=98.67ms</tspan> <tspan fill="#ff5c7a" font-weight="700">max=117.05ms</tspan> <tspan fill="#ffb86b" font-weight="700">p(90)=106.01ms</tspan> <tspan fill="#ff7edb" font-weight="700">p(95)=112.21ms</tspan></text>
+<text x="46" y="118" fill="#8f97d6">http_reqs......................: 27  ← 27 requests were timed to produce these six numbers</text>
+</g>
+<text x="30" y="166" font-size="13" font-weight="700" fill="#ffffff">The same six numbers on a ruler (milliseconds)</text>
+<line x1="60" y1="230" x2="940" y2="230" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3"/>
+<line x1="60.0" y1="224" x2="60.0" y2="236" stroke="#ffffff" stroke-opacity="0.4"/><text x="60.0" y="252" font-size="10.5" fill="#8f97d6" text-anchor="middle">60</text>
+<line x1="206.66666666666666" y1="224" x2="206.66666666666666" y2="236" stroke="#ffffff" stroke-opacity="0.4"/><text x="206.66666666666666" y="252" font-size="10.5" fill="#8f97d6" text-anchor="middle">70</text>
+<line x1="353.3333333333333" y1="224" x2="353.3333333333333" y2="236" stroke="#ffffff" stroke-opacity="0.4"/><text x="353.3333333333333" y="252" font-size="10.5" fill="#8f97d6" text-anchor="middle">80</text>
+<line x1="500.0" y1="224" x2="500.0" y2="236" stroke="#ffffff" stroke-opacity="0.4"/><text x="500.0" y="252" font-size="10.5" fill="#8f97d6" text-anchor="middle">90</text>
+<line x1="646.6666666666666" y1="224" x2="646.6666666666666" y2="236" stroke="#ffffff" stroke-opacity="0.4"/><text x="646.6666666666666" y="252" font-size="10.5" fill="#8f97d6" text-anchor="middle">100</text>
+<line x1="793.3333333333334" y1="224" x2="793.3333333333334" y2="236" stroke="#ffffff" stroke-opacity="0.4"/><text x="793.3333333333334" y="252" font-size="10.5" fill="#8f97d6" text-anchor="middle">110</text>
+<line x1="940.0" y1="224" x2="940.0" y2="236" stroke="#ffffff" stroke-opacity="0.4"/><text x="940.0" y="252" font-size="10.5" fill="#8f97d6" text-anchor="middle">120</text>
+<line x1="112.21333333333337" y1="230" x2="112.21333333333337" y2="196" stroke="#7dffb0" stroke-width="3"/><circle cx="112.21333333333337" cy="230" r="6" fill="#7dffb0"/>
+<text x="112.21333333333337" y="188" font-size="12" font-weight="700" fill="#7dffb0" text-anchor="middle">min</text><text x="112.21333333333337" y="176" font-size="10.5" fill="#7dffb0" text-anchor="middle">63.56</text>
+<line x1="546.3466666666666" y1="230" x2="546.3466666666666" y2="270" stroke="#7afcff" stroke-width="3"/><circle cx="546.3466666666666" cy="230" r="6" fill="#7afcff"/>
+<text x="546.3466666666666" y="284" font-size="12" font-weight="700" fill="#7afcff" text-anchor="middle">avg</text><text x="546.3466666666666" y="297" font-size="10.5" fill="#7afcff" text-anchor="middle">93.16</text>
+<line x1="627.1600000000001" y1="230" x2="627.1600000000001" y2="196" stroke="#ffe27a" stroke-width="3"/><circle cx="627.1600000000001" cy="230" r="6" fill="#ffe27a"/>
+<text x="627.1600000000001" y="188" font-size="12" font-weight="700" fill="#ffe27a" text-anchor="middle">med</text><text x="627.1600000000001" y="176" font-size="10.5" fill="#ffe27a" text-anchor="middle">98.67</text>
+<line x1="734.8133333333334" y1="230" x2="734.8133333333334" y2="270" stroke="#ffb86b" stroke-width="3"/><circle cx="734.8133333333334" cy="230" r="6" fill="#ffb86b"/>
+<text x="734.8133333333334" y="284" font-size="12" font-weight="700" fill="#ffb86b" text-anchor="middle">p(90)</text><text x="734.8133333333334" y="297" font-size="10.5" fill="#ffb86b" text-anchor="middle">106.01</text>
+<line x1="825.7466666666666" y1="230" x2="825.7466666666666" y2="196" stroke="#ff7edb" stroke-width="3"/><circle cx="825.7466666666666" cy="230" r="6" fill="#ff7edb"/>
+<text x="825.7466666666666" y="188" font-size="12" font-weight="700" fill="#ff7edb" text-anchor="middle">p(95)</text><text x="825.7466666666666" y="176" font-size="10.5" fill="#ff7edb" text-anchor="middle">112.21</text>
+<line x1="896.7333333333333" y1="230" x2="896.7333333333333" y2="270" stroke="#ff5c7a" stroke-width="3"/><circle cx="896.7333333333333" cy="230" r="6" fill="#ff5c7a"/>
+<text x="896.7333333333333" y="284" font-size="12" font-weight="700" fill="#ff5c7a" text-anchor="middle">max</text><text x="896.7333333333333" y="297" font-size="10.5" fill="#ff5c7a" text-anchor="middle">117.05</text>
+<text x="112.21333333333337" y="264" font-size="10.5" fill="#7dffb0" text-anchor="middle">← best</text>
+<text x="896.7333333333333" y="264" font-size="10.5" fill="#ff5c7a" text-anchor="middle">worst →</text>
+<rect x="30" y="316" width="300" height="96" rx="10" fill="#7dffb0" fill-opacity="0.12" stroke="#7dffb0" stroke-width="1.5"/>
+<text x="44" y="340" font-size="13" font-weight="700" fill="#7dffb0">min = the best request</text>
+<text x="44" y="362" font-size="11.5" fill="#e6e9ff">The single fastest of the 27.</text>
+<text x="44" y="378" font-size="11.5" fill="#e6e9ff">Nice to know, but a lucky outlier —</text>
+<text x="44" y="394" font-size="11.5" fill="#e6e9ff">not what users typically get.</text>
+<rect x="350" y="316" width="300" height="96" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<text x="364" y="340" font-size="13" font-weight="700" fill="#7afcff">avg = the mean</text>
+<text x="364" y="362" font-size="11.5" fill="#e6e9ff">Add all 27, divide by 27.</text>
+<text x="364" y="378" font-size="11.5" fill="#e6e9ff">One very slow request drags it up,</text>
+<text x="364" y="394" font-size="11.5" fill="#e6e9ff">so it can hide the real picture.</text>
+<rect x="670" y="316" width="300" height="96" rx="10" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<text x="684" y="340" font-size="13" font-weight="700" fill="#ffe27a">med = the middle</text>
+<text x="684" y="362" font-size="11.5" fill="#e6e9ff">Sort the 27 → take the middle one.</text>
+<text x="684" y="378" font-size="11.5" fill="#e6e9ff">Half were faster, half were slower.</text>
+<text x="684" y="394" font-size="11.5" fill="#e6e9ff">A steadier “typical” than average.</text>
+<rect x="30" y="422" width="300" height="96" rx="10" fill="#ffb86b" fill-opacity="0.12" stroke="#ffb86b" stroke-width="1.5"/>
+<text x="44" y="446" font-size="13" font-weight="700" fill="#ffb86b">p(90) = 90th percentile</text>
+<text x="44" y="468" font-size="11.5" fill="#e6e9ff">90% of requests took this long</text>
+<text x="44" y="484" font-size="11.5" fill="#e6e9ff">or less. Only the slowest 10% took</text>
+<text x="44" y="500" font-size="11.5" fill="#e6e9ff">longer.</text>
+<rect x="350" y="422" width="300" height="96" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<text x="364" y="446" font-size="13" font-weight="700" fill="#ff7edb">p(95) = 95th percentile ★</text>
+<text x="364" y="468" font-size="11.5" fill="#e6e9ff">95% of requests took this long or</text>
+<text x="364" y="484" font-size="11.5" fill="#e6e9ff">less. The favourite benchmark for</text>
+<text x="364" y="500" font-size="11.5" fill="#e6e9ff">judging how healthy an app is.</text>
+<rect x="670" y="422" width="300" height="96" rx="10" fill="#ff5c7a" fill-opacity="0.12" stroke="#ff5c7a" stroke-width="1.5"/>
+<text x="684" y="446" font-size="13" font-weight="700" fill="#ff5c7a">max = the worst request</text>
+<text x="684" y="468" font-size="11.5" fill="#e6e9ff">The single slowest of the 27.</text>
+<text x="684" y="484" font-size="11.5" fill="#e6e9ff">Useful to see how bad a bad</text>
+<text x="684" y="500" font-size="11.5" fill="#e6e9ff">moment was.</text>
+<rect x="30" y="532" width="940" height="52" rx="10" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.15"/>
+<text x="46" y="553" font-size="12.5" fill="#e6e9ff"><tspan font-weight="700" fill="#ffe27a">What is being timed?</tspan>  http_req_duration = time sending the request + waiting for the server + receiving the response.</text>
+<text x="46" y="572" font-size="12" fill="#a9b0e8">Per the k6 docs it excludes the one-off DNS lookup and connection set-up. It is the “end to end” time of one request.</text>
+</g></svg>

@@ -1,0 +1,109 @@
+<svg width="1000" height="640" viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">How a percentile is calculated</title><desc id="d">Twenty response times sorted from smallest to largest as bars. The 19th value, 380 milliseconds, is the 95th percentile and the 18th value, 346, is the 90th percentile. Steps: sort, compute position, read the value.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient></defs>
+<rect width="1000" height="640" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Percentiles by hand: sort, count, read</text>
+<text x="500" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Example: 20 requests (illustrative values, in milliseconds)</text>
+<rect x="30" y="68" width="300" height="100" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="50" cy="88" r="10" fill="#7afcff"/><text x="50" y="92" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="68" y="92" font-size="13" font-weight="700" fill="#7afcff">Sort smallest → largest</text>
+<text x="44" y="114" font-size="11.5" fill="#e6e9ff">k6 does this for you internally.</text>
+<text x="44" y="130" font-size="11.5" fill="#e6e9ff">Now “95% of the requests” simply</text>
+<text x="44" y="146" font-size="11.5" fill="#e6e9ff">means “the first 19 in the row”.</text>
+<rect x="350" y="68" width="300" height="100" rx="10" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<circle cx="370" cy="88" r="10" fill="#ffe27a"/><text x="370" y="92" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="388" y="92" font-size="13" font-weight="700" fill="#ffe27a">Work out the position</text>
+<text x="364" y="114" font-size="11.5" fill="#e6e9ff">95 ÷ 100 × 20 requests = 19</text>
+<text x="364" y="130" font-size="11.5" fill="#e6e9ff">(90 ÷ 100 × 20 = 18)</text>
+<text x="364" y="146" font-size="11.5" fill="#e6e9ff">Count along to that position.</text>
+<rect x="670" y="68" width="300" height="100" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<circle cx="690" cy="88" r="10" fill="#ff7edb"/><text x="690" y="92" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<text x="708" y="92" font-size="13" font-weight="700" fill="#ff7edb">Read the value there</text>
+<text x="684" y="114" font-size="11.5" fill="#e6e9ff">19th value = 380 ms → p(95)</text>
+<text x="684" y="130" font-size="11.5" fill="#e6e9ff">18th value = 346 ms → p(90)</text>
+<text x="684" y="146" font-size="11.5" fill="#e6e9ff">“95% took 380 ms or less.”</text>
+<line x1="40" y1="400" x2="975" y2="400" stroke="#ffffff" stroke-opacity="0.4"/>
+<rect x="60" y="361.0" width="34" height="39.0" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="77.0" y="356.0" font-size="10" fill="#7dffb0" text-anchor="middle">222</text>
+<text x="77.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">1</text>
+<rect x="106" y="348.9090909090909" width="34" height="51.09090909090909" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="123.0" y="343.9090909090909" font-size="10" fill="#7dffb0" text-anchor="middle">236</text>
+<text x="123.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">2</text>
+<rect x="152" y="345.45454545454544" width="34" height="54.54545454545455" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="169.0" y="340.45454545454544" font-size="10" fill="#7dffb0" text-anchor="middle">240</text>
+<text x="169.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">3</text>
+<rect x="198" y="341.1363636363636" width="34" height="58.86363636363637" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="215.0" y="336.1363636363636" font-size="10" fill="#7dffb0" text-anchor="middle">245</text>
+<text x="215.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">4</text>
+<rect x="244" y="335.95454545454544" width="34" height="64.04545454545455" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="261.0" y="330.95454545454544" font-size="10" fill="#7dffb0" text-anchor="middle">251</text>
+<text x="261.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">5</text>
+<rect x="290" y="329.9090909090909" width="34" height="70.0909090909091" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="307.0" y="324.9090909090909" font-size="10" fill="#7dffb0" text-anchor="middle">258</text>
+<text x="307.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">6</text>
+<rect x="336" y="326.45454545454544" width="34" height="73.54545454545455" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="353.0" y="321.45454545454544" font-size="10" fill="#7dffb0" text-anchor="middle">262</text>
+<text x="353.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">7</text>
+<rect x="382" y="319.54545454545456" width="34" height="80.45454545454545" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="399.0" y="314.54545454545456" font-size="10" fill="#7dffb0" text-anchor="middle">270</text>
+<text x="399.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">8</text>
+<rect x="428" y="314.3636363636364" width="34" height="85.63636363636364" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="445.0" y="309.3636363636364" font-size="10" fill="#7dffb0" text-anchor="middle">276</text>
+<text x="445.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">9</text>
+<rect x="474" y="308.3181818181818" width="34" height="91.68181818181819" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="491.0" y="303.3181818181818" font-size="10" fill="#7dffb0" text-anchor="middle">283</text>
+<text x="491.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">10</text>
+<rect x="520" y="302.27272727272725" width="34" height="97.72727272727273" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="537.0" y="297.27272727272725" font-size="10" fill="#7dffb0" text-anchor="middle">290</text>
+<text x="537.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">11</text>
+<rect x="566" y="297.0909090909091" width="34" height="102.9090909090909" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="583.0" y="292.0909090909091" font-size="10" fill="#7dffb0" text-anchor="middle">296</text>
+<text x="583.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">12</text>
+<rect x="612" y="290.1818181818182" width="34" height="109.81818181818181" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="629.0" y="285.1818181818182" font-size="10" fill="#7dffb0" text-anchor="middle">304</text>
+<text x="629.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">13</text>
+<rect x="658" y="283.27272727272725" width="34" height="116.72727272727273" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="675.0" y="278.27272727272725" font-size="10" fill="#7dffb0" text-anchor="middle">312</text>
+<text x="675.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">14</text>
+<rect x="704" y="274.6363636363636" width="34" height="125.36363636363636" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="721.0" y="269.6363636363636" font-size="10" fill="#7dffb0" text-anchor="middle">322</text>
+<text x="721.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">15</text>
+<rect x="750" y="267.72727272727275" width="34" height="132.27272727272728" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="767.0" y="262.72727272727275" font-size="10" fill="#7dffb0" text-anchor="middle">330</text>
+<text x="767.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">16</text>
+<rect x="796" y="260.8181818181818" width="34" height="139.1818181818182" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="813.0" y="255.8181818181818" font-size="10" fill="#7dffb0" text-anchor="middle">338</text>
+<text x="813.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">17</text>
+<rect x="842" y="253.9090909090909" width="34" height="146.0909090909091" rx="4" fill="#7dffb0" fill-opacity="0.75"/>
+<text x="859.0" y="248.9090909090909" font-size="10" fill="#7dffb0" text-anchor="middle">346</text>
+<text x="859.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">18</text>
+<rect x="888" y="224.54545454545453" width="34" height="175.45454545454547" rx="4" fill="#ffb86b" fill-opacity="0.75"/>
+<text x="905.0" y="219.54545454545453" font-size="10" fill="#ffb86b" text-anchor="middle">380</text>
+<text x="905.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">19</text>
+<rect x="934" y="196.9090909090909" width="34" height="203.0909090909091" rx="4" fill="#ff5c7a" fill-opacity="0.75"/>
+<text x="951.0" y="191.9090909090909" font-size="10" fill="#ff5c7a" text-anchor="middle">412</text>
+<text x="951.0" y="415" font-size="10" fill="#8f97d6" text-anchor="middle">20</text>
+<text x="30" y="424" font-size="11" fill="#8f97d6">position →</text>
+<line x1="50" y1="299.12045454545455" x2="960" y2="299.12045454545455" stroke="#7afcff" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="52" y="293.12045454545455" font-size="11" fill="#7afcff" font-weight="700">average = 293.65 (dashed line)</text>
+<path d="M60,434 L922.0,434" stroke="#7dffb0" stroke-width="3"/>
+<text x="482.5" y="454" font-size="12" font-weight="700" fill="#7dffb0" text-anchor="middle">first 19 of 20 = 95% of requests → all took ≤ 380 ms</text>
+<path d="M934.0,434 L968.0,434" stroke="#ff5c7a" stroke-width="3"/>
+<text x="951.0" y="454" font-size="11.5" font-weight="700" fill="#ff5c7a" text-anchor="middle">last 5%</text>
+<path d="M905.0,195 L905.0,207" stroke="#ff7edb" stroke-width="2.5"/><text x="899.0" y="190" font-size="12" font-weight="700" fill="#ff7edb" text-anchor="middle">p(95) = 380</text>
+<path d="M859.0,228 L859.0,240" stroke="#ffb86b" stroke-width="2.5"/><text x="841.0" y="223" font-size="12" font-weight="700" fill="#ffb86b" text-anchor="middle">p(90) = 346</text>
+<path d="M514.0,403 L514.0,392" stroke="#ffe27a" stroke-width="2.5"/>
+<text x="514.0" y="225" font-size="11.5" font-weight="700" fill="#ffe27a" text-anchor="middle">median = between 10th &amp; 11th</text>
+<line x1="514.0" y1="230" x2="514.0" y2="260" stroke="#ffe27a" stroke-width="1.5" stroke-dasharray="3 3"/>
+<rect x="30" y="486" width="940" height="92" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="30" y="486" width="940" height="26" rx="10" fill="#1d1f33"/><rect x="30" y="502" width="940" height="10" fill="#1d1f33"/>
+<circle cx="50" cy="499" r="5" fill="#ff5c7a"/><circle cx="68" cy="499" r="5" fill="#ffd166"/><circle cx="86" cy="499" r="5" fill="#7dffb0"/>
+<text x="500.0" y="503" font-size="11" fill="#a9b0e8" text-anchor="middle">What k6 really prints for these same 20 values</text>
+<g class="m" font-size="12.5">
+<text x="46" y="536" fill="#e6e9ff">demo_response_time: avg=293.64ms min=222ms med=286.5ms max=412ms <tspan fill="#ffb86b" font-weight="700">p(90)=349.4ms</tspan> <tspan fill="#ff7edb" font-weight="700">p(95)=381.6ms</tspan></text>
+</g>
+<text x="46" y="562" font-size="11.5" fill="#c9cdf5">k6 blends between neighbouring sorted values, so it lands slightly off the counted 380 / 346. The idea is identical — “this fast or faster for 95%”.</text>
+<text x="500" y="606" font-size="12" fill="#8f97d6" text-anchor="middle">Try it: k6 run assets/code/k6-console-output/percentile-demo.js</text>
+</g></svg>
