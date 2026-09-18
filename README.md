@@ -31,6 +31,17 @@ so you can point it directly at your LLM and learn with AI as your companion.
 > ask questions, get explanations, run drills. The structured frontmatter and cross-linked
 > concepts mean the AI always has the right context. That's what makes this different.
 
+### 🌱 New to JavaScript? Start here — you're covered.
+
+Every k6 test is written in JavaScript, and **you don't need to know it already**. The companion
+**[JavaScript Knowledge Bundle](https://github.com/bhagatabhijeet/javascript-knowledge-bundle)** is a free,
+open-source, ad-free learning path built in the same Open Knowledge Format — it takes you from
+**complete beginner to confident intermediate**: variables, functions, objects and arrays, control flow,
+promises, `async/await` and ES modules, with **runnable snippets, hand-built diagrams and a quiz** to check
+yourself. Learn the language there, then come back here and write your first k6 load test with confidence.
+
+[![Learn JavaScript first](https://img.shields.io/badge/New%20to%20JavaScript%3F-Start%20with%20the%20JavaScript%20Knowledge%20Bundle-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/bhagatabhijeet/javascript-knowledge-bundle)
+
 ---
 
 ## 💡 Why k6?
@@ -235,7 +246,7 @@ export default function () {
 ```
 ✅ Basic programming experience (any language)
 ✅ Familiarity with APIs is helpful but not required
-✅ JavaScript fundamentals — covered inside this bundle
+✅ JavaScript basics — new to it? The JavaScript Knowledge Bundle (linked above) gets you there
 ✅ An open mind and curiosity about how systems behave under pressure
 ```
 
