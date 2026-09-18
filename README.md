@@ -205,6 +205,12 @@ k6-knowledge-bundle/
 │   ├── http-req-duration-and-percentiles.md
 │   └── percentile-math.md
 │
+├── 📁 k6-core-concepts/
+│   ├── index.md
+│   ├── expected-responses.md
+│   ├── thresholds.md
+│   └── stages.md
+│
 ├── 📁 k6-architecture/
 │   ├── index.md
 │   ├── how-k6-is-built.md
@@ -232,6 +238,12 @@ k6-knowledge-bundle/
         ├── k6-console-output/
         │   ├── percentile-demo.js
         │   └── percentile-math-demo.js
+        ├── k6-core-concepts/
+        │   ├── expected-responses.js
+        │   ├── global-expected-statuses.js
+        │   ├── thresholds-demo.js
+        │   ├── abort-on-fail.js
+        │   └── stages-demo.js
         └── k6-architecture/
             └── test-lifecycle.js
 ```
