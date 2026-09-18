@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-09-18 (update 9)
+
+- Added guide: "The Math of Percentiles — Explained Simply" (`k6-console-output/percentile-math.md`) with `percentile-math-demo.js` and eight diagrams, written for a 10th-grade reading level.
+- Added a percentile-math marketing section to the root `README.md`; added the JavaScript Knowledge Bundle callout and reference-guide entry.
+- Added a `.gitignore` rule for zip archives.
+
 ## 2026-09-18 (update 8)
 
 - Added topic **k6 Configuration Options in Code Editor** (`k6-configuration-options-in-code-editor/`): "Enabling k6 IntelliSense in Your Editor" and "Writing and Running Your First k6 Test", with `first-test.js` and `first-test-missing-import.js`.

@@ -65,6 +65,26 @@ Lightweight. Scriptable. CI/CD-ready from day one.
 
 ---
 
+## 📐 Percentiles — finally explained like you’re in 10th grade
+
+Everyone says “look at the p95”. Almost nobody explains **where p95 comes from**. This bundle does — slowly, with
+pictures, using **ten friendly numbers** and nothing harder than adding, multiplying and dividing.
+
+<div align="center">
+<img src="assets/images/percentile-what-p90-means.svg" alt="Ten response times lined up smallest to largest: the first nine are 90 percent, so the 90th percentile is about the 9th value" width="100%" />
+</div>
+
+- 📏 **Line them up** — why percentiles start with sorting
+- 🧮 **“How far along the line?”** — what p90, p95 and p99 really mean
+- ⚖️ **A seesaw** — why the average gets fooled by one slow request and the median doesn’t
+- 🪜 **Walk the stairs** — the exact trick k6 uses when a percentile lands *between* two requests
+- 📝 **A three-step recipe**, a worked cheat-sheet, three classic traps, and a self-check quiz
+
+Every answer in the guide is **checked against a real k6 run** you can repeat yourself. 👉
+[**Read “The Math of Percentiles — Explained Simply”**](k6-console-output/percentile-math.md)
+
+---
+
 ## 📚 What's inside — 6+ hours of content
 
 ```
@@ -182,7 +202,8 @@ k6-knowledge-bundle/
 ├── 📁 k6-console-output/
 │   ├── index.md
 │   ├── reading-the-k6-summary.md
-│   └── http-req-duration-and-percentiles.md
+│   ├── http-req-duration-and-percentiles.md
+│   └── percentile-math.md
 │
 ├── 📁 k6-architecture/
 │   ├── index.md
@@ -209,7 +230,8 @@ k6-knowledge-bundle/
         │   ├── first-test.js
         │   └── first-test-missing-import.js
         ├── k6-console-output/
-        │   └── percentile-demo.js
+        │   ├── percentile-demo.js
+        │   └── percentile-math-demo.js
         └── k6-architecture/
             └── test-lifecycle.js
 ```
