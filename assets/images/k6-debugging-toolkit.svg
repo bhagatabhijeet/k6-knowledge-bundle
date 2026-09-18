@@ -1,0 +1,80 @@
+<svg width="1000" height="560" viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">Debugging k6 versus debugging Playwright</title>
+  <desc id="d">Playwright runs on Node.js, so an IDE debugger can attach and step through code with breakpoints. k6 runs on a Go binary with an embedded JavaScript engine and has no built-in step debugger, so you debug by making the script report what it does: inspect, one-user runs, console logging, checks, HTTP debug output, and the k6 Studio debugger.</desc>
+  <style>.pre text, text.pre { white-space: pre; }</style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffb86b"/></marker>
+  </defs>
+  <rect width="1000" height="560" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="500" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Debugging in k6 is different — you don’t pause, you observe</text>
+
+    <!-- LEFT: Playwright -->
+    <rect x="24" y="56" width="300" height="300" rx="14" fill="#7dffb0" fill-opacity="0.07" stroke="#7dffb0" stroke-opacity="0.6"/>
+    <text x="40" y="82" font-size="15" font-weight="700" fill="#7dffb0">Playwright / Node.js</text>
+    <text x="40" y="100" font-size="11.5" fill="#a9b0e8">what you may be used to</text>
+    <g font-size="12" fill="#e8fff2">
+      <text x="40" y="128">Runs on <tspan font-weight="700">Node.js</tspan> (V8 engine)</text>
+      <text x="40" y="150">→ the IDE can attach a debugger</text>
+      <text x="40" y="180" fill="#7dffb0" font-weight="700">✓ breakpoints</text>
+      <text x="40" y="200" fill="#7dffb0" font-weight="700">✓ step over / into</text>
+      <text x="40" y="220" fill="#7dffb0" font-weight="700">✓ watch variables</text>
+      <text x="40" y="240" fill="#7dffb0" font-weight="700">✓ page.pause() inspector</text>
+    </g>
+    <text x="40" y="276" font-size="11.5" fill="#dfffee">Press F5, click the gutter,</text>
+    <text x="40" y="292" font-size="11.5" fill="#dfffee">inspect any value mid-run.</text>
+    <rect x="40" y="308" width="268" height="32" rx="8" fill="#000" fill-opacity="0.35"/>
+    <text x="52" y="329" font-size="11.5" fill="#dfffee" font-family="Consolas, monospace">Debug ▶ Run  (VS Code)</text>
+
+    <!-- middle divider -->
+    <path d="M334,206 L376,206" stroke="#ffb86b" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+    <text x="355" y="196" font-size="10.5" fill="#ffb86b" text-anchor="middle">not the</text>
+    <text x="355" y="232" font-size="10.5" fill="#ffb86b" text-anchor="middle">same</text>
+
+    <!-- RIGHT: k6 -->
+    <rect x="384" y="56" width="592" height="300" rx="14" fill="#ff7edb" fill-opacity="0.07" stroke="#ff7edb" stroke-opacity="0.7"/>
+    <text x="400" y="82" font-size="15" font-weight="700" fill="#ff9be3">k6</text>
+    <text x="400" y="100" font-size="11.5" fill="#a9b0e8">Go binary + embedded JavaScript VM (Sobek) — not Node.js</text>
+    <text x="400" y="126" font-size="12" fill="#ffe6f8"><tspan fill="#ff8fa6" font-weight="700">✗ no built-in step debugger</tspan> — F5 and breakpoints don’t attach to a k6 run.</text>
+    <text x="400" y="146" font-size="12" fill="#ffe6f8">Instead, make the script <tspan font-weight="700" fill="#ff9be3">tell you</tspan> what it is doing — lightest tool first:</text>
+
+    <!-- ladder -->
+    <g class="pre">
+      <rect x="400" y="160" width="560" height="28" rx="6" fill="#7afcff" fill-opacity="0.12"/>
+      <text x="410" y="179" font-size="12" fill="#dff8ff"><tspan font-weight="700" fill="#7afcff">1</tspan>  <tspan font-family="Consolas, monospace" fill="#7afcff">k6 inspect script.js</tspan>     syntax &amp; options, no load</text>
+
+      <rect x="400" y="192" width="560" height="28" rx="6" fill="#8fb8ff" fill-opacity="0.12"/>
+      <text x="410" y="211" font-size="12" fill="#e6f0ff"><tspan font-weight="700" fill="#8fb8ff">2</tspan>  <tspan font-family="Consolas, monospace" fill="#8fb8ff">--vus 1 --iterations 1</tspan>    a tiny, fast debug run</text>
+
+      <rect x="400" y="224" width="560" height="28" rx="6" fill="#b9acff" fill-opacity="0.12"/>
+      <text x="410" y="243" font-size="12" fill="#ece8ff"><tspan font-weight="700" fill="#b9acff">3</tspan>  <tspan font-family="Consolas, monospace" fill="#b9acff">console.log / warn / error</tspan>     print values as it runs</text>
+
+      <rect x="400" y="256" width="560" height="28" rx="6" fill="#7dffb0" fill-opacity="0.12"/>
+      <text x="410" y="275" font-size="12" fill="#e8fff2"><tspan font-weight="700" fill="#7dffb0">4</tspan>  <tspan font-family="Consolas, monospace" fill="#7dffb0">check()  ·  fail()</tspan>     named pass/fail lines · stop an iteration</text>
+
+      <rect x="400" y="288" width="560" height="28" rx="6" fill="#ffe27a" fill-opacity="0.12"/>
+      <text x="410" y="307" font-size="12" fill="#fff6d5"><tspan font-weight="700" fill="#ffe27a">5</tspan>  <tspan font-family="Consolas, monospace" fill="#ffe27a">--http-debug[=full]</tspan>     every request &amp; response (+ bodies)</text>
+
+      <rect x="400" y="320" width="560" height="28" rx="6" fill="#ffb86b" fill-opacity="0.12"/>
+      <text x="410" y="339" font-size="12" fill="#fff0da"><tspan font-weight="700" fill="#ffb86b">6</tspan>  <tspan fill="#ffb86b" font-weight="700">k6 Studio Debugger</tspan>     one iteration, visual request/response view</text>
+    </g>
+
+    <!-- bottom recipe -->
+    <rect x="24" y="374" width="952" height="80" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="40" y="398" font-size="13" font-weight="700" fill="#ffffff">The everyday “debug run” — one user, one iteration, see every request:</text>
+    <rect x="40" y="410" width="920" height="32" rx="8" fill="#000" fill-opacity="0.5"/>
+    <text x="54" y="431" font-size="13.5" fill="#7dffb0" font-family="Consolas, monospace">k6 run --vus 1 --iterations 1 --http-debug script.js</text>
+
+    <!-- warnings -->
+    <rect x="24" y="466" width="470" height="80" rx="12" fill="#ff5c7a" fill-opacity="0.08" stroke="#ff5c7a" stroke-opacity="0.6"/>
+    <text x="40" y="490" font-size="13" font-weight="700" fill="#ff8fa6">⚠ Debug small, then remove the noise</text>
+    <text x="40" y="510" font-size="11.5" fill="#ffe0e6">console.log and --http-debug at 500 VUs floods the terminal</text>
+    <text x="40" y="526" font-size="11.5" fill="#ffe0e6">and slows the load generator — strip them before real runs.</text>
+
+    <rect x="506" y="466" width="470" height="80" rx="12" fill="#ffb86b" fill-opacity="0.08" stroke="#ffb86b" stroke-opacity="0.6"/>
+    <text x="522" y="490" font-size="13" font-weight="700" fill="#ffb86b">⚠ Debug output can contain secrets</text>
+    <text x="522" y="510" font-size="11.5" fill="#fff0da">--http-debug prints headers and cookies, including tokens.</text>
+    <text x="522" y="526" font-size="11.5" fill="#fff0da">Don’t paste it into tickets or commit log files.</text>
+  </g>
+</svg>

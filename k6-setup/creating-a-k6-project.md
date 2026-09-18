@@ -34,6 +34,10 @@ is identical in both; only the command that opens the folder differs).
 
 There is an apparent contradiction worth understanding before you type anything:
 
+![Node.js organises the project folder while the Go-based k6 binary runs the scripts](/assets/images/node-vs-k6-engine.svg)
+
+The same idea as a text diagram:
+
 ```
   ┌──────────────────────────────┐        ┌───────────────────────────────┐
   │   RUNNING a test             │        │   BUILDING a test framework   │
@@ -144,12 +148,20 @@ In the editor's terminal (which is now inside `k6-load`):
 k6 version
 ```
 
-Expected output like `k6.exe v1.x.x (go1.x, windows/amd64)`. Running plain `k6` prints the
-Grafana k6 banner and the list of commands.
+Expected output like `k6.exe v2.x.x (go1.x, windows/amd64)`:
+
+![Terminal running k6 version in the k6-load folder: k6.exe v1.7.1 with commit, Go version and OS/CPU explained](/assets/images/k6-version-success.svg)
+
+Running plain `k6` prints the Grafana k6 banner and the list of commands — the “Grafana k6” screen
+that confirms k6 is detected globally:
+
+![Terminal running k6 with no arguments showing the Grafana k6 banner and command list](/assets/images/k6-banner-help.svg)
 
 If the terminal says *"k6 is not recognized"* or *"command not found"*, k6 is installed
 but not on your `PATH` — go back to [Installing k6](/k6-setup/installing-k6.md) and fix the
-`PATH` (or re-run the `.msi` installer), then open a **new** terminal.
+`PATH` (or re-run the `.msi` installer), then open a **new** terminal. The errors look like this:
+
+![What the terminal prints when k6 is not on the PATH, with the three-step fix](/assets/images/k6-version-not-found.svg)
 
 ### Step 7 — Checklist
 

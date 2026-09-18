@@ -1,0 +1,70 @@
+<svg width="1000" height="440" viewBox="0 0 1000 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">k6 Studio correlation and parameterization rules</title>
+  <desc id="d">Correlation extracts a dynamic value such as a CSRF token from one response and replaces it in a later request. Parameterization replaces a hardcoded recorded value with a variable or data-file value per iteration.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffe27a"/></marker>
+    <marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#8fb8ff"/></marker>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1000" height="440" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="500" y="34" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">Rules turn a recording into a test that works for every user</text>
+
+    <!-- CORRELATION -->
+    <text x="30" y="70" font-size="14" font-weight="700" fill="#ff9be3">① Correlation — reuse a value the server just gave you</text>
+
+    <rect x="30" y="84" width="270" height="110" rx="10" fill="#000" fill-opacity="0.35" stroke="#ff7edb" stroke-opacity="0.6"/>
+    <text x="44" y="106" font-size="12" font-weight="700" fill="#ff9be3">Response to  GET /login</text>
+    <text x="44" y="132" font-size="12" fill="#dfe3ff" font-family="Consolas, monospace">{ "csrf":</text>
+    <text x="44" y="152" font-size="12" font-family="Consolas, monospace"><tspan fill="#ffe27a" font-weight="700">  "a1b2c3d4"</tspan><tspan fill="#dfe3ff"> ,</tspan></text>
+    <text x="44" y="172" font-size="12" fill="#dfe3ff" font-family="Consolas, monospace">  "page": "login" }</text>
+
+    <rect x="345" y="104" width="300" height="70" rx="10" fill="#ffe27a" fill-opacity="0.1" stroke="#ffe27a" stroke-opacity="0.8" filter="url(#glow)"/>
+    <text x="495" y="126" font-size="12" font-weight="700" fill="#ffe27a" text-anchor="middle">Correlation rule</text>
+    <text x="495" y="146" font-size="11" fill="#fff6d5" text-anchor="middle">Extractor: JSON selector  <tspan font-family="Consolas, monospace">csrf</tspan></text>
+    <text x="495" y="163" font-size="11" fill="#fff6d5" text-anchor="middle">→ saved as variable  <tspan font-family="Consolas, monospace" font-weight="700">correlation_0</tspan></text>
+
+    <rect x="690" y="84" width="280" height="110" rx="10" fill="#000" fill-opacity="0.35" stroke="#7dffb0" stroke-opacity="0.6"/>
+    <text x="704" y="106" font-size="12" font-weight="700" fill="#7dffb0">Request  POST /login</text>
+    <text x="704" y="130" font-size="11.5" fill="#8f97d6" font-family="Consolas, monospace" text-decoration="line-through">csrf=a1b2c3d4  <tspan text-decoration="none" font-family="Segoe UI, sans-serif" font-size="10">recorded (stale)</tspan></text>
+    <text x="704" y="152" font-size="11.5" fill="#e8fff2" font-family="Consolas, monospace"><tspan fill="#7dffb0" font-weight="700">csrf=${correlation_0}</tspan></text>
+    <text x="704" y="176" font-size="10.5" fill="#a9b0e8">Replacer swaps in the fresh value</text>
+
+    <path d="M300,140 L340,140" stroke="#ffe27a" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+    <path d="M645,140 L685,140" stroke="#ffe27a" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+
+    <text x="30" y="216" font-size="12" fill="#c9cdf5">Without it, every virtual user replays the <tspan fill="#ffb3b3" font-weight="700">same recorded token</tspan> → the server rejects them → the test measures errors, not performance.</text>
+
+    <line x1="30" y1="236" x2="970" y2="236" stroke="#ffffff" stroke-opacity="0.12"/>
+
+    <!-- PARAMETERIZATION -->
+    <text x="30" y="266" font-size="14" font-weight="700" fill="#8fb8ff">② Parameterization — give every virtual user different data</text>
+
+    <rect x="30" y="282" width="270" height="110" rx="10" fill="#000" fill-opacity="0.35" stroke="#8fb8ff" stroke-opacity="0.6"/>
+    <text x="44" y="304" font-size="12" font-weight="700" fill="#8fb8ff">Recorded request</text>
+    <text x="44" y="330" font-size="12" fill="#dfe3ff" font-family="Consolas, monospace">POST /login</text>
+    <text x="44" y="350" font-size="12" font-family="Consolas, monospace"><tspan fill="#dfe3ff">user=</tspan><tspan fill="#ffb3b3" font-weight="700">alice</tspan></text>
+    <text x="44" y="370" font-size="10.5" fill="#a9b0e8">one hard-coded value</text>
+
+    <rect x="345" y="292" width="300" height="90" rx="10" fill="#8fb8ff" fill-opacity="0.1" stroke="#8fb8ff" stroke-opacity="0.8" filter="url(#glow)"/>
+    <text x="495" y="314" font-size="12" font-weight="700" fill="#8fb8ff" text-anchor="middle">Parameterization rule</text>
+    <text x="495" y="334" font-size="11" fill="#e6f0ff" text-anchor="middle">replace value with  text · variable ·</text>
+    <text x="495" y="350" font-size="11" fill="#e6f0ff" text-anchor="middle">data file column · custom code</text>
+    <text x="495" y="370" font-size="10.5" fill="#a9b0e8" text-anchor="middle">Test Data tab: CSV / JSON, up to 10 MB</text>
+
+    <rect x="690" y="282" width="280" height="110" rx="10" fill="#000" fill-opacity="0.35" stroke="#7dffb0" stroke-opacity="0.6"/>
+    <text x="704" y="304" font-size="12" font-weight="700" fill="#7dffb0">What each VU sends</text>
+    <g font-size="11.5" font-family="Consolas, monospace" fill="#e8fff2">
+      <text x="704" y="328">VU 1   user=<tspan fill="#7dffb0" font-weight="700">alice</tspan></text>
+      <text x="704" y="348">VU 2   user=<tspan fill="#7dffb0" font-weight="700">bob</tspan></text>
+      <text x="704" y="368">VU 3   user=<tspan fill="#7dffb0" font-weight="700">carol</tspan></text>
+    </g>
+    <text x="704" y="384" font-size="10.5" fill="#a9b0e8">realistic, non-cached traffic</text>
+
+    <path d="M300,338 L340,338" stroke="#8fb8ff" stroke-width="2.5" fill="none" marker-end="url(#arr2)"/>
+    <path d="M645,338 L685,338" stroke="#8fb8ff" stroke-width="2.5" fill="none" marker-end="url(#arr2)"/>
+
+    <text x="30" y="418" font-size="12" fill="#c9cdf5">Without it, 500 VUs all log in as <tspan fill="#ffb3b3" font-weight="700">alice</tspan> → caches and sessions make results look far better than reality.</text>
+  </g>
+</svg>

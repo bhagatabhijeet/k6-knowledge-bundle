@@ -1,0 +1,47 @@
+<svg width="900" height="360" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">Node.js builds the project, k6 runs the test</title>
+  <desc id="d">A Node.js project holds package.json, type definitions and scripts. The k6 Go binary executes the scripts on its own engine, not on Node.js.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#7afcff"/></marker>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="900" height="360" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="450" y="36" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">Node.js organises the project — k6 runs the test</text>
+
+    <!-- Node project -->
+    <rect x="30" y="60" width="390" height="260" rx="14" fill="#7dffb0" fill-opacity="0.07" stroke="#7dffb0" stroke-opacity="0.7" stroke-dasharray="6 4"/>
+    <text x="50" y="86" font-size="14" font-weight="700" fill="#7dffb0">📁 k6-load/   ← a Node.js project (npm init -y)</text>
+    <g font-family="Consolas, monospace" font-size="12.5" fill="#dfffee">
+      <text x="56" y="120">├─ package.json</text>
+      <text x="56" y="144">├─ node_modules/</text>
+      <text x="82" y="166" fill="#8fe8b8">└─ @types/k6        <tspan fill="#8f97d6" font-family="Segoe UI, sans-serif" font-size="11">autocomplete</tspan></text>
+      <text x="56" y="192">├─ .gitignore</text>
+      <text x="56" y="216">└─ scripts/</text>
+      <text x="82" y="238" fill="#ffe27a">├─ smoke-test.js</text>
+      <text x="82" y="260" fill="#ffe27a">├─ load-test.js</text>
+      <text x="82" y="282" fill="#ffe27a">└─ stress-test.js</text>
+    </g>
+    <text x="235" y="308" font-size="11" fill="#8f97d6" text-anchor="middle">structure · dependencies · IntelliSense · npm scripts</text>
+
+    <!-- arrow -->
+    <path d="M300,266 C 470,266 470,196 546,196" stroke="#7afcff" stroke-width="3" fill="none" marker-end="url(#arr)" filter="url(#glow)"/>
+    <rect x="384" y="228" width="132" height="26" rx="13" fill="#0b0326" stroke="#7afcff" stroke-opacity="0.7"/>
+    <text x="450" y="246" font-size="12" fill="#7afcff" font-family="Consolas, monospace" text-anchor="middle">k6 run …</text>
+
+    <!-- k6 engine -->
+    <rect x="550" y="60" width="320" height="260" rx="14" fill="#00add8" fill-opacity="0.12" stroke="#00add8" stroke-opacity="0.8" stroke-width="1.5"/>
+    <text x="710" y="90" font-size="15" font-weight="700" fill="#5ee3ff" text-anchor="middle">k6 binary — Go</text>
+    <rect x="580" y="108" width="260" height="70" rx="10" fill="#0b0326" fill-opacity="0.7" stroke="#ff7edb" stroke-opacity="0.5"/>
+    <text x="710" y="134" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Sobek JavaScript VM</text>
+    <text x="710" y="154" font-size="11" fill="#c9cdf5" text-anchor="middle">embedded engine runs your scripts</text>
+    <text x="710" y="170" font-size="11" fill="#ff9be3" text-anchor="middle">not Node.js · not a browser</text>
+    <text x="710" y="214" font-size="12" fill="#e8f3ff" text-anchor="middle">Go engine schedules VUs,</text>
+    <text x="710" y="232" font-size="12" fill="#e8f3ff" text-anchor="middle">sends traffic, collects metrics</text>
+    <text x="710" y="270" font-size="11" fill="#8f97d6" text-anchor="middle">needs only the k6 binary to run</text>
+    <text x="710" y="300" font-size="12" fill="#5ee3ff" font-family="Consolas, monospace" text-anchor="middle">k6 version ✓</text>
+
+    <text x="450" y="346" font-size="12" fill="#8f97d6" text-anchor="middle">Two tools, two jobs: install both — they never run inside each other</text>
+  </g>
+</svg>

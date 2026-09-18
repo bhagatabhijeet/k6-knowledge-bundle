@@ -1,0 +1,72 @@
+<svg width="900" height="560" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">Running k6 with no arguments</title>
+  <desc id="d">A terminal running k6 on its own and printing the Grafana k6 banner, a usage line, and the core and additional commands such as new, run, cloud, inspect and x.</desc>
+  <style>.mono text, text.mono, .pre text { white-space: pre; }</style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+    <linearGradient id="spark" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7afcff"/><stop offset="1" stop-color="#b9acff"/></linearGradient>
+  </defs>
+  <rect width="900" height="560" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="450" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Type just  <tspan font-family="Consolas, monospace" fill="#7afcff">k6</tspan>  — the banner proves it is “globally detected”</text>
+
+    <!-- terminal -->
+    <rect x="30" y="54" width="560" height="486" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+    <rect x="30" y="54" width="560" height="28" rx="10" fill="#1d1f33"/><rect x="30" y="72" width="560" height="10" fill="#1d1f33"/>
+    <circle cx="50" cy="68" r="5" fill="#ff5c7a"/><circle cx="68" cy="68" r="5" fill="#ffd166"/><circle cx="86" cy="68" r="5" fill="#7dffb0"/>
+    <text x="310" y="73" font-size="12" fill="#a9b0e8" text-anchor="middle">Terminal</text>
+
+    <g class="mono" font-family="Consolas, monospace" font-size="12.5">
+      <text x="48" y="104" fill="#8f97d6">PS C:\Users\you\k6-load&gt; <tspan fill="#ffffff">k6</tspan></text>
+      <text x="48" y="130" fill="#7afcff">         /\      Grafana   /‾‾/</text>
+      <text x="48" y="146" fill="#7afcff">    /\  /  \     |\  __   /  /</text>
+      <text x="48" y="162" fill="#7afcff">   /  \/    \    | |/ /  /   ‾‾\</text>
+      <text x="48" y="178" fill="#7afcff">  /          \   |   (  |  (‾)  |</text>
+      <text x="48" y="194" fill="#7afcff"> / __________ \  |_|\_\  \_____/</text>
+      <text x="48" y="222" fill="#dfe3ff">Grafana k6 is an easy-to-use, open-source load</text>
+      <text x="48" y="238" fill="#dfe3ff">and performance testing tool</text>
+      <text x="48" y="266" fill="#dfe3ff">Usage:</text>
+      <text x="48" y="282" fill="#dfe3ff">  k6.exe [command]</text>
+      <text x="48" y="310" fill="#ffe27a">Core Commands:</text>
+      <text x="48" y="326" fill="#dfe3ff">  <tspan fill="#7dffb0">new</tspan>         Create a test</text>
+      <text x="48" y="342" fill="#dfe3ff">  <tspan fill="#7dffb0">run</tspan>         Run a test</text>
+      <text x="48" y="358" fill="#dfe3ff">  <tspan fill="#7dffb0">cloud</tspan>       Run and manage Grafana Cloud tests</text>
+      <text x="48" y="386" fill="#ffe27a">Additional Commands:</text>
+      <text x="48" y="402" fill="#dfe3ff">  archive     Create an archive</text>
+      <text x="48" y="418" fill="#dfe3ff">  completion  Generate the autocompletion script</text>
+      <text x="48" y="434" fill="#dfe3ff">  deps        Resolve and list the dependencies of a test</text>
+      <text x="48" y="450" fill="#dfe3ff">  <tspan fill="#7dffb0">inspect</tspan>     Inspect a script or archive</text>
+      <text x="48" y="466" fill="#dfe3ff">  <tspan fill="#7dffb0">x</tspan>           Extension subcommands</text>
+      <text x="48" y="494" fill="#ffe27a">Flags:</text>
+      <text x="48" y="510" fill="#dfe3ff">  -h, --help      Show help</text>
+      <text x="48" y="526" fill="#dfe3ff">      --version   Show version information</text>
+    </g>
+
+    <!-- side notes -->
+    <g>
+      <rect x="614" y="54" width="256" height="98" rx="12" fill="#7dffb0" fill-opacity="0.09" stroke="#7dffb0" stroke-opacity="0.7"/>
+      <text x="630" y="78" font-size="13" font-weight="700" fill="#7dffb0">✓ What success looks like</text>
+      <text x="630" y="98" font-size="12" fill="#e8fff2">The Grafana k6 banner and a</text>
+      <text x="630" y="114" font-size="12" fill="#e8fff2">command list — k6 is found on</text>
+      <text x="630" y="130" font-size="12" fill="#e8fff2">your PATH and ready to use.</text>
+
+      <rect x="614" y="164" width="256" height="196" rx="12" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/>
+      <text x="630" y="188" font-size="13" font-weight="700" fill="#ffffff">Commands you’ll use</text>
+      <g class="pre" font-size="12" fill="#dfe3ff">
+        <text x="630" y="212"><tspan font-family="Consolas, monospace" fill="#7dffb0">k6 run</tspan>   run a script</text>
+        <text x="630" y="234"><tspan font-family="Consolas, monospace" fill="#7dffb0">k6 new</tspan>   scaffold a starter script</text>
+        <text x="630" y="256"><tspan font-family="Consolas, monospace" fill="#7dffb0">k6 inspect</tspan>  check a script</text>
+        <text x="630" y="272" fill="#8f97d6">        without running load</text>
+        <text x="630" y="296"><tspan font-family="Consolas, monospace" fill="#7dffb0">k6 x</tspan>     extensions &amp; AI helper</text>
+        <text x="630" y="318"><tspan font-family="Consolas, monospace" fill="#7dffb0">k6 cloud</tspan>  Grafana Cloud runs</text>
+        <text x="630" y="346" font-size="11" fill="#8f97d6">Exact commands vary by version.</text>
+      </g>
+
+      <rect x="614" y="372" width="256" height="90" rx="12" fill="#ffb86b" fill-opacity="0.09" stroke="#ffb86b" stroke-opacity="0.7"/>
+      <text x="630" y="396" font-size="13" font-weight="700" fill="#ffb86b">Prefer one line?</text>
+      <text x="630" y="418" font-size="12" fill="#fff0da" font-family="Consolas, monospace">k6 version</text>
+      <text x="630" y="438" font-size="12" fill="#fff0da" font-family="Consolas, monospace">k6 --version</text>
+      <text x="630" y="454" font-size="11" fill="#8f97d6">both print the version</text>
+    </g>
+  </g>
+</svg>

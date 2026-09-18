@@ -1,0 +1,68 @@
+<svg width="900" height="520" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">k6 version not working</title>
+  <desc id="d">What the terminal prints when k6 is not on the PATH: a PowerShell error saying k6 is not recognized, and command not found on macOS and Linux. Followed by a three-step fix.</desc>
+  <style>.mono text, text.mono { white-space: pre; }</style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#7dffb0"/></marker>
+  </defs>
+  <rect width="900" height="520" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="450" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">“k6 version” printing an error? Here is what it looks like — and the fix</text>
+
+    <!-- Windows terminal -->
+    <rect x="30" y="56" width="840" height="150" rx="10" fill="#0c0c14" stroke="#ff5c7a" stroke-opacity="0.7"/>
+    <rect x="30" y="56" width="840" height="28" rx="10" fill="#1d1f33"/><rect x="30" y="74" width="840" height="10" fill="#1d1f33"/>
+    <circle cx="50" cy="70" r="5" fill="#ff5c7a"/><circle cx="68" cy="70" r="5" fill="#ffd166"/><circle cx="86" cy="70" r="5" fill="#7dffb0"/>
+    <text x="450" y="75" font-size="12" fill="#a9b0e8" text-anchor="middle">Windows — PowerShell</text>
+    <g class="mono" font-family="Consolas, monospace" font-size="12.5">
+      <text x="48" y="106" fill="#8f97d6">PS C:\Users\you&gt; <tspan fill="#ffffff">k6 version</tspan></text>
+      <text x="48" y="128" fill="#ff8fa6">k6 : The term 'k6' is not recognized as the name of a cmdlet, function, script file, or</text>
+      <text x="48" y="145" fill="#ff8fa6">operable program. Check the spelling of the name, or if a path was included, verify that</text>
+      <text x="48" y="162" fill="#ff8fa6">the path is correct and try again.</text>
+      <text x="48" y="184" fill="#ff8fa6">    + CategoryInfo          : ObjectNotFound: (k6:String) [], CommandNotFoundException</text>
+    </g>
+
+    <!-- mac/linux terminal -->
+    <rect x="30" y="218" width="840" height="92" rx="10" fill="#0c0c14" stroke="#ff5c7a" stroke-opacity="0.7"/>
+    <rect x="30" y="218" width="840" height="28" rx="10" fill="#1d1f33"/><rect x="30" y="236" width="840" height="10" fill="#1d1f33"/>
+    <circle cx="50" cy="232" r="5" fill="#ff5c7a"/><circle cx="68" cy="232" r="5" fill="#ffd166"/><circle cx="86" cy="232" r="5" fill="#7dffb0"/>
+    <text x="450" y="237" font-size="12" fill="#a9b0e8" text-anchor="middle">macOS / Linux — zsh or bash</text>
+    <g class="mono" font-family="Consolas, monospace" font-size="12.5">
+      <text x="48" y="268" fill="#8f97d6">you@laptop ~ % <tspan fill="#ffffff">k6 version</tspan></text>
+      <text x="48" y="288" fill="#ff8fa6">zsh: command not found: k6        <tspan fill="#8f97d6">   (bash says: bash: k6: command not found)</tspan></text>
+    </g>
+
+    <!-- what it means -->
+    <rect x="30" y="322" width="840" height="46" rx="10" fill="#ff5c7a" fill-opacity="0.08" stroke="#ff5c7a" stroke-opacity="0.5"/>
+    <text x="50" y="343" font-size="13" font-weight="700" fill="#ff8fa6">What it means</text>
+    <text x="50" y="360" font-size="12.5" fill="#ffe0e6">k6 may be installed, but the terminal doesn’t know where to look for it. The fix is almost always the PATH.</text>
+
+    <!-- fix steps -->
+    <text x="30" y="396" font-size="14" font-weight="700" fill="#7dffb0">The fix — three steps</text>
+    <g>
+      <rect x="30" y="408" width="266" height="92" rx="12" fill="#7dffb0" fill-opacity="0.09" stroke="#7dffb0" stroke-opacity="0.7"/>
+      <circle cx="54" cy="432" r="13" fill="#7dffb0"/><text x="54" y="437" font-size="14" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+      <text x="76" y="437" font-size="13" font-weight="700" fill="#e8fff2">Open a NEW terminal</text>
+      <text x="46" y="462" font-size="11.5" fill="#dfffee">Old windows don’t see PATH changes</text>
+      <text x="46" y="479" font-size="11.5" fill="#dfffee">made after they were opened.</text>
+
+      <path d="M296,454 L318,454" stroke="#7dffb0" stroke-width="2.5" marker-end="url(#arr)"/>
+
+      <rect x="322" y="408" width="266" height="92" rx="12" fill="#7dffb0" fill-opacity="0.09" stroke="#7dffb0" stroke-opacity="0.7"/>
+      <circle cx="346" cy="432" r="13" fill="#7dffb0"/><text x="346" y="437" font-size="14" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+      <text x="368" y="437" font-size="13" font-weight="700" fill="#e8fff2">Put k6’s FOLDER on PATH</text>
+      <text x="338" y="462" font-size="11.5" fill="#dfffee">The folder containing k6.exe —</text>
+      <text x="338" y="479" font-size="11.5" fill="#dfffee">not the .exe file itself.</text>
+
+      <path d="M588,454 L610,454" stroke="#7dffb0" stroke-width="2.5" marker-end="url(#arr)"/>
+
+      <rect x="614" y="408" width="256" height="92" rx="12" fill="#7dffb0" fill-opacity="0.09" stroke="#7dffb0" stroke-opacity="0.7"/>
+      <circle cx="638" cy="432" r="13" fill="#7dffb0"/><text x="638" y="437" font-size="14" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+      <text x="660" y="437" font-size="13" font-weight="700" fill="#e8fff2">Run it again</text>
+      <text x="630" y="462" font-size="12" fill="#e8f3ff" font-family="Consolas, monospace">k6 version</text>
+      <text x="630" y="479" font-size="11.5" fill="#dfffee">→ a version line = fixed ✓</text>
+    </g>
+    <text x="450" y="514" font-size="11" fill="#8f97d6" text-anchor="middle">Installed with brew, the .msi, winget or choco? They set the PATH for you — then try step 1 first.</text>
+  </g>
+</svg>

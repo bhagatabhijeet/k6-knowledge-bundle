@@ -1,0 +1,76 @@
+<svg width="900" height="520" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">Running hello-k6.js successfully</title>
+  <desc id="d">A terminal running k6 run hello-k6.js. The output shows one passing check, zero failed HTTP requests and one completed iteration. Each important line is highlighted and explained.</desc>
+  <style>.mono text, text.mono { white-space: pre; }</style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#7dffb0"/></marker>
+  </defs>
+  <rect width="900" height="520" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="450" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Your first real run:  <tspan font-family="Consolas, monospace" fill="#7afcff">k6 run hello-k6.js</tspan></text>
+
+    <rect x="30" y="54" width="580" height="450" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+    <rect x="30" y="54" width="580" height="28" rx="10" fill="#1d1f33"/><rect x="30" y="72" width="580" height="10" fill="#1d1f33"/>
+    <circle cx="50" cy="68" r="5" fill="#ff5c7a"/><circle cx="68" cy="68" r="5" fill="#ffd166"/><circle cx="86" cy="68" r="5" fill="#7dffb0"/>
+    <text x="320" y="73" font-size="12" fill="#a9b0e8" text-anchor="middle">Terminal — real output (trimmed)</text>
+
+    <g class="mono" font-family="Consolas, monospace" font-size="12">
+      <text x="46" y="104" fill="#8f97d6">PS C:\...\k6-setup&gt; <tspan fill="#ffffff">k6 run hello-k6.js</tspan></text>
+      <text x="46" y="128" fill="#7afcff">         /\      Grafana   /‾‾/</text>
+      <text x="46" y="143" fill="#7afcff">    /\  /  \     |\  __   /  /</text>
+      <text x="46" y="158" fill="#7afcff">   /  \/    \    | |/ /  /   ‾‾\</text>
+      <text x="46" y="173" fill="#7afcff">  /          \   |   (  |  (‾)  |</text>
+      <text x="46" y="188" fill="#7afcff"> / __________ \  |_|\_\  \_____/</text>
+      <text x="46" y="212" fill="#dfe3ff">     execution: local</text>
+      <text x="46" y="227" fill="#dfe3ff">        script: hello-k6.js</text>
+      <text x="46" y="242" fill="#dfe3ff">     scenarios: 1 scenario, 1 max VUs, 10m30s max duration</text>
+      <text x="46" y="266" fill="#ffe27a">  █ TOTAL RESULTS</text>
+      <text x="46" y="288" fill="#dfe3ff">    checks_total.......: 1</text>
+      <text x="46" y="303" fill="#dfe3ff">    checks_succeeded...: 100.00% 1 out of 1</text>
+      <text x="46" y="318" fill="#dfe3ff">    checks_failed......: 0.00%   0 out of 1</text>
+      <text x="46" y="340" fill="#7dffb0" font-weight="700">    ✓ status is 200</text>
+      <text x="46" y="364" fill="#dfe3ff">    http_req_duration..: avg=55.61ms  p(95)=70.51ms</text>
+      <text x="46" y="379" fill="#dfe3ff">    http_req_failed....: 0.00%  0 out of 2</text>
+      <text x="46" y="394" fill="#dfe3ff">    http_reqs..........: 2</text>
+      <text x="46" y="418" fill="#dfe3ff">    iterations.........: 1</text>
+      <text x="46" y="433" fill="#dfe3ff">    vus................: 1   min=1  max=1</text>
+      <text x="46" y="457" fill="#7dffb0">default ✓ [ 100% ] 1 VUs  00m01.5s/10m0s  1/1 shared iters</text>
+    </g>
+
+    <!-- call-outs -->
+    <g stroke="#7dffb0" stroke-width="2" fill="none" marker-end="url(#arr)">
+      <path d="M612,335 L570,335"/>
+      <path d="M612,390 L570,388"/>
+      <path d="M612,424 L570,420"/>
+      <path d="M612,455 L590,455"/>
+    </g>
+    <g>
+      <rect x="626" y="300" width="250" height="56" rx="10" fill="#7dffb0" fill-opacity="0.1" stroke="#7dffb0" stroke-opacity="0.7"/>
+      <text x="640" y="322" font-size="12.5" font-weight="700" fill="#7dffb0">✓ Green tick = check passed</text>
+      <text x="640" y="341" font-size="11.5" fill="#e8fff2">k6 got HTTP 200 from the site</text>
+
+      <rect x="626" y="366" width="250" height="52" rx="10" fill="#7dffb0" fill-opacity="0.1" stroke="#7dffb0" stroke-opacity="0.7"/>
+      <text x="640" y="388" font-size="12.5" font-weight="700" fill="#7dffb0">http_req_failed: 0.00%</text>
+      <text x="640" y="406" font-size="11.5" fill="#e8fff2">no failed requests</text>
+
+      <rect x="626" y="428" width="250" height="52" rx="10" fill="#7dffb0" fill-opacity="0.1" stroke="#7dffb0" stroke-opacity="0.7"/>
+      <text x="640" y="450" font-size="12.5" font-weight="700" fill="#7dffb0">1/1 iterations, 100%</text>
+      <text x="640" y="468" font-size="11.5" fill="#e8fff2">the script ran to the end</text>
+    </g>
+
+    <rect x="626" y="60" width="250" height="150" rx="12" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="640" y="84" font-size="13" font-weight="700" fill="#ffffff">Why 2 requests?</text>
+    <text x="640" y="106" font-size="11.5" fill="#dfe3ff">The script makes 1 request, but</text>
+    <text x="640" y="122" font-size="11.5" fill="#dfe3ff">test.k6.io answers with a redirect</text>
+    <text x="640" y="138" font-size="11.5" fill="#dfe3ff">(302) to another site. k6 follows</text>
+    <text x="640" y="154" font-size="11.5" fill="#dfe3ff">it — so 2 requests are counted.</text>
+    <text x="640" y="176" font-size="11" fill="#8f97d6">Timings and numbers will differ on</text>
+    <text x="640" y="192" font-size="11" fill="#8f97d6">your machine — that is normal.</text>
+
+    <rect x="626" y="222" width="250" height="66" rx="12" fill="#ff5c7a" fill-opacity="0.08" stroke="#ff5c7a" stroke-opacity="0.5"/>
+    <text x="640" y="244" font-size="12.5" font-weight="700" fill="#ff8fa6">See a red ✗ or errors?</text>
+    <text x="640" y="262" font-size="11.5" fill="#ffe0e6">Check your internet connection</text>
+    <text x="640" y="278" font-size="11.5" fill="#ffe0e6">and the URL, then run again.</text>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<svg width="900" height="470" viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">Running k6 version</title>
+  <desc id="d">A terminal running the k6 version command and printing k6.exe v1.7.1 with the commit, Go version and operating system. Each part of the output is colour-coded and explained. A green badge confirms k6 is installed and on the PATH.</desc>
+  <style>.mono text, text.mono { white-space: pre; }</style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="900" height="470" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="450" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">You should see this when you run  <tspan font-family="Consolas, monospace" fill="#7afcff">k6 version</tspan></text>
+
+    <!-- terminal window -->
+    <rect x="40" y="56" width="820" height="150" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+    <rect x="40" y="56" width="820" height="30" rx="10" fill="#1d1f33"/>
+    <rect x="40" y="76" width="820" height="10" fill="#1d1f33"/>
+    <circle cx="62" cy="71" r="5.5" fill="#ff5c7a"/><circle cx="82" cy="71" r="5.5" fill="#ffd166"/><circle cx="102" cy="71" r="5.5" fill="#7dffb0"/>
+    <text x="450" y="76" font-size="12" fill="#a9b0e8" text-anchor="middle">Terminal — PowerShell / zsh / bash</text>
+
+    <g class="mono" font-family="Consolas, monospace" font-size="15">
+      <text x="62" y="118" fill="#8f97d6">PS C:\Users\you\k6-load&gt; <tspan fill="#ffffff">k6 version</tspan></text>
+      <text x="62" y="150"><tspan fill="#7afcff" font-weight="700">k6.exe</tspan><tspan fill="#dfe3ff"> </tspan><tspan fill="#ffe27a" font-weight="700">v1.7.1</tspan><tspan fill="#dfe3ff"> (</tspan><tspan fill="#ff9be3">commit/9f82e6f1fc</tspan><tspan fill="#dfe3ff">, </tspan><tspan fill="#7dffb0">go1.26.1</tspan><tspan fill="#dfe3ff">, </tspan><tspan fill="#ffb86b">windows/amd64</tspan><tspan fill="#dfe3ff">)</tspan></text>
+      <text x="62" y="182" fill="#8f97d6">PS C:\Users\you\k6-load&gt; <tspan fill="#ffffff">█</tspan></text>
+    </g>
+
+    <!-- success badge -->
+    <g filter="url(#glow)">
+      <rect x="690" y="96" width="156" height="30" rx="15" fill="#7dffb0" fill-opacity="0.2" stroke="#7dffb0"/>
+    </g>
+    <text x="768" y="116" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">✓ k6 is installed</text>
+
+    <!-- legend -->
+    <text x="40" y="240" font-size="14" font-weight="700" fill="#ffffff">Reading the output — one colour per part</text>
+    <g font-size="13">
+      <rect x="40" y="254" width="12" height="12" rx="3" fill="#7afcff"/>
+      <text x="62" y="265" fill="#dff8ff"><tspan font-weight="700">k6.exe</tspan>  —  the program that answered (just <tspan font-family="Consolas, monospace">k6</tspan> on macOS / Linux). It ran, so your terminal found it.</text>
+
+      <rect x="40" y="280" width="12" height="12" rx="3" fill="#ffe27a"/>
+      <text x="62" y="291" fill="#fff6d5"><tspan font-weight="700">v1.7.1</tspan>  —  the k6 version. Newer installs show <tspan font-family="Consolas, monospace">v2.x.x</tspan>; the scripts in this bundle work on both.</text>
+
+      <rect x="40" y="306" width="12" height="12" rx="3" fill="#ff9be3"/>
+      <text x="62" y="317" fill="#ffe6f8"><tspan font-weight="700">commit/…</tspan>  —  the exact source-code build this binary came from (useful in bug reports).</text>
+
+      <rect x="40" y="332" width="12" height="12" rx="3" fill="#7dffb0"/>
+      <text x="62" y="343" fill="#dfffee"><tspan font-weight="700">go1.26.1</tspan>  —  the Go compiler version that built k6 (k6 is a Go program, not Node.js).</text>
+
+      <rect x="40" y="358" width="12" height="12" rx="3" fill="#ffb86b"/>
+      <text x="62" y="369" fill="#fff0da"><tspan font-weight="700">windows/amd64</tspan>  —  operating system / CPU type. Apple silicon shows <tspan font-family="Consolas, monospace">darwin/arm64</tspan>; Linux shows <tspan font-family="Consolas, monospace">linux/amd64</tspan>.</text>
+    </g>
+
+    <rect x="40" y="392" width="820" height="56" rx="12" fill="#7dffb0" fill-opacity="0.08" stroke="#7dffb0" stroke-opacity="0.6"/>
+    <text x="60" y="416" font-size="13" font-weight="700" fill="#7dffb0">What matters</text>
+    <text x="60" y="436" font-size="13" fill="#e8fff2">Any version line at all = success. Your exact numbers will differ. An error instead = see “k6 version not working?” below.</text>
+  </g>
+</svg>

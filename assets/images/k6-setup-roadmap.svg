@@ -1,0 +1,53 @@
+<svg width="1000" height="270" viewBox="0 0 1000 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">k6 setup roadmap</title>
+  <desc id="d">Five stations: install k6, pick an editor, create a project, optionally add k6 Studio, and write your first script.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7afcff"/><stop offset="0.5" stop-color="#b9acff"/><stop offset="1" stop-color="#ff7edb"/></linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1000" height="270" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="500" y="36" font-size="20" font-weight="700" fill="#ffffff">Your k6 setup journey — five stations to your first script</text>
+
+    <path d="M100,110 L900,110" stroke="url(#road)" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
+    <path d="M700,110 L700,110" stroke="#fff"/>
+
+    <!-- 1 -->
+    <circle cx="100" cy="110" r="28" fill="#0b0326" stroke="#7afcff" stroke-width="3"/>
+    <text x="100" y="118" font-size="22" font-weight="700" fill="#7afcff">1</text>
+    <text x="100" y="166" font-size="15" font-weight="700" fill="#ffffff">Install k6</text>
+    <text x="100" y="186" font-size="11" fill="#a9b0e8">one Go binary</text>
+    <text x="100" y="214" font-size="11" fill="#7afcff" font-family="Consolas, monospace">k6 version</text>
+
+    <!-- 2 -->
+    <circle cx="300" cy="110" r="28" fill="#0b0326" stroke="#8fb8ff" stroke-width="3"/>
+    <text x="300" y="118" font-size="22" font-weight="700" fill="#8fb8ff">2</text>
+    <text x="300" y="166" font-size="15" font-weight="700" fill="#ffffff">Pick an editor</text>
+    <text x="300" y="186" font-size="11" fill="#a9b0e8">VS Code or Cursor</text>
+    <text x="300" y="214" font-size="11" fill="#8fb8ff" font-family="Consolas, monospace">code . / cursor .</text>
+
+    <!-- 3 -->
+    <circle cx="500" cy="110" r="28" fill="#0b0326" stroke="#b9acff" stroke-width="3"/>
+    <text x="500" y="118" font-size="22" font-weight="700" fill="#b9acff">3</text>
+    <text x="500" y="166" font-size="15" font-weight="700" fill="#ffffff">Create a project</text>
+    <text x="500" y="186" font-size="11" fill="#a9b0e8">Node.js + npm</text>
+    <text x="500" y="214" font-size="11" fill="#b9acff" font-family="Consolas, monospace">npm init -y</text>
+
+    <!-- 4 optional -->
+    <circle cx="700" cy="110" r="28" fill="#0b0326" stroke="#ffb86b" stroke-width="3" stroke-dasharray="6 4"/>
+    <text x="700" y="118" font-size="22" font-weight="700" fill="#ffb86b">4</text>
+    <text x="700" y="166" font-size="15" font-weight="700" fill="#ffffff">k6 Studio</text>
+    <text x="700" y="186" font-size="11" fill="#a9b0e8">optional · record instead of code</text>
+    <text x="700" y="214" font-size="11" fill="#ffb86b" font-family="Consolas, monospace">Record → Generate</text>
+
+    <!-- 5 -->
+    <circle cx="900" cy="110" r="28" fill="#0b0326" stroke="#ff7edb" stroke-width="3"/>
+    <text x="900" y="118" font-size="22" font-weight="700" fill="#ff7edb">5</text>
+    <text x="900" y="166" font-size="15" font-weight="700" fill="#ffffff">First script</text>
+    <text x="900" y="186" font-size="11" fill="#a9b0e8">run a real test</text>
+    <text x="900" y="214" font-size="11" fill="#ff7edb" font-family="Consolas, monospace">k6 run hello-k6.js</text>
+
+    <text x="500" y="250" font-size="12" fill="#8f97d6">Solid = required · dashed = optional shortcut for people who prefer clicking to coding</text>
+  </g>
+</svg>

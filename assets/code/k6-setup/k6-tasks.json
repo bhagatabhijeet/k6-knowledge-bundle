@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "k6: run current file",
+      "type": "shell",
+      "command": "k6 run \"${file}\"",
+      "group": { "kind": "test", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "k6: debug run (1 VU, 1 iteration, HTTP debug)",
+      "type": "shell",
+      "command": "k6 run --vus 1 --iterations 1 --http-debug \"${file}\"",
+      "group": "test",
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "k6: inspect current file",
+      "type": "shell",
+      "command": "k6 inspect \"${file}\"",
+      "group": "test",
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    }
+  ]
+}

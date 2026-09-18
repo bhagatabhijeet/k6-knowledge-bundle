@@ -47,6 +47,10 @@ free to use, and everything you learn transfers to the paid cloud version if you
 
 ## How it works — install by platform
 
+![Five ways to install k6 — macOS, Windows, Linux, Docker and manual — all ending in k6 version](/assets/images/k6-install-paths.svg)
+
+The same choices as a text tree:
+
 ```
                         Which operating system?
                                   │
@@ -156,7 +160,26 @@ Open a **new** terminal and run:
 k6 version
 ```
 
-You should see something like `k6 v1.x.x (go1.x, windows/amd64)`. Then run the smallest
+You should see something like `k6 v2.x.x (go1.x, windows/amd64)` (v2 is the current major version).
+Any version line means k6 is installed and found:
+
+![Terminal running k6 version, printing k6.exe v1.7.1 with commit, Go version and OS/CPU, each part explained by colour](/assets/images/k6-version-success.svg)
+
+Running plain `k6` (no arguments) prints the Grafana k6 banner and the list of commands — another way to
+confirm k6 is detected globally:
+
+![Terminal running k6 with no arguments: the Grafana k6 banner and the command list](/assets/images/k6-banner-help.svg)
+
+### k6 version not working?
+
+If you see an error instead of a version line, k6 is either not installed or not on your `PATH`. This is what
+it looks like, and the three-step fix:
+
+![Terminal errors when k6 is not on the PATH — not recognized on Windows, command not found on macOS and Linux — with a three-step fix](/assets/images/k6-version-not-found.svg)
+
+### Run your first script
+
+With a version line showing, run the smallest
 possible test to confirm k6 can execute a script and reach the network:
 
 ```bash
@@ -182,7 +205,9 @@ export default function () {
 
 [Source](/assets/code/k6-setup/hello-k6.js)
 
-A green `✓ status is 200` line means the setup is complete.
+A green `✓ status is 200` line means the setup is complete. This is what a successful run looks like:
+
+![Terminal output of k6 run hello-k6.js with the passing check, zero failed requests and one completed iteration highlighted](/assets/images/k6-run-hello-success.svg)
 
 ## Common pitfalls
 
@@ -208,6 +233,7 @@ A green `✓ status is 200` line means the setup is complete.
 ## Further reading
 
 - [Grafana k6 — Install k6](https://grafana.com/docs/k6/latest/set-up/install-k6/)
+- [Setting Up k6 Studio](/k6-setup/k6-studio.md) — the optional record-and-generate desktop app
 - [k6 releases on GitHub](https://github.com/grafana/k6/releases)
 - [Setting Up the Editor](/k6-setup/setting-up-the-editor.md)
 - [What Is k6?](/introduction-to-performance-testing/what-is-k6.md)

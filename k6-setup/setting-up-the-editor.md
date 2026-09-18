@@ -31,6 +31,8 @@ editor** to write them in. This bundle supports two, and every step works in bot
 | **Visual Studio Code (VS Code)** | Microsoft's free, open-source editor with excellent JavaScript/TypeScript support built in | Free |
 | **Cursor** | An AI-first editor **built on VS Code** — same layout, shortcuts and terminal, with built-in AI chat and code generation | Free tier + paid plans |
 
+![VS Code and Cursor compared: what is different and what is identical for k6 work](/assets/images/editor-vscode-cursor.svg)
+
 Both run on Windows, macOS and Linux. Because Cursor is built on VS Code, the k6 setup,
 IntelliSense, integrated terminal and `@types/k6` all behave the same. Pick whichever you prefer.
 
@@ -104,7 +106,8 @@ change how your script executes. What you gain:
 | Typos found only at run time | Typos underlined immediately |
 
 Verify it: open [hello-k6.js](/assets/code/k6-setup/hello-k6.js) in your editor, hover over
-`http.get`, and a signature tooltip should appear.
+`http.get`, and a signature tooltip should appear. The full walk-through, with screenshots-style diagrams and
+troubleshooting, is in [Enabling k6 IntelliSense in Your Editor](/k6-configuration-options-in-code-editor/enable-k6-intellisense.md).
 
 ### Suggested project layout (same in both editors)
 
@@ -129,8 +132,9 @@ Nothing beyond `@types/k6` is required. Two conveniences many people add:
 - **ESLint** — flags mistakes in your scripts as you type.
 - **Prettier** — keeps formatting consistent across a team.
 
-Both editors have an Extensions panel (**Ctrl+Shift+X**). Cursor may use a different extension
-registry from VS Code, so if an extension you know doesn't appear, search for an equivalent.
+Both editors have an Extensions panel (**Ctrl+Shift+X**). Cursor uses the **Open VSX** registry rather than Microsoft's
+marketplace, so some VS Code extensions (including the official k6 one) aren't listed there — see
+[Editor Extensions & AI Assistants for k6](/k6-setup/k6-editor-extensions.md) for what to use instead.
 
 ## Common pitfalls
 
