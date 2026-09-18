@@ -61,19 +61,38 @@ A load test runs your entire end-to-end user journey — login → browse → ad
 place order — but with the target number of concurrent virtual users, sustained for long
 enough to observe stable behaviour.
 
+### Realistic traffic patterns — why stages matter
+
+Real users do not arrive all at once. When a sale opens, traffic builds gradually: a few
+users in the first minute, more in the second, reaching full load only after several
+minutes. The same is true on the way down — users don't all leave simultaneously.
+
+Simulating this accurately matters because:
+- An **instant ramp-up** creates an artificial spike that is not representative of
+  real traffic, and can hide slow degradation that only shows up under sustained load.
+- A **gradual ramp-down** lets you observe how your system recovers — does it release
+  connections cleanly? Does memory come back down?
+
 ```
-Timeline of a typical load test
-─────────────────────────────────────────────────────────────────────
+Realistic 30-minute load test timeline
+──────────────────────────────────────────────────────────────────────
 
  VUs
- 100 │                    ████████████████████
-  75 │             ████████                   ████████
-  50 │      ████████                                   ████
-   0 │──────┴────────┴──────────────────────────────────┴────▶ time
-        ramp-up   normal load (50 VUs)    peak (100 VUs)  ramp-down
+ 100 │                         ░░░░░░░░░░░░░░░░░░░░
+  50 │           ░░░░░░░░░░░░░░                    ░░░░░░░░░░░░░
+   0 │░░░░░░░░░░░                                              ░░░░░░░
+     └──────────┴─────────────┴────────────────────┴──────────┴──────▶
+        ramp-up     normal         ramp-up to           hold    ramp-down
+        (5 min)   load hold        peak (5 min)        peak     (5 min)
+                  (10 min)                            (10 min)
+
+     Stage 1       Stage 2         Stage 3           Stage 4   Stage 5
+   0 → 50 VUs    50 VUs hold     50 → 100 VUs      100 VUs    100 → 0
 ```
 
-In k6, you model this with load **stages**:
+In k6 each stage is one `{ duration, target }` pair. k6 interpolates linearly between the
+current VU count and the target over the given duration — that is all you need for a
+smooth, realistic ramp:
 
 ```js
 // assets/code/introduction-to-performance-testing/load-test.js
@@ -82,12 +101,12 @@ import { sleep, check } from 'k6';
 
 export const options = {
   stages: [
-    { duration: '2m', target: 50 },  // ramp up to normal load (50 VUs)
-    { duration: '5m', target: 50 },  // hold normal load — observe steady state
-    { duration: '2m', target: 100 }, // ramp up to peak load (100 VUs)
-    { duration: '5m', target: 100 }, // hold peak load — observe under pressure
-    { duration: '2m', target: 0 },   // ramp down gracefully
-  ],
+    { duration: '5m',  target: 50  }, // Stage 1: ramp up  → normal load (50 VUs)
+    { duration: '10m', target: 50  }, // Stage 2: hold       normal load — baseline
+    { duration: '5m',  target: 100 }, // Stage 3: ramp up  → peak load (100 VUs)
+    { duration: '10m', target: 100 }, // Stage 4: hold       peak load — pressure
+    { duration: '5m',  target: 0   }, // Stage 5: ramp down → graceful cool-off
+  ],                                   // Total: 35 minutes of rich performance data
   thresholds: {
     http_req_duration: ['p(95)<500'], // 95% of requests must finish under 500 ms
     http_req_failed:   ['rate<0.01'], // error rate must stay below 1%
@@ -95,19 +114,23 @@ export const options = {
 };
 
 export default function () {
-  // Simulate a realistic user journey — replace with your application's flow
+  // Replace with your application's end-to-end user journey
   const res = http.get('https://test.k6.io');
 
   check(res, {
-    'status is 200': (r) => r.status === 200,
+    'status is 200':         (r) => r.status === 200,
     'response time < 500ms': (r) => r.timings.duration < 500,
   });
 
-  sleep(1); // think time between steps
+  sleep(1); // think time — real users pause between actions
 }
 ```
 
 [Source](/assets/code/introduction-to-performance-testing/load-test.js)
+
+> **Tip — ramp-down is not just cleanup.** Watching the system during Stage 5 tells you
+> whether it recovers gracefully (memory drops, connections close, response times return
+> to baseline) or lingers in a degraded state even after load is removed.
 
 ### Reading the output
 
