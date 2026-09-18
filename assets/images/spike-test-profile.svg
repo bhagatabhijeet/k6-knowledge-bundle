@@ -1,0 +1,82 @@
+<svg width="900" height="400" viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">k6 spike test profile</title>
+  <desc id="d">Virtual users hold at 100, jump to 1000 in ten seconds, hold for two minutes, drop back to 100, then the recovery period is observed.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0326"/>
+      <stop offset="1" stop-color="#151a4a"/>
+    </linearGradient>
+    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff7edb" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#7d64ff" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7afcff"/>
+      <stop offset="0.45" stop-color="#ff7edb"/>
+      <stop offset="1" stop-color="#7afcff"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="400" rx="16" fill="url(#bg)"/>
+  <text x="40" y="38" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff">Spike test — sudden surge, then recovery</text>
+  <text x="40" y="58" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#a9b0e8">k6 stages · 100 → 1000 VUs in 10 s · total ≈ 10.5 min</text>
+
+  <!-- grid -->
+  <g stroke="#ffffff" stroke-opacity="0.08">
+    <line x1="80" y1="320" x2="860" y2="320"/>
+    <line x1="80" y1="242" x2="860" y2="242"/>
+    <line x1="80" y1="164" x2="860" y2="164"/>
+    <line x1="80" y1="86"  x2="860" y2="86"/>
+  </g>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#8f97d6" text-anchor="end">
+    <text x="72" y="324">0</text>
+    <text x="72" y="246">300</text>
+    <text x="72" y="168">600</text>
+    <text x="72" y="90">900</text>
+  </g>
+  <text x="18" y="200" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#8f97d6" transform="rotate(-90 18 200)" text-anchor="middle">virtual users</text>
+
+  <!-- phase bands -->
+  <rect x="155" y="70" width="227" height="250" fill="#7afcff" fill-opacity="0.05"/>
+  <rect x="394" y="70" width="152" height="250" fill="#ff5c7a" fill-opacity="0.10"/>
+  <rect x="558" y="70" width="227" height="250" fill="#7dffb0" fill-opacity="0.06"/>
+
+  <!-- area + line -->
+  <path d="M80,320 L155.5,294 L382,294 L394.5,60 L545.5,60 L558,294 L784.5,294 L860,320 Z" fill="url(#fill)"/>
+  <path d="M80,320 L155.5,294 L382,294 L394.5,60 L545.5,60 L558,294 L784.5,294 L860,320"
+        fill="none" stroke="url(#line)" stroke-width="3.5" stroke-linejoin="round" filter="url(#glow)"/>
+
+  <!-- lightning bolt at the spike -->
+  <path d="M470,70 L452,104 L466,104 L456,134 L484,92 L469,92 L478,70 Z" fill="#fff6d5" filter="url(#glow)"/>
+
+  <!-- annotations -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle">
+    <text x="268" y="282" fill="#7afcff" font-weight="600">1. baseline</text>
+    <text x="268" y="298" fill="#7afcff" fill-opacity="0.75" font-size="11">100 VUs · 3 min</text>
+    <text x="470" y="176" fill="#ff8fa6" font-weight="600">2. SPIKE</text>
+    <text x="470" y="192" fill="#ff8fa6" fill-opacity="0.8" font-size="11">1000 VUs · 2 min</text>
+    <text x="671" y="282" fill="#7dffb0" font-weight="600">3. recovery?</text>
+    <text x="671" y="298" fill="#7dffb0" fill-opacity="0.8" font-size="11">100 VUs · 3 min</text>
+  </g>
+
+  <!-- x axis -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#8f97d6" text-anchor="middle">
+    <text x="80" y="342">0</text>
+    <text x="155" y="342">1m</text>
+    <text x="382" y="342">4m</text>
+    <text x="395" y="342">4m10s</text>
+    <text x="546" y="342">6m10s</text>
+    <text x="558" y="342" dy="14">6m20s</text>
+    <text x="785" y="342">9m20s</text>
+    <text x="860" y="342">10m20s</text>
+  </g>
+
+  <!-- what to watch -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#c9cdf5">
+    <text x="40" y="378"><tspan fill="#ff8fa6" font-weight="700">Watch:</tspan> errors &amp; latency during the spike  ·  <tspan fill="#7dffb0" font-weight="700">then:</tspan> do p95 and error rate return to baseline in phase 3?</text>
+  </g>
+</svg>
