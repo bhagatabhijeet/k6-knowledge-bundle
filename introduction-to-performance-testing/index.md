@@ -10,3 +10,5 @@ description: >
 
 - [What Is Performance Testing?](/introduction-to-performance-testing/what-is-performance-testing.md) — defines performance testing, explains the umbrella term, and lists the key testing types
 - [What Is k6?](/introduction-to-performance-testing/what-is-k6.md) — introduces Grafana k6, how it compares to JMeter and LoadRunner, and a preview of the full course curriculum
+- [Smoke Testing](/introduction-to-performance-testing/smoke-testing.md) — the minimal sanity-check load run you always do first on a new build
+- [Load Testing](/introduction-to-performance-testing/load-testing.md) — validating system performance under normal and peak concurrent user counts; where non-functional validation truly begins
