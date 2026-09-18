@@ -148,14 +148,38 @@ k6-knowledge-bundle/
 │   ├── what-is-performance-testing.md
 │   ├── what-is-k6.md
 │   ├── smoke-testing.md
+│   ├── load-testing.md
+│   ├── stress-testing.md
+│   ├── spike-testing.md
+│   ├── soak-testing.md
 │   └── … more concepts coming
+│
+├── 📁 k6-setup/
+│   ├── index.md
+│   ├── installing-k6.md
+│   ├── setting-up-the-editor.md
+│   └── creating-a-k6-project.md
+│
+├── 📁 k6-architecture/
+│   ├── index.md
+│   ├── how-k6-is-built.md
+│   └── k6-test-lifecycle.md
 │
 └── 📁 assets/
     ├── images/                          ← Diagrams & visuals
     └── code/                            ← Runnable k6 scripts
-        └── introduction-to-performance-testing/
-            ├── first-load-test.js
-            └── smoke-test.js
+        ├── introduction-to-performance-testing/
+        │   ├── first-load-test.js
+        │   ├── smoke-test.js
+        │   ├── load-test.js
+        │   ├── stress-test.js
+        │   ├── spike-test.js
+        │   ├── spike-test-arrival-rate.js
+        │   └── soak-test.js
+        ├── k6-setup/
+        │   └── hello-k6.js
+        └── k6-architecture/
+            └── test-lifecycle.js
 ```
 
 ---

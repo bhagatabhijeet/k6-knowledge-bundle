@@ -15,3 +15,5 @@ through advanced topics like cloud-scale load runs, Grafana dashboards, and CI/C
 ## Topics
 
 1. [Introduction to Performance Testing](/introduction-to-performance-testing/index.md)
+2. [k6 Setup](/k6-setup/index.md)
+3. [k6 Architecture](/k6-architecture/index.md)

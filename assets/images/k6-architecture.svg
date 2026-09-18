@@ -1,0 +1,113 @@
+<svg width="900" height="560" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">k6 architecture</title>
+  <desc id="d">Your JavaScript or TypeScript script is loaded by k6, a Go program. Each virtual user runs the script in an embedded Sobek JavaScript runtime. Built-in modules are Go code exposed to JavaScript. Results flow to a metrics engine and out to the terminal summary, Grafana, or other outputs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0326"/>
+      <stop offset="1" stop-color="#101a48"/>
+    </linearGradient>
+    <linearGradient id="go" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00add8" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#7d64ff" stop-opacity="0.18"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#7afcff"/>
+    </marker>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="560" rx="16" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="40" y="38" font-size="20" font-weight="700" fill="#ffffff">k6 architecture — a Go program with an embedded JavaScript VM</text>
+    <text x="40" y="58" font-size="12" fill="#a9b0e8">Not Node.js · not a browser · your script is data that the Go engine executes</text>
+
+    <!-- Your script -->
+    <rect x="40" y="82" width="200" height="86" rx="12" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-opacity="0.7"/>
+    <text x="140" y="110" font-size="14" font-weight="700" fill="#ffe27a" text-anchor="middle">Your script</text>
+    <text x="140" y="130" font-size="12" fill="#f3e9b8" text-anchor="middle">.js  or  .ts</text>
+    <text x="140" y="148" font-size="11" fill="#c9cdf5" text-anchor="middle">k6 run script.js</text>
+
+    <!-- Go engine outline -->
+    <rect x="270" y="76" width="590" height="420" rx="16" fill="url(#go)" stroke="#00add8" stroke-opacity="0.8" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="290" y="100" font-size="13" font-weight="700" fill="#5ee3ff">k6 binary — written in Go</text>
+
+    <!-- arrow script -> engine -->
+    <path d="M240,125 L292,125" stroke="#7afcff" stroke-width="2.5" fill="none" marker-end="url(#arr)" filter="url(#glow)"/>
+
+    <!-- Loader -->
+    <rect x="296" y="112" width="150" height="66" rx="10" fill="#0b0326" fill-opacity="0.7" stroke="#7afcff" stroke-opacity="0.5"/>
+    <text x="371" y="136" font-size="13" font-weight="700" fill="#7afcff" text-anchor="middle">Loader</text>
+    <text x="371" y="154" font-size="11" fill="#c9cdf5" text-anchor="middle">resolves imports</text>
+    <text x="371" y="168" font-size="11" fill="#c9cdf5" text-anchor="middle">esbuild strips TS types</text>
+
+    <!-- Scheduler -->
+    <rect x="480" y="112" width="150" height="66" rx="10" fill="#0b0326" fill-opacity="0.7" stroke="#b9acff" stroke-opacity="0.6"/>
+    <text x="555" y="136" font-size="13" font-weight="700" fill="#b9acff" text-anchor="middle">Scheduler</text>
+    <text x="555" y="154" font-size="11" fill="#c9cdf5" text-anchor="middle">executors, stages,</text>
+    <text x="555" y="168" font-size="11" fill="#c9cdf5" text-anchor="middle">VUs &amp; iterations</text>
+    <path d="M446,145 L476,145" stroke="#7afcff" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+    <!-- VU lanes -->
+    <text x="290" y="214" font-size="12" font-weight="700" fill="#ff8fa6">Virtual users — run concurrently</text>
+
+    <g>
+      <!-- VU 1 -->
+      <rect x="296" y="226" width="180" height="120" rx="10" fill="#ff7edb" fill-opacity="0.08" stroke="#ff7edb" stroke-opacity="0.6"/>
+      <text x="386" y="248" font-size="12" font-weight="700" fill="#ff9be3" text-anchor="middle">VU 1</text>
+      <rect x="310" y="258" width="152" height="76" rx="8" fill="#0b0326" fill-opacity="0.75" stroke="#ff7edb" stroke-opacity="0.4"/>
+      <text x="386" y="280" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Sobek JS runtime</text>
+      <text x="386" y="298" font-size="11" fill="#c9cdf5" text-anchor="middle">own copy of your script</text>
+      <text x="386" y="314" font-size="11" fill="#c9cdf5" text-anchor="middle">init → default()</text>
+      <text x="386" y="328" font-size="10" fill="#8f97d6" text-anchor="middle">~1–5 MB RAM</text>
+
+      <!-- VU 2 -->
+      <rect x="490" y="226" width="180" height="120" rx="10" fill="#ff7edb" fill-opacity="0.08" stroke="#ff7edb" stroke-opacity="0.6"/>
+      <text x="580" y="248" font-size="12" font-weight="700" fill="#ff9be3" text-anchor="middle">VU 2</text>
+      <rect x="504" y="258" width="152" height="76" rx="8" fill="#0b0326" fill-opacity="0.75" stroke="#ff7edb" stroke-opacity="0.4"/>
+      <text x="580" y="280" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Sobek JS runtime</text>
+      <text x="580" y="298" font-size="11" fill="#c9cdf5" text-anchor="middle">own copy of your script</text>
+      <text x="580" y="314" font-size="11" fill="#c9cdf5" text-anchor="middle">init → default()</text>
+      <text x="580" y="328" font-size="10" fill="#8f97d6" text-anchor="middle">~1–5 MB RAM</text>
+
+      <!-- VU N -->
+      <rect x="684" y="226" width="160" height="120" rx="10" fill="#ff7edb" fill-opacity="0.08" stroke="#ff7edb" stroke-opacity="0.6" stroke-dasharray="4 3"/>
+      <text x="764" y="248" font-size="12" font-weight="700" fill="#ff9be3" text-anchor="middle">VU … N</text>
+      <text x="764" y="296" font-size="26" fill="#ff9be3" text-anchor="middle">⋯</text>
+      <text x="764" y="322" font-size="11" fill="#c9cdf5" text-anchor="middle">as many as you set</text>
+    </g>
+
+    <path d="M555,178 L555,220" stroke="#7afcff" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+    <!-- Go built-in modules -->
+    <rect x="296" y="368" width="374" height="56" rx="10" fill="#7dffb0" fill-opacity="0.1" stroke="#7dffb0" stroke-opacity="0.6"/>
+    <text x="483" y="391" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">Built-in modules — Go code exposed to JavaScript</text>
+    <text x="483" y="411" font-size="11" fill="#c9cdf5" text-anchor="middle">k6/http · k6 (check, sleep) · k6/metrics · k6/execution · k6/data · …</text>
+    <path d="M386,346 L386,364 M580,346 L580,364" stroke="#7dffb0" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+    <!-- Extensions -->
+    <rect x="684" y="368" width="160" height="56" rx="10" fill="#ffb86b" fill-opacity="0.1" stroke="#ffb86b" stroke-opacity="0.6"/>
+    <text x="764" y="391" font-size="13" font-weight="700" fill="#ffb86b" text-anchor="middle">Extensions</text>
+    <text x="764" y="411" font-size="11" fill="#c9cdf5" text-anchor="middle">custom Go via xk6</text>
+
+    <!-- Metrics engine -->
+    <rect x="296" y="440" width="548" height="42" rx="10" fill="#0b0326" fill-opacity="0.7" stroke="#7afcff" stroke-opacity="0.5"/>
+    <text x="570" y="466" font-size="13" font-weight="700" fill="#7afcff" text-anchor="middle">Metrics engine — collects, aggregates, evaluates thresholds</text>
+    <path d="M483,424 L483,436" stroke="#7afcff" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+    <!-- Outputs -->
+    <path d="M570,482 L570,512" stroke="#7afcff" stroke-width="2.5" fill="none" marker-end="url(#arr)" filter="url(#glow)"/>
+    <text x="570" y="532" font-size="12" fill="#c9cdf5" text-anchor="middle">Terminal summary · exit code · Grafana / Prometheus / JSON via <tspan fill="#7afcff" font-weight="700">--out</tspan></text>
+
+    <!-- left side note: not node -->
+    <rect x="40" y="200" width="200" height="140" rx="12" fill="#ff5c7a" fill-opacity="0.1" stroke="#ff5c7a" stroke-opacity="0.6"/>
+    <text x="140" y="226" font-size="13" font-weight="700" fill="#ff8fa6" text-anchor="middle">Not available</text>
+    <text x="140" y="248" font-size="11" fill="#e6c4cd" text-anchor="middle">Node.js APIs (fs, process…)</text>
+    <text x="140" y="266" font-size="11" fill="#e6c4cd" text-anchor="middle">Browser APIs (DOM, window)</text>
+    <text x="140" y="284" font-size="11" fill="#e6c4cd" text-anchor="middle">npm-style module lookup</text>
+    <text x="140" y="308" font-size="11" fill="#8f97d6" text-anchor="middle">bundle npm code first,</text>
+    <text x="140" y="324" font-size="11" fill="#8f97d6" text-anchor="middle">or write a Go extension</text>
+  </g>
+</svg>
