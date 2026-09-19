@@ -57,7 +57,7 @@ Create **`login-flow-test.js`** (any name works). It has the same two building b
 - **`options`** — how much load and *which browser* (`browser: { type: 'chromium' }`, exactly as in [Using k6 Browser](/browser-ui-testing-with-playwright-k6-integration/using-k6-browser.md)).
 - **The default function** — the user journey.
 
-In this lecture style we give the default function a **name** — `browserTest`. It works the same as an anonymous one:
+Here we give the default function a **name** — `browserTest`. It works the same as an anonymous one:
 
 ```js
 export default async function browserTest() {

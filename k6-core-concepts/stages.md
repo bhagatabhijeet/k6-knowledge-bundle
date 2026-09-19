@@ -189,7 +189,7 @@ stages: [
 The same tool builds every test type: a **hold** stage is a load or soak test, **steps upward** are a [stress test](/introduction-to-performance-testing/stress-testing.md), and a **very short, steep** stage is a
 [spike test](/introduction-to-performance-testing/spike-testing.md).
 
-The lecture example uses seconds and tiny numbers on purpose: the goal is to *understand the concept*, not to stress the application. Once the idea is clear, raise the numbers.
+This example uses seconds and tiny numbers on purpose: the goal is to *understand the concept*, not to stress the application. Once the idea is clear, raise the numbers.
 
 ## Common pitfalls
 
