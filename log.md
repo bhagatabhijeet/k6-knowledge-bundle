@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-09-18 (update 13)
+
+- Moved "The Math of Percentiles — Explained Simply" into its own section, **Math for Performance Testers** (`math-for-performance-testers/`), and made it part **#10** of the learning path in the root `index.md`, README and roadmap table. The demo script moved to `assets/code/math-for-performance-testers/`, and all links were updated.
+- Added the first browser scripts for part 6: `first-browser-test.js`, `api-vs-browser.js` and `login-flow-test.js` (`assets/code/browser-ui-testing-with-playwright-k6-integration/`).
+
 ## 2026-09-18 (update 12)
 
 - Reorganised the root `index.md` and the README learning path into the nine-part curriculum: fundamentals, k6 setup, k6 core concepts, testing APIs, functional API load scenarios, browser UI testing with Playwright k6 integration, UI load scenarios, Grafana Cloud load tests and CI/CD. Existing topics are grouped under parts 1-3; parts 4-9 are marked as coming soon (part 6 in progress).

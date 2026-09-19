@@ -22,6 +22,8 @@ verified:
     at: 2026-09-18T00:00:00Z
 ---
 
+> *Part of [Math for Performance Testers](/math-for-performance-testers/index.md) — the plain-language maths behind the numbers k6 prints.*
+
 ## What it is
 
 You have already met **p(90)** and **p(95)** in the k6 results. This page explains — slowly, with pictures — where those numbers come from.
@@ -143,7 +145,7 @@ Same recipe for any size. With 1000 requests taking 1, 2, … 1000 ms, p95 sits 
 Let k6 do the same maths and check it against ours. This tiny script feeds k6 the ten numbers:
 
 ```js
-// assets/code/k6-console-output/percentile-math-demo.js
+// assets/code/math-for-performance-testers/percentile-math-demo.js
 import { Trend } from 'k6/metrics';
 
 const ten = new Trend('ten_requests', true); // true = the values are times (ms)
@@ -161,7 +163,7 @@ export default function () {
 }
 ```
 
-[Source](/assets/code/k6-console-output/percentile-math-demo.js) — run it with `k6 run percentile-math-demo.js`. Real output:
+[Source](/assets/code/math-for-performance-testers/percentile-math-demo.js) — run it with `k6 run percentile-math-demo.js`. Real output:
 
 ```
 ten_requests: min=100ms p(25)=325ms med=550ms avg=550ms p(75)=775ms p(90)=910ms p(95)=954.99ms p(99)=991ms max=1s

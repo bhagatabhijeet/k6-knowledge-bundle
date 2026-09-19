@@ -67,7 +67,7 @@ So in our run: **min 63.56 ms** was the fastest request, **max 117.05 ms** the s
 
 ### What is a percentile? Sort, count, read
 
-> **Want the math explained slowly, with easy numbers and lots of pictures?** Read [The Math of Percentiles — Explained Simply](/k6-console-output/percentile-math.md) first — then come back here.
+> **Want the math explained slowly, with easy numbers and lots of pictures?** Read [The Math of Percentiles — Explained Simply](/math-for-performance-testers/percentile-math.md) first — then come back here.
 
 A percentile answers: *“what value do most of my requests stay under?”* Here is the recipe, with 20 example requests
 (illustrative values, in milliseconds):

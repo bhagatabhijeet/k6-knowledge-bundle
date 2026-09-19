@@ -80,8 +80,8 @@ pictures, using **ten friendly numbers** and nothing harder than adding, multipl
 - 🪜 **Walk the stairs** — the exact trick k6 uses when a percentile lands *between* two requests
 - 📝 **A three-step recipe**, a worked cheat-sheet, three classic traps, and a self-check quiz
 
-Every answer in the guide is **checked against a real k6 run** you can repeat yourself. 👉
-[**Read “The Math of Percentiles — Explained Simply”**](k6-console-output/percentile-math.md)
+It lives in its own section — **Math for Performance Testers** — and every answer is **checked against a real k6 run** you can repeat yourself. 👉
+[**Read “The Math of Percentiles — Explained Simply”**](math-for-performance-testers/percentile-math.md)
 
 ---
 
@@ -127,8 +127,12 @@ Every answer in the guide is **checked against a real k6 run** you can repeat yo
 │  9 🔄 CI/CD Integration                                     ~30 min  │
 │     └─ Embedding k6 into pipelines                                  │
 │     └─ Automated pass/fail on threshold breach                      │
+├─────────────────────────────────────────────────────────────────────┤
+│  10 📐 Math for Performance Testers                         ~30 min  │
+│     └─ Percentiles explained like you're in 10th grade            │
+│     └─ Averages, medians & the long tail                            │
 └─────────────────────────────────────────────────────────────────────┘
-                                              TOTAL  ≈ 7 hrs 30 min
+                                              TOTAL  ≈ 8 hrs
 ```
 
 ---
@@ -207,6 +211,10 @@ k6-knowledge-bundle/
 │   ├── thresholds.md
 │   └── stages.md
 │
+├── 📁 math-for-performance-testers/
+│   ├── index.md
+│   └── percentile-math.md
+│
 ├── 📁 k6-architecture/
 │   ├── index.md
 │   ├── how-k6-is-built.md
@@ -232,7 +240,8 @@ k6-knowledge-bundle/
         │   ├── first-test.js
         │   └── first-test-missing-import.js
         ├── k6-console-output/
-        │   ├── percentile-demo.js
+        │   └── percentile-demo.js
+        ├── math-for-performance-testers/
         │   └── percentile-math-demo.js
         ├── k6-core-concepts/
         │   ├── expected-responses.js

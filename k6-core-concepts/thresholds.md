@@ -78,7 +78,7 @@ k6 has four **metric types**, and each allows different aggregations:
 | **Trend** | many values, summarised | `avg`, `min`, `max`, `med`, `p(N)` | `http_req_duration` | `page_time: ['med<800', 'p(99)<1000']` |
 
 Units matter: **times are in milliseconds** (`p(95)<800` = 800 ms) and **rates are fractions from 0 to 1** (`rate<0.1` = 10%).
-The percentile `p(N)` is exactly the value explained in [The Math of Percentiles](/k6-console-output/percentile-math.md).
+The percentile `p(N)` is exactly the value explained in [The Math of Percentiles](/math-for-performance-testers/percentile-math.md).
 
 ### A complete example
 
@@ -203,7 +203,7 @@ That single row generates exactly `http_req_duration: [{ threshold: "p(95)<400",
 - **Setting only speed goals.** Add `http_req_failed` so fast errors can’t pass.
 - **Impossible or arbitrary numbers.** Base goals on your SLA or a measured baseline, not a guess; a goal that always fails is ignored by the team.
 - **`abortOnFail` without `delayAbortEval`.** An early outlier may stop a healthy test.
-- **Judging a tiny sample.** With few requests, high percentiles are unstable (see [Percentile traps](/k6-console-output/percentile-math.md)).
+- **Judging a tiny sample.** With few requests, high percentiles are unstable (see [Percentile traps](/math-for-performance-testers/percentile-math.md)).
 
 ## Key takeaways
 
@@ -218,5 +218,5 @@ That single row generates exactly `http_req_duration: [{ threshold: "p(95)<400",
 - [Grafana k6 — Thresholds](https://grafana.com/docs/k6/latest/using-k6/thresholds/)
 - [Grafana k6 — Metrics](https://grafana.com/docs/k6/latest/using-k6/metrics/)
 - [Expected Responses and http_req_failed](/k6-core-concepts/expected-responses.md)
-- [The Math of Percentiles — Explained Simply](/k6-console-output/percentile-math.md)
+- [The Math of Percentiles — Explained Simply](/math-for-performance-testers/percentile-math.md)
 - [Load Testing](/introduction-to-performance-testing/load-testing.md)

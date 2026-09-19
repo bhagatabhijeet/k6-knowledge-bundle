@@ -73,7 +73,7 @@ interactive dashboards.
 
 ## Bundle roadmap
 
-This bundle follows a step-by-step progression in nine parts:
+This bundle follows a step-by-step progression in ten parts:
 
 | # | Part | What you learn |
 |---|---|---|
@@ -86,6 +86,7 @@ This bundle follows a step-by-step progression in nine parts:
 | 7 | Building load scenarios for UI tests | Browser scenarios at scale, alongside protocol-level load |
 | 8 | Building load tests for the Grafana Cloud platform | Streaming results to the cloud, dashboards, reports and cloud-scale runs |
 | 9 | CI/CD integration | Embedding tests in pipelines with automatic pass/fail on threshold breach |
+| 10 | Math for performance testers | The maths behind the numbers, in plain language — starting with percentiles |
 
 ## Common pitfalls
 

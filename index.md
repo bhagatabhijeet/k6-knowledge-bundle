@@ -14,7 +14,7 @@ through advanced topics like cloud-scale load runs, Grafana dashboards, and CI/C
 
 ## Topics
 
-The bundle is a learning path in nine parts. Read them in order, or jump to the one you need.
+The bundle is a learning path in ten parts. Read them in order, or jump to the one you need.
 
 1. [Performance Testing Fundamentals](/introduction-to-performance-testing/index.md) — what performance testing is, where k6 fits, and the test types (smoke, load, stress, spike, soak)
 2. **k6 Setup**
@@ -30,6 +30,7 @@ The bundle is a learning path in nine parts. Read them in order, or jump to the 
 7. Building Load Scenarios for UI Tests — *coming soon*
 8. Building Load Tests for the Grafana Cloud Platform — *coming soon*
 9. CI/CD Integration — *coming soon*
+10. [Math for Performance Testers](/math-for-performance-testers/index.md) — the maths behind the numbers, in plain language: percentiles first
 
 ## Reference guides
 
