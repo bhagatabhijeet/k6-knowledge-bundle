@@ -211,6 +211,11 @@ k6-knowledge-bundle/
 │   ├── thresholds.md
 │   └── stages.md
 │
+├── 📁 browser-ui-testing-with-playwright-k6-integration/
+│   ├── index.md
+│   ├── using-k6-browser.md
+│   └── playwright-e2e-login-flow.md
+│
 ├── 📁 math-for-performance-testers/
 │   ├── index.md
 │   └── percentile-math.md
@@ -241,6 +246,10 @@ k6-knowledge-bundle/
         │   └── first-test-missing-import.js
         ├── k6-console-output/
         │   └── percentile-demo.js
+        ├── browser-ui-testing-with-playwright-k6-integration/
+        │   ├── first-browser-test.js
+        │   ├── api-vs-browser.js
+        │   └── login-flow-test.js
         ├── math-for-performance-testers/
         │   └── percentile-math-demo.js
         ├── k6-core-concepts/

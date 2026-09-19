@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-09-18 (update 14)
+
+- Started part 6 with the new section **Browser UI Testing with Playwright k6 Integration** (`browser-ui-testing-with-playwright-k6-integration/`): "Using k6 Browser" and "Using the Playwright Library for E2E Browser Tests".
+- Added three verified browser scripts (`first-browser-test.js`, `api-vs-browser.js`, `login-flow-test.js`), ten diagrams and three real screenshots of the QuickPizza demo app taken through the k6 browser module.
+- Verified against k6 v1.7.1 with Chrome: browser scenario options, BROWSER and WEB_VITALS metrics, `fill` vs `type`, condition-based waiting, and which locator styles work (CSS, XPath and the `hasText` option do; Playwright `text=` and `:has-text()` do not).
+
 ## 2026-09-18 (update 13)
 
 - Moved "The Math of Percentiles — Explained Simply" into its own section, **Math for Performance Testers** (`math-for-performance-testers/`), and made it part **#10** of the learning path in the root `index.md`, README and roadmap table. The demo script moved to `assets/code/math-for-performance-testers/`, and all links were updated.

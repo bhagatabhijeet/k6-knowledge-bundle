@@ -26,7 +26,9 @@ The bundle is a learning path in ten parts. Read them in order, or jump to the o
    - [k6 Architecture](/k6-architecture/index.md) — Go, the Sobek JavaScript engine and the test lifecycle
 4. How to Test APIs Using k6 — *coming soon*
 5. Building Load Scenarios for Functional API Tests — *coming soon*
-6. Browser UI Testing with Playwright k6 Integration — *in progress*
+6. [Browser UI Testing with Playwright k6 Integration](/browser-ui-testing-with-playwright-k6-integration/index.md) — *in progress*
+   - [Using k6 Browser](/browser-ui-testing-with-playwright-k6-integration/using-k6-browser.md) — API load vs browser load, the k6 browser module, web vitals
+   - [Using the Playwright Library for E2E Browser Tests](/browser-ui-testing-with-playwright-k6-integration/playwright-e2e-login-flow.md) — an end-to-end login flow, step by step
 7. Building Load Scenarios for UI Tests — *coming soon*
 8. Building Load Tests for the Grafana Cloud Platform — *coming soon*
 9. CI/CD Integration — *coming soon*
