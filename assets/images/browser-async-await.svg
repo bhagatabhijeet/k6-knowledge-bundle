@@ -1,0 +1,28 @@
+<svg width="1000" height="520" viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Why every browser step needs await</title><desc id="d">Without await the steps start at the same time and race each other, so the test fills a form before the page has loaded. With await each step finishes before the next begins.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="520" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">async / await — “wait for this step to finish”</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Browser actions take real time (the network, the page). await makes your script patient.</text>
+<rect x="24" y="72" width="952" height="196" rx="14" fill="#ff5c7a" fill-opacity="0.07" stroke="#ff5c7a" stroke-opacity="0.7"/>
+<text x="44" y="100" font-size="15" font-weight="700" fill="#ff5c7a">✗ Without await — everything fires at once</text>
+<rect x="70" y="118" width="420" height="26" rx="6" fill="#7afcff" fill-opacity="0.3" stroke="#7afcff"/><text x="82" y="136" font-size="12.5" fill="#ffffff" class="m">goto(login)</text>
+<rect x="70" y="152" width="400" height="26" rx="6" fill="#ffe27a" fill-opacity="0.3" stroke="#ffe27a"/><text x="82" y="170" font-size="12.5" fill="#ffffff" class="m">fill(username)</text>
+<rect x="70" y="186" width="380" height="26" rx="6" fill="#ffe27a" fill-opacity="0.3" stroke="#ffe27a"/><text x="82" y="204" font-size="12.5" fill="#ffffff" class="m">fill(password)</text>
+<rect x="70" y="220" width="360" height="26" rx="6" fill="#7dffb0" fill-opacity="0.3" stroke="#7dffb0"/><text x="82" y="238" font-size="12.5" fill="#ffffff" class="m">click(Sign in)</text>
+<path d="M70,112 L70,256" stroke="#ffffff" stroke-opacity="0.35" stroke-dasharray="4 3"/><text x="76" y="268" font-size="10.5" fill="#8f97d6">all start at time 0</text>
+<text x="560" y="150" font-size="13" fill="#ffe0e6">The form is typed into and clicked</text><text x="560" y="170" font-size="13" fill="#ffe0e6">while the page is STILL LOADING →</text><text x="560" y="196" font-size="14" font-weight="700" fill="#ff5c7a">errors, or a test that “passes”</text><text x="560" y="216" font-size="14" font-weight="700" fill="#ff5c7a">by luck. Flaky!</text>
+<rect x="24" y="284" width="952" height="196" rx="14" fill="#7dffb0" fill-opacity="0.07" stroke="#7dffb0" stroke-opacity="0.7"/>
+<text x="44" y="312" font-size="15" font-weight="700" fill="#7dffb0">✓ With await — one step after another</text>
+<rect x="70" y="334" width="150" height="26" rx="6" fill="#7afcff" fill-opacity="0.3" stroke="#7afcff"/><text x="78" y="352" font-size="12" fill="#ffffff" class="m">goto(login)</text>
+<path d="M220,360 L220,368" stroke="#ffffff" stroke-opacity="0.5"/>
+<rect x="220" y="368" width="120" height="26" rx="6" fill="#ffe27a" fill-opacity="0.3" stroke="#ffe27a"/><text x="228" y="386" font-size="12" fill="#ffffff" class="m">fill(username)</text>
+<path d="M340,394 L340,402" stroke="#ffffff" stroke-opacity="0.5"/>
+<rect x="320" y="402" width="120" height="26" rx="6" fill="#ffe27a" fill-opacity="0.3" stroke="#ffe27a"/><text x="328" y="420" font-size="12" fill="#ffffff" class="m">fill(password)</text>
+<path d="M440,428 L440,436" stroke="#ffffff" stroke-opacity="0.5"/>
+<rect x="420" y="436" width="120" height="26" rx="6" fill="#7dffb0" fill-opacity="0.3" stroke="#7dffb0"/><text x="428" y="454" font-size="12" fill="#ffffff" class="m">click(Sign in)</text>
+<text x="560" y="366" font-size="13" fill="#e8fff2">Each step starts only when the</text><text x="560" y="386" font-size="13" fill="#e8fff2">previous one is DONE →</text><text x="560" y="412" font-size="14" font-weight="700" fill="#7dffb0">the same order a human follows.</text><text x="560" y="432" font-size="14" font-weight="700" fill="#7dffb0">Reliable.</text>
+<text x="500" y="502" font-size="12.5" fill="#e6e9ff" text-anchor="middle"><tspan font-weight="700" fill="#ffe27a">Rule:</tspan>  put  <tspan font-family="Consolas, monospace">async</tspan>  before the function and  <tspan font-family="Consolas, monospace">await</tspan>  before every browser call. Forget one and you get a race.</text>
+</g></svg>

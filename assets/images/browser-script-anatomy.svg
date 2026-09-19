@@ -1,0 +1,75 @@
+<svg width="1000" height="640" viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Anatomy of a first k6 browser test</title><desc id="d">The script imports browser from k6/browser, sets a scenario with browser type chromium, exports an async default function, opens a page with await, navigates, and closes the page in a finally block.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="640" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Anatomy of a browser test — five things to notice</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">first-browser-test.js</text>
+<rect x="24" y="66" width="620" height="330" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="24" y="66" width="620" height="26" rx="10" fill="#1d1f33"/><rect x="24" y="82" width="620" height="10" fill="#1d1f33"/>
+<circle cx="44" cy="79" r="5" fill="#ff5c7a"/><circle cx="62" cy="79" r="5" fill="#ffd166"/><circle cx="80" cy="79" r="5" fill="#7dffb0"/>
+<text x="334.0" y="83" font-size="11" fill="#a9b0e8" text-anchor="middle">first-browser-test.js</text>
+<rect x="32" y="85" width="604" height="21" rx="3" fill="#7afcff" fill-opacity="0.10"/>
+<text class="m" x="48" y="100" font-size="12.5"><tspan fill="#c586c0">import </tspan><tspan fill="#dfe3ff">{ browser } </tspan><tspan fill="#c586c0">from </tspan><tspan fill="#ce9178">&#x27;k6/browser&#x27;</tspan><tspan fill="#dfe3ff">;</tspan></text>
+<rect x="32" y="125" width="604" height="21" rx="3" fill="#ffe27a" fill-opacity="0.10"/>
+<text class="m" x="48" y="140" font-size="12.5"><tspan fill="#dfe3ff">scenarios: { ui: {</tspan></text>
+<rect x="32" y="143" width="604" height="21" rx="3" fill="#ffe27a" fill-opacity="0.10"/>
+<text class="m" x="48" y="158" font-size="12.5"><tspan fill="#9cdcfe">  executor: </tspan><tspan fill="#ce9178">&#x27;shared-iterations&#x27;</tspan><tspan fill="#dfe3ff">,</tspan></text>
+<rect x="32" y="161" width="604" height="21" rx="3" fill="#ffe27a" fill-opacity="0.10"/>
+<text class="m" x="48" y="176" font-size="12.5"><tspan fill="#9cdcfe">  options: { </tspan><tspan fill="#dfe3ff">browser: { type: </tspan><tspan fill="#ce9178" font-weight="700">&#x27;chromium&#x27;</tspan><tspan fill="#dfe3ff"> } },</tspan></text>
+<rect x="32" y="199" width="604" height="21" rx="3" fill="#ff7edb" fill-opacity="0.10"/>
+<text class="m" x="48" y="214" font-size="12.5"><tspan fill="#c586c0">export default </tspan><tspan fill="#ff7edb" font-weight="700">async </tspan><tspan fill="#dfe3ff">function () {</tspan></text>
+<rect x="32" y="221" width="604" height="21" rx="3" fill="#ff7edb" fill-opacity="0.10"/>
+<text class="m" x="48" y="236" font-size="12.5"><tspan fill="#dfe3ff">  const page = </tspan><tspan fill="#ff7edb" font-weight="700">await </tspan><tspan fill="#dfe3ff">browser.newPage();</tspan></text>
+<rect x="32" y="259" width="604" height="21" rx="3" fill="#7dffb0" fill-opacity="0.10"/>
+<text class="m" x="48" y="274" font-size="12.5"><tspan fill="#dfe3ff">  try {</tspan></text>
+<rect x="32" y="281" width="604" height="21" rx="3" fill="#7dffb0" fill-opacity="0.10"/>
+<text class="m" x="48" y="296" font-size="12.5"><tspan fill="#dfe3ff">    </tspan><tspan fill="#ff7edb" font-weight="700">await </tspan><tspan fill="#dfe3ff">page.goto(&#x27;https://quickpizza.grafana.com/&#x27;);</tspan></text>
+<rect x="32" y="303" width="604" height="21" rx="3" fill="#7dffb0" fill-opacity="0.10"/>
+<text class="m" x="48" y="318" font-size="12.5"><tspan fill="#dfe3ff">    </tspan><tspan fill="#dfe3ff">const title = await </tspan><tspan fill="#dfe3ff">page.title();</tspan></text>
+<rect x="32" y="325" width="604" height="21" rx="3" fill="#ffb86b" fill-opacity="0.10"/>
+<text class="m" x="48" y="340" font-size="12.5"><tspan fill="#dfe3ff">  } </tspan><tspan fill="#ffb86b" font-weight="700">finally</tspan><tspan fill="#dfe3ff"> {</tspan></text>
+<rect x="32" y="347" width="604" height="21" rx="3" fill="#ffb86b" fill-opacity="0.10"/>
+<text class="m" x="48" y="362" font-size="12.5"><tspan fill="#dfe3ff">    </tspan><tspan fill="#ff7edb" font-weight="700">await </tspan><tspan fill="#dfe3ff">page.close();</tspan></text>
+<rect x="32" y="369" width="604" height="21" rx="3" fill="#ffb86b" fill-opacity="0.10"/>
+<text class="m" x="48" y="384" font-size="12.5"><tspan fill="#dfe3ff">  }</tspan></text>
+<path d="M640,96 L666,104" stroke="#7afcff" stroke-width="2.5" fill="none"/><circle cx="640" cy="96" r="3.5" fill="#7afcff"/>
+<rect x="666" y="78" width="310" height="54" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="686" cy="95" r="10" fill="#7afcff"/><text x="686" y="99" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">A</text>
+<text x="704" y="99" font-size="12.5" font-weight="700" fill="#7afcff">Import the browser</text><text x="680" y="115" font-size="10.5" fill="#e6e9ff">It comes from k6/browser — a built-in module,</text><text x="680" y="127" font-size="10.5" fill="#e6e9ff">nothing to install.</text>
+<path d="M640,154 L666,168" stroke="#ffe27a" stroke-width="2.5" fill="none"/><circle cx="640" cy="154" r="3.5" fill="#ffe27a"/>
+<rect x="666" y="142" width="310" height="54" rx="10" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<circle cx="686" cy="159" r="10" fill="#ffe27a"/><text x="686" y="163" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">B</text>
+<text x="704" y="163" font-size="12.5" font-weight="700" fill="#ffe27a">Tell k6 which browser</text><text x="680" y="179" font-size="10.5" fill="#e6e9ff">browser: { type: chromium } is REQUIRED,</text><text x="680" y="191" font-size="10.5" fill="#e6e9ff">together with an executor.</text>
+<path d="M640,221 L666,232" stroke="#ff7edb" stroke-width="2.5" fill="none"/><circle cx="640" cy="221" r="3.5" fill="#ff7edb"/>
+<rect x="666" y="206" width="310" height="54" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<circle cx="686" cy="223" r="10" fill="#ff7edb"/><text x="686" y="227" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">C</text>
+<text x="704" y="227" font-size="12.5" font-weight="700" fill="#ff7edb">async + await</text><text x="680" y="243" font-size="10.5" fill="#e6e9ff">Every browser action returns a Promise.</text><text x="680" y="255" font-size="10.5" fill="#e6e9ff">await = “finish this before moving on”.</text>
+<path d="M640,302 L666,296" stroke="#7dffb0" stroke-width="2.5" fill="none"/><circle cx="640" cy="302" r="3.5" fill="#7dffb0"/>
+<rect x="666" y="270" width="310" height="54" rx="10" fill="#7dffb0" fill-opacity="0.12" stroke="#7dffb0" stroke-width="1.5"/>
+<circle cx="686" cy="287" r="10" fill="#7dffb0"/><text x="686" y="291" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">D</text>
+<text x="704" y="291" font-size="12.5" font-weight="700" fill="#7dffb0">Your user journey</text><text x="680" y="307" font-size="10.5" fill="#e6e9ff">The same flow a person would follow:</text><text x="680" y="319" font-size="10.5" fill="#e6e9ff">open the page, read something.</text>
+<path d="M640,358 L666,360" stroke="#ffb86b" stroke-width="2.5" fill="none"/><circle cx="640" cy="358" r="3.5" fill="#ffb86b"/>
+<rect x="666" y="334" width="310" height="54" rx="10" fill="#ffb86b" fill-opacity="0.12" stroke="#ffb86b" stroke-width="1.5"/>
+<circle cx="686" cy="351" r="10" fill="#ffb86b"/><text x="686" y="355" font-size="11" font-weight="700" fill="#0b0326" text-anchor="middle">E</text>
+<text x="704" y="355" font-size="12.5" font-weight="700" fill="#ffb86b">Always clean up</text><text x="680" y="371" font-size="10.5" fill="#e6e9ff">finally runs even if a step fails, so</text><text x="680" y="383" font-size="10.5" fill="#e6e9ff">no browser tabs are left open.</text>
+<rect x="24" y="420" width="300" height="108" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<text x="38" y="444" font-size="13" font-weight="700" fill="#7afcff">Needs Chrome</text>
+<text x="38" y="466" font-size="11.5" fill="#e6e9ff">A Chromium-based browser must be</text>
+<text x="38" y="482" font-size="11.5" fill="#e6e9ff">installed (Chrome, or the Chrome-</text>
+<text x="38" y="498" font-size="11.5" fill="#e6e9ff">compatible Edge).</text>
+<rect x="350" y="420" width="300" height="108" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<text x="364" y="444" font-size="13" font-weight="700" fill="#ff7edb">Headless by default</text>
+<text x="364" y="466" font-size="11.5" fill="#e6e9ff">No window opens — faster, fine for</text>
+<text x="364" y="482" font-size="11.5" fill="#e6e9ff">CI. To WATCH it run, set</text>
+<text x="364" y="498" font-size="11.5" fill="#e6e9ff">K6_BROWSER_HEADLESS=false.</text>
+<rect x="676" y="420" width="300" height="108" rx="10" fill="#7dffb0" fill-opacity="0.12" stroke="#7dffb0" stroke-width="1.5"/>
+<text x="690" y="444" font-size="13" font-weight="700" fill="#7dffb0">Then just k6 run</text>
+<text x="690" y="466" font-size="11.5" fill="#e6e9ff">Same command as always:</text>
+<text x="690" y="482" font-size="11.5" fill="#e6e9ff">k6 run first-browser-test.js</text>
+<text x="690" y="498" font-size="11.5" fill="#e6e9ff">— plus BROWSER metrics in results.</text>
+<rect x="24" y="546" width="952" height="72" rx="12" fill="#ffe27a" fill-opacity="0.08" stroke="#ffe27a" stroke-opacity="0.7"/>
+<text x="44" y="574" font-size="13.5" font-weight="700" fill="#ffe27a">Two blocks again — just like an API test</text>
+<text x="44" y="598" font-size="12.5" fill="#e6e9ff"><tspan font-weight="700">options</tspan> = how much load and which browser  ·  <tspan font-weight="700">default function</tspan> = the user journey.  Same structure you already know; the journey is now clicks instead of requests.</text>
+</g></svg>

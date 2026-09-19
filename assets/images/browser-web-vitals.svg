@@ -1,0 +1,55 @@
+<svg width="1000" height="640" viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">The web vitals k6 records</title><desc id="d">A page-load timeline: TTFB at 1.27 seconds, FCP and LCP at 1.64 seconds. Cards explain FCP, LCP, CLS, INP and TTFB with commonly cited good thresholds.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="640" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Web vitals — what a user actually experiences</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Timeline from a real run (logging in to QuickPizza). Times are measured from the start of navigation.</text>
+<line x1="60" y1="160" x2="782.0" y2="160" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4"/>
+<line x1="60" y1="154" x2="60" y2="166" stroke="#ffffff" stroke-opacity="0.4"/><text x="60" y="184" font-size="11" fill="#8f97d6" text-anchor="middle">0s</text>
+<line x1="250.0" y1="154" x2="250.0" y2="166" stroke="#ffffff" stroke-opacity="0.4"/><text x="250.0" y="184" font-size="11" fill="#8f97d6" text-anchor="middle">0.5s</text>
+<line x1="440.0" y1="154" x2="440.0" y2="166" stroke="#ffffff" stroke-opacity="0.4"/><text x="440.0" y="184" font-size="11" fill="#8f97d6" text-anchor="middle">1s</text>
+<line x1="630.0" y1="154" x2="630.0" y2="166" stroke="#ffffff" stroke-opacity="0.4"/><text x="630.0" y="184" font-size="11" fill="#8f97d6" text-anchor="middle">1.5s</text>
+<circle cx="542.6" cy="160" r="8" fill="#ffb86b"/>
+<path d="M542.6,152 L542.6,124" stroke="#ffb86b" stroke-width="2.5"/>
+<text x="542.6" y="118" font-size="13" font-weight="700" fill="#ffb86b" text-anchor="middle">TTFB 1.27 s</text><text x="542.6" y="134" font-size="11" fill="#c9cdf5" text-anchor="middle">first byte arrives</text>
+<circle cx="683.1999999999999" cy="160" r="8" fill="#7dffb0"/>
+<path d="M683.1999999999999,168 L683.1999999999999,194" stroke="#7dffb0" stroke-width="2.5"/>
+<text x="683.1999999999999" y="208" font-size="13" font-weight="700" fill="#7dffb0" text-anchor="middle">FCP = LCP 1.64 s</text><text x="683.1999999999999" y="224" font-size="11" fill="#c9cdf5" text-anchor="middle">first and biggest content drawn</text>
+<rect x="60" y="132" width="482.6" height="14" rx="4" fill="#7afcff" fill-opacity="0.35"/><text x="299.4" y="126" font-size="11" fill="#7afcff" text-anchor="middle">waiting for the server</text>
+<rect x="542.6" y="132" width="140.6" height="14" rx="4" fill="#7dffb0" fill-opacity="0.45"/>
+<text x="800" y="120" font-size="12.5" font-weight="700" fill="#ffffff">Then, after the user acts…</text>
+<rect x="800" y="130" width="176" height="64" rx="10" fill="#b9acff" fill-opacity="0.13" stroke="#b9acff"/><text x="812" y="153" font-size="12.5" font-weight="700" fill="#b9acff">FID 0.2 ms · INP 32 ms</text><text x="812" y="172" font-size="11" fill="#e6e9ff">the page answered</text><text x="812" y="186" font-size="11" fill="#e6e9ff">the click in 32 ms</text>
+<rect x="24" y="226" width="308" height="176" rx="14" fill="#ffe27a" fill-opacity="0.09" stroke="#ffe27a" stroke-width="1.5"/>
+<text x="38" y="252" font-size="13" font-weight="700" fill="#ffe27a">FCP — First Contentful Paint</text>
+<text x="38" y="276" font-size="12" fill="#e6e9ff">The first text or image appears.</text><text x="38" y="296" font-size="12" fill="#c9cdf5" font-style="italic">“Something is happening!”</text>
+<text x="38" y="344" font-size="11.5" fill="#8f97d6">Google’s guideline</text><text x="38" y="364" font-size="14" font-weight="700" fill="#ffffff">good ≤ 1.8 s</text>
+<rect x="200" y="326" width="118" height="56" rx="10" fill="#0b0326" stroke="#ffe27a"/><text x="259" y="346" font-size="10.5" fill="#8f97d6" text-anchor="middle">this run</text><text x="259" y="370" font-size="16" font-weight="700" fill="#7dffb0" text-anchor="middle">1.64 s</text>
+<rect x="346" y="226" width="308" height="176" rx="14" fill="#7dffb0" fill-opacity="0.09" stroke="#7dffb0" stroke-width="1.5"/>
+<text x="360" y="252" font-size="13" font-weight="700" fill="#7dffb0">LCP — Largest Contentful Paint</text>
+<text x="360" y="276" font-size="12" fill="#e6e9ff">The biggest thing on screen appears.</text><text x="360" y="296" font-size="12" fill="#c9cdf5" font-style="italic">“The page is basically here.”</text>
+<text x="360" y="344" font-size="11.5" fill="#8f97d6">Google’s guideline</text><text x="360" y="364" font-size="14" font-weight="700" fill="#ffffff">good ≤ 2.5 s</text>
+<rect x="522" y="326" width="118" height="56" rx="10" fill="#0b0326" stroke="#7dffb0"/><text x="581" y="346" font-size="10.5" fill="#8f97d6" text-anchor="middle">this run</text><text x="581" y="370" font-size="16" font-weight="700" fill="#7dffb0" text-anchor="middle">1.64 s</text>
+<rect x="668" y="226" width="308" height="176" rx="14" fill="#ff7edb" fill-opacity="0.09" stroke="#ff7edb" stroke-width="1.5"/>
+<text x="682" y="252" font-size="13" font-weight="700" fill="#ff7edb">CLS — Cumulative Layout Shift</text>
+<text x="682" y="276" font-size="12" fill="#e6e9ff">How much the page jumps around.</text><text x="682" y="296" font-size="12" fill="#c9cdf5" font-style="italic">“Don’t move the button I’m clicking!”</text>
+<text x="682" y="344" font-size="11.5" fill="#8f97d6">Google’s guideline</text><text x="682" y="364" font-size="14" font-weight="700" fill="#ffffff">good ≤ 0.1</text>
+<rect x="844" y="326" width="118" height="56" rx="10" fill="#0b0326" stroke="#ff7edb"/><text x="903" y="346" font-size="10.5" fill="#8f97d6" text-anchor="middle">this run</text><text x="903" y="370" font-size="16" font-weight="700" fill="#7dffb0" text-anchor="middle">0.000105</text>
+<rect x="24" y="416" width="308" height="176" rx="14" fill="#b9acff" fill-opacity="0.09" stroke="#b9acff" stroke-width="1.5"/>
+<text x="38" y="442" font-size="13" font-weight="700" fill="#b9acff">INP — Interaction to Next Paint</text>
+<text x="38" y="466" font-size="12" fill="#e6e9ff">How fast the page reacts to input.</text><text x="38" y="486" font-size="12" fill="#c9cdf5" font-style="italic">“I clicked — did anything happen?”</text>
+<text x="38" y="534" font-size="11.5" fill="#8f97d6">Google’s guideline</text><text x="38" y="554" font-size="14" font-weight="700" fill="#ffffff">good ≤ 200 ms</text>
+<rect x="200" y="516" width="118" height="56" rx="10" fill="#0b0326" stroke="#b9acff"/><text x="259" y="536" font-size="10.5" fill="#8f97d6" text-anchor="middle">this run</text><text x="259" y="560" font-size="16" font-weight="700" fill="#7dffb0" text-anchor="middle">32 ms</text>
+<rect x="346" y="416" width="308" height="176" rx="14" fill="#ffb86b" fill-opacity="0.09" stroke="#ffb86b" stroke-width="1.5"/>
+<text x="360" y="442" font-size="13" font-weight="700" fill="#ffb86b">TTFB — Time to First Byte</text>
+<text x="360" y="466" font-size="12" fill="#e6e9ff">How long until the server starts replying.</text><text x="360" y="486" font-size="12" fill="#c9cdf5" font-style="italic">“Is the server even awake?”</text>
+<text x="360" y="534" font-size="11.5" fill="#8f97d6">Google’s guideline</text><text x="360" y="554" font-size="14" font-weight="700" fill="#ffffff">good ≤ 0.8 s</text>
+<rect x="522" y="516" width="118" height="56" rx="10" fill="#0b0326" stroke="#ffb86b"/><text x="581" y="536" font-size="10.5" fill="#8f97d6" text-anchor="middle">this run</text><text x="581" y="560" font-size="16" font-weight="700" fill="#ffb86b" text-anchor="middle">1.27 s</text>
+<rect x="668" y="416" width="308" height="176" rx="14" fill="#7afcff" fill-opacity="0.09" stroke="#7afcff" stroke-width="1.5"/>
+<text x="682" y="442" font-size="13" font-weight="700" fill="#7afcff">FID — First Input Delay</text>
+<text x="682" y="466" font-size="12" fill="#e6e9ff">Delay before the first click is handled.</text><text x="682" y="486" font-size="12" fill="#c9cdf5" font-style="italic">(older cousin of INP)</text>
+<text x="682" y="534" font-size="11.5" fill="#8f97d6">Google’s guideline</text><text x="682" y="554" font-size="14" font-weight="700" fill="#ffffff">good ≤ 100 ms</text>
+<rect x="844" y="516" width="118" height="56" rx="10" fill="#0b0326" stroke="#7afcff"/><text x="903" y="536" font-size="10.5" fill="#8f97d6" text-anchor="middle">this run</text><text x="903" y="560" font-size="16" font-weight="700" fill="#7dffb0" text-anchor="middle">0.2 ms</text>
+<text x="500" y="626" font-size="11.5" fill="#8f97d6" text-anchor="middle">Guidelines are Google’s commonly cited “good” ranges. A slow TTFB from a far-away test machine is a network fact, not always an app fault — always compare like with like.</text>
+</g></svg>

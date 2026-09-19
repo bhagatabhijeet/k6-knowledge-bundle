@@ -1,0 +1,53 @@
+<svg width="1000" height="560" viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Waiting for time versus waiting for a condition</title><desc id="d">A fixed two second sleep is too short when the page is slow and wastes time when it is fast. Waiting for a condition, such as the Logout button appearing, waits exactly as long as needed.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="560" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Wait for a CONDITION, not for a clock</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Illustrative timings: how long the page really needs varies from run to run</text>
+<rect x="24" y="72" width="470" height="330" rx="14" fill="#ff5c7a" fill-opacity="0.07" stroke="#ff5c7a" stroke-opacity="0.7"/>
+<text x="44" y="100" font-size="15" font-weight="700" fill="#ff5c7a">✗ Fixed sleep</text>
+<text class="m" x="44" y="122" font-size="12.5"><tspan fill="#dfe3ff">await page.waitForTimeout(2000);</tspan></text>
+<text x="44" y="162" font-size="12" fill="#e6e9ff" font-weight="700">Fast run</text>
+<rect x="130" y="148" width="55.800000000000004" height="22" rx="5" fill="#7dffb0" fill-opacity="0.4" stroke="#7dffb0"/><text x="193.8" y="164" font-size="11" fill="#7dffb0">page ready at 0.9 s</text>
+<rect x="130" y="176" width="124" height="14" rx="4" fill="#ffb86b" fill-opacity="0.4"/><text x="262" y="188" font-size="11" fill="#ffb86b">sleeps 2 s</text>
+<text x="328" y="188" font-size="11.5" fill="#ffb86b" font-weight="700">→ wastes 1.1 s</text>
+<text x="44" y="240" font-size="12" fill="#e6e9ff" font-weight="700">Typical run</text>
+<rect x="130" y="226" width="99.2" height="22" rx="5" fill="#7dffb0" fill-opacity="0.4" stroke="#7dffb0"/><text x="237.2" y="242" font-size="11" fill="#7dffb0">page ready at 1.6 s</text>
+<rect x="130" y="254" width="124" height="14" rx="4" fill="#ffb86b" fill-opacity="0.4"/><text x="262" y="266" font-size="11" fill="#ffb86b">sleeps 2 s</text>
+<text x="328" y="266" font-size="11.5" fill="#ffb86b" font-weight="700">→ wastes 0.4 s</text>
+<text x="44" y="318" font-size="12" fill="#e6e9ff" font-weight="700">Slow run</text>
+<rect x="130" y="304" width="210.79999999999998" height="22" rx="5" fill="#7dffb0" fill-opacity="0.4" stroke="#7dffb0"/><text x="348.79999999999995" y="320" font-size="11" fill="#7dffb0">page ready at 3.4 s</text>
+<rect x="130" y="332" width="124" height="14" rx="4" fill="#ffb86b" fill-opacity="0.4"/><text x="262" y="344" font-size="11" fill="#ffb86b">sleeps 2 s</text>
+<text x="328" y="344" font-size="11.5" fill="#ff5c7a" font-weight="700">→ ✗ clicks too early: FLAKY</text>
+<text x="44" y="392" font-size="12" fill="#ffe0e6">Too short → random failures.  Too long → slow tests (× every user!).</text>
+<rect x="506" y="72" width="470" height="330" rx="14" fill="#7dffb0" fill-opacity="0.07" stroke="#7dffb0" stroke-opacity="0.7"/>
+<text x="526" y="100" font-size="15" font-weight="700" fill="#7dffb0">✓ Wait for a condition</text>
+<text class="m" x="526" y="122" font-size="11"><tspan fill="#dfe3ff">await page.locator(&#x27;button&#x27;, { hasText: &#x27;Logout&#x27; }).waitFor();</tspan></text>
+<text x="526" y="162" font-size="12" fill="#e6e9ff" font-weight="700">Fast run</text>
+<rect x="612" y="148" width="55.800000000000004" height="22" rx="5" fill="#7dffb0" fill-opacity="0.4" stroke="#7dffb0"/><text x="675.8" y="164" font-size="11" fill="#7dffb0">page ready at 0.9 s</text>
+<rect x="612" y="176" width="55.800000000000004" height="14" rx="4" fill="#7dffb0" fill-opacity="0.65"/><text x="675.8" y="188" font-size="11" fill="#7dffb0" font-weight="700">✓ continues at 0.9 s</text>
+<text x="526" y="240" font-size="12" fill="#e6e9ff" font-weight="700">Typical run</text>
+<rect x="612" y="226" width="99.2" height="22" rx="5" fill="#7dffb0" fill-opacity="0.4" stroke="#7dffb0"/><text x="719.2" y="242" font-size="11" fill="#7dffb0">page ready at 1.6 s</text>
+<rect x="612" y="254" width="99.2" height="14" rx="4" fill="#7dffb0" fill-opacity="0.65"/><text x="719.2" y="266" font-size="11" fill="#7dffb0" font-weight="700">✓ continues at 1.6 s</text>
+<text x="526" y="318" font-size="12" fill="#e6e9ff" font-weight="700">Slow run</text>
+<rect x="612" y="304" width="210.79999999999998" height="22" rx="5" fill="#7dffb0" fill-opacity="0.4" stroke="#7dffb0"/><text x="830.8" y="320" font-size="11" fill="#7dffb0">page ready at 3.4 s</text>
+<rect x="612" y="332" width="210.79999999999998" height="14" rx="4" fill="#7dffb0" fill-opacity="0.65"/><text x="830.8" y="344" font-size="11" fill="#7dffb0" font-weight="700">✓ continues at 3.4 s</text>
+<text x="526" y="392" font-size="12" fill="#e8fff2">Exactly as long as needed — fast when fast, patient when slow.</text>
+<rect x="24" y="418" width="300" height="128" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<text x="38" y="442" font-size="13" font-weight="700" fill="#7afcff">Good things to wait for</text>
+<text x="38" y="464" font-size="11.5" fill="#e6e9ff">An element appears: locator.waitFor()</text>
+<text x="38" y="480" font-size="11.5" fill="#e6e9ff">A page settles: waitForLoadState</text>
+<text x="38" y="496" font-size="11.5" fill="#e6e9ff">A URL/heading/text changes</text>
+<rect x="350" y="418" width="300" height="128" rx="10" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<text x="364" y="442" font-size="13" font-weight="700" fill="#ffe27a">This is how we logged in</text>
+<text x="364" y="464" font-size="11.5" fill="#e6e9ff">networkidle before typing, then wait</text>
+<text x="364" y="480" font-size="11.5" fill="#e6e9ff">for the Logout button — never a</text>
+<text x="364" y="496" font-size="11.5" fill="#e6e9ff">guessed number of seconds.</text>
+<rect x="676" y="418" width="300" height="128" rx="10" fill="#ffb86b" fill-opacity="0.12" stroke="#ffb86b" stroke-width="1.5"/>
+<text x="690" y="442" font-size="13" font-weight="700" fill="#ffb86b">When a sleep is OK</text>
+<text x="690" y="464" font-size="11.5" fill="#e6e9ff">Rarely. A short think-time between</text>
+<text x="690" y="480" font-size="11.5" fill="#e6e9ff">user actions is realistic; a sleep to</text>
+<text x="690" y="496" font-size="11.5" fill="#e6e9ff">“hope the page is ready” is not.</text>
+</g></svg>

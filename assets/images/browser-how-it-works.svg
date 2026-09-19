@@ -1,0 +1,45 @@
+<svg width="1000" height="520" viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">How the k6 browser module drives Chrome</title><desc id="d">Your script runs inside k6, which is a Go program. The k6 browser module talks to a real Chromium browser through the Chrome DevTools Protocol. The API looks like Playwright but it is not built on Playwright.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="520" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">What happens when you run a browser test</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Your script never touches the browser directly — k6 remote-controls a real Chrome</text>
+<rect x="30" y="86" width="220" height="190" rx="14" fill="#7afcff" fill-opacity="0.11" stroke="#7afcff" stroke-width="2"/>
+<text x="140" y="118" font-size="14.5" font-weight="700" fill="#7afcff" text-anchor="middle">📄 Your script</text>
+<text x="140" y="158" font-size="12.5" fill="#e6e9ff" text-anchor="middle">await page.goto(url)</text>
+<text x="140" y="180" font-size="12.5" fill="#e6e9ff" text-anchor="middle">await page.locator(…).click()</text>
+<rect x="60" y="236" width="160" height="26" rx="13" fill="#7afcff" fill-opacity="0.22"/><text x="140" y="254" font-size="11.5" fill="#7afcff" text-anchor="middle" font-weight="700">JavaScript (Sobek)</text>
+<rect x="270" y="86" width="220" height="190" rx="14" fill="#b9acff" fill-opacity="0.11" stroke="#b9acff" stroke-width="2"/>
+<text x="380" y="118" font-size="14.5" font-weight="700" fill="#b9acff" text-anchor="middle">⚙️ k6</text>
+<text x="380" y="158" font-size="12.5" fill="#e6e9ff" text-anchor="middle">runs the VUs, starts</text>
+<text x="380" y="180" font-size="12.5" fill="#e6e9ff" text-anchor="middle">and stops browsers,</text>
+<text x="380" y="202" font-size="12.5" fill="#e6e9ff" text-anchor="middle">collects the metrics</text>
+<rect x="300" y="236" width="160" height="26" rx="13" fill="#b9acff" fill-opacity="0.22"/><text x="380" y="254" font-size="11.5" fill="#b9acff" text-anchor="middle" font-weight="700">written in Go</text>
+<rect x="510" y="86" width="220" height="190" rx="14" fill="#ffb86b" fill-opacity="0.11" stroke="#ffb86b" stroke-width="2"/>
+<text x="620" y="118" font-size="14.5" font-weight="700" fill="#ffb86b" text-anchor="middle">🔌 Chrome DevTools Protocol</text>
+<text x="620" y="158" font-size="12.5" fill="#e6e9ff" text-anchor="middle">the same remote-control</text>
+<text x="620" y="180" font-size="12.5" fill="#e6e9ff" text-anchor="middle">channel Chrome’s own</text>
+<text x="620" y="202" font-size="12.5" fill="#e6e9ff" text-anchor="middle">developer tools use</text>
+<rect x="540" y="236" width="160" height="26" rx="13" fill="#ffb86b" fill-opacity="0.22"/><text x="620" y="254" font-size="11.5" fill="#ffb86b" text-anchor="middle" font-weight="700">CDP</text>
+<rect x="750" y="86" width="220" height="190" rx="14" fill="#7dffb0" fill-opacity="0.11" stroke="#7dffb0" stroke-width="2"/>
+<text x="860" y="118" font-size="14.5" font-weight="700" fill="#7dffb0" text-anchor="middle">🌐 Chromium / Chrome</text>
+<text x="860" y="158" font-size="12.5" fill="#e6e9ff" text-anchor="middle">a REAL browser:</text>
+<text x="860" y="180" font-size="12.5" fill="#e6e9ff" text-anchor="middle">renders, runs JS,</text>
+<text x="860" y="202" font-size="12.5" fill="#e6e9ff" text-anchor="middle">downloads assets</text>
+<rect x="780" y="236" width="160" height="26" rx="13" fill="#7dffb0" fill-opacity="0.22"/><text x="860" y="254" font-size="11.5" fill="#7dffb0" text-anchor="middle" font-weight="700">headless by default</text>
+<path d="M252,181 L268,181" stroke="#ffffff" stroke-width="3" marker-end="url(#arr)"/>
+<path d="M492,181 L508,181" stroke="#ffffff" stroke-width="3" marker-end="url(#arr)"/>
+<path d="M732,181 L748,181" stroke="#ffffff" stroke-width="3" marker-end="url(#arr)"/>
+<path d="M980,120 L990,120 L990,296 L140,296 L140,282" stroke="#ffe27a" stroke-width="2" stroke-dasharray="6 5" fill="none" marker-end="url(#arr)"/>
+<text x="560" y="316" font-size="12" fill="#ffe27a" text-anchor="middle" font-weight="700">results flow back: page state, timings and web vitals become k6 metrics</text>
+<rect x="24" y="346" width="952" height="160" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/>
+<text x="44" y="374" font-size="15" font-weight="700" fill="#ffffff">The Playwright question, answered</text>
+<circle cx="60" cy="402" r="11" fill="#7dffb0"/><text x="60" y="407" font-size="13" font-weight="700" fill="#0b0326" text-anchor="middle">✓</text>
+<text x="82" y="407" font-size="12.5" fill="#e6e9ff">The API is Playwright-STYLE: browser context → page → locators → click / fill / goto. If you know Playwright, it feels familiar.</text>
+<circle cx="60" cy="436" r="11" fill="#ff5c7a"/><text x="60" y="441" font-size="13" font-weight="700" fill="#0b0326" text-anchor="middle">✗</text>
+<text x="82" y="441" font-size="12.5" fill="#e6e9ff">It is NOT the Playwright library. k6 has its own implementation (in Go) that speaks CDP. Some Playwright features are missing.</text>
+<circle cx="60" cy="470" r="11" fill="#7afcff"/><text x="60" y="475" font-size="13" font-weight="700" fill="#0b0326" text-anchor="middle">i</text>
+<text x="82" y="475" font-size="12.5" fill="#e6e9ff">Bundled inside k6 since v0.52 — no extra install. You only need Chrome (or another Chromium-based browser) on the machine.</text>
+</g></svg>

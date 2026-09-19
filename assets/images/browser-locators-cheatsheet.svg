@@ -1,0 +1,47 @@
+<svg width="1000" height="620" viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Locating elements with CSS in k6 browser</title><desc id="d">The username field is found with hash username, the password field with input name equals password, and the Sign in button with button type equals submit. A table shows which locator styles work in k6 v1.7.1.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="620" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Finding things on the page: locators</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Tell k6 which element to click or fill — using CSS selectors</text>
+<rect x="30" y="72" width="420" height="300" rx="14" fill="#fff6ec"/>
+<text x="240" y="112" font-size="17" font-weight="700" fill="#1f2937" text-anchor="middle">QuickPizza User Login</text>
+<text x="240" y="138" font-size="12" fill="#374151" text-anchor="middle">Username (hint: default)</text>
+<rect x="80" y="148" width="320" height="34" rx="8" fill="#f3f4f6" stroke="#7afcff" stroke-width="3"/>
+<text x="240" y="222" font-size="12" fill="#374151" text-anchor="middle">Password (hint: 12345678)</text>
+<rect x="80" y="232" width="320" height="34" rx="8" fill="#f3f4f6" stroke="#ff7edb" stroke-width="3"/>
+<rect x="80" y="308" width="320" height="34" rx="8" fill="#e5e7eb" stroke="#7dffb0" stroke-width="3"/><text x="240" y="330" font-size="13" fill="#111827" text-anchor="middle">Sign in</text>
+<circle cx="462" cy="170" r="12" fill="#7afcff"/><text x="462" y="174" font-size="12" font-weight="700" fill="#0b0326" text-anchor="middle">A</text>
+<circle cx="462" cy="254" r="12" fill="#ff7edb"/><text x="462" y="258" font-size="12" font-weight="700" fill="#0b0326" text-anchor="middle">B</text>
+<circle cx="462" cy="325" r="12" fill="#7dffb0"/><text x="462" y="329" font-size="12" font-weight="700" fill="#0b0326" text-anchor="middle">C</text>
+<rect x="490" y="72" width="486" height="150" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="490" y="72" width="486" height="26" rx="10" fill="#1d1f33"/><rect x="490" y="88" width="486" height="10" fill="#1d1f33"/>
+<circle cx="510" cy="85" r="5" fill="#ff5c7a"/><circle cx="528" cy="85" r="5" fill="#ffd166"/><circle cx="546" cy="85" r="5" fill="#7dffb0"/>
+<text x="733.0" y="89" font-size="11" fill="#a9b0e8" text-anchor="middle">locators for this form</text>
+<text class="m" x="508" y="120" font-size="12.5"><tspan fill="#7afcff" font-weight="700">A  </tspan><tspan fill="#dfe3ff">page.locator(</tspan><tspan fill="#ce9178" font-weight="700">&#x27;#username&#x27;</tspan><tspan fill="#dfe3ff">)</tspan></text>
+<text class="m" x="508" y="152" font-size="12.5"><tspan fill="#ff7edb" font-weight="700">B  </tspan><tspan fill="#dfe3ff">page.locator(</tspan><tspan fill="#ce9178" font-weight="700">&quot;input[name=&#x27;password&#x27;]&quot;</tspan><tspan fill="#dfe3ff">)</tspan></text>
+<text class="m" x="508" y="184" font-size="12.5"><tspan fill="#7dffb0" font-weight="700">C  </tspan><tspan fill="#dfe3ff">page.locator(</tspan><tspan fill="#ce9178" font-weight="700">&quot;button[type=&#x27;submit&#x27;]&quot;</tspan><tspan fill="#dfe3ff">)</tspan></text>
+<text x="508" y="208" font-size="11" fill="#8f97d6">…then  .fill("text")  or  .click()</text>
+<text x="490" y="250" font-size="14" font-weight="700" fill="#ffffff">Two patterns cover most pages</text>
+<rect x="490" y="260" width="236" height="112" rx="10" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<text x="504" y="284" font-size="13" font-weight="700" fill="#ffe27a">By id  →  # + id</text>
+<text x="504" y="306" font-size="11.5" fill="#e6e9ff">&lt;input id=&quot;username&quot;&gt;</text>
+<text x="504" y="322" font-size="11.5" fill="#e6e9ff">becomes  #username</text>
+<text x="504" y="338" font-size="11.5" fill="#e6e9ff">ids are unique: best choice</text>
+<rect x="740" y="260" width="236" height="112" rx="10" fill="#ffb86b" fill-opacity="0.12" stroke="#ffb86b" stroke-width="1.5"/>
+<text x="754" y="284" font-size="13" font-weight="700" fill="#ffb86b">By attribute</text>
+<text x="754" y="306" font-size="11.5" fill="#e6e9ff">tag[attribute=&#x27;value&#x27;]</text>
+<text x="754" y="322" font-size="11.5" fill="#e6e9ff">input[name=&#x27;password&#x27;]</text>
+<text x="754" y="338" font-size="11.5" fill="#e6e9ff">button[type=&#x27;submit&#x27;]</text>
+<text x="30" y="404" font-size="15" font-weight="700" fill="#ffffff">How to find the right selector yourself</text>
+<rect x="30" y="414" width="946" height="56" rx="10" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/>
+<text x="46" y="437" font-size="12.5" fill="#e6e9ff">Right-click the element → <tspan font-weight="700" fill="#7afcff">Inspect</tspan>. Look at its attributes (id, name, type, placeholder…). Build the selector, then test it in the DevTools Console with</text>
+<text x="46" y="457" font-size="12.5" fill="#e6e9ff" class="m">document.querySelectorAll("input[name='password']")   →   exactly 1 match = a good locator</text>
+<text x="30" y="496" font-size="15" font-weight="700" fill="#ffffff">What works in k6 (tested on k6 v1.7.1)</text>
+<rect x="30" y="504" width="946" height="22" rx="5" fill="#7dffb0" fill-opacity="0.09"/><text x="42" y="520" font-size="13" font-weight="700" fill="#7dffb0">✓</text><text x="66" y="520" font-size="12" fill="#e6e9ff" font-weight="700">CSS  ·  #id  ·  tag[attr=&#x27;value&#x27;]</text><text x="380" y="520" font-size="11.5" fill="#c9cdf5" class="m">page.locator(&#x27;#username&#x27;)</text>
+<rect x="30" y="530" width="946" height="22" rx="5" fill="#7dffb0" fill-opacity="0.09"/><text x="42" y="546" font-size="13" font-weight="700" fill="#7dffb0">✓</text><text x="66" y="546" font-size="12" fill="#e6e9ff" font-weight="700">XPath</text><text x="380" y="546" font-size="11.5" fill="#c9cdf5" class="m">page.locator(&quot;//button[contains(., &#x27;Logout&#x27;)]&quot;)</text>
+<rect x="30" y="556" width="946" height="22" rx="5" fill="#7dffb0" fill-opacity="0.09"/><text x="42" y="572" font-size="13" font-weight="700" fill="#7dffb0">✓</text><text x="66" y="572" font-size="12" fill="#e6e9ff" font-weight="700">CSS + text filter option</text><text x="380" y="572" font-size="11.5" fill="#c9cdf5" class="m">page.locator(&#x27;button&#x27;, { hasText: &#x27;Logout&#x27; })</text>
+<rect x="30" y="582" width="946" height="22" rx="5" fill="#ff5c7a" fill-opacity="0.09"/><text x="42" y="598" font-size="13" font-weight="700" fill="#ff5c7a">✗</text><text x="66" y="598" font-size="12" fill="#e6e9ff" font-weight="700">Playwright text selectors</text><text x="380" y="598" font-size="11.5" fill="#c9cdf5" class="m">&#x27;text=Logout&#x27;  ·  &#x27;button:has-text(&quot;Logout&quot;)&#x27;  → error</text>
+</g></svg>

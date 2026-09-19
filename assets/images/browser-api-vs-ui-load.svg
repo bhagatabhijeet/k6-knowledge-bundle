@@ -1,0 +1,40 @@
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">The same page as an API test and as a browser test</title><desc id="d">An API test sends one request and receives about 7 kilobytes. A browser test opens the page in Chrome, which makes 15 to 17 requests, downloads about 110 kilobytes, runs the page scripts and renders it, producing web vitals.</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="600" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Same page. Very different load.</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Real numbers from running k6 against quickpizza.grafana.com — once as an API test, once in a real browser</text>
+<rect x="24" y="72" width="470" height="400" rx="16" fill="#7afcff" fill-opacity="0.07" stroke="#7afcff" stroke-width="2"/>
+<text x="44" y="104" font-size="20" font-weight="700" fill="#7afcff">🔌 API-level test</text><text x="44" y="126" font-size="12.5" fill="#c9cdf5">http.get(url) — “what the server sends back”</text>
+<text x="259" y="230" font-size="76" font-weight="700" fill="#7afcff" text-anchor="middle">1</text><text x="259" y="258" font-size="15" fill="#e6e9ff" text-anchor="middle" font-weight="700">request</text>
+<text x="259" y="318" font-size="34" font-weight="700" fill="#7afcff" text-anchor="middle">≈ 7 kB</text><text x="259" y="342" font-size="13" fill="#e6e9ff" text-anchor="middle">downloaded</text>
+<text x="64" y="376" font-size="13" fill="#7dffb0">✓  HTML text only</text>
+<text x="64" y="398" font-size="13" fill="#8f97d6">✗  no scripts run</text>
+<text x="64" y="420" font-size="13" fill="#8f97d6">✗  no images, fonts or styles</text>
+<text x="64" y="442" font-size="13" fill="#8f97d6">✗  nothing is drawn</text>
+<rect x="506" y="72" width="470" height="400" rx="16" fill="#ff7edb" fill-opacity="0.07" stroke="#ff7edb" stroke-width="2"/>
+<text x="526" y="104" font-size="20" font-weight="700" fill="#ff7edb">🌐 Browser-level test</text><text x="526" y="126" font-size="12.5" fill="#c9cdf5">page.goto(url) — “what a real user’s Chrome does”</text>
+<text x="741" y="230" font-size="76" font-weight="700" fill="#ff7edb" text-anchor="middle">15–17</text><text x="741" y="258" font-size="15" fill="#e6e9ff" text-anchor="middle" font-weight="700">requests</text>
+<text x="741" y="318" font-size="34" font-weight="700" fill="#ff7edb" text-anchor="middle">≈ 110 kB</text><text x="741" y="342" font-size="13" fill="#e6e9ff" text-anchor="middle">downloaded</text>
+<text x="546" y="376" font-size="13" fill="#7dffb0">✓  HTML + scripts + styles + fonts + images</text>
+<text x="546" y="398" font-size="13" fill="#7dffb0">✓  the page’s JavaScript really runs</text>
+<text x="546" y="420" font-size="13" fill="#7dffb0">✓  the page is drawn on screen</text>
+<text x="546" y="442" font-size="13" fill="#7dffb0">✓  web vitals: FCP, LCP, CLS …</text>
+<rect x="24" y="488" width="300" height="96" rx="10" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<text x="38" y="512" font-size="13" font-weight="700" fill="#7afcff">API tests answer…</text>
+<text x="38" y="534" font-size="11.5" fill="#e6e9ff">“How fast is my SERVER?”</text>
+<text x="38" y="550" font-size="11.5" fill="#e6e9ff">Lightweight — thousands of users</text>
+<text x="38" y="566" font-size="11.5" fill="#e6e9ff">per machine are realistic.</text>
+<rect x="350" y="488" width="300" height="96" rx="10" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<text x="364" y="512" font-size="13" font-weight="700" fill="#ff7edb">Browser tests answer…</text>
+<text x="364" y="534" font-size="11.5" fill="#e6e9ff">“How does the PAGE feel to a user?”</text>
+<text x="364" y="550" font-size="11.5" fill="#e6e9ff">Heavy — a whole browser per user,</text>
+<text x="364" y="566" font-size="11.5" fill="#e6e9ff">so use far fewer of them.</text>
+<rect x="676" y="488" width="300" height="96" rx="10" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<text x="690" y="512" font-size="13" font-weight="700" fill="#ffe27a">You need both</text>
+<text x="690" y="534" font-size="11.5" fill="#e6e9ff">A fast API can still sit behind a</text>
+<text x="690" y="550" font-size="11.5" fill="#e6e9ff">slow page (big images, slow scripts).</text>
+<text x="690" y="566" font-size="11.5" fill="#e6e9ff">Test the server AND the screen.</text>
+</g></svg>

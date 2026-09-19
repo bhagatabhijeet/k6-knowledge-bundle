@@ -1,0 +1,84 @@
+<svg width="1000" height="668" viewBox="0 0 1000 668" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Reading the BROWSER and WEB_VITALS sections of the console</title><desc id="d">Reading the BROWSER and WEB_VITALS sections of the console</desc>
+<style>.m text, text.m, tspan.m {white-space:pre; font-family:Consolas,monospace;}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0326"/><stop offset="1" stop-color="#101a48"/></linearGradient><marker id="arr" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="#ffffff" fill-opacity="0.9"/></marker></defs>
+<rect width="1000" height="668" rx="16" fill="url(#bg)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<text x="500.0" y="34" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">Reading the BROWSER and WEB_VITALS sections of the console</text>
+<text x="500.0" y="54" font-size="12" fill="#a9b0e8" text-anchor="middle">Real output of a one-user browser test that logs in to QuickPizza</text>
+<rect x="20" y="72" width="612" height="310.8" rx="10" fill="#0c0c14" stroke="#ffffff" stroke-opacity="0.2"/>
+<rect x="20" y="72" width="612" height="26" rx="10" fill="#1d1f33"/><rect x="20" y="88" width="612" height="10" fill="#1d1f33"/>
+<circle cx="40" cy="85" r="5" fill="#ff5c7a"/><circle cx="58" cy="85" r="5" fill="#ffd166"/><circle cx="76" cy="85" r="5" fill="#7dffb0"/>
+<text x="326.0" y="89" font-size="11" fill="#a9b0e8" text-anchor="middle">Terminal — real output (trimmed, dot leaders shortened)</text>
+<rect x="28" y="105" width="596" height="37" rx="5" fill="#a9b0e8" fill-opacity="0.13" stroke="#a9b0e8" stroke-opacity="0.7"/>
+<rect x="28" y="154.4" width="596" height="37.0" rx="5" fill="#7afcff" fill-opacity="0.13" stroke="#7afcff" stroke-opacity="0.7"/>
+<rect x="28" y="192.4" width="596" height="18.0" rx="5" fill="#ff7edb" fill-opacity="0.13" stroke="#ff7edb" stroke-opacity="0.7"/>
+<rect x="28" y="211.4" width="596" height="18.0" rx="5" fill="#ff5c7a" fill-opacity="0.13" stroke="#ff5c7a" stroke-opacity="0.7"/>
+<rect x="28" y="241.8" width="596" height="56.0" rx="5" fill="#ffe27a" fill-opacity="0.13" stroke="#ffe27a" stroke-opacity="0.7"/>
+<rect x="28" y="298.8" width="596" height="18.0" rx="5" fill="#7dffb0" fill-opacity="0.13" stroke="#7dffb0" stroke-opacity="0.7"/>
+<rect x="28" y="317.8" width="596" height="37.0" rx="5" fill="#b9acff" fill-opacity="0.13" stroke="#b9acff" stroke-opacity="0.7"/>
+<g class="m" font-size="9.0">
+<text x="58" y="118" fill="#e6e9ff">  data_received.......: 0 B    0 B/s</text>
+<text x="58" y="137" fill="#e6e9ff">  data_sent...........: 0 B    0 B/s</text>
+<text x="58" y="167.4" fill="#e6e9ff">  browser_data_received: 499 kB  152 kB/s</text>
+<text x="58" y="186.4" fill="#e6e9ff">  browser_data_sent....: 7.3 kB  2.2 kB/s</text>
+<text x="58" y="205.4" fill="#e6e9ff">  browser_http_req_duration: avg=286ms min=70ms med=317ms max=1.27s p(95)=380ms</text>
+<text x="58" y="224.4" fill="#e6e9ff">  browser_http_req_failed..: 0.00%  0 out of 24</text>
+<text x="58" y="254.8" fill="#e6e9ff">  browser_web_vital_ttfb: avg=1.27s</text>
+<text x="58" y="273.8" fill="#e6e9ff">  browser_web_vital_fcp.: avg=1.64s</text>
+<text x="58" y="292.8" fill="#e6e9ff">  browser_web_vital_lcp.: avg=1.64s</text>
+<text x="58" y="311.8" fill="#e6e9ff">  browser_web_vital_cls.: avg=0.000105</text>
+<text x="58" y="330.8" fill="#e6e9ff">  browser_web_vital_fid.: avg=199.99µs</text>
+<text x="58" y="349.8" fill="#e6e9ff">  browser_web_vital_inp.: avg=32ms</text>
+</g>
+<circle cx="43" cy="123.5" r="9" fill="#a9b0e8"/><text x="43" y="127.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<circle cx="43" cy="172.9" r="9" fill="#7afcff"/><text x="43" y="176.9" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<circle cx="43" cy="201.4" r="9" fill="#ff7edb"/><text x="43" y="205.4" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<circle cx="43" cy="220.4" r="9" fill="#ff5c7a"/><text x="43" y="224.4" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">4</text>
+<circle cx="43" cy="269.8" r="9" fill="#ffe27a"/><text x="43" y="273.8" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">5</text>
+<circle cx="43" cy="307.8" r="9" fill="#7dffb0"/><text x="43" y="311.8" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">6</text>
+<circle cx="43" cy="336.3" r="9" fill="#b9acff"/><text x="43" y="340.3" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">7</text>
+<path d="M628,123.5 L658,123.5" stroke="#a9b0e8" stroke-width="2.5" fill="none"/><circle cx="628" cy="123.5" r="3.5" fill="#a9b0e8"/>
+<rect x="662" y="89.5" width="322" height="68" rx="9" fill="#a9b0e8" fill-opacity="0.12" stroke="#a9b0e8" stroke-width="1.5"/>
+<circle cx="680" cy="106.5" r="9" fill="#a9b0e8"/><text x="680" y="110.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">1</text>
+<text x="696" y="110.5" font-size="12" font-weight="700" fill="#a9b0e8">Plain-HTTP traffic: zero</text>
+<text x="676" y="127.5" font-size="11" fill="#e6e9ff">This test made no http.get() calls, so these</text>
+<text x="676" y="142.5" font-size="11" fill="#e6e9ff">counters stay at 0. The browser counts its own.</text>
+<path d="M628,172.9 L658,177.5" stroke="#7afcff" stroke-width="2.5" fill="none"/><circle cx="628" cy="172.9" r="3.5" fill="#7afcff"/>
+<rect x="662" y="165.5" width="322" height="68" rx="9" fill="#7afcff" fill-opacity="0.12" stroke="#7afcff" stroke-width="1.5"/>
+<circle cx="680" cy="182.5" r="9" fill="#7afcff"/><text x="680" y="186.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">2</text>
+<text x="696" y="186.5" font-size="12" font-weight="700" fill="#7afcff">Everything Chrome downloaded</text>
+<text x="676" y="203.5" font-size="11" fill="#e6e9ff">499 kB in, 7.3 kB out — the page and all its</text>
+<text x="676" y="218.5" font-size="11" fill="#e6e9ff">scripts, styles and images.</text>
+<path d="M628,201.4 L658,253.5" stroke="#ff7edb" stroke-width="2.5" fill="none"/><circle cx="628" cy="201.4" r="3.5" fill="#ff7edb"/>
+<rect x="662" y="241.5" width="322" height="68" rx="9" fill="#ff7edb" fill-opacity="0.12" stroke="#ff7edb" stroke-width="1.5"/>
+<circle cx="680" cy="258.5" r="9" fill="#ff7edb"/><text x="680" y="262.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">3</text>
+<text x="696" y="262.5" font-size="12" font-weight="700" fill="#ff7edb">Timing of Chrome’s 24 requests</text>
+<text x="676" y="279.5" font-size="11" fill="#e6e9ff">Same stats you know from http_req_duration:</text>
+<text x="676" y="294.5" font-size="11" fill="#e6e9ff">avg, med, p(95)… but for EVERY request Chrome made.</text>
+<path d="M628,220.4 L658,329.5" stroke="#ff5c7a" stroke-width="2.5" fill="none"/><circle cx="628" cy="220.4" r="3.5" fill="#ff5c7a"/>
+<rect x="662" y="317.5" width="322" height="53" rx="9" fill="#ff5c7a" fill-opacity="0.12" stroke="#ff5c7a" stroke-width="1.5"/>
+<circle cx="680" cy="334.5" r="9" fill="#ff5c7a"/><text x="680" y="338.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">4</text>
+<text x="696" y="338.5" font-size="12" font-weight="700" fill="#ff5c7a">Failed browser requests: 0 of 24</text>
+<text x="676" y="355.5" font-size="11" fill="#e6e9ff">The browser twin of http_req_failed.</text>
+<path d="M628,269.8 L658,390.5" stroke="#ffe27a" stroke-width="2.5" fill="none"/><circle cx="628" cy="269.8" r="3.5" fill="#ffe27a"/>
+<rect x="662" y="378.5" width="322" height="83" rx="9" fill="#ffe27a" fill-opacity="0.12" stroke="#ffe27a" stroke-width="1.5"/>
+<circle cx="680" cy="395.5" r="9" fill="#ffe27a"/><text x="680" y="399.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">5</text>
+<text x="696" y="399.5" font-size="12" font-weight="700" fill="#ffe27a">Loading vitals</text>
+<text x="676" y="416.5" font-size="11" fill="#e6e9ff">TTFB 1.27 s → first byte arrived</text>
+<text x="676" y="431.5" font-size="11" fill="#e6e9ff">FCP 1.64 s → first thing drawn</text>
+<text x="676" y="446.5" font-size="11" fill="#e6e9ff">LCP 1.64 s → biggest thing drawn</text>
+<path d="M628,307.8 L658,481.5" stroke="#7dffb0" stroke-width="2.5" fill="none"/><circle cx="628" cy="307.8" r="3.5" fill="#7dffb0"/>
+<rect x="662" y="469.5" width="322" height="53" rx="9" fill="#7dffb0" fill-opacity="0.12" stroke="#7dffb0" stroke-width="1.5"/>
+<circle cx="680" cy="486.5" r="9" fill="#7dffb0"/><text x="680" y="490.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">6</text>
+<text x="696" y="490.5" font-size="12" font-weight="700" fill="#7dffb0">Visual stability: CLS ≈ 0</text>
+<text x="676" y="507.5" font-size="11" fill="#e6e9ff">Nothing jumped around on screen. Lower = steadier.</text>
+<path d="M628,336.3 L658,542.5" stroke="#b9acff" stroke-width="2.5" fill="none"/><circle cx="628" cy="336.3" r="3.5" fill="#b9acff"/>
+<rect x="662" y="530.5" width="322" height="68" rx="9" fill="#b9acff" fill-opacity="0.12" stroke="#b9acff" stroke-width="1.5"/>
+<circle cx="680" cy="547.5" r="9" fill="#b9acff"/><text x="680" y="551.5" font-size="10.5" font-weight="700" fill="#0b0326" text-anchor="middle">7</text>
+<text x="696" y="551.5" font-size="12" font-weight="700" fill="#b9acff">Interaction vitals</text>
+<text x="676" y="568.5" font-size="11" fill="#e6e9ff">FID / INP appear once the test CLICKS or types —</text>
+<text x="676" y="583.5" font-size="11" fill="#e6e9ff">how quickly the page reacted (INP 32 ms).</text>
+<rect x="20" y="624.5" width="960" height="30" rx="8" fill="#ffffff" fill-opacity="0.05"/>
+<text x="500.0" y="644.5" font-size="12" fill="#c9cdf5" text-anchor="middle">Browser tests give you two families of numbers: browser_* (network) and web vitals (what the user sees)</text>
+</g></svg>
