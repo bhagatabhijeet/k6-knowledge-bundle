@@ -73,18 +73,19 @@ interactive dashboards.
 
 ## Bundle roadmap
 
-This bundle follows a step-by-step progression:
+This bundle follows a step-by-step progression in nine parts:
 
-| Stage | What you learn |
-|---|---|
-| Performance testing types | Load, stress, soak, and other testing types explained |
-| k6 setup & first test | Installing k6, running a test, reading the results |
-| k6 core concepts | Thresholds, load stages, tags, metrics, and assertions |
-| API load testing | End-to-end load scenarios against real API endpoints |
-| Functional flow testing | Registration, check-in, order placement — measuring performance across full user journeys |
-| Browser load testing | Playwright integration for UI-level load testing |
-| Grafana Cloud integration | Streaming results to the cloud, visualising reports on dashboards |
-| Cloud execution & CI/CD | Running at scale on Grafana Cloud, embedding tests in Jenkins pipelines |
+| # | Part | What you learn |
+|---|---|---|
+| 1 | Performance testing fundamentals | What performance testing is and the test types: smoke, load, stress, spike and soak |
+| 2 | k6 setup | Installing k6, the editor, a project, k6 Studio; IntelliSense and your first test |
+| 3 | k6 core concepts | Expected responses, thresholds, stages; reading the console; architecture and the test lifecycle |
+| 4 | How to test APIs using k6 | Requests, parameterisation, data-driven tests and assertions against real API endpoints |
+| 5 | Building load scenarios for functional API tests | Registration, check-in, order placement — measuring performance across full user journeys |
+| 6 | Browser UI testing with Playwright k6 integration | The k6 browser module for UI-level testing and browser metrics |
+| 7 | Building load scenarios for UI tests | Browser scenarios at scale, alongside protocol-level load |
+| 8 | Building load tests for the Grafana Cloud platform | Streaming results to the cloud, dashboards, reports and cloud-scale runs |
+| 9 | CI/CD integration | Embedding tests in pipelines with automatic pass/fail on threshold breach |
 
 ## Common pitfalls
 

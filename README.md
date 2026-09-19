@@ -91,48 +91,44 @@ Every answer in the guide is **checked against a real k6 run** you can repeat yo
 ┌─────────────────────────────────────────────────────────────────────┐
 │  LEARNING PATH                                              ⏱ TIME  │
 ├─────────────────────────────────────────────────────────────────────┤
-│  📖 Introduction to Performance Testing                    ~45 min  │
-│     └─ What is performance testing?                                 │
-│     └─ What is k6?                                                  │
-│     └─ Testing types: smoke, load, stress, soak, spike…            │
+│  1 📖 Performance Testing Fundamentals                     ~45 min  │
+│     └─ What is performance testing? What is k6?                     │
+│     └─ Testing types: smoke, load, stress, spike, soak              │
 ├─────────────────────────────────────────────────────────────────────┤
-│  🛠  Setting Up k6                                          ~30 min  │
-│     └─ Installation & first test                                    │
-│     └─ Reading k6 output                                            │
+│  2 🛠  k6 Setup                                             ~30 min  │
+│     └─ Install k6, editor, project, k6 Studio, extensions           │
+│     └─ IntelliSense & your first test                               │
 ├─────────────────────────────────────────────────────────────────────┤
-│  ⚙️  k6 Core Concepts                                      ~90 min  │
-│     └─ Virtual users & duration                                     │
-│     └─ Thresholds & pass/fail criteria                              │
-│     └─ Load stages & ramp-up patterns                               │
-│     └─ Tags, groups, metrics & checks                               │
+│  3 ⚙️  k6 Core Concepts                                    ~90 min  │
+│     └─ Expected responses, thresholds & stages                      │
+│     └─ Reading the console, the math of percentiles                 │
+│     └─ Architecture: Go, Sobek & the test lifecycle                 │
 ├─────────────────────────────────────────────────────────────────────┤
-│  🔗 API Load Testing                                        ~60 min  │
-│     └─ End-to-end API scenarios                                     │
-│     └─ Parameterisation & data-driven tests                         │
+│  4 🔗 How to Test APIs Using k6                             ~60 min  │
+│     └─ Requests, parameterisation & data-driven tests               │
 │     └─ Assertions on responses                                      │
 ├─────────────────────────────────────────────────────────────────────┤
-│  🧑‍💻 Functional Flow Testing                                ~60 min  │
+│  5 🧑‍💻 Building Load Scenarios for Functional API Tests    ~60 min  │
 │     └─ Registration → login → checkout journeys                     │
-│     └─ Measuring real-world user journeys under load                │
+│     └─ Measuring real user journeys under load                      │
 ├─────────────────────────────────────────────────────────────────────┤
-│  🌐 Browser / UI Load Testing                              ~45 min  │
-│     └─ k6 + Playwright integration                                  │
-│     └─ Capturing browser metrics under load                         │
+│  6 🌐 Browser UI Testing with Playwright k6 Integration    ~45 min  │
+│     └─ k6 browser module & Playwright-style scripting               │
+│     └─ Capturing browser metrics                                    │
 ├─────────────────────────────────────────────────────────────────────┤
-│  ☁️  Grafana Cloud Integration                             ~45 min  │
-│     └─ Streaming results to the cloud                               │
-│     └─ Dashboards, charts & performance reports                     │
+│  7 🎭 Building Load Scenarios for UI Tests                  ~45 min  │
+│     └─ Browser scenarios at scale                                   │
+│     └─ Mixing protocol and browser load                             │
+├─────────────────────────────────────────────────────────────────────┤
+│  8 ☁️  Building Load Tests for the Grafana Cloud Platform  ~45 min  │
+│     └─ Streaming results, dashboards & reports                      │
 │     └─ Running cloud-scale tests                                    │
 ├─────────────────────────────────────────────────────────────────────┤
-│  🔄 CI/CD Integration                                      ~30 min  │
-│     └─ Embedding k6 into Jenkins pipelines                          │
+│  9 🔄 CI/CD Integration                                     ~30 min  │
+│     └─ Embedding k6 into pipelines                                  │
 │     └─ Automated pass/fail on threshold breach                      │
-├─────────────────────────────────────────────────────────────────────┤
-│  📝 Career & JavaScript Resources                          ~15 min  │
-│     └─ Resume points & interview prep                               │
-│     └─ JavaScript fundamentals refresher                            │
 └─────────────────────────────────────────────────────────────────────┘
-                                              TOTAL  ≈ 6 hrs 40 min
+                                              TOTAL  ≈ 7 hrs 30 min
 ```
 
 ---

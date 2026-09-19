@@ -1,5 +1,5 @@
 ---
-title: Introduction to Performance Testing
+title: Performance Testing Fundamentals
 description: >
   What performance testing is, where k6 fits in the ecosystem, and a
   road-map of everything covered in this bundle — from first test to

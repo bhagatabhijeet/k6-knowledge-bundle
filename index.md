@@ -14,12 +14,22 @@ through advanced topics like cloud-scale load runs, Grafana dashboards, and CI/C
 
 ## Topics
 
-1. [Introduction to Performance Testing](/introduction-to-performance-testing/index.md)
-2. [k6 Setup](/k6-setup/index.md)
-3. [k6 Configuration Options in Code Editor](/k6-configuration-options-in-code-editor/index.md)
-4. [Understanding the k6 Console Output](/k6-console-output/index.md)
-5. [k6 Architecture](/k6-architecture/index.md)
-6. [k6 Core Concepts](/k6-core-concepts/index.md)
+The bundle is a learning path in nine parts. Read them in order, or jump to the one you need.
+
+1. [Performance Testing Fundamentals](/introduction-to-performance-testing/index.md) — what performance testing is, where k6 fits, and the test types (smoke, load, stress, spike, soak)
+2. **k6 Setup**
+   - [k6 Setup](/k6-setup/index.md) — install k6, the editor and project, k6 Studio, extensions and debugging
+   - [k6 Configuration Options in Code Editor](/k6-configuration-options-in-code-editor/index.md) — IntelliSense and your first test
+3. **k6 Core Concepts**
+   - [k6 Core Concepts](/k6-core-concepts/index.md) — expected responses, thresholds and stages
+   - [Understanding the k6 Console Output](/k6-console-output/index.md) — reading results and the math of percentiles
+   - [k6 Architecture](/k6-architecture/index.md) — Go, the Sobek JavaScript engine and the test lifecycle
+4. How to Test APIs Using k6 — *coming soon*
+5. Building Load Scenarios for Functional API Tests — *coming soon*
+6. Browser UI Testing with Playwright k6 Integration — *in progress*
+7. Building Load Scenarios for UI Tests — *coming soon*
+8. Building Load Tests for the Grafana Cloud Platform — *coming soon*
+9. CI/CD Integration — *coming soon*
 
 ## Reference guides
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-09-18 (update 12)
+
+- Reorganised the root `index.md` and the README learning path into the nine-part curriculum: fundamentals, k6 setup, k6 core concepts, testing APIs, functional API load scenarios, browser UI testing with Playwright k6 integration, UI load scenarios, Grafana Cloud load tests and CI/CD. Existing topics are grouped under parts 1-3; parts 4-9 are marked as coming soon (part 6 in progress).
+- Renamed the first topic's label to "Performance Testing Fundamentals" and updated the roadmap table in `what-is-k6.md`.
+
 ## 2026-09-18 (update 11)
 
 - Added topic **k6 Core Concepts** (`k6-core-concepts/`): "Expected Responses and http_req_failed", "Thresholds — Pass/Fail Goals for Your Metrics" and "Stages — Ramp-up, Hold and Ramp-down".
